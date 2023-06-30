@@ -1,0 +1,24 @@
+{
+  "name": "csc-wx-app",
+  "version": "1.0.0",
+  "description": "## Database Schema Design",
+  "main": "index.js",
+  "scripts": {
+    "render-postbuild": "npm run build --prefix frontend",
+    "install": "npm --prefix frontend install frontend",
+    "dev:frontend": "npm install --prefix frontend start",
+    "start": "npm start --prefix frontend",
+    "build": "npm run --prefix frontend build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RyanFullStack/csc-weather-app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RyanFullStack/csc-weather-app/issues"
+  },
+  "homepage": "https://github.com/RyanFullStack/csc-weather-app#readme"
+}
