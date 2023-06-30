@@ -113,7 +113,7 @@ const WindSpeed = () => {
                 if (weatherData[0].data.weather.presentWeather === ' FU') {
                     setMetarAbbr('Smoke')
                 }
-                if (weatherData[0].data.weather.presentWeather === ' HZ') {
+                if (weatherData[0].data.weather.presentWeather === 'HZ') {
                     setMetarAbbr('Haze')
                 }
                 if (weatherData[0].data.weather.presentWeather === ' FC') {
