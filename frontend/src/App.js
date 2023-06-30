@@ -1,12 +1,15 @@
 import './App.css';
+import WindSpeed from './components/wind';
 
 function App() {
   return (
-    <div className="App">
-      <header className="title-header">
-        <h2>WELCOME TO THE CSC WX APP!</h2>
-      </header>
-    </div>
+    <>
+      <div className="App">
+          <h2>WELCOME TO THE CSC WX APP!</h2>
+          <p>This page updates live, don't refresh!</p>
+          <WindSpeed />
+      </div>
+    </>
   );
 }
 
