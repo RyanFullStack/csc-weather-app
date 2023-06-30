@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from 'react'
+import { useEffect, useState } from 'react'
 
 
 const WindSpeed = () => {
@@ -15,8 +15,9 @@ const WindSpeed = () => {
     const [cloudCeiling3, setCloudCeiling3] = useState()
     const [metarAbbr, setMetarAbbr] = useState()
     const [metarDesc, setMetarDesc] = useState()
-
+// eslint-disable-next-line
     const windData = []
+// eslint-disable-next-line
     const weatherData = []
 
     useEffect(() => {
@@ -234,7 +235,7 @@ const WindSpeed = () => {
         <div id='windMeter'>
             <h3>LIVE CONDITIONS</h3>
             <div>Speed: {speed} {gustSpeed ? `Gusting: ${gustSpeed}` : null}<br />
-                Direction: {direction}<br />
+                {speed > 0 ? `Direction: ${direction}` : null}<br />
                 Temperature: {temp}<br />
                 {skyCondition1} {cloudCeiling1} {skyCondition2} {cloudCeiling2} {skyCondition3} {cloudCeiling3}<br />
                 {metarDesc && metarAbbr ? metarDesc : null} {metarAbbr}<br /> <br /><br />
