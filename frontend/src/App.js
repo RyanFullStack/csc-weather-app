@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <div className="App">
-          <h2>WELCOME TO THE CSC WX APP!</h2>
+          <h2>CSC WX APP</h2>
           <p>This page updates live, don't refresh!</p>
           <WindSpeed />
       </div>
