@@ -15,6 +15,7 @@ const WindSpeed = () => {
     const [cloudCeiling3, setCloudCeiling3] = useState()
     const [metarAbbr, setMetarAbbr] = useState()
     const [metarDesc, setMetarDesc] = useState()
+    const [gustData, setGustData] = useState([])
 // eslint-disable-next-line
     const windData = []
 // eslint-disable-next-line
@@ -230,6 +231,21 @@ const WindSpeed = () => {
             }
         };
     }, [weatherData])
+
+
+
+    useEffect(() => {
+        const getWind = async() => {
+        const res = await fetch('https://thingproxy.freeboard.io/fetch/https://lifeatterminalvelocity.com/csc_awos/data.php')
+        const resArr = await res.json()
+
+        if (!gustData.length || (gustData[0].receivedAt !== resArr[0].receivedAt)) {
+            setGustData([...resArr])
+        }
+
+    }
+    getWind()
+    }, [gustData])
 
     return (
         <div id='windMeter'>
