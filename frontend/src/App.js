@@ -1,12 +1,12 @@
 import './App.css';
 import WindSpeed from './components/wind';
+import GustChart from './components/gusts';
 
 function App() {
   return (
     <>
       <div className="App">
-          <h2>CSC WX APP</h2>
-          <p>This page updates live, don't refresh!</p>
+          <GustChart />
           <WindSpeed />
       </div>
     </>
