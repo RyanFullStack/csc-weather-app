@@ -236,7 +236,7 @@ const WindSpeed = () => {
 
     useEffect(() => {
         const getWind = async() => {
-        const res = await fetch('https://thingproxy.freeboard.io/fetch/https://lifeatterminalvelocity.com/csc_awos/data.php')
+        const res = await fetch('https://corsproxy.io/?https://lifeatterminalvelocity.com/csc_awos/data.php')
         const resArr = await res.json()
 
         if (!gustData.length || (gustData[0].receivedAt !== resArr[0].receivedAt)) {
