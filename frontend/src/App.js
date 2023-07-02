@@ -1,11 +1,16 @@
 import './App.css';
-import WindSpeed from './components/wind';
+import Metar from './components/metar';
 
 function App() {
   return (
     <>
       <div className="App">
-          <WindSpeed />
+
+        <div className='header-container'></div>
+        <div className='chart-container'></div>
+        <div className='footer-container'>
+          <Metar />
+        </div>
       </div>
     </>
   );

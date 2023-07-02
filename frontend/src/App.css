@@ -15,4 +15,33 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  border: 1px solid red;
+}
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: space-evenly;
+  height: 8vh;
+  min-width: 100vw;
+  outline: 1px solid red;
+}
+.chart-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 84vh;
+  min-width: 100vw;
+  outline: 1px solid rgb(0, 26, 255);
+}
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 8vh;
+  min-width: 100vw;
+  outline: 1px solid rgb(0, 255, 42);
 }
