@@ -22,9 +22,9 @@ const WindSpeedProvider = props => {
     const [darkTheme, setDarkTheme] = useState('true')
     const [tempSetting, setTempSetting] = useState('true')
 
-// eslint-disable-next-line
+    // eslint-disable-next-line
     const windData = []
-// eslint-disable-next-line
+    // eslint-disable-next-line
     const weatherData = []
 
     useEffect(() => {
@@ -109,10 +109,10 @@ const WindSpeedProvider = props => {
 
                 setMetar(metArr2)
                 setTemp(weatherData[0].data.weather.temperature)
-                setTempC(((weatherData[0].data.weather.temperature-32)/1.8).toFixed(1))
+                setTempC(((weatherData[0].data.weather.temperature - 32) / 1.8).toFixed(1))
 
                 if (weatherData[0].data.weather.skyCondition[0].altitude) {
-                setCloudCeiling1(`${weatherData[0].data.weather.skyCondition[0].altitude}'`)
+                    setCloudCeiling1(`${weatherData[0].data.weather.skyCondition[0].altitude}'`)
                 }
 
                 if (weatherData[0].data.weather.skyCondition[0].altitude === null) {
@@ -202,19 +202,19 @@ const WindSpeedProvider = props => {
                 }
 
                 if (weatherData[0].data.weather.skyCondition[0].cloudCover) {
-                if (weatherData[0].data.weather.skyCondition[0].cloudCover === 'CLR') {
-                    setSkyCondition1('Clear Sky')
+                    if (weatherData[0].data.weather.skyCondition[0].cloudCover === 'CLR') {
+                        setSkyCondition1('Clear Sky')
+                    }
+                    if (weatherData[0].data.weather.skyCondition[0].cloudCover === 'SCT') {
+                        setSkyCondition1('Scattered')
+                    }
+                    if (weatherData[0].data.weather.skyCondition[0].cloudCover === 'BKN') {
+                        setSkyCondition1('Broken')
+                    }
+                    if (weatherData[0].data.weather.skyCondition[0].cloudCover === 'OVC') {
+                        setSkyCondition1('Overcast')
+                    }
                 }
-                if (weatherData[0].data.weather.skyCondition[0].cloudCover === 'SCT') {
-                    setSkyCondition1('Scattered')
-                }
-                if (weatherData[0].data.weather.skyCondition[0].cloudCover === 'BKN') {
-                    setSkyCondition1('Broken')
-                }
-                if (weatherData[0].data.weather.skyCondition[0].cloudCover === 'OVC') {
-                    setSkyCondition1('Overcast')
-                }
-            }
 
                 if (weatherData[0].data.weather.skyCondition[1]) {
                     if (weatherData[0].data.weather.skyCondition[1].cloudCover === 'CLR') {
@@ -245,6 +245,13 @@ const WindSpeedProvider = props => {
                         setSkyCondition3('Overcast')
                     }
                 }
+                if (weatherData[0].data.weather.skyCondition[0]?.cloudCover === "CLR" &&
+                    (!weatherData[0].data.weather.skyCondition[1] || !weatherData[0].data.weather.skyCondition[1].cloudCover) &&
+                    (!weatherData[0].data.weather.skyCondition[2] || !weatherData[0].data.weather.skyCondition[2].cloudCover)) {
+                    setSkyCondition1('Clear Sky');
+                    setSkyCondition2('');
+                    setSkyCondition3('');
+                }
             }
         };
     }, [weatherData, temp])
@@ -252,20 +259,20 @@ const WindSpeedProvider = props => {
 
 
     useEffect(() => {
-        const getWind = async() => {
-        const res = await fetch('https://corsproxy.io/?https://lifeatterminalvelocity.com/csc_awos/data.php')
-        const resArr = await res.json()
+        const getWind = async () => {
+            const res = await fetch('https://corsproxy.io/?https://lifeatterminalvelocity.com/csc_awos/data.php')
+            const resArr = await res.json()
 
-        if (!gustData.length || (gustData[0].receivedAt !== resArr[0].receivedAt)) {
-            setGustData([...resArr])
+            if (!gustData.length || (gustData[0].receivedAt !== resArr[0].receivedAt)) {
+                setGustData([...resArr])
+            }
+
         }
-
-    }
-    getWind()
+        getWind()
     }, [gustData])
 
     return (
-        <WeatherContext.Provider value={{speed, gustSpeed, direction, metar, temp, tempC, tempSetting, setTempSetting, skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3, metarAbbr, metarDesc, gustData, darkTheme, setDarkTheme }}>
+        <WeatherContext.Provider value={{ speed, gustSpeed, direction, metar, temp, tempC, tempSetting, setTempSetting, skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3, metarAbbr, metarDesc, gustData, darkTheme, setDarkTheme }}>
             {props.children}
         </WeatherContext.Provider>
     )
