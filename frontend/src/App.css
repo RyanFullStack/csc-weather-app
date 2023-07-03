@@ -42,7 +42,8 @@
 }
 
 .temp-content {
-  margin-right: 1vw;
+  margin-right: 1.2vw;
+  font-size: calc(14px + 4vmin);
 }
 
 .theme-content {
@@ -58,27 +59,28 @@
 
 .wind-component {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   /* outline: 1px solid red; */
   height: 90%;
   width: 90%;
   margin: 2vw 2vh;
 }
 
-.wind-component-left {
+.wind-component-top {
   display: flex;
-  flex-direction: column;
-  width: 60%;
+  flex-direction: row;
+  height: 60%;
+  gap: 10vw;
   /* outline: 1px solid green; */
   justify-content: center;
   align-items: center;
 }
 
-.wind-component-right {
+.wind-component-bottom {
   display: flex;
-  flex-direction: column;
-  width: 40%;
-  justify-content: center;
+  flex-direction: row;
+  height: 40%;
+  gap: 10vw;
   align-items: center;
   /* outline: 1px solid pink; */
 }
@@ -87,7 +89,9 @@
   font-size: calc(10px + 50vmin);
   display: flex;
   flex-direction: row;
-  height: 60%;
+  height: 100%;
+  width: 50%;
+  /* border: 1px solid red; */
   align-items: center;
   justify-content: center;
   gap: 2vw;
@@ -107,18 +111,37 @@
 }
 
 .wind-anamometer {
-  height: 65%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  /* border: 1px solid red; */
 }
 
 .metar-abbr {
   font-size: calc(10px + 4vmin);
   display: flex;
+  flex-direction: column;
   text-align: center;
-  justify-content: center;
-  align-items: flex-end;
-  height: 20%;
+  justify-content: space-evenly;
+  height: 100%;
+  /* border: 1px solid red; */
+  width: 50%;
 }
 .arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-height: 60vh;
   max-width: 60vw;
+}
+.wind-bottom-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 50%;
+  height: 100%;
+  /* border: 1px solid red; */
 }

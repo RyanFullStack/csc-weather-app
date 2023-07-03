@@ -4,7 +4,7 @@ import arrow from '../images/arrow.png'
 import '../components/anamometer.css'
 
 function Wind() {
-    const { speed, gustSpeed, direction, metarAbbr, metarDesc } = useContext(WeatherContext)
+    const { speed, gustSpeed, direction, metarAbbr, metarDesc, skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3 } = useContext(WeatherContext)
     const [ trackDirection, setTrackDirection ] = useState('')
 
         useEffect(() => {
@@ -121,23 +121,26 @@ function Wind() {
 
     return (
         <div className="wind-component">
-            <div className='wind-component-left'>
+            <div className='wind-component-top'>
                 <div className="wind-speed">
                     {speed}<p>kts</p>
                 </div>
+                <div className="wind-anamometer">
+                    <img src={arrow} alt='Wind Direction' className={`arrow  ${trackDirection}`}></img>
+                </div>
+            </div>
+            <div className="wind-component-bottom">
+                <div className="metar-abbr">
+                    <div>{skyCondition1} {cloudCeiling1} {skyCondition2} {cloudCeiling2} {skyCondition3} {cloudCeiling3}</div>
+                    <div>{metarDesc || metarAbbr ? `${metarDesc} ${metarAbbr}` : `No metar weather`}</div>
+                </div>
+                <div className="wind-bottom-right">
                 <div className="wind-direction">
                     {speed === 0 ? `Calm` : `From ${direction}º`}
                 </div>
                 <div className="wind-gusts">
                     {gustSpeed ? `Gusting to: ${gustSpeed}` : `No gusts, winds are steady!`}
                 </div>
-            </div>
-            <div className="wind-component-right">
-                <div className="wind-anamometer">
-                    <img src={arrow} className={`arrow  ${trackDirection}`}></img>
-                </div>
-                <div className="metar-abbr">
-                    {metarDesc || metarAbbr ? `${metarDesc} ${metarAbbr}` : `No metar weather`}
                 </div>
             </div>
         </div>
