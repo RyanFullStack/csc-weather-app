@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <div className={darkTheme ? 'App' : 'Applight'}>
+      <div className={darkTheme === 'true' ? 'App' : 'Applight'}>
 
         <div className='header-container'>
           <Header />

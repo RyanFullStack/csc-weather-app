@@ -1,17 +1,31 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { WeatherContext } from "../context/WeatherContext";
 
 function Theme() {
     const {darkTheme, setDarkTheme} = useContext(WeatherContext)
 
+    useEffect(() => {
+        if (!localStorage.getItem('darktheme')) {
+            localStorage.setItem('darktheme', 'true')
+        } else {
+            setDarkTheme(localStorage.getItem('darktheme'))
+        }
+    }, [darkTheme, setDarkTheme])
+
+
     const handleClick = () => {
-        setDarkTheme(!darkTheme)
+        if(darkTheme === 'true') {
+            setDarkTheme('false')
+            localStorage.setItem('darktheme', 'false')
+        } else {
+            setDarkTheme('true')
+            localStorage.setItem('darktheme', 'true')
+        }
     }
 
     return (
         <div className="theme-content" onClick={handleClick}>
-           <i className="fa-solid fa-sun"></i>
-           <i className="fa-solid fa-moon"></i>
+           {darkTheme === 'true' ? <i className="fa-solid fa-sun"/> : <i className="fa-solid fa-moon"/>}
         </div>
     )
 }

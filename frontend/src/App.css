@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  background: rgb(0, 0, 0);
   background: linear-gradient(0deg, rgba(0, 0, 0, 1) 7%, rgba(34, 34, 34, .9) 10%, rgba(34, 34, 34, .9) 90%, rgba(28, 169, 180, 1) 95%);
   font-size: calc(10px + 2vmin);
   color: rgb(14, 173, 152);
@@ -63,13 +63,16 @@
 .theme-content {
   display: flex;
   flex-direction: row;
+  height: 8vh;
+  width: 8vw;
   align-items: center;
   gap: .5vw;
   justify-content: space-around;
   cursor: pointer;
-  border: 1px solid red;
-  height: 8vh;
-  width: 8vw;
+  /* border: 1px solid red; */
+}
+.fa-solid {
+  cursor: pointer;
 }
 
 .time-component {

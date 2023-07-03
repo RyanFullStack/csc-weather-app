@@ -18,7 +18,8 @@ const WindSpeedProvider = props => {
     const [metarAbbr, setMetarAbbr] = useState()
     const [metarDesc, setMetarDesc] = useState()
     const [gustData, setGustData] = useState([])
-    const [darkTheme, setDarkTheme] = useState(true)
+    const [darkTheme, setDarkTheme] = useState('')
+
 // eslint-disable-next-line
     const windData = []
 // eslint-disable-next-line
