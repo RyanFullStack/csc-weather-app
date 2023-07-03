@@ -56,9 +56,11 @@
 }
 
 .temp-content {
-  margin-right: 1.2vw;
+  padding-right: 1.2vw;
   font-size: calc(14px + 2vmin);
+  text-align: right;
   cursor: pointer;
+  width: 17vw;
 }
 
 .theme-content {
@@ -72,12 +74,16 @@
   cursor: pointer;
   /* border: 1px solid red; */
 }
+
 .fa-solid {
   cursor: pointer;
 }
 
 .time-component {
   font-size: calc(10px + 4vmin);
+  text-align: center;
+  margin-left: 10vw;
+  ;
 }
 
 .wind-component {
@@ -119,6 +125,7 @@
   justify-content: center;
   gap: 2vw;
 }
+
 .small {
   font-size: 40px;
   margin-left: -10px;
@@ -190,36 +197,53 @@
     gap: 20vw;
     margin-left: 10vw;
   }
+
   .wind-component-bottom {
     height: 30%;
     /* border: 1px solid red; */
     width: 115%;
   }
-  .wind-gusts, .metar {
+
+  .wind-gusts,
+  .metar {
     font-size: calc(10px + 2vmin)
   }
-  .sky-conditions, .wind-direction {
+
+  .sky-conditions,
+  .wind-direction {
     font-size: calc(10px + 5vmin)
   }
+
   .small {
     font-size: 20px;
   }
 
+  .arrow {
+    max-height: 45vh;
+    max-width: 45vw;
+  }
+
 
 }
+
 @media screen and (max-width: 400px) {
   .wind-component-top {
     height: 30%;
     gap: 20vw;
     margin-left: 8vw;
   }
+
   .wind-component-bottom {
-    height:10%;
+    height: 10%;
   }
-  .wind-gusts, .metar {
+
+  .wind-gusts,
+  .metar {
     font-size: calc(10px + 1vmin)
   }
-  .sky-conditions, .wind-direction {
+
+  .sky-conditions,
+  .wind-direction {
     font-size: calc(10px + 3vmin)
   }
 }
