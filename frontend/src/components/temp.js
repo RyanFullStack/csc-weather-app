@@ -26,7 +26,7 @@ function CurrentTemp() {
 
     return (
         <div className='temp-content' onClick={handleClick}>
-            {(tempSetting === 'true') ? `${temp}º F` : `${tempC}º C`}
+            {(tempsetting && tempSetting === 'true') ? `${temp}º F` : `${tempC}º C`}
         </div>
     )
 }
