@@ -118,6 +118,10 @@
   justify-content: center;
   gap: 2vw;
 }
+.small {
+  font-size: 40px;
+  margin-left: -40px;
+}
 
 .wind-speed p {
   font-size: calc(10px + 20vmin);
@@ -181,7 +185,7 @@
 
 @media screen and (max-width: 650px) {
   .wind-component-top {
-    height: 40%;
+    height: 50%;
     gap: 20vw;
     margin-left: 10vw;
   }
@@ -195,6 +199,9 @@
   }
   .sky-conditions, .wind-direction {
     font-size: calc(10px + 5vmin)
+  }
+  .small {
+    font-size: 20px;
   }
 
 
