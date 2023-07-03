@@ -132,7 +132,7 @@ function Wind() {
             </div>
             <div className="wind-component-bottom">
                 <div className="metar-abbr">
-                    <div className='sky-conditions'>{skyCondition1} {cloudCeiling1} {skyCondition2} {cloudCeiling2} {skyCondition3} {cloudCeiling3}</div>
+                    <div className='sky-conditions'>{skyCondition1} {cloudCeiling1} <br/>{skyCondition2} {cloudCeiling2} <br/>{skyCondition3} {cloudCeiling3}</div>
                     <div className='metar'>{metarDesc && metarAbbr ? `${metarDesc}  ${metarAbbr}` : metarAbbr ? `${metarAbbr}` : null}</div>
                 </div>
                 <div className="wind-bottom-right">

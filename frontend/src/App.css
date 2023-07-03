@@ -184,7 +184,7 @@
 }
 
 .sky-conditions {
-  font-size: calc(10px + 6vmin);
+  font-size: calc(10px + 3.5vmin);
 }
 
 .metar {
@@ -211,7 +211,7 @@
 
   .sky-conditions,
   .wind-direction {
-    font-size: calc(10px + 5vmin)
+    font-size: calc(10px + 2vmin)
   }
 
   .small {
