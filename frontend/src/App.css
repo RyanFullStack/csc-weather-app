@@ -186,8 +186,17 @@
     margin-left: 10vw;
   }
   .wind-component-bottom {
-    height: 35%;
+    height: 30%;
+    /* border: 1px solid red; */
+    width: 115%;
   }
+  .wind-gusts, .metar {
+    font-size: calc(10px + 2vmin)
+  }
+  .sky-conditions, .wind-direction {
+    font-size: calc(10px + 5vmin)
+  }
+
 
 }
 @media screen and (max-width: 400px) {
@@ -197,7 +206,12 @@
     margin-left: 8vw;
   }
   .wind-component-bottom {
-    height: 20%;
+    height:10%;
   }
-
+  .wind-gusts, .metar {
+    font-size: calc(10px + 1vmin)
+  }
+  .sky-conditions, .wind-direction {
+    font-size: calc(10px + 3vmin)
+  }
 }
