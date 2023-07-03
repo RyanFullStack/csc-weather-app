@@ -3,8 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 7%, rgba(34, 34, 34, 1) 10%, rgba(34, 34, 34, 1) 90%, rgba(28, 169, 180, 1) 95%);
+
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 7%, rgba(34, 34, 34, .9) 10%, rgba(34, 34, 34, .9) 90%, rgba(28, 169, 180, 1) 95%);
   font-size: calc(10px + 2vmin);
   color: rgb(14, 173, 152);
   overflow: hidden;
@@ -16,7 +16,7 @@
   justify-content: center;
   align-items: center;
   background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 7%, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 1) 90%, rgba(28, 169, 180, 1) 95%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 7%, rgba(255, 255, 255, .5) 10%, rgba(255, 255, 255, .5) 90%, rgba(28, 169, 180, 1) 95%);
   font-size: calc(10px + 2vmin);
   color: rgb(0, 0, 0);
   overflow: hidden;
@@ -40,8 +40,8 @@
   justify-content: center;
   align-items: center;
   height: 84vh;
-  min-width: 100vw;
-  /* outline: 1px solid rgb(0, 26, 255); */
+  width: 80%;
+  /* border: 1px solid rgb(255, 0, 0); */
 }
 
 .footer-container {
@@ -63,9 +63,13 @@
 .theme-content {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: .5vw;
-  margin-left: 1vw;
+  justify-content: space-around;
   cursor: pointer;
+  border: 1px solid red;
+  height: 8vh;
+  width: 8vw;
 }
 
 .time-component {
@@ -95,7 +99,7 @@
   display: flex;
   flex-direction: row;
   height: 40%;
-  gap: 10vw;
+  gap: 15vw;
   align-items: center;
   /* outline: 1px solid pink; */
 }
@@ -114,10 +118,11 @@
 
 .wind-speed p {
   font-size: calc(10px + 20vmin);
+  z-index: 2;
 }
 
 .wind-gusts {
-  font-size: calc(10px + 5vmin);
+  font-size: calc(10px + 3vmin);
   text-align: center;
 }
 
@@ -150,6 +155,7 @@
   align-items: center;
   max-height: 60vh;
   max-width: 60vw;
+  z-index: 1;
 }
 
 .wind-bottom-right {
@@ -157,7 +163,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
-  width: 50%;
+  width: 60%;
   height: 100%;
   /* border: 1px solid red; */
 }
@@ -168,4 +174,29 @@
 
 .metar {
   font-size: calc(10px + 4vmin);
+}
+
+@media screen and (max-width: 650px) {
+  .wind-component-top {
+    height: 40%;
+    gap: 20vw;
+    margin-left: 10vw;
+  }
+  .wind-component-bottom {
+    height: 35%;
+    gap: 22vw;
+  }
+
+}
+@media screen and (max-width: 400px) {
+  .wind-component-top {
+    height: 30%;
+    gap: 20vw;
+    margin-left: 8vw;
+  }
+  .wind-component-bottom {
+    height: 20%;
+    gap: 18vw;
+  }
+
 }
