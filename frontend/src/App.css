@@ -8,15 +8,9 @@
   min-width: 100vw;
   font-size: calc(10px + 2vmin);
   color: white;
+  overflow: hidden;
 }
-#windMeter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border: 1px solid red;
-}
+
 .header-container {
   display: flex;
   flex-direction: row;
@@ -24,18 +18,19 @@
   align-items: center;
   height: 8vh;
   min-width: 100vw;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
+
 .chart-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   height: 84vh;
   min-width: 100vw;
-  outline: 1px solid rgb(0, 26, 255);
+  /* outline: 1px solid rgb(0, 26, 255); */
 }
+
 .footer-container {
   display: flex;
   flex-direction: row;
@@ -43,14 +38,87 @@
   align-items: center;
   height: 8vh;
   min-width: 100vw;
-  outline: 1px solid rgb(0, 255, 42);
+  /* outline: 1px solid rgb(0, 255, 42); */
 }
+
 .temp-content {
   margin-right: 1vw;
 }
+
 .theme-content {
   display: flex;
   flex-direction: row;
   gap: 1vw;
   margin-left: 1vw;
+}
+
+.time-component {
+  font-size: calc(10px + 4vmin);
+}
+
+.wind-component {
+  display: flex;
+  flex-direction: row;
+  /* outline: 1px solid red; */
+  height: 90%;
+  width: 90%;
+  margin: 2vw 2vh;
+}
+
+.wind-component-left {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  /* outline: 1px solid green; */
+  justify-content: center;
+  align-items: center;
+}
+
+.wind-component-right {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  justify-content: center;
+  align-items: center;
+  /* outline: 1px solid pink; */
+}
+
+.wind-speed {
+  font-size: calc(10px + 50vmin);
+  display: flex;
+  flex-direction: row;
+  height: 60%;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+}
+
+.wind-speed p {
+  font-size: calc(10px + 20vmin);
+}
+
+.wind-gusts {
+  font-size: calc(10px + 5vmin);
+  text-align: center;
+}
+
+.wind-direction {
+  font-size: calc(10px + 8vmin);
+}
+
+.wind-anamometer {
+  height: 65%;
+}
+
+.metar-abbr {
+  font-size: calc(10px + 4vmin);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: flex-end;
+  height: 20%;
+}
+.arrow {
+  max-height: 60vh;
+  max-width: 60vw;
 }

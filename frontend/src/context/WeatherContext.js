@@ -124,7 +124,7 @@ const WindSpeedProvider = props => {
                         setMetarDesc('Heavy')
                     }
                     if (weatherData[0].data.weather.presentWeather.includes('VC')) {
-                        setMetarDesc('In The Vicinity')
+                        setMetarDesc('Vicinity')
                     }
                     if (weatherData[0].data.weather.presentWeather.includes('MI')) {
                         setMetarDesc('Shallow')
@@ -141,12 +141,15 @@ const WindSpeedProvider = props => {
                     if (weatherData[0].data.weather.presentWeather.includes('BL')) {
                         setMetarDesc('Blowing')
                     }
+                    if (weatherData[0].data.weather.presentWeather.includes('FZ')) {
+                        setMetarDesc('Freezing')
+                    }
 
                     if (weatherData[0].data.weather.presentWeather.includes('BR')) {
                         setMetarAbbr('Mist')
                     }
                     if (weatherData[0].data.weather.presentWeather.includes('TS')) {
-                        setMetarAbbr('Thunderstorm')
+                        setMetarAbbr('Thunderstorms')
                     }
                     if (weatherData[0].data.weather.presentWeather.includes('SH')) {
                         setMetarAbbr('Shower')

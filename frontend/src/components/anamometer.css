@@ -1,0 +1,180 @@
+.one {
+    transform: rotate(10deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.two {
+    transform: rotate(20deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.three {
+    transform: rotate(30deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.four {
+    transform: rotate(40deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.five {
+    transform: rotate(50deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.six {
+    transform: rotate(60deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.seven {
+    transform: rotate(70deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.eight {
+    transform: rotate(80deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.nine {
+    transform: rotate(90deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.onezero {
+    transform: rotate(100deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.oneone {
+    transform: rotate(110deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.onetwo {
+    transform: rotate(120deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.onethree {
+    transform: rotate(130deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.onefour {
+    transform: rotate(140deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.onefive {
+    transform: rotate(150deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.onesix {
+    transform: rotate(160deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.oneseven {
+    transform: rotate(170deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.oneeight {
+    transform: rotate(180deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.onenine {
+    transform: rotate(-170deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.twozero {
+    transform: rotate(-160deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.twoone {
+    transform: rotate(-150deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.twotwo {
+    transform: rotate(-140deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.twothree {
+    transform: rotate(-130deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.twofour {
+    transform: rotate(-120deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.twofive {
+    transform: rotate(-110deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.twosix {
+    transform: rotate(-100deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.twoseven {
+    transform: rotate(-90deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.twoeight {
+    transform: rotate(-80deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.twonine {
+    transform: rotate(-70deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.threezero {
+    transform: rotate(-60deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.threeone {
+    transform: rotate(-50deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.threetwo {
+    transform: rotate(-40deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.threethree {
+    transform: rotate(-30deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.threefour {
+    transform: rotate(-20deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.threefive {
+    transform: rotate(-10deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}
+.threesix {
+    transform: rotate(0deg);
+    transition-property: transform;
+    transition-duration: 2s;
+}

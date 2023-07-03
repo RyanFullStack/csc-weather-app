@@ -1,5 +1,6 @@
 import Metar from './components/metar';
 import Header from './components/header';
+import Wind from './components/wind';
 import './App.css';
 
 function App() {
@@ -10,7 +11,9 @@ function App() {
         <div className='header-container'>
           <Header />
         </div>
-        <div className='chart-container'></div>
+        <div className='chart-container'>
+          <Wind />
+        </div>
         <div className='footer-container'>
           <Metar />
         </div>
