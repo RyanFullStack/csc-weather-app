@@ -222,11 +222,22 @@
     max-height: 45vh;
     max-width: 45vw;
   }
-
+  .time-component {
+    font-size: calc(10px + 2vmin)
+  }
+  .temp-content {
+    font-size: calc(10px + 1vmin)
+  }
 
 }
 
 @media screen and (max-width: 400px) {
+  .time-component {
+    font-size: calc(10px + 1vmin)
+  }
+  .temp-content {
+    font-size: calc(10px + 0vmin)
+  }
   .wind-component-top {
     height: 30%;
     gap: 20vw;
