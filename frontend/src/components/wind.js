@@ -123,7 +123,7 @@ function Wind() {
         <div className="wind-component">
             <div className='wind-component-top'>
                 <div className="wind-speed">
-                    25 <div className="small">kts</div>
+                    {speed} <div className="small">kts</div>
                 </div>
                 <div className="wind-anamometer">
                     <img src={arrow} alt='Wind Direction' className={`arrow  ${trackDirection}`}></img>
