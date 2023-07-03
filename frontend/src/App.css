@@ -20,7 +20,7 @@
 .header-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   height: 8vh;
   min-width: 100vw;
@@ -45,8 +45,12 @@
   min-width: 100vw;
   outline: 1px solid rgb(0, 255, 42);
 }
-.time-component {
+.temp-content {
+  margin-right: 1vw;
+}
+.theme-content {
   display: flex;
   flex-direction: row;
-  gap: 2vw;
+  gap: 1vw;
+  margin-left: 1vw;
 }

@@ -13,7 +13,7 @@ function GetCst() {
 
     useEffect(() => {
         const timeInt = setInterval(() => {
-            const timeObj = getNewDate().toLocaleString('en-US', {timeZone: 'America/Chicago'})
+            const timeObj = getNewDate().toLocaleString('en-US', { timeZone: 'America/Chicago' })
 
             const timeArr = timeObj.split(',')
 
@@ -32,7 +32,7 @@ function GetCst() {
 
         }, 1000)
 
-        return function() {
+        return function () {
             clearInterval(timeInt)
         }
     }, [])
@@ -40,8 +40,8 @@ function GetCst() {
 
     return (
         <div className="time-component">
-        <div>{currentDay} {currentDate} {currentTime} {timeOfDay}</div>
-        <div></div>
+            <div>{currentDay} {currentDate} {currentTime} {timeOfDay}</div>
+            <div></div>
         </div>
     )
 }
