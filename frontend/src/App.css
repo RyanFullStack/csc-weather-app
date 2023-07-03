@@ -57,7 +57,8 @@
 
 .temp-content {
   margin-right: 1.2vw;
-  font-size: calc(14px + 4vmin);
+  font-size: calc(14px + 2vmin);
+  cursor: pointer;
 }
 
 .theme-content {

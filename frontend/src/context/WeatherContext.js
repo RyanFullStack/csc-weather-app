@@ -9,6 +9,7 @@ const WindSpeedProvider = props => {
     const [direction, setDirection] = useState()
     const [metar, setMetar] = useState()
     const [temp, setTemp] = useState()
+    const [tempC, setTempC] = useState()
     const [skyCondition1, setSkyCondition1] = useState()
     const [skyCondition2, setSkyCondition2] = useState()
     const [skyCondition3, setSkyCondition3] = useState()
@@ -19,6 +20,7 @@ const WindSpeedProvider = props => {
     const [metarDesc, setMetarDesc] = useState()
     const [gustData, setGustData] = useState([])
     const [darkTheme, setDarkTheme] = useState('true')
+    const [tempSetting, setTempSetting] = useState('true')
 
 // eslint-disable-next-line
     const windData = []
@@ -107,6 +109,7 @@ const WindSpeedProvider = props => {
 
                 setMetar(metArr2)
                 setTemp(weatherData[0].data.weather.temperature)
+                setTempC(((weatherData[0].data.weather.temperature-32)/1.8).toFixed(1))
 
                 if (weatherData[0].data.weather.skyCondition[0].altitude) {
                 setCloudCeiling1(`${weatherData[0].data.weather.skyCondition[0].altitude}'`)
@@ -240,7 +243,7 @@ const WindSpeedProvider = props => {
                 }
             }
         };
-    }, [weatherData])
+    }, [weatherData, temp])
 
 
 
@@ -258,7 +261,7 @@ const WindSpeedProvider = props => {
     }, [gustData])
 
     return (
-        <WeatherContext.Provider value={{speed, gustSpeed, direction, metar, temp, skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3, metarAbbr, metarDesc, gustData, darkTheme, setDarkTheme }}>
+        <WeatherContext.Provider value={{speed, gustSpeed, direction, metar, temp, tempC, tempSetting, setTempSetting, skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3, metarAbbr, metarDesc, gustData, darkTheme, setDarkTheme }}>
             {props.children}
         </WeatherContext.Provider>
     )
