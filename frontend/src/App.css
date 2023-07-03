@@ -197,6 +197,9 @@
     gap: 20vw;
     margin-left: 10vw;
   }
+  .arrow {
+    margin-top: 0;
+  }
 
   .wind-component-bottom {
     height: 30%;
@@ -205,6 +208,7 @@
   }
   .wind-bottom-right {
     width: 55%;
+    margin-top: -20px;
   }
 
   .wind-gusts,
