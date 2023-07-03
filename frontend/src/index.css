@@ -4,7 +4,5 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     background-image: url('./images/csc.jpg');
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: 100vw 100vh;
+    background-position: 50%;
 }

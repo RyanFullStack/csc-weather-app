@@ -142,7 +142,7 @@
 }
 
 .wind-direction {
-  font-size: calc(10px + 8vmin);
+  font-size: calc(10px + 5vmin);
 }
 
 .wind-anamometer {
@@ -168,9 +168,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 60vh;
-  max-width: 60vw;
+  max-height: 50vh;
   z-index: 1;
+  margin-top: 5vh;
 }
 
 .wind-bottom-right {
@@ -178,7 +178,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
-  width: 60%;
+  width: 70%;
   height: 100%;
   /* border: 1px solid red; */
 }
@@ -202,6 +202,9 @@
     height: 30%;
     /* border: 1px solid red; */
     width: 115%;
+  }
+  .wind-bottom-right {
+    width: 55%;
   }
 
   .wind-gusts,
