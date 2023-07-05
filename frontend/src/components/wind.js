@@ -6,6 +6,9 @@ import '../components/anamometer.css'
 function Wind() {
   const { speed, gustSpeed, direction, metarAbbr, metarDesc, skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3 } = useContext(WeatherContext)
   const [trackDirection, setTrackDirection] = useState('')
+  const [gusting, setGusting] = useState('')
+  const [mini, setMini] = useState('')
+
 
   useEffect(() => {
     if (direction === null) {
@@ -31,6 +34,24 @@ function Wind() {
     }
   }, [direction, trackDirection]);
 
+  useEffect(() => {
+    if (gustSpeed) {
+      setGusting('gusting')
+    } else {
+      setGusting()
+    }
+
+  }, [gustSpeed])
+
+  useEffect(() => {
+    if (skyCondition2 && skyCondition3) {
+      setMini('mini')
+    }
+    else {
+      setMini('')
+    }
+  }, [skyCondition2, skyCondition3])
+
   return (
     <div className="wind-component">
       <div className='wind-component-top'>
@@ -43,15 +64,15 @@ function Wind() {
       </div>
       <div className="wind-component-bottom">
         <div className="metar-abbr">
-          <div className='sky-conditions'>{skyCondition1} {cloudCeiling1 ? cloudCeiling1 : null} <br />{skyCondition2 && cloudCeiling2 ? `${skyCondition2} ${cloudCeiling2}` : null} <br />{skyCondition3 && cloudCeiling3 ? `${skyCondition3} ${cloudCeiling3}` : null}</div>
+          <div className={`sky-conditions ${mini}`}>{skyCondition1} {cloudCeiling1 ? cloudCeiling1 : null} <br />{skyCondition2 && cloudCeiling2 ? `${skyCondition2} ${cloudCeiling2}` : null} <br />{skyCondition3 && cloudCeiling3 ? `${skyCondition3} ${cloudCeiling3}` : null}</div>
           <div className='metar'>{metarDesc && metarAbbr ? `${metarDesc}  ${metarAbbr}` : metarAbbr ? `${metarAbbr}` : null}</div>
         </div>
         <div className="wind-bottom-right">
           <div className="wind-direction">
             {direction ? `From ${direction}º` : speed === 0 ? `Calm` : null}
           </div>
-          <div className="wind-gusts">
-            {gustSpeed ? `Gusting to: ${gustSpeed}` : `No gusts, winds are steady!`}
+          <div className={`wind-gusts ${gusting}`}>
+            {gustSpeed ? `Gusting to: ${gustSpeed} kts` : `No gusts, winds are steady!`}
           </div>
         </div>
       </div>

@@ -141,6 +141,10 @@
   text-align: center;
 }
 
+.gusting {
+  font-weight: bold;
+}
+
 .wind-direction {
   font-size: calc(10px + 5vmin);
 }
@@ -163,6 +167,7 @@
   /* border: 1px solid red; */
   width: 50%;
 }
+
 
 .arrow {
   display: flex;
@@ -187,6 +192,10 @@
   font-size: calc(10px + 3.5vmin);
 }
 
+.mini {
+  font-size: calc(10px + 2.5vmin);
+}
+
 .metar {
   font-size: calc(10px + 4vmin);
 }
@@ -197,6 +206,7 @@
     gap: 20vw;
     margin-left: 10vw;
   }
+
   .arrow {
     margin-top: 0;
   }
@@ -206,6 +216,7 @@
     /* border: 1px solid red; */
     width: 115%;
   }
+
   .wind-bottom-right {
     width: 55%;
     margin-top: -20px;
@@ -229,9 +240,11 @@
     max-height: 45vh;
     max-width: 45vw;
   }
+
   .time-component {
     font-size: calc(10px + 2vmin)
   }
+
   .temp-content {
     font-size: calc(10px + 1vmin)
   }
@@ -242,9 +255,11 @@
   .time-component {
     font-size: calc(10px + 1vmin)
   }
+
   .temp-content {
     font-size: calc(10px + 0vmin)
   }
+
   .wind-component-top {
     height: 30%;
     gap: 20vw;
