@@ -138,7 +138,7 @@ function Wind() {
                 </div>
                 <div className="wind-bottom-right">
                 <div className="wind-direction">
-                    {direction ? `From ${direction}` : speed === 0 ? `Calm` : null}
+                    {direction ? `From ${direction}º` : speed === 0 ? `Calm` : null}
                 </div>
                 <div className="wind-gusts">
                     {gustSpeed ? `Gusting to: ${gustSpeed}` : `No gusts, winds are steady!`}
