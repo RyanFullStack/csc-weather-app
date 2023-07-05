@@ -6,7 +6,7 @@ export const WeatherContext = createContext()
 const WindSpeedProvider = props => {
     const [speed, setSpeed] = useState()
     const [gustSpeed, setGustSpeed] = useState()
-    const [direction, setDirection] = useState()
+    const [direction, setDirection] = useState(0)
     const [metar, setMetar] = useState()
     const [temp, setTemp] = useState()
     const [tempC, setTempC] = useState()
@@ -58,7 +58,11 @@ const WindSpeedProvider = props => {
             if (windData[0]) {
                 setSpeed(windData[0].data.wind.speed)
                 setGustSpeed(windData[0].data.wind.gustSpeed)
-                setDirection(windData[0].data.wind.direction)
+                if (windData[0].data.wind.direction) {
+                    setDirection(windData[0].data.wind.direction)
+                } else {
+                    setDirection(null)
+                }
             }
         };
     }, [windData])
