@@ -26,7 +26,6 @@ function Wind() {
           } else {
             normalizedDirection = direction;
           }
-          console.log(normalizedDirection)
           setTrackDirection(`rotate-${normalizedDirection}`);
         }
       }, [direction, trackDirection]);
