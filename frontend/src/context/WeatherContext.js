@@ -108,8 +108,10 @@ const WindSpeedProvider = props => {
                 const metArr2 = metArr.join(' ')
 
                 setMetar(metArr2)
+                if (weatherData[0].data.weather.temperature) {
                 setTemp(weatherData[0].data.weather.temperature)
                 setTempC(((weatherData[0].data.weather.temperature - 32) / 1.8).toFixed(1))
+                }
 
                 if (weatherData[0].data.weather.skyCondition[0].altitude) {
                     setCloudCeiling1(`${weatherData[0].data.weather.skyCondition[0].altitude}'`)
