@@ -1,180 +1,286 @@
-.one {
+.arrow {
+    transition-property: transform;
+    transition-duration: 2s;
+}
+
+.rotate-10 {
     transform: rotate(10deg);
-    transition-property: transform;
-    transition-duration: 2s;
 }
-.two {
+
+.rotate-20 {
     transform: rotate(20deg);
-    transition-property: transform;
-    transition-duration: 2s;
 }
-.three {
+
+.rotate-30 {
     transform: rotate(30deg);
-    transition-property: transform;
-    transition-duration: 2s;
 }
-.four {
+
+.rotate-40 {
     transform: rotate(40deg);
-    transition-property: transform;
-    transition-duration: 2s;
 }
-.five {
+
+.rotate-50 {
     transform: rotate(50deg);
-    transition-property: transform;
-    transition-duration: 2s;
 }
-.six {
+
+.rotate-60 {
     transform: rotate(60deg);
-    transition-property: transform;
-    transition-duration: 2s;
 }
-.seven {
+
+.rotate-70 {
     transform: rotate(70deg);
-    transition-property: transform;
-    transition-duration: 2s;
 }
-.eight {
+
+.rotate-80 {
     transform: rotate(80deg);
-    transition-property: transform;
-    transition-duration: 2s;
 }
-.nine {
+
+.rotate-90 {
     transform: rotate(90deg);
-    transition-property: transform;
-    transition-duration: 2s;
 }
-.onezero {
+
+.rotate-100 {
     transform: rotate(100deg);
-    transition-property: transform;
-    transition-duration: 2s;
 }
-.oneone {
+
+.rotate-110 {
     transform: rotate(110deg);
-    transition-property: transform;
-    transition-duration: 2s;
 }
-.onetwo {
+
+.rotate-120 {
     transform: rotate(120deg);
-    transition-property: transform;
-    transition-duration: 2s;
 }
-.onethree {
+
+.rotate-130 {
     transform: rotate(130deg);
-    transition-property: transform;
-    transition-duration: 2s;
 }
-.onefour {
+
+.rotate-140 {
     transform: rotate(140deg);
-    transition-property: transform;
-    transition-duration: 2s;
 }
-.onefive {
+
+.rotate-150 {
     transform: rotate(150deg);
-    transition-property: transform;
-    transition-duration: 2s;
 }
-.onesix {
+
+.rotate-160 {
     transform: rotate(160deg);
-    transition-property: transform;
-    transition-duration: 2s;
 }
-.oneseven {
+
+.rotate-170 {
     transform: rotate(170deg);
-    transition-property: transform;
-    transition-duration: 2s;
 }
-.oneeight {
+
+.rotate-180 {
     transform: rotate(180deg);
-    transition-property: transform;
-    transition-duration: 2s;
 }
-.onenine {
-    transform: rotate(-170deg);
-    transition-property: transform;
-    transition-duration: 2s;
+
+.rotate-190 {
+    transform: rotate(190deg);
 }
-.twozero {
-    transform: rotate(-160deg);
-    transition-property: transform;
-    transition-duration: 2s;
+
+.rotate-200 {
+    transform: rotate(200deg);
 }
-.twoone {
-    transform: rotate(-150deg);
-    transition-property: transform;
-    transition-duration: 2s;
+
+.rotate-210 {
+    transform: rotate(210deg);
 }
-.twotwo {
-    transform: rotate(-140deg);
-    transition-property: transform;
-    transition-duration: 2s;
+
+.rotate-220 {
+    transform: rotate(220deg);
 }
-.twothree {
-    transform: rotate(-130deg);
-    transition-property: transform;
-    transition-duration: 2s;
+
+.rotate-230 {
+    transform: rotate(230deg);
 }
-.twofour {
-    transform: rotate(-120deg);
-    transition-property: transform;
-    transition-duration: 2s;
+
+.rotate-240 {
+    transform: rotate(240deg);
 }
-.twofive {
-    transform: rotate(-110deg);
-    transition-property: transform;
-    transition-duration: 2s;
+
+.rotate-250 {
+    transform: rotate(250deg);
 }
-.twosix {
-    transform: rotate(-100deg);
-    transition-property: transform;
-    transition-duration: 2s;
+
+.rotate-260 {
+    transform: rotate(260deg);
 }
-.twoseven {
-    transform: rotate(-90deg);
-    transition-property: transform;
-    transition-duration: 2s;
+
+.rotate-270 {
+    transform: rotate(270deg);
 }
-.twoeight {
-    transform: rotate(-80deg);
-    transition-property: transform;
-    transition-duration: 2s;
+
+.rotate-280 {
+    transform: rotate(280deg);
 }
-.twonine {
-    transform: rotate(-70deg);
-    transition-property: transform;
-    transition-duration: 2s;
+
+.rotate-290 {
+    transform: rotate(290deg);
 }
-.threezero {
-    transform: rotate(-60deg);
-    transition-property: transform;
-    transition-duration: 2s;
+
+.rotate-300 {
+    transform: rotate(300deg);
 }
-.threeone {
-    transform: rotate(-50deg);
-    transition-property: transform;
-    transition-duration: 2s;
+
+.rotate-310 {
+    transform: rotate(310deg);
 }
-.threetwo {
-    transform: rotate(-40deg);
-    transition-property: transform;
-    transition-duration: 2s;
+
+.rotate-320 {
+    transform: rotate(320deg);
 }
-.threethree {
-    transform: rotate(-30deg);
-    transition-property: transform;
-    transition-duration: 2s;
+
+.rotate-330 {
+    transform: rotate(330deg);
+
 }
-.threefour {
-    transform: rotate(-20deg);
-    transition-property: transform;
-    transition-duration: 2s;
+
+.rotate-340 {
+    transform: rotate(340deg);
 }
-.threefive {
+
+.rotate-350 {
+    transform: rotate(350deg);
+}
+
+.rotate--10 {
     transform: rotate(-10deg);
-    transition-property: transform;
-    transition-duration: 2s;
 }
-.threesix {
-    transform: rotate(0deg);
-    transition-property: transform;
-    transition-duration: 2s;
+
+.rotate--20 {
+    transform: rotate(-20deg);
+}
+
+.rotate--30 {
+    transform: rotate(-30deg);
+}
+
+.rotate--40 {
+    transform: rotate(-40deg);
+}
+
+.rotate--50 {
+    transform: rotate(-50deg);
+}
+
+.rotate--60 {
+    transform: rotate(-60deg);
+}
+
+.rotate--70 {
+    transform: rotate(-70deg);
+}
+
+.rotate--80 {
+    transform: rotate(-80deg);
+}
+
+.rotate--90 {
+    transform: rotate(-90deg);
+}
+
+.rotate--100 {
+    transform: rotate(-100deg);
+}
+
+.rotate--110 {
+    transform: rotate(-110deg);
+}
+
+.rotate--120 {
+transform: rotate(-120deg);
+}
+
+.rotate--130 {
+    transform: rotate(-130deg);
+}
+
+.rotate--140 {
+    transform: rotate(-140deg);
+}
+
+.rotate--150 {
+    transform: rotate(-150deg);
+}
+
+.rotate--160 {
+    transform: rotate(-160deg);
+}
+
+.rotate--170 {
+    transform: rotate(-170deg);
+}
+
+.rotate--180 {
+    transform: rotate(-180deg);
+}
+
+.rotate--190 {
+    transform: rotate(-190deg);
+}
+
+.rotate--200 {
+    transform: rotate(-200deg);
+}
+
+.rotate--210 {
+    transform: rotate(-210deg);
+}
+
+.rotate--220 {
+    transform: rotate(-220deg);
+}
+
+.rotate--230 {
+    transform: rotate(-230deg);
+}
+
+.rotate--240 {
+    transform: rotate(-240deg);
+}
+
+.rotate--250 {
+    transform: rotate(-250deg);
+}
+
+.rotate--260 {
+    transform: rotate(-260deg);
+}
+
+.rotate--270 {
+    transform: rotate(-270deg);
+}
+
+.rotate--280 {
+    transform: rotate(-280deg);
+}
+
+.rotate--290 {
+    transform: rotate(-290deg);
+}
+
+.rotate--300 {
+    transform: rotate(-300deg);
+}
+
+.rotate--310 {
+    transform: rotate(-310deg);
+}
+
+.rotate--320 {
+    transform: rotate(-320deg);
+}
+
+.rotate--330 {
+    transform: rotate(-330deg);
+
+}
+
+.rotate--340 {
+    transform: rotate(-340deg);
+}
+
+.rotate--350 {
+    transform: rotate(-350deg);
 }
