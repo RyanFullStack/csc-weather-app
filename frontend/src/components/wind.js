@@ -77,6 +77,7 @@ function Wind() {
         </div>
       </div>
     </div>
+
   )
 }
 

@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import WeatherProvier from './context/WeatherContext';
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
-import WeatherProvier from './context/WeatherContext'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <WeatherProvier>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </WeatherProvier>
   </React.StrictMode>
 );
