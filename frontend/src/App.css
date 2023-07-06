@@ -76,8 +76,9 @@
   align-items: flex-start;
   justify-content: center;
   width: 95%;
-  height: 95%;
+  height: 98%;
 }
+
 .hangar-cam-container {
   display: flex;
   flex-direction: row;

@@ -64,8 +64,10 @@ function GustChart() {
     return (
         <div className="gust-chart">
             <Line
+            className='chart'
                 data={data}
                 options={{
+                    maintainAspectRatio: false,
                     plugins: {
                         title: {
                             display: true,
