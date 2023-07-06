@@ -266,16 +266,23 @@ const WindSpeedProvider = props => {
 
     useEffect(() => {
         const getWind = async () => {
-            const res = await fetch('https://corsproxy.io/?https://lifeatterminalvelocity.com/csc_awos/data.php')
-            const resArr = await res.json()
+          const res = await fetch('https://corsproxy.io/?https://lifeatterminalvelocity.com/csc_awos/data.php');
+          const resArr = await res.json();
 
-            if (!gustData.length || (gustData[0].receivedAt !== resArr[0].receivedAt)) {
-                setGustData([...resArr])
-            }
-
-        }
+          if (!gustData.length || gustData[0].receivedAt !== resArr[0].receivedAt) {
+            setGustData([...resArr]);
+          }
+        };
         getWind()
-    }, [gustData])
+        const interval = setInterval(() => {
+          getWind();
+        }, 10000); // Fetch data every minute
+
+        return () => {
+          clearInterval(interval); // Clear the interval on component unmount
+        };
+        // eslint-disable-next-line
+      }, []);
 
     return (
         <WeatherContext.Provider value={{ speed, gustSpeed, direction, metar, temp, tempC, tempSetting, setTempSetting, skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3, metarAbbr, metarDesc, gustData, darkTheme, setDarkTheme }}>
