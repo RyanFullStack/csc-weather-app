@@ -7,11 +7,11 @@ import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <WeatherProvier>
-      <BrowserRouter>
+
+      <WeatherProvier>
+    <BrowserRouter>
         <App />
-      </BrowserRouter>
-    </WeatherProvier>
-  </React.StrictMode>
+    </BrowserRouter>
+      </WeatherProvier>
+
 );

@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 7%, rgba(34, 34, 34, .9) 10%, rgba(34, 34, 34, .9) 90%, rgba(28, 169, 180, 1) 95%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 7%, rgba(34, 34, 34, .9) 10%, rgba(34, 34, 34, .9) 90%, rgb(16, 163, 144) 95%);
   font-size: calc(10px + 2vmin);
   color: rgb(14, 173, 152);
   overflow: hidden;
@@ -16,7 +16,7 @@
   justify-content: center;
   align-items: center;
   background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 7%, rgba(255, 255, 255, .5) 10%, rgba(255, 255, 255, .5) 90%, rgba(28, 169, 180, 1) 95%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 7%, rgba(255, 255, 255, .5) 10%, rgba(255, 255, 255, .5) 90%, rgba(16, 163, 144, 1) 95%);
   font-size: calc(10px + 2vmin);
   color: rgb(0, 0, 0);
   overflow: hidden;
@@ -31,24 +31,59 @@
   min-width: 100vw;
   color: black;
   font-weight: bold;
-  /* outline: 1px solid red; */
+  outline: rgba(0, 26, 255, 0)
 }
-
+.nav-container a{
+  display: inline-flex;
+  flex-direction: row;
+  text-decoration: none;
+  cursor: pointer;
+}
+.nav-component {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 3vw;
+  height: 8vh;
+  font-size: calc(10px + 2.5vmin);
+}
+.nav-component a {
+    color: rgb(14, 173, 152);
+}
+.light a{
+  color: black;
+}
 .chart-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 84vh;
+  height: 76vh;
   width: 80%;
   /* border: 1px solid rgb(255, 0, 0); */
+}
+.gusts-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  height: 76vh;
+  width: 80%;
+  /* border: 1px solid rgb(255, 0, 0); */
+}
+.gust-chart {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 95%;
+  height: 95%;
 }
 .hangar-cam-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  height: 84vh;
+  height: 76vh;
   width: 80%;
 }
 
@@ -56,16 +91,16 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  padding-top: 2vh;
   align-items: center;
   width: 75%;
-  margin-top: 5vh;
-  height: auto;
+  max-height: auto;
 }
 
 #cam {
   width: 100%;
   height: 100%;
-  border-radius: 50px;
+  border-radius: 30px;
 }
 
 
@@ -272,6 +307,14 @@
 
   .temp-content {
     font-size: calc(10px + 1vmin)
+  }
+  .nav-component {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 2vw;
+    height: 8vh;
+    font-size: calc(10px + 1.5vmin);
   }
 
 }
