@@ -31,8 +31,6 @@ function GustChart() {
         setSpeeds(windSpeeds)
         setGusts(gustSpeeds)
 
-        console.log(gustData)
-
     }, [gustData])
 
 
