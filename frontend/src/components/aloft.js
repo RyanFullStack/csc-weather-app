@@ -1,26 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext } from 'react';
+import { WeatherContext } from '../context/WeatherContext';
 import './aloft.css'
 
 function WindsAloft() {
-    const [directions, setDirections] = useState({})
-    const [temps, setTemps] = useState({})
-    const [speeds, setSpeeds] = useState({})
-    const [received, setReceived] = useState()
 
-    useEffect(() => {
-        const data = async () => {
-            const res = await fetch('https://corsproxy.io/?https://markschulze.net/winds/winds.php?lat=41.8930014&lon=-89.07829&hourOffset=0&referrer=MSWA')
-            const winds = await res.json()
-            setDirections(winds.direction)
-            setTemps(winds.temp)
-            setSpeeds(winds.speed)
-            setReceived(winds.validtime)
-
-        }
-        data()
-
-    }, [])
-
+    const {directions, speeds, temps, received} = useContext(WeatherContext)
 
     return (
         <div className="wind-aloft-table"><div className="aloft-title">Winds Received at {received}Z, valid now</div>

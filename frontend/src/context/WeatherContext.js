@@ -21,11 +21,35 @@ const WindSpeedProvider = props => {
     const [gustData, setGustData] = useState([])
     const [darkTheme, setDarkTheme] = useState('true')
     const [tempSetting, setTempSetting] = useState('true')
+    const [directions, setDirections] = useState({})
+    const [temps, setTemps] = useState({})
+    const [speeds, setSpeeds] = useState({})
+    const [received, setReceived] = useState()
 
     // eslint-disable-next-line
     const windData = []
     // eslint-disable-next-line
     const weatherData = []
+
+    useEffect(() => {
+        const data = async () => {
+            const res = await fetch('https://corsproxy.io/?https://markschulze.net/winds/winds.php?lat=41.8930014&lon=-89.07829&hourOffset=0&referrer=MSWA')
+            const winds = await res.json()
+            setDirections(winds.direction)
+            setTemps(winds.temp)
+            setSpeeds(winds.speed)
+            setReceived(winds.validtime)
+        }
+        data()
+        const interval = setInterval(() => {
+            data()
+        }, 1000000)
+
+        return function() {
+            clearInterval(interval)
+        }
+    }, [])
+
 
     useEffect(() => {
         const WebSocket = require('websocket').w3cwebsocket
@@ -276,7 +300,7 @@ const WindSpeedProvider = props => {
         getWind()
         const interval = setInterval(() => {
           getWind();
-        }, 10000); // Fetch data every minute
+        }, 20000); // Fetch data every minute
 
         return () => {
           clearInterval(interval); // Clear the interval on component unmount
@@ -285,7 +309,7 @@ const WindSpeedProvider = props => {
       }, []);
 
     return (
-        <WeatherContext.Provider value={{ speed, gustSpeed, direction, metar, temp, tempC, tempSetting, setTempSetting, skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3, metarAbbr, metarDesc, gustData, darkTheme, setDarkTheme }}>
+        <WeatherContext.Provider value={{ speed, gustSpeed, direction, metar, temp, tempC, tempSetting, setTempSetting, skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3, metarAbbr, metarDesc, gustData, darkTheme, setDarkTheme, directions, speeds, temps, received }}>
             {props.children}
         </WeatherContext.Provider>
     )
