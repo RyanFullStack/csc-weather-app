@@ -38,12 +38,6 @@ function App() {
         </div>
         </Route>
 
-      <Route exact path='/dev'>
-        <div className='gusts-container'>
-          <embed src='https://www.markschulze.net/winds/' height='95%' width='50%'/>
-        </div>
-        </Route>
-
       <Route path='/'>
         <div className='chart-container'>
           <Wind />
