@@ -7,6 +7,7 @@ import Wind from './components/wind';
 import HangarCam from './components/hangar';
 import GustChart from './components/gusts';
 import NavBar from './components/navigation';
+import WindsAloft from './components/aloft';
 import './App.css';
 
 function App() {
@@ -35,6 +36,12 @@ function App() {
       <Route exact path='/gusts'>
         <div className='gusts-container'>
           <GustChart />
+        </div>
+        </Route>
+
+      <Route exact path='/aloft'>
+        <div className='aloft-container'>
+          <WindsAloft />
         </div>
         </Route>
 

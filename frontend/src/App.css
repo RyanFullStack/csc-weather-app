@@ -33,26 +33,32 @@
   font-weight: bold;
   outline: rgba(0, 26, 255, 0)
 }
-.nav-container a{
+
+.nav-container a {
   display: inline-flex;
   flex-direction: row;
   text-decoration: none;
   cursor: pointer;
 }
+
 .nav-component {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  gap: 3vw;
+  gap: 2.5vw;
   height: 8vh;
   font-size: calc(10px + 2.5vmin);
+  font-weight: 600;
 }
+
 .nav-component a {
-    color: rgb(14, 173, 152);
+  color: rgb(14, 173, 152);
 }
-.light a{
+
+.light a {
   color: black;
 }
+
 .chart-container {
   display: flex;
   flex-direction: row;
@@ -62,6 +68,7 @@
   width: 80%;
   /* border: 1px solid rgb(255, 0, 0); */
 }
+
 .gusts-container {
   display: flex;
   flex-direction: row;
@@ -71,12 +78,26 @@
   width: 80%;
   /* border: 1px solid rgb(255, 0, 0); */
 }
+
 .gust-chart {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   width: 95%;
   height: 98%;
+}
+
+.aloft-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  height: 76vh;
+  width: 80%;
+  overflow: scroll;
+  overflow-x: hidden;
+
+  /* border: 1px solid rgb(255, 0, 0); */
 }
 
 .hangar-cam-container {
@@ -309,6 +330,7 @@
   .temp-content {
     font-size: calc(10px + 1vmin)
   }
+
   .nav-component {
     display: flex;
     flex-direction: row;
@@ -317,6 +339,11 @@
     height: 8vh;
     font-size: calc(10px + 1.5vmin);
   }
+
+  .hangar-cam {
+    width: 100%;
+  }
+
 
 }
 

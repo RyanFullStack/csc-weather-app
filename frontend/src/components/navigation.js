@@ -21,10 +21,13 @@ function NavBar() {
         <NavLink exact to='/'>HOME</NavLink>
       </div>
       <div>
-        <NavLink to='/gusts'>GUSTS</NavLink>
+        <NavLink exact to='/gusts'>GUSTS</NavLink>
       </div>
       <div>
-        <NavLink to='/hangar'>WEBCAM</NavLink>
+        <NavLink exact to='/aloft'>ALOFT</NavLink>
+      </div>
+      <div>
+        <NavLink exact to='/hangar'>WEBCAM</NavLink>
       </div>
       <div>
         <a href='https://dzm.burblesoft.com/jmp?dz_id=408&columns=5&display_menu=0&font_size=12' target='_blank' rel="noreferrer">MANIFEST</a>
