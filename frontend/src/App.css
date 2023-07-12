@@ -255,7 +255,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 50vh;
+  max-height: 30vh;
   z-index: 1;
   margin-top: 5vh;
 }
@@ -296,7 +296,7 @@
   .wind-component-bottom {
     height: 30%;
     /* border: 1px solid red; */
-    width: 115%;
+    width: 110%;
   }
 
   .wind-bottom-right {
@@ -306,21 +306,21 @@
 
   .wind-gusts,
   .metar {
-    font-size: calc(10px + 2vmin)
+    font-size: calc(10px + 1.5vmin)
   }
 
   .sky-conditions,
   .wind-direction {
-    font-size: calc(10px + 2vmin)
+    font-size: calc(10px + 1.5vmin)
   }
 
   .small {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .arrow {
-    max-height: 45vh;
-    max-width: 45vw;
+    max-height: 30vh;
+    max-width: 30vw;
   }
 
   .time-component {
@@ -345,34 +345,4 @@
   }
 
 
-}
-
-@media screen and (max-width: 400px) {
-  .time-component {
-    font-size: calc(10px + 1vmin)
-  }
-
-  .temp-content {
-    font-size: calc(10px + 0vmin)
-  }
-
-  .wind-component-top {
-    height: 30%;
-    gap: 20vw;
-    margin-left: 8vw;
-  }
-
-  .wind-component-bottom {
-    height: 10%;
-  }
-
-  .wind-gusts,
-  .metar {
-    font-size: calc(10px + 1vmin)
-  }
-
-  .sky-conditions,
-  .wind-direction {
-    font-size: calc(10px + 3vmin)
-  }
 }
