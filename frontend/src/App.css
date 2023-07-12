@@ -255,7 +255,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 30vh;
+  max-height: 100%;
+  max-width: 100%;
   z-index: 1;
   margin-top: 5vh;
 }
@@ -316,11 +317,6 @@
 
   .small {
     font-size: 18px;
-  }
-
-  .arrow {
-    max-height: 30vh;
-    max-width: 30vw;
   }
 
   .time-component {
