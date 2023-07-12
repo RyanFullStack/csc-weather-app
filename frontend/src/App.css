@@ -135,6 +135,7 @@
   min-width: 100vw;
   /* outline: 1px solid rgb(0, 255, 42); */
   color: rgb(119, 119, 119);
+  font-size: calc(10px + 1vmin);
 }
 
 .temp-content {
@@ -258,7 +259,7 @@
   max-height: 120%;
   max-width: 100%;
   z-index: 1;
-  margin-top: 18vh;
+  margin-top: 0vh;
 }
 
 .wind-bottom-right {
@@ -280,7 +281,7 @@
 }
 
 .metar {
-  font-size: calc(10px + 4vmin);
+  font-size: calc(10px + 3vmin);
 }
 
 @media screen and (max-width: 650px) {
@@ -292,9 +293,12 @@
     margin-bottom: 2vh;
     /* border: 1px solid red;; */
   }
+  .footer-container {
+     font-size: calc(6px + 1vmin);
+  }
 
   .arrow {
-    max-height: 300%;
+    max-height: 200px;
     max-width: 300%;
     z-index: 1;
     margin-top: 5vh;
