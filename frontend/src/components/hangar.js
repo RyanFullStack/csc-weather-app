@@ -15,7 +15,7 @@ function HangarCam() {
 
   return (
     <div className='hangar-cam'>
-      <img src='http://webcam.skydivecsc.com/hangar_nw?1688604278611' id='cam' alt='Hangar camera feed not found, This is a problem with the source and not this app. Visit skydivecsc.com/skydiving-webcams to confirm.'/>
+      <img src='https://webcam.skydivecsc.com/hangar_nw?1688604278611' id='cam' alt='Hangar camera feed not found, This is a problem with the source and not this app. Visit skydivecsc.com/skydiving-webcams to confirm.'/>
     </div>
   );
 }
