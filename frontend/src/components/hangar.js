@@ -6,7 +6,7 @@ function HangarCam() {
       // Generate a unique query parameter to force image reload
       const timestamp = Date.now();
       const imgElement = document.getElementById('cam');
-      imgElement.src = `http://webcam.skydivecsc.com/hangar_nw?1688604278611&_=${timestamp}`;
+      imgElement.src = `https://webcam.skydivecsc.com/hangar_nw?1688604278611&_=${timestamp}`;
     }, 1000);
 
     // Cleanup the interval when the component unmounts
