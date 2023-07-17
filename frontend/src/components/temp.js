@@ -31,10 +31,10 @@ function CurrentTemp() {
     return (
         <div className='temp-content'>
             <div className="temp-logos">
-                <a href='https://www.facebook.com/groups/csc.experienced' target='_blank'><img src={fb} /></a>
-                <a href='https://www.instagram.com/skydivecsc/' target='_blank'><img src={ig} /></a>
-                <a href='https://chat.whatsapp.com/K4on8ni6xKd1nSta35CQAK' target='_blank'><img src={wa} /></a>
-                <a href='http://audio.skydivecsc.com/' target='_blank'><img src={audio} /></a>
+                <a href='https://www.facebook.com/groups/csc.experienced' target='_blank' rel='noreferrer'><img src={fb} alt='fb' /></a>
+                <a href='https://www.instagram.com/skydivecsc/' target='_blank' rel='noreferrer'><img src={ig} alt='ig'/></a>
+                <a href='https://chat.whatsapp.com/K4on8ni6xKd1nSta35CQAK' target='_blank' rel='noreferrer'><img src={wa}  alt='wa'/></a>
+                <a href='http://audio.skydivecsc.com/' target='_blank' rel='noreferrer'><img src={audio}  alt='audio'/></a>
             </div>
             <div className="temp-temp" onClick={handleClick}>{tempSetting === 'true' && temp ? `${temp}º F` : tempC ? `${tempC}º C` : ''}</div>
         </div>
