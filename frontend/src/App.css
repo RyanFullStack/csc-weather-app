@@ -369,7 +369,7 @@
     align-items: flex-end;
     gap: 2vw;
     height: 8vh;
-    font-size: calc(6px + 1vmin);
+    font-size: calc(10px + 1vmin);
   }
 
   .hangar-cam {
@@ -377,12 +377,12 @@
   }
 
   .temp-logos {
-    gap: .4vw;
+    gap: 1vw;
   }
 
   .temp-logos img {
-    max-width: 15px;
-    max-height: 15px;
+    max-width: 16px;
+    max-height: 16px;
   }
 
 
