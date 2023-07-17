@@ -40,6 +40,7 @@
   text-decoration: none;
   cursor: pointer;
 }
+
 .nav-container {
   z-index: 2;
 }
@@ -153,13 +154,15 @@
   text-align: right;
   cursor: pointer;
 }
+
 .temp-logos {
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-gap: .5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: .5vw;
 }
+
 .temp-logos img {
   max-width: 30px;
   max-height: 30px;
@@ -372,6 +375,16 @@ gap: .5vw;
   .hangar-cam {
     width: 100%;
   }
+
+  .temp-logos {
+    gap: .4vw;
+  }
+
+  .temp-logos img {
+    max-width: 15px;
+    max-height: 15px;
+  }
+
 
 
 }
