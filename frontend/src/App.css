@@ -40,15 +40,19 @@
   text-decoration: none;
   cursor: pointer;
 }
+.nav-container {
+  z-index: 2;
+}
 
 .nav-component {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: flex-end;
   gap: 2.5vw;
   height: 8vh;
-  font-size: calc(10px + 2.5vmin);
-  font-weight: 600;
+  font-size: calc(8px + 2vmin);
+  font-weight: 500;
 }
 
 .nav-component a {
@@ -66,6 +70,7 @@
   align-items: flex-start;
   height: 76vh;
   width: 80%;
+  z-index: 0;
   /* border: 1px solid rgb(255, 0, 0); */
 }
 
@@ -191,13 +196,14 @@
 .wind-component-bottom {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   height: 40%;
   gap: 15vw;
   /* outline: 1px solid pink; */
 }
 
 .wind-speed {
-  font-size: calc(10px + 50vmin);
+  font-size: calc(10px + 45vmin);
   display: flex;
   flex-direction: row;
   height: 100%;
@@ -293,8 +299,9 @@
     margin-bottom: 2vh;
     /* border: 1px solid red;; */
   }
+
   .footer-container {
-     font-size: calc(6px + 1vmin);
+    font-size: calc(6px + 1vmin);
   }
 
   .arrow {
@@ -344,7 +351,7 @@
     align-items: flex-end;
     gap: 2vw;
     height: 8vh;
-    font-size: calc(10px + 1.5vmin);
+    font-size: calc(6px + 1vmin);
   }
 
   .hangar-cam {

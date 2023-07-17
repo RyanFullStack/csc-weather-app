@@ -32,6 +32,12 @@ function NavBar() {
       <div>
         <a href='https://dzm.burblesoft.com/jmp?dz_id=408&columns=5&display_menu=0&font_size=12' target='_blank' rel="noreferrer">MANIFEST</a>
       </div>
+      <div>
+        <a href='http://audio.skydivecsc.com/' target='_blank' rel="noreferrer">AUDIO</a>
+      </div>
+      <div>
+        <a href='https://chat.whatsapp.com/K4on8ni6xKd1nSta35CQAK' target='_blank' rel="noreferrer">WHATSAPP</a>
+      </div>
     </div>
   );
 }
