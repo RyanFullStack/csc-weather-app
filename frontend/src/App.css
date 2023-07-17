@@ -51,7 +51,7 @@
   align-items: flex-end;
   gap: 2.5vw;
   height: 8vh;
-  font-size: calc(8px + 2vmin);
+  font-size: calc(10px + 2vmin);
   font-weight: 700;
 }
 
@@ -144,12 +144,27 @@
 }
 
 .temp-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 3vw;
   padding-right: 1.2vw;
   font-size: calc(14px + 2vmin);
   text-align: right;
   cursor: pointer;
-  width: 17vw;
 }
+.temp-logos {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+gap: .5vw;
+}
+.temp-logos img {
+  max-width: 30px;
+  max-height: 30px;
+}
+
 
 .theme-content {
   display: flex;
