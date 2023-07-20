@@ -15,11 +15,12 @@ function GustChart() {
     useEffect(() => {
         const timeStamps = gustData.map(gust => {
             const time = gust.timestamp_stored.split(' ')[1].split(':')
-            const hr = new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' }).split(',')
-            const [, timeInfo] = hr
-            const [, min] = time
-            const hour = timeInfo.split(':')[0]
-            return `${hour}:${min}`
+            const [hrz, min] = time
+            let localhr = (parseInt(hrz) + 7) % 24;
+            if (localhr === 0) {
+                localhr = 12
+            }
+            return `${localhr}:${min}`
         })
 
         const windSpeeds = gustData.map(wind => {
@@ -33,7 +34,6 @@ function GustChart() {
         setTimes(timeStamps)
         setSpeeds(windSpeeds)
         setGusts(gustSpeeds)
-        console.log(darkTheme === 'true')
 
     }, [gustData, darkTheme])
 
