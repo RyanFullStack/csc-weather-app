@@ -19,6 +19,8 @@ function GustChart() {
             let localhr = (parseInt(hrz) + 7) % 24;
             if (localhr === 0) {
                 localhr = 12
+            } else if (localhr > 12) {
+                localhr -= 12;
             }
             return `${localhr}:${min}`
         })
@@ -37,7 +39,7 @@ function GustChart() {
 
     }, [gustData, darkTheme])
 
-    
+
     const data = {
         labels: times,
 
