@@ -30,7 +30,7 @@ function NavBar() {
         <NavLink exact to='/hangar'>WEBCAM</NavLink>
       </div>
       <div>
-        <a href='https://dzm.burblesoft.com/jmp?dz_id=408&columns=5&display_menu=0&font_size=12' target='_blank' rel="noreferrer">MANIFEST</a>
+        <a href='https://dzm.burblesoft.com/jmp?dz_id=408&columns=5&display_menu=0&font_size=12' target='_blank' rel="noreferrer">MANIFEST&nbsp;<i className="fa fa-external-link" /></a>
       </div>
     </div>
   );

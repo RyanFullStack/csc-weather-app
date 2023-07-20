@@ -56,6 +56,11 @@
   font-weight: 700;
 }
 
+.fa-external-link {
+  font-size: calc(10px + 1vmin);
+  align-self: center;
+}
+
 .nav-component a {
   color: rgb(14, 173, 152);
 }
@@ -80,8 +85,9 @@
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  height: 76vh;
+  height: 74vh;
   width: 80%;
+  margin-top: 2vh;
   /* border: 1px solid rgb(255, 0, 0); */
 }
 
