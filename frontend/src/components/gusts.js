@@ -37,15 +37,10 @@ function GustChart() {
 
     }, [gustData, darkTheme])
 
-
-
-    // const test1 = [5, 8, 7, 12, 15, 11, 9, 6, 5, 14, 18, 24, 22, 19, 17, 15, 16, 17, 17, 17, 15, 14, 9, 9, 9, 7, 12, 15, 16, 18]
-
-    // const test2 = [0, 0, 0, 0, 20, 20, 20, 20, 20, 20, 20, 27, 27, 27, 24, 24, 24, 21, 21, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-
+    
     const data = {
         labels: times,
-        // datasets is an array of objects where each object represents a set of data to display corresponding to the labels above. for brevity, we'll keep it at one object
+
         datasets: [
             {
                 label: 'Wind Speed',

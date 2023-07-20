@@ -300,10 +300,10 @@ const WindSpeedProvider = props => {
         getWind()
         const interval = setInterval(() => {
           getWind();
-        }, 20000); // Fetch data every minute
+        }, 20000);
 
         return () => {
-          clearInterval(interval); // Clear the interval on component unmount
+          clearInterval(interval);
         };
         // eslint-disable-next-line
       }, []);
