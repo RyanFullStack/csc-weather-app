@@ -6,7 +6,7 @@ import { useContext, useEffect, useState } from 'react';
 import { WeatherContext } from '../context/WeatherContext';
 
 function GustChart() {
-    const { gustData } = useContext(WeatherContext)
+    const { gustData, darkTheme } = useContext(WeatherContext)
     const [times, setTimes] = useState([])
     const [speeds, setSpeeds] = useState([])
     const [gusts, setGusts] = useState([])
@@ -15,8 +15,11 @@ function GustChart() {
     useEffect(() => {
         const timeStamps = gustData.map(gust => {
             const time = gust.timestamp_stored.split(' ')[1].split(':')
-            const [, min, sec] = time
-            return `${min}:${sec}`
+            const hr = new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' }).split(',')
+            const [, timeInfo] = hr
+            const [, min] = time
+            const hour = timeInfo.split(':')[0]
+            return `${hour}:${min}`
         })
 
         const windSpeeds = gustData.map(wind => {
@@ -30,8 +33,9 @@ function GustChart() {
         setTimes(timeStamps)
         setSpeeds(windSpeeds)
         setGusts(gustSpeeds)
+        console.log(darkTheme === 'true')
 
-    }, [gustData])
+    }, [gustData, darkTheme])
 
 
 
@@ -100,15 +104,15 @@ function GustChart() {
                             min: 0,
                             max: 30,
                             ticks: {
-                                color: 'rgba(0, 0, 0, 0.8)',
+                                color: darkTheme === 'true' ? 'rgb(14, 173, 152)' : 'rgb(0, 0, 0)',
                             },
                             grid: {
-                                color: `rgba(0,0,0,.8)`,
+                                color: darkTheme === 'true' ? 'rgb(14, 173, 152)' : 'rgb(0, 0, 0)',
                             },
                         },
                         x: {
                             grid: {
-                                color: `rgba(0,0,0,.8)`,
+                                color: `rgb(0, 0, 0)`,
                             }
                         }
                     }

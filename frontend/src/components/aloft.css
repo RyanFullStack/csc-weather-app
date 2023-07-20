@@ -11,7 +11,14 @@ table {
     border-collapse: collapse;
 }
 td {
-    border: 2px solid black;
+    border: 1px solid black;
+}
+.table {
+    border: 2px solid rgb(14, 173, 152);
+    font-weight: 700;
+}
+.table-light {
+    border: 2px solid rgb(0,0,0);
     font-weight: 700;
 }
 th {
