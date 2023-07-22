@@ -4,7 +4,13 @@
   justify-content: center;
   align-items: center;
   background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 7%, rgba(34, 34, 34, .9) 10%, rgba(34, 34, 34, .9) 90%, rgb(16, 163, 144) 95%);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 7%,
+    rgba(34, 34, 34, 0.9) 10%,
+    rgba(34, 34, 34, 0.9) 90%,
+    rgb(16, 163, 144) 95%
+  );
   font-size: calc(10px + 2vmin);
   color: rgb(14, 173, 152);
   overflow: hidden;
@@ -16,7 +22,13 @@
   justify-content: center;
   align-items: center;
   background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 7%, rgba(255, 255, 255, .5) 10%, rgba(255, 255, 255, .5) 90%, rgba(16, 163, 144, 1) 95%);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 7%,
+    rgba(255, 255, 255, 0.5) 10%,
+    rgba(255, 255, 255, 0.5) 90%,
+    rgba(16, 163, 144, 1) 95%
+  );
   font-size: calc(10px + 2vmin);
   color: rgb(0, 0, 0);
   overflow: hidden;
@@ -31,7 +43,7 @@
   min-width: 100vw;
   color: black;
   font-weight: bold;
-  outline: rgba(0, 26, 255, 0)
+  outline: rgba(0, 26, 255, 0);
 }
 
 .nav-container a {
@@ -50,11 +62,48 @@
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
-  gap: 2.5vw;
+  gap: 2vw;
   height: 8vh;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 1.6vmin);
   font-weight: 700;
 }
+
+.navbutton {
+  display: flex;
+  align-items: center;
+  outline: 4px solid black;
+  padding: 0.3em 0.8em;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 3vh;
+}
+
+.navbuttonactive {
+  display: flex;
+  align-items: center;
+  outline: 4px solid black;
+  padding: 0.3em 0.8em;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 3vh;
+  background-color: black;
+}
+
+.navbuttonactivelight {
+  display: flex;
+  align-items: center;
+  outline: 4px solid black;
+  padding: 0.3em 0.8em;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 3vh;
+  background-color: rgb(14, 173, 152)
+}
+
+.navbutton:hover {
+  background-color: rgba(111, 177, 168, 0.658);
+}
+
 
 .fa-external-link {
   font-size: calc(10px + 1vmin);
@@ -137,7 +186,6 @@
   border-radius: 30px;
 }
 
-
 .footer-container {
   display: flex;
   flex-direction: row;
@@ -166,7 +214,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: .5vw;
+  gap: 0.5vw;
 }
 
 .temp-logos img {
@@ -174,14 +222,13 @@
   max-height: 30px;
 }
 
-
 .theme-content {
   display: flex;
   flex-direction: row;
   height: 8vh;
   width: 8vw;
   align-items: center;
-  gap: .5vw;
+  gap: 0.5vw;
   justify-content: space-around;
   cursor: pointer;
   /* border: 1px solid red; */
@@ -195,7 +242,6 @@
   font-size: calc(10px + 4vmin);
   text-align: center;
   margin-left: 10vw;
-  ;
 }
 
 .wind-component {
@@ -281,7 +327,6 @@
   width: 50%;
 }
 
-
 .arrow {
   display: flex;
   justify-content: center;
@@ -333,7 +378,6 @@
     max-width: 300%;
     z-index: 1;
     margin-top: 5vh;
-
   }
 
   .wind-component-bottom {
@@ -349,12 +393,12 @@
 
   .wind-gusts,
   .metar {
-    font-size: calc(10px + 1.5vmin)
+    font-size: calc(10px + 1.5vmin);
   }
 
   .sky-conditions,
   .wind-direction {
-    font-size: calc(10px + 1.5vmin)
+    font-size: calc(10px + 1.5vmin);
   }
 
   .small {
@@ -362,11 +406,11 @@
   }
 
   .time-component {
-    font-size: calc(10px + 2vmin)
+    font-size: calc(10px + 2vmin);
   }
 
   .temp-content {
-    font-size: calc(10px + 1vmin)
+    font-size: calc(10px + 1vmin);
   }
 
   .nav-component {
@@ -375,7 +419,7 @@
     align-items: flex-end;
     gap: 2vw;
     height: 8vh;
-    font-size: calc(10px + 1vmin);
+    font-size: calc(10px + .8vmin);
   }
 
   .hangar-cam {
@@ -391,6 +435,19 @@
     max-height: 16px;
   }
 
+  .navbutton {
+    outline: 2px solid black;
+    padding: 0.2em 0.5em;
+  }
 
+  .navbuttonactive {
+    outline: 2px solid black;
+    padding: 0.2em 0.5em;
+    border-radius: 10px;
+  }
 
+  .navbuttonactivelight {
+    outline: 2px solid black;
+    padding: 0.2em 0.5em;
+  }
 }
