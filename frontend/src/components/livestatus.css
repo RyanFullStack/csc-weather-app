@@ -1,0 +1,27 @@
+.livecomponent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: rgb(185, 0, 0);
+    gap: .5vw;
+    font-size: calc(6px + 2vmin);
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.livestatus img {
+    height: 2vh;
+    animation: blink 1s;
+    animation-iteration-count: infinite;
+}

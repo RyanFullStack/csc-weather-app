@@ -47,7 +47,6 @@
   min-width: 100vw;
   color: black;
   font-weight: bold;
-  outline: rgba(0, 26, 255, 0);
 }
 
 .nav-container a {
@@ -229,13 +228,10 @@
 .theme-content {
   display: flex;
   flex-direction: row;
+  margin-left: .5vw;
   height: 8vh;
-  width: 8vw;
   align-items: center;
-  gap: 0.5vw;
-  justify-content: space-around;
   cursor: pointer;
-  /* border: 1px solid red; */
 }
 
 .fa-solid {
@@ -245,7 +241,6 @@
 .time-component {
   font-size: calc(10px + 4vmin);
   text-align: center;
-  margin-left: 10vw;
 }
 
 .wind-component {

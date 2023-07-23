@@ -1,6 +1,7 @@
 import GetCst from './time'
 import CurrentTemp from './temp';
 import Theme from './theme';
+import LiveStatus from './livestatus';
 
 function Header() {
 
@@ -8,6 +9,9 @@ function Header() {
         <>
             <div className='themecontainer'>
                 <Theme />
+            </div>
+            <div className='livestatus'>
+                <LiveStatus />
             </div>
             <div className='timeContainer'>
                 <GetCst />

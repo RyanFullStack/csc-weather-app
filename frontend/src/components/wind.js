@@ -52,9 +52,6 @@ function Wind() {
     }
   }, [skyCondition2, skyCondition3])
 
-  if (!speed) {
-    return <div className="loading">Live Conditions Loading...</div>;
-  }
 
   return (
     <div className="wind-component">
