@@ -5,7 +5,7 @@
     justify-content: center;
     color: rgb(185, 0, 0);
     gap: .5vw;
-    font-size: calc(6px + 2vmin);
+    font-size: calc(6px + 1vmin);
 }
 
 @keyframes blink {
@@ -21,7 +21,7 @@
 }
 
 .livestatus img {
-    height: 2vh;
+    height: 1.5vh;
     animation: blink 1s;
     animation-iteration-count: infinite;
 }
