@@ -73,6 +73,10 @@ function GustChart() {
         ]
     }
 
+    if (!gustData.length) {
+        return <div className="loading">Live Gusts Loading!</div>;
+      }
+
 
     return (
         <div className="gust-chart">

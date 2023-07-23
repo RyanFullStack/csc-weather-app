@@ -34,6 +34,10 @@
   overflow: hidden;
 }
 
+.loading {
+  margin-top: 20px;
+}
+
 .header-container {
   display: flex;
   flex-direction: row;
