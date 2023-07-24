@@ -7,8 +7,9 @@ function WindsAloft() {
     useContext(WeatherContext);
 
   const timeZoneOffset = -5;
-  const convertedHour = (parseInt(received) + timeZoneOffset + 24) % 12 || 12;
-  const period = received >= 12 ? "PM" : "AM";
+  let adjustedHour = (parseInt(received) + timeZoneOffset + 24) % 24;
+  const convertedHour = ((adjustedHour + 11) % 12) + 1;
+  const period = adjustedHour >= 12 ? "PM" : "AM";
 
   if (!directions || !speeds || !temps || !received) {
     return <div className="loading">Winds Aloft Loading!</div>;
@@ -17,7 +18,8 @@ function WindsAloft() {
   return (
     <div className="wind-aloft-table">
       <div className="aloft-title">
-        Winds Received at {convertedHour}{period} CDT, valid now
+        Winds Received at {convertedHour}
+        {period} CDT, valid now
       </div>
       <table>
         <thead>
