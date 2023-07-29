@@ -1,0 +1,18 @@
+.metar-container {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+    font-size: calc(6px + 1vmin);
+    text-align: center;
+}
+
+.metar-container a {
+    font-size: calc(4px + 1vmin);
+    text-align: center;
+    margin: 0px 3vw;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
