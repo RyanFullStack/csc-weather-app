@@ -9,6 +9,7 @@
 }
 
 .metar-container a {
+    display: flex;
     font-size: calc(4px + 1vmin);
     text-align: center;
     margin: 0px 3vw;
