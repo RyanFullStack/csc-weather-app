@@ -64,6 +64,28 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 2vw;
+  height: 8vh;
+  font-size: calc(10px + 1.6vmin);
+  font-weight: 700;
+}
+
+.nav-top-half {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2vw;
+  height: 8vh;
+  font-size: calc(10px + 1.6vmin);
+  font-weight: 700;
+}
+
+.nav-bottom-half {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: flex-end;
   gap: 2vw;
   height: 8vh;
@@ -133,6 +155,17 @@
 }
 
 .gusts-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  height: 74vh;
+  width: 80%;
+  margin-top: 2vh;
+  /* border: 1px solid rgb(255, 0, 0); */
+}
+
+.radar-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
