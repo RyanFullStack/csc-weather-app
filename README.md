@@ -17,7 +17,7 @@ Change from dark to light mode at the top left.
 
 Click the temperature in top right to switch from ºF to ºC
 
-## Navigation
+## Features
 
 ### Home Page
 
