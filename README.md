@@ -1,4 +1,4 @@
-# CSC WX APP
+# CSC Weather APP
 
 CSC WX APP is a commercial app developed for Chicagoland Skydiving Center. This app is currently being used live heavily by both employees and customers to make important safety decisions.
 
