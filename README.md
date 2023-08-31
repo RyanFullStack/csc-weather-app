@@ -29,7 +29,7 @@ The Gusts Chart displays wind data for the previous 30 minutes. The blue portion
 
 ### Aloft
 
-The Aloft section display wind conditions aloft accoring to NOAA forecasts. This information is updated once per hour at the top of every hour.
+The Aloft section displays wind conditions aloft according to NOAA forecasts. This information is updated once per hour at the top of every hour.
 
 ### Webcam
 
