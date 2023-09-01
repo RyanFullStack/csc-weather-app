@@ -153,8 +153,18 @@ const WindSpeedProvider = props => {
                     setCloudCeiling2(`${weatherData[0].data.weather.skyCondition[1].altitude}'`)
                 }
 
+                if (weatherData[0].data.weather.skyCondition[1] === undefined) {
+                    setCloudCeiling2()
+                    setSkyCondition2('')
+                }
+
                 if (weatherData[0].data.weather.skyCondition[2]) {
                     setCloudCeiling3(`${weatherData[0].data.weather.skyCondition[2].altitude}'`)
+                }
+
+                if (weatherData[0].data.weather.skyCondition[2] === undefined) {
+                    setCloudCeiling3()
+                    setSkyCondition3('')
                 }
 
                 if (weatherData[0].data.weather.presentWeather) {
