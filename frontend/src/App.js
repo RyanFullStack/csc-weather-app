@@ -8,6 +8,8 @@ import HangarCam from './components/hangar';
 import GustChart from './components/gusts';
 import NavBar from './components/navigation';
 import WindsAloft from './components/aloft';
+import CscRadar from './components/radar';
+import DetailedPage from './components/details';
 import './App.css';
 
 function App() {
@@ -42,6 +44,18 @@ function App() {
       <Route exact path='/aloft'>
         <div className='aloft-container'>
           <WindsAloft />
+        </div>
+        </Route>
+
+      <Route path='/radar'>
+        <div className='radar-container'>
+          <CscRadar />
+        </div>
+        </Route>
+
+      <Route path='/detailed'>
+        <div className='detailed-container'>
+          <DetailedPage />
         </div>
         </Route>
 

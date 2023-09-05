@@ -64,6 +64,28 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 2vw;
+  height: 8vh;
+  font-size: calc(10px + 1.6vmin);
+  font-weight: 700;
+}
+
+.nav-top-half {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2vw;
+  height: 8vh;
+  font-size: calc(10px + 1.6vmin);
+  font-weight: 700;
+}
+
+.nav-bottom-half {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: flex-end;
   gap: 2vw;
   height: 8vh;
@@ -74,7 +96,7 @@
 .navbutton {
   display: flex;
   align-items: center;
-  outline: 4px solid black;
+  outline: 2px solid black;
   padding: 0.3em 0.8em;
   border-radius: 10px;
   cursor: pointer;
@@ -84,7 +106,7 @@
 .navbuttonactive {
   display: flex;
   align-items: center;
-  outline: 4px solid black;
+  outline: 2px solid black;
   padding: 0.3em 0.8em;
   border-radius: 10px;
   cursor: pointer;
@@ -95,18 +117,17 @@
 .navbuttonactivelight {
   display: flex;
   align-items: center;
-  outline: 4px solid black;
+  outline: 2px solid black;
   padding: 0.3em 0.8em;
   border-radius: 10px;
   cursor: pointer;
   height: 3vh;
-  background-color: rgb(14, 173, 152)
+  background-color: rgb(14, 173, 152);
 }
 
 .navbutton:hover {
   background-color: rgba(111, 177, 168, 0.658);
 }
-
 
 .fa-external-link {
   font-size: calc(10px + 1vmin);
@@ -143,6 +164,37 @@
   /* border: 1px solid rgb(255, 0, 0); */
 }
 
+.radar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  height: 74vh;
+  width: 80%;
+  margin-top: 2vh;
+  /* border: 1px solid rgb(255, 0, 0); */
+}
+
+.detailed-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 74vh;
+  width: 100%;
+  margin-top: 2vh;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.detailed-contents, .aloft-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+}
+
 .gust-chart {
   display: flex;
   align-items: flex-start;
@@ -156,12 +208,32 @@
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  height: 76vh;
-  width: 80%;
+  height: 74vh;
+  width: 100%;
   overflow: scroll;
   overflow-x: hidden;
+  margin-top: 2vh;
 
   /* border: 1px solid rgb(255, 0, 0); */
+}
+
+.windy-radar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  height: 76vh;
+  width: 90%;
+}
+
+.windy-radar embed {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-top: 2vh;
+  align-items: center;
+  width: 100%;
+  height: 90%;
 }
 
 .hangar-cam-container {
@@ -186,7 +258,7 @@
 #cam {
   width: 100%;
   height: 100%;
-  border-radius: 30px;
+  border-radius: 10px;
 }
 
 .footer-container {
@@ -207,7 +279,7 @@
   justify-content: flex-end;
   gap: 3vw;
   padding-right: 1.2vw;
-  font-size: calc(14px + 2vmin);
+  font-size: calc(12px + 2vmin);
   text-align: right;
   cursor: pointer;
 }
@@ -228,7 +300,7 @@
 .theme-content {
   display: flex;
   flex-direction: row;
-  margin-left: .5vw;
+  margin-left: 0.5vw;
   height: 8vh;
   align-items: center;
   cursor: pointer;
@@ -239,7 +311,7 @@
 }
 
 .time-component {
-  font-size: calc(10px + 4vmin);
+  font-size: calc(10px + 3vmin);
   text-align: center;
 }
 
@@ -358,7 +430,17 @@
   font-size: calc(10px + 3vmin);
 }
 
-@media screen and (max-width: 650px) {
+.student-wind-hold {
+  margin-bottom: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: calc(10px + .5rem);
+}
+.red {
+  color: red;
+}
+
+@media screen and (max-width: 1000px) {
   .wind-component-top {
     height: 50%;
     max-height: 500px;
@@ -405,11 +487,11 @@
   }
 
   .time-component {
-    font-size: calc(10px + 2vmin);
+    font-size: calc(8px + 2vmin);
   }
 
   .temp-content {
-    font-size: calc(10px + 1vmin);
+    font-size: calc(9px + 1vmin);
   }
 
   .nav-component {
@@ -418,7 +500,14 @@
     align-items: flex-end;
     gap: 2vw;
     height: 8vh;
-    font-size: calc(10px + .8vmin);
+    font-size: calc(10px + 0.8vmin);
+  }
+
+  .nav-top-half {
+    height: 6vh;
+  }
+  .nav-bottom-half {
+    height: 4vh;
   }
 
   .hangar-cam {
@@ -435,18 +524,56 @@
   }
 
   .navbutton {
-    outline: 2px solid black;
+    outline: 1px solid black;
     padding: 0.2em 0.5em;
   }
 
   .navbuttonactive {
-    outline: 2px solid black;
+    outline: 1px solid black;
     padding: 0.2em 0.5em;
     border-radius: 10px;
   }
 
   .navbuttonactivelight {
-    outline: 2px solid black;
+    outline: 1px solid black;
     padding: 0.2em 0.5em;
+  }
+}
+
+@media screen and (max-width: 872px) {
+  .chart-container {
+    height: 72vh;
+    margin-top: 4vh;
+  }
+  .gusts-container {
+    height: 71vh;
+    margin-top: 5vh;
+  }
+  .aloft-container {
+    height: 71vh;
+    margin-top: 5vh;
+  }
+  .hangar-cam-container {
+    height: 72vh;
+    margin-top: 4vh;
+    width: 90%;
+  }
+  .windy-radar {
+    height: 74vh;
+    margin-top: 2vh;
+    width: 100%;
+  }
+  .detailed-container {
+    height: 71vh;
+    margin-top: 5vh;
+    width: 100%;
+  }
+  .table {
+    border: 2px solid rgba(14, 173, 152, .6);
+    font-weight: 500;
+  }
+  .table-light {
+    border: 1px solid rgb(0, 0, 0);
+    font-weight: 700;
   }
 }

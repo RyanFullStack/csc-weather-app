@@ -25,6 +25,16 @@ const WindSpeedProvider = props => {
     const [temps, setTemps] = useState({})
     const [speeds, setSpeeds] = useState({})
     const [received, setReceived] = useState()
+    const [dewPoint, setDewPoint] = useState()
+    const [pressure, setPressure] = useState()
+    const [densityAlt, setDensityAlt] = useState()
+    const [visibility, setVisibility] = useState()
+    const [sunset, setSunset] = useState()
+    const [sunrise, setSunrise] = useState()
+    const [twilight, setTwilight] = useState()
+    const [noon, setNoon] = useState()
+    const [maxGust, setMaxGust] = useState()
+    const [variableDirection, setVariableDirection] = useState()
 
     // eslint-disable-next-line
     const windData = []
@@ -43,7 +53,7 @@ const WindSpeedProvider = props => {
         data()
         const interval = setInterval(() => {
             data()
-        }, 1000000)
+        }, 200000)
 
         return function() {
             clearInterval(interval)
@@ -80,6 +90,8 @@ const WindSpeedProvider = props => {
 
             windData.unshift(res.payload)
             if (windData[0]) {
+
+                setVariableDirection(windData[0].data.wind.variableDirection)
                 setSpeed(windData[0].data.wind.speed)
                 setGustSpeed(windData[0].data.wind.gustSpeed)
                 if (windData[0].data.wind.direction) {
@@ -103,6 +115,7 @@ const WindSpeedProvider = props => {
             temperature
             dewPoint
             visibility
+            altimeterSetting
             densityAltitude
             skyCondition {
               cloudCover
@@ -126,6 +139,19 @@ const WindSpeedProvider = props => {
 
             weatherData.unshift(res.payload)
             if (weatherData[0]) {
+
+                if (weatherData[0].data.weather.altimeterSetting) {
+                    setPressure(weatherData[0].data.weather.altimeterSetting)
+                }
+                if (weatherData[0].data.weather.densityAltitude) {
+                    setDensityAlt(weatherData[0].data.weather.densityAltitude)
+                }
+                if (weatherData[0].data.weather.visibility) {
+                    setVisibility(weatherData[0].data.weather.visibility)
+                }
+                if (weatherData[0].data.weather.dewPoint) {
+                    setDewPoint(weatherData[0].data.weather.dewPoint)
+                }
 
                 const metArr = weatherData[0].data.weather.metar.split(' ')
                 metArr.pop()
@@ -318,8 +344,36 @@ const WindSpeedProvider = props => {
         // eslint-disable-next-line
       }, []);
 
+
+    useEffect(() => {
+        const maxGust = gustData.map(gust => gust.gust_speed)
+        const max = Math.max(...maxGust)
+        setMaxGust(max)
+    },[gustData])
+
+
+    useEffect(() => {
+        const getAstornomy = async () => {
+            const res = await fetch('https://api.sunrise-sunset.org/json?lat=41.892&lng=-89.071&date=today&formatted=0')
+            const data = await res.json()
+            if (data.results) {
+
+                const sunsetFormat = new Date(data.results.sunset).toLocaleTimeString('en-US', { timeZone: 'America/Chicago' })
+                const sunriseFormat = new Date(data.results.sunrise).toLocaleTimeString('en-US', { timeZone: 'America/Chicago' })
+                const twilightFormat = new Date(data.results.civil_twilight_end).toLocaleTimeString('en-US', { timeZone: 'America/Chicago' })
+                const noonFormat = new Date(data.results.solar_noon).toLocaleTimeString('en-US', { timeZone: 'America/Chicago' })
+
+                setSunset(sunsetFormat)
+                setSunrise(sunriseFormat)
+                setTwilight(twilightFormat)
+                setNoon(noonFormat)
+            }
+        }
+        getAstornomy()
+    }, [])
+
     return (
-        <WeatherContext.Provider value={{ speed, gustSpeed, direction, metar, temp, tempC, tempSetting, setTempSetting, skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3, metarAbbr, metarDesc, gustData, darkTheme, setDarkTheme, directions, speeds, temps, received }}>
+        <WeatherContext.Provider value={{ speed, gustSpeed, direction, metar, temp, tempC, tempSetting, setTempSetting, skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3, metarAbbr, metarDesc, gustData, darkTheme, setDarkTheme, directions, speeds, temps, received, pressure, visibility, densityAlt, dewPoint, sunset, sunrise, twilight, noon, maxGust, variableDirection }}>
             {props.children}
         </WeatherContext.Provider>
     )
