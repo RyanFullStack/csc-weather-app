@@ -58,9 +58,9 @@ function NavBar() {
       <div>
         <NavLink exact to="/radar" id="6" className={active === '6' && darkTheme === 'true' ? 'navbuttonactive' : active === '6' && darkTheme === 'false' ? 'navbuttonactivelight' : 'navbutton'} onClick={handleClick}>RADAR</NavLink>
       </div>
-      <div className="navbutton">
-        <a href="https://dzm.burblesoft.com/jmp?dz_id=408&columns=5&display_menu=0&font_size=12" target="_blank" rel="noreferrer">MANIFEST&nbsp;<i className="fa fa-external-link" /></a>
-      </div>
+      <a href="https://dzm.burblesoft.com/jmp?dz_id=408&columns=5&display_menu=0&font_size=12" target="_blank" rel="noreferrer"><div className="navbutton">
+        MANIFEST&nbsp;<i className="fa fa-external-link" />
+      </div></a>
     </div>
 
     </div>

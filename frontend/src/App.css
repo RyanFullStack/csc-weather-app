@@ -96,7 +96,7 @@
 .navbutton {
   display: flex;
   align-items: center;
-  outline: 4px solid black;
+  outline: 2px solid black;
   padding: 0.3em 0.8em;
   border-radius: 10px;
   cursor: pointer;
@@ -106,7 +106,7 @@
 .navbuttonactive {
   display: flex;
   align-items: center;
-  outline: 4px solid black;
+  outline: 2px solid black;
   padding: 0.3em 0.8em;
   border-radius: 10px;
   cursor: pointer;
@@ -117,7 +117,7 @@
 .navbuttonactivelight {
   display: flex;
   align-items: center;
-  outline: 4px solid black;
+  outline: 2px solid black;
   padding: 0.3em 0.8em;
   border-radius: 10px;
   cursor: pointer;
@@ -197,6 +197,25 @@
   /* border: 1px solid rgb(255, 0, 0); */
 }
 
+.windy-radar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  height: 76vh;
+  width: 90%;
+}
+
+.windy-radar embed {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-top: 2vh;
+  align-items: center;
+  width: 100%;
+  height: 90%;
+}
+
 .hangar-cam-container {
   display: flex;
   flex-direction: row;
@@ -219,7 +238,7 @@
 #cam {
   width: 100%;
   height: 100%;
-  border-radius: 30px;
+  border-radius: 10px;
 }
 
 .footer-container {
@@ -240,7 +259,7 @@
   justify-content: flex-end;
   gap: 3vw;
   padding-right: 1.2vw;
-  font-size: calc(14px + 2vmin);
+  font-size: calc(12px + 2vmin);
   text-align: right;
   cursor: pointer;
 }
@@ -272,7 +291,7 @@
 }
 
 .time-component {
-  font-size: calc(10px + 4vmin);
+  font-size: calc(10px + 3vmin);
   text-align: center;
 }
 
@@ -391,7 +410,7 @@
   font-size: calc(10px + 3vmin);
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1000px) {
   .wind-component-top {
     height: 50%;
     max-height: 500px;
@@ -438,11 +457,11 @@
   }
 
   .time-component {
-    font-size: calc(10px + 2vmin);
+    font-size: calc(8px + 2vmin);
   }
 
   .temp-content {
-    font-size: calc(10px + 1vmin);
+    font-size: calc(9px + 1vmin);
   }
 
   .nav-component {
@@ -452,6 +471,13 @@
     gap: 2vw;
     height: 8vh;
     font-size: calc(10px + .8vmin);
+  }
+
+  .nav-top-half {
+    height: 6vh;
+  }
+  .nav-bottom-half {
+    height: 4vh;
   }
 
   .hangar-cam {
@@ -468,18 +494,37 @@
   }
 
   .navbutton {
-    outline: 2px solid black;
+    outline: 1px solid black;
     padding: 0.2em 0.5em;
   }
 
   .navbuttonactive {
-    outline: 2px solid black;
+    outline: 1px solid black;
     padding: 0.2em 0.5em;
     border-radius: 10px;
   }
 
   .navbuttonactivelight {
-    outline: 2px solid black;
+    outline: 1px solid black;
     padding: 0.2em 0.5em;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .gusts-container {
+    height: 71vh;
+    margin-top: 5vh;
+  }
+  .aloft-container {
+    height: 72vh;
+    margin-top: 4vh;
+  }
+  .hangar-cam-container {
+    height: 72vh;
+    margin-top: 4vh;
+  }
+  .windy-radar{
+    height: 74vh;
+    margin-top: 2vh;
   }
 }
