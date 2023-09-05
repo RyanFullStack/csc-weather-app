@@ -31,6 +31,14 @@ The Gusts Chart displays wind data for the previous 30 minutes. The blue portion
 
 The Aloft section displays wind conditions aloft according to NOAA forecasts. This information is updated once per hour at the top of every hour.
 
+### Detailed
+
+The Detailed section displays a collection of information of weather info displayed in a table. Also has a live Student Weather Hold Indicator.
+
+### Radar
+
+The Radar section displays an embed of the Windy App.
+
 ### Webcam
 
 This is a live view of the hangar at Chicagoland Skydiving Center.

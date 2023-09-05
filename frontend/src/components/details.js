@@ -10,7 +10,7 @@ function DetailedPage() {
 
     return (
         <div className='detailed-contents'>
-            <span className="student-wind-hold red">{maxGust > 15 ? '*** STUDENT WIND HOLD ***' : null}</span>
+            <span className="student-wind-hold">{maxGust > 15 ? <span className="red">'*** STUDENT WIND HOLD ***'</span> : <span className="green">STUDENTS CLEAR TO JUMP!</span>}</span>
                 <table>
                     <tbody>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
@@ -59,7 +59,7 @@ function DetailedPage() {
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Max Gust <small>(30 Min)</small>:</td>
-                            <td>{maxGust && maxGust !== -Infinity ? <span className={maxGust > 15 ? 'red' : ''}>{maxGust} kts</span> : 'No Gust'}</td>
+                            <td>{maxGust && maxGust !== -Infinity ? <span className={maxGust > 15 ? 'red' : 'green'}>{maxGust} kts</span> : 'No Gust'}</td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Wind direction:</td>
