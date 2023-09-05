@@ -348,8 +348,11 @@ const WindSpeedProvider = props => {
     useEffect(() => {
         const maxGust = gustData.map(gust => gust.gust_speed)
         const max = Math.max(...maxGust)
+        if (max < gustSpeed) {
+            setMaxGust(gustSpeed)
+        } else
         setMaxGust(max)
-    },[gustData])
+    },[gustData, gustSpeed])
 
 
     useEffect(() => {
