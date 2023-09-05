@@ -54,7 +54,7 @@ function App() {
         </Route>
 
       <Route path='/detailed'>
-        <div className='chart-container'>
+        <div className='detailed-container'>
           <DetailedPage />
         </div>
         </Route>
