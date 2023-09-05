@@ -42,14 +42,6 @@ function DetailedPage() {
                             <td>{tempSetting === 'true' ? dewPoint : ((dewPoint - 32) * 5 / 9).toFixed(1)}º</td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                            <td>Visibility:</td>
-                            <td>{visibility} SM</td>
-                        </tr>
-                        <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                            <td>Sky Condition:</td>
-                            <td>{skyCondition1} {cloudCeiling1}{skyCondition2 ? <br /> : null}{skyCondition2} {cloudCeiling2}{skyCondition3 ? <br /> : null} {skyCondition3} {cloudCeiling3}</td>
-                        </tr>
-                        <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Current Speed:</td>
                             <td>{speed} kts</td>
                         </tr>
@@ -68,6 +60,14 @@ function DetailedPage() {
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Variable direction:</td>
                             <td>{variableDirection ? variableDirection : 'Steady'}</td>
+                        </tr>
+                        <tr className={darkTheme === "true" ? "table" : "table-light"}>
+                            <td>Visibility:</td>
+                            <td>{visibility} SM</td>
+                        </tr>
+                        <tr className={darkTheme === "true" ? "table" : "table-light"}>
+                            <td>Sky Condition:</td>
+                            <td>{skyCondition1} {cloudCeiling1}{skyCondition2 ? <br /> : null}{skyCondition2} {cloudCeiling2}{skyCondition3 ? <br /> : null} {skyCondition3} {cloudCeiling3}</td>
                         </tr>
                     </tbody>
                 </table>
