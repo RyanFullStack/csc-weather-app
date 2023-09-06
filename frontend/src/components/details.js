@@ -5,12 +5,12 @@ import { WeatherContext } from "../context/WeatherContext";
 function DetailedPage() {
     const { darkTheme, tempSetting, densityAlt, pressure, dewPoint, visibility, sunset, sunrise, twilight, noon,
         skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3,
-        speed, gustSpeed, maxGust, direction, variableDirection, metarAbbr, metarDesc } =
+        speed, gustSpeed, maxGust, maxSpeed, direction, variableDirection, metarAbbr, metarDesc } =
         useContext(WeatherContext);
 
     return (
         <div className='detailed-contents'>
-            <span className="student-wind-hold">{maxGust > 15 && maxGust < 26 ? <span className="yellow">*** STUDENT WIND HOLD ***</span> : maxGust > 25 && maxGust < 41 ? <span className="red">*** DROPZONE WIND HOLD ***</span> : maxGust > 40 && maxGust < 51 ? <span className="red">*** HANG ON TIGHT!!! ***</span> : maxGust > 50 ? <span className="red">*** HOLY $h*T!!! ***</span> :<span className="green">WINDS OK FOR STUDENTS!</span>}</span>
+            <span className="student-wind-hold">{(maxGust > 15 && maxGust < 26) || (maxSpeed > 15 && maxSpeed < 26) ? <span className="yellow">*** STUDENT WIND HOLD ***</span> : (maxGust > 25 && maxGust < 41) || (maxSpeed > 25 && maxSpeed < 41) ? <span className="red">*** DROPZONE WIND HOLD ***</span> : (maxGust > 40 && maxGust < 51) || (maxSpeed > 40 && maxSpeed < 51) ? <span className="red">*** HANG ON TIGHT!!! ***</span> : maxGust > 50 || maxSpeed > 50 ? <span className="red">*** HOLY $h*T!!! ***</span> : <span className="green">WINDS OK FOR STUDENTS!</span>}</span>
                 <table>
                     <tbody>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
@@ -48,6 +48,10 @@ function DetailedPage() {
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Current Gust:</td>
                             <td>{gustSpeed ? gustSpeed + ' kts' : 'No Gust'}</td>
+                        </tr>
+                        <tr className={darkTheme === "true" ? "table" : "table-light"}>
+                            <td>Max Speed <small>(30 Min)</small>:</td>
+                            <td>{maxSpeed ? <span className={maxSpeed > 15 && maxSpeed < 26 ? 'yellow' : maxSpeed > 25 ? 'red' : 'green'}>{maxSpeed} kts</span> : 'None'}</td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Max Gust <small>(30 Min)</small>:</td>

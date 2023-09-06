@@ -34,6 +34,7 @@ const WindSpeedProvider = props => {
     const [twilight, setTwilight] = useState()
     const [noon, setNoon] = useState()
     const [maxGust, setMaxGust] = useState()
+    const [maxSpeed, setMaxSpeed] = useState()
     const [variableDirection, setVariableDirection] = useState()
 
     // eslint-disable-next-line
@@ -362,9 +363,20 @@ const WindSpeedProvider = props => {
         const max = Math.max(...maxGust)
         if (max < gustSpeed) {
             setMaxGust(gustSpeed)
-        } else
+        } else {
         setMaxGust(max)
+        }
     },[gustData, gustSpeed])
+
+    useEffect(() => {
+        const maxSpeed = gustData.map(gust => gust.wind_speed)
+        const max = Math.max(...maxSpeed)
+        if (max < speed) {
+            setMaxSpeed(speed)
+        } else {
+            setMaxSpeed(max)
+        }
+    }, [gustData, speed])
 
 
     useEffect(() => {
@@ -388,7 +400,7 @@ const WindSpeedProvider = props => {
     }, [])
 
     return (
-        <WeatherContext.Provider value={{ speed, gustSpeed, direction, metar, temp, tempC, tempSetting, setTempSetting, skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3, metarAbbr, metarDesc, gustData, darkTheme, setDarkTheme, directions, speeds, temps, received, pressure, visibility, densityAlt, dewPoint, sunset, sunrise, twilight, noon, maxGust, variableDirection }}>
+        <WeatherContext.Provider value={{ speed, gustSpeed, direction, metar, temp, tempC, tempSetting, setTempSetting, skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3, metarAbbr, metarDesc, gustData, darkTheme, setDarkTheme, directions, speeds, temps, received, pressure, visibility, densityAlt, dewPoint, sunset, sunrise, twilight, noon, maxGust, variableDirection, maxSpeed }}>
             {props.children}
         </WeatherContext.Provider>
     )
