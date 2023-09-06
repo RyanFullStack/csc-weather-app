@@ -5,7 +5,7 @@ import { WeatherContext } from "../context/WeatherContext";
 function DetailedPage() {
     const { darkTheme, tempSetting, densityAlt, pressure, dewPoint, visibility, sunset, sunrise, twilight, noon,
         skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3,
-        speed, gustSpeed, maxGust, direction, variableDirection } =
+        speed, gustSpeed, maxGust, direction, variableDirection, metarAbbr, metarDesc } =
         useContext(WeatherContext);
 
     return (
@@ -60,6 +60,10 @@ function DetailedPage() {
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Variable direction:</td>
                             <td>{variableDirection ? variableDirection : 'Steady'}</td>
+                        </tr>
+                        <tr className={darkTheme === "true" ? "table" : "table-light"}>
+                            <td>Present Weather:</td>
+                            <td>{metarAbbr ? metarDesc + ' ' + metarAbbr : 'None'}</td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Visibility:</td>
