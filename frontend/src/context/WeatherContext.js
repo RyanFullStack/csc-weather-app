@@ -168,7 +168,11 @@ const WindSpeedProvider = props => {
                 }
 
                 if (weatherData[0].data.weather.skyCondition[0].altitude) {
+                    if (tempSetting === 'true') {
                     setCloudCeiling1(`${weatherData[0].data.weather.skyCondition[0].altitude}'`)
+                    } else {
+                        setCloudCeiling1(`${((weatherData[0].data.weather.skyCondition[0].altitude - 32) / 1.8).toFixed(0)}M`)
+                    }
                 }
 
                 if (weatherData[0].data.weather.skyCondition[0].altitude === null) {
@@ -176,7 +180,11 @@ const WindSpeedProvider = props => {
                 }
 
                 if (weatherData[0].data.weather.skyCondition[1]) {
-                    setCloudCeiling2(`${weatherData[0].data.weather.skyCondition[1].altitude}'`)
+                    if (tempSetting === 'true') {
+                        setCloudCeiling2(`${weatherData[0].data.weather.skyCondition[1].altitude}'`)
+                        } else {
+                            setCloudCeiling2(`${((weatherData[0].data.weather.skyCondition[1].altitude - 32) / 1.8).toFixed(0)}M`)
+                        }
                 }
 
                 if (weatherData[0].data.weather.skyCondition[1] === undefined) {
@@ -185,7 +193,11 @@ const WindSpeedProvider = props => {
                 }
 
                 if (weatherData[0].data.weather.skyCondition[2]) {
-                    setCloudCeiling3(`${weatherData[0].data.weather.skyCondition[2].altitude}'`)
+                    if (tempSetting === 'true') {
+                        setCloudCeiling3(`${weatherData[0].data.weather.skyCondition[2].altitude}'`)
+                        } else {
+                            setCloudCeiling3(`${((weatherData[0].data.weather.skyCondition[2].altitude - 32) / 1.8).toFixed(0)}M`)
+                        }
                 }
 
                 if (weatherData[0].data.weather.skyCondition[2] === undefined) {
@@ -320,7 +332,7 @@ const WindSpeedProvider = props => {
                 }
             }
         };
-    }, [weatherData, temp])
+    }, [weatherData, tempSetting])
 
 
 
