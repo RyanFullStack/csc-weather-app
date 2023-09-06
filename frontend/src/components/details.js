@@ -35,7 +35,7 @@ function DetailedPage() {
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Pressure:</td>
-                            <td>{pressure}" Hg</td>
+                            <td>{!pressure ? null : pressure + '" Hg'}</td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Dew Point:</td>
@@ -43,7 +43,7 @@ function DetailedPage() {
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Current Speed:</td>
-                            <td>{speed === 1 ? speed + ' kt' : speed + ' kts'}</td>
+                            <td>{!speed ? null : speed === 1 ? speed + ' kt' : speed + ' kts'}</td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Current Gust:</td>
