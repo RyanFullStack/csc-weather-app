@@ -97,7 +97,7 @@ function WindsAloft() {
               </td>
             </tr>
             <tr className={darkTheme === "true" ? "table" : "table-light"}>
-              <td>{tempSetting === 'true' ? "5,000'": "1524M"}</td>
+              <td>{tempSetting === 'true' ? "5,000'": "1524.0M"}</td>
               <td>
                 {directions["5000"]}º{" "}
                 <i
@@ -177,7 +177,7 @@ function WindsAloft() {
               </td>
             </tr>
             <tr className={darkTheme === "true" ? "table" : "table-light"}>
-              <td>{tempSetting === 'true' ? "10,000'": "3048M"}</td>
+              <td>{tempSetting === 'true' ? "10,000'": "3048.0M"}</td>
               <td>
                 {directions["10000"]}º{" "}
                 <i
@@ -257,7 +257,7 @@ function WindsAloft() {
               </td>
             </tr>
             <tr className={darkTheme === "true" ? "table" : "table-light"}>
-              <td>{tempSetting === 'true' ? "15,000'": "4572M"}</td>
+              <td>{tempSetting === 'true' ? "15,000'": "4572.0M"}</td>
               <td>
                 {directions["15000"]}º{" "}
                 <i
