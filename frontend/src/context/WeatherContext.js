@@ -171,7 +171,7 @@ const WindSpeedProvider = props => {
                     if (tempSetting === 'true') {
                     setCloudCeiling1(`${weatherData[0].data.weather.skyCondition[0].altitude}'`)
                     } else {
-                        setCloudCeiling1(`${((weatherData[0].data.weather.skyCondition[0].altitude - 32) / 1.8).toFixed(0)}M`)
+                        setCloudCeiling1(`${(weatherData[0].data.weather.skyCondition[0].altitude / 3.28).toFixed(0)}M`)
                     }
                 }
 
@@ -183,7 +183,7 @@ const WindSpeedProvider = props => {
                     if (tempSetting === 'true') {
                         setCloudCeiling2(`${weatherData[0].data.weather.skyCondition[1].altitude}'`)
                         } else {
-                            setCloudCeiling2(`${((weatherData[0].data.weather.skyCondition[1].altitude - 32) / 1.8).toFixed(0)}M`)
+                            setCloudCeiling2(`${(weatherData[0].data.weather.skyCondition[1].altitude  / 3.28).toFixed(0)}M`)
                         }
                 }
 
@@ -196,7 +196,7 @@ const WindSpeedProvider = props => {
                     if (tempSetting === 'true') {
                         setCloudCeiling3(`${weatherData[0].data.weather.skyCondition[2].altitude}'`)
                         } else {
-                            setCloudCeiling3(`${((weatherData[0].data.weather.skyCondition[2].altitude - 32) / 1.8).toFixed(0)}M`)
+                            setCloudCeiling3(`${(weatherData[0].data.weather.skyCondition[2].altitude  / 3.28).toFixed(0)}M`)
                         }
                 }
 
