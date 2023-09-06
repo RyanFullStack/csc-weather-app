@@ -26,7 +26,7 @@ function DetailedPage() {
                             <td>{sunrise}</td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                            <td>Solar noon:</td>
+                            <td>Solar Noon:</td>
                             <td>{noon}</td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
@@ -54,11 +54,11 @@ function DetailedPage() {
                             <td>{maxGust && maxGust !== -Infinity ? <span className={maxGust > 15 && maxGust < 26 ? 'yellow' : maxGust > 25 ? 'red' : 'green'}>{maxGust} kts</span> : 'No Gust'}</td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                            <td>Wind direction:</td>
+                            <td>Wind Direction:</td>
                             <td>{direction}º</td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                            <td>Variable direction:</td>
+                            <td>Variable Direction:</td>
                             <td>{variableDirection ? variableDirection : 'Steady'}</td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
