@@ -33,7 +33,7 @@ function WindsAloft() {
           </thead>
           <tbody>
             <tr className={darkTheme === "true" ? "table" : "table-light"}>
-              <td>1000</td>
+              <td>{tempSetting === 'true' ? "1,000'": "304.8M"}</td>
               <td>
                 {directions["1000"]}º{" "}
                 <i
@@ -49,7 +49,7 @@ function WindsAloft() {
               </td>
             </tr>
             <tr className={darkTheme === "true" ? "table" : "table-light"}>
-              <td>2000</td>
+              <td>{tempSetting === 'true' ? "2,000'": "609.6M"}</td>
               <td>
                 {directions["2000"]}º{" "}
                 <i
@@ -65,7 +65,7 @@ function WindsAloft() {
               </td>
             </tr>
             <tr className={darkTheme === "true" ? "table" : "table-light"}>
-              <td>3000</td>
+              <td>{tempSetting === 'true' ? "3,000'": "914.4M"}</td>
               <td>
                 {directions["3000"]}º{" "}
                 <i
@@ -81,7 +81,7 @@ function WindsAloft() {
               </td>
             </tr>
             <tr className={darkTheme === "true" ? "table" : "table-light"}>
-              <td>4000</td>
+              <td>{tempSetting === 'true' ? "4,000'": "1219.2M"}</td>
               <td>
                 {directions["4000"]}º{" "}
                 <i
@@ -97,7 +97,7 @@ function WindsAloft() {
               </td>
             </tr>
             <tr className={darkTheme === "true" ? "table" : "table-light"}>
-              <td>5000</td>
+              <td>{tempSetting === 'true' ? "5,000'": "1524M"}</td>
               <td>
                 {directions["5000"]}º{" "}
                 <i
@@ -113,7 +113,7 @@ function WindsAloft() {
               </td>
             </tr>
             <tr className={darkTheme === "true" ? "table" : "table-light"}>
-              <td>6000</td>
+              <td>{tempSetting === 'true' ? "6,000'": "1828.8M"}</td>
               <td>
                 {directions["6000"]}º{" "}
                 <i
@@ -129,7 +129,7 @@ function WindsAloft() {
               </td>
             </tr>
             <tr className={darkTheme === "true" ? "table" : "table-light"}>
-              <td>7000</td>
+              <td>{tempSetting === 'true' ? "7,000'": "2133.6M"}</td>
               <td>
                 {directions["7000"]}º{" "}
                 <i
@@ -145,7 +145,7 @@ function WindsAloft() {
               </td>
             </tr>
             <tr className={darkTheme === "true" ? "table" : "table-light"}>
-              <td>8000</td>
+              <td>{tempSetting === 'true' ? "8,000'": "2438.4M"}</td>
               <td>
                 {directions["8000"]}º{" "}
                 <i
@@ -161,7 +161,7 @@ function WindsAloft() {
               </td>
             </tr>
             <tr className={darkTheme === "true" ? "table" : "table-light"}>
-              <td>9000</td>
+              <td>{tempSetting === 'true' ? "9,000'": "2743.2M"}</td>
               <td>
                 {directions["9000"]}º{" "}
                 <i
@@ -177,7 +177,7 @@ function WindsAloft() {
               </td>
             </tr>
             <tr className={darkTheme === "true" ? "table" : "table-light"}>
-              <td>10000</td>
+              <td>{tempSetting === 'true' ? "10,000'": "3048M"}</td>
               <td>
                 {directions["10000"]}º{" "}
                 <i
@@ -193,7 +193,7 @@ function WindsAloft() {
               </td>
             </tr>
             <tr className={darkTheme === "true" ? "table" : "table-light"}>
-              <td>11000</td>
+              <td>{tempSetting === 'true' ? "11,000'": "3352.8M"}</td>
               <td>
                 {directions["11000"]}º{" "}
                 <i
@@ -209,7 +209,7 @@ function WindsAloft() {
               </td>
             </tr>
             <tr className={darkTheme === "true" ? "table" : "table-light"}>
-              <td>12000</td>
+              <td>{tempSetting === 'true' ? "12,000'": "3657.6M"}</td>
               <td>
                 {directions["12000"]}º{" "}
                 <i
@@ -225,7 +225,7 @@ function WindsAloft() {
               </td>
             </tr>
             <tr className={darkTheme === "true" ? "table" : "table-light"}>
-              <td>13000</td>
+              <td>{tempSetting === 'true' ? "13,000'": "3962.4M"}</td>
               <td>
                 {directions["13000"]}º{" "}
                 <i
@@ -241,7 +241,7 @@ function WindsAloft() {
               </td>
             </tr>
             <tr className={darkTheme === "true" ? "table" : "table-light"}>
-              <td>14000</td>
+              <td>{tempSetting === 'true' ? "14,000'": "4267.2M"}</td>
               <td>
                 {directions["14000"]}º{" "}
                 <i
@@ -257,7 +257,7 @@ function WindsAloft() {
               </td>
             </tr>
             <tr className={darkTheme === "true" ? "table" : "table-light"}>
-              <td>15000</td>
+              <td>{tempSetting === 'true' ? "15,000'": "4572M"}</td>
               <td>
                 {directions["15000"]}º{" "}
                 <i
@@ -273,7 +273,7 @@ function WindsAloft() {
               </td>
             </tr>
             <tr className={darkTheme === "true" ? "table" : "table-light"}>
-              <td>16000</td>
+              <td>{tempSetting === 'true' ? "16,000'": "4876.8M"}</td>
               <td>
                 {directions["16000"]}º{" "}
                 <i
@@ -289,7 +289,7 @@ function WindsAloft() {
               </td>
             </tr>
             <tr className={darkTheme === "true" ? "table" : "table-light"}>
-              <td>17000</td>
+              <td>{tempSetting === 'true' ? "17,000'": "5181.6M"}</td>
               <td>
                 {directions["17000"]}º{" "}
                 <i
@@ -305,7 +305,7 @@ function WindsAloft() {
               </td>
             </tr>
             <tr className={darkTheme === "true" ? "table" : "table-light"}>
-              <td>18000</td>
+              <td>{tempSetting === 'true' ? "18,000'": "5486.4M"}</td>
               <td>
                 {directions["18000"]}º{" "}
                 <i
