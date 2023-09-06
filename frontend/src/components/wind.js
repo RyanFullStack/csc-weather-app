@@ -55,27 +55,25 @@ function Wind() {
 
   return (
     <div className="wind-component">
-      <div className='wind-component-top'>
+      <div className='wind-component-left'>
         <div className="wind-speed">
           {speed}
           <div className="small">{(speed === 1) ? `kt` : `kts`}</div>
         </div>
+        <div className={`wind-gusts ${gusting}`}>
+          {gustSpeed > 0 && gustSpeed <= 15 ? <span className="green">Gusting to: {gustSpeed} kts</span> : gustSpeed > 15 && gustSpeed <= 25 ? <span className="yellow">Gusting to: {gustSpeed} kts</span> : gustSpeed > 25 ? <span className="red">Gusting to: {gustSpeed} kts</span> : `No gusts`}
+        </div>
+        <div className="wind-direction">
+          {direction ? `From ${direction}º` : speed === 0 ? `Calm` : null}
+        </div>
+      </div>
+      <div className="wind-component-right">
         <div className="wind-anamometer">
           <img src={arrow} alt='Wind Direction' className={`arrow  ${trackDirection}`}></img>
         </div>
-      </div>
-      <div className="wind-component-bottom">
         <div className="metar-abbr">
-          <div className={`sky-conditions ${mini}`}>{skyCondition1} {cloudCeiling1 ? cloudCeiling1 : null} {skyCondition2 ? <br /> : null} {skyCondition2 && cloudCeiling2 ? `${skyCondition2} ${cloudCeiling2}` : null} {skyCondition3 ? <br /> : null}{skyCondition3 && cloudCeiling3 ? `${skyCondition3} ${cloudCeiling3}` : null}</div>
           <div className='metar'>{metarDesc && metarAbbr ? `${metarDesc}  ${metarAbbr}` : metarAbbr ? `${metarAbbr}` : null}</div>
-        </div>
-        <div className="wind-bottom-right">
-          <div className="wind-direction">
-            {direction ? `From ${direction}º` : speed === 0 ? `Calm` : null}
-          </div>
-          <div className={`wind-gusts ${gusting}`}>
-            {gustSpeed > 0 && gustSpeed <= 15 ? <span className="green">Gusting to: {gustSpeed} kts</span> : gustSpeed > 15 && gustSpeed <= 25 ? <span className="yellow">Gusting to: {gustSpeed} kts</span> : gustSpeed > 25 ? <span className="red">Gusting to: {gustSpeed} kts</span> : `No gusts, winds are steady!`}
-          </div>
+          <div className={`sky-conditions ${mini}`}>{skyCondition1} {cloudCeiling1 ? cloudCeiling1 : null} {skyCondition2 ? <br /> : null} {skyCondition2 && cloudCeiling2 ? `${skyCondition2} ${cloudCeiling2}` : null} {skyCondition3 ? <br /> : null}{skyCondition3 && cloudCeiling3 ? `${skyCondition3} ${cloudCeiling3}` : null}</div>
         </div>
       </div>
     </div>

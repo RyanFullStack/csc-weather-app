@@ -206,6 +206,11 @@ const WindSpeedProvider = props => {
                     setSkyCondition3('')
                 }
 
+                if (!weatherData[0].data.weather.presentWeather) {
+                    setMetarAbbr()
+                    setMetarDesc()
+                }
+
                 if (weatherData[0].data.weather.presentWeather) {
 
                     if (weatherData[0].data.weather.presentWeather.includes('-')) {
