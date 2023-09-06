@@ -39,7 +39,7 @@ function DetailedPage() {
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Dew Point:</td>
-                            <td>{tempSetting === 'true' ? dewPoint : ((dewPoint - 32) * 5 / 9).toFixed(1)}º</td>
+                            <td>{tempSetting === 'true' ? dewPoint + 'ºF' : ((dewPoint - 32) * 5 / 9).toFixed(1) + 'ºC'}</td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Current Speed:</td>
