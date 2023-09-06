@@ -59,7 +59,7 @@ function DetailedPage() {
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Wind Direction:</td>
-                            <td>{direction}º</td>
+                            <td>{direction ? `${direction}º` : speed === 0 ? `Calm` : null}</td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Variable Direction:</td>
