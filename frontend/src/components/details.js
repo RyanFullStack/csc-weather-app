@@ -51,7 +51,7 @@ function DetailedPage() {
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Max Speed <small>(30 Min)</small>:</td>
-                            <td>{maxSpeed && maxSpeed !== -Infinity ? <span className={maxSpeed > 15 && maxSpeed < 26 ? 'yellow' : maxSpeed > 25 ? 'red' : 'green'}>{maxSpeed} kts</span> : '0 kts'}</td>
+                            <td>{maxSpeed && maxSpeed !== -Infinity ? <span className={maxSpeed > 15 && maxSpeed < 26 ? 'yellow' : maxSpeed > 25 ? 'red' : 'green'}>{maxSpeed === 1 ? '1 kt' : maxSpeed + ' kts'}</span> : '0 kts'}</td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Max Gust <small>(30 Min)</small>:</td>
