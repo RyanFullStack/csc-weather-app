@@ -360,6 +360,7 @@
   font-size: calc(10px + 4vmin);
   text-align: center;
   margin-bottom: .5rem;
+  font-weight: bold;
 }
 
 .gusting {
@@ -426,7 +427,9 @@
     font-size: calc(6px + 1vmin);
   }
 
-  .wind-gusts,
+  .wind-gusts {
+    font-size: calc(10px + 3vmin);
+  }
   .metar {
     font-size: calc(10px + 1.5vmin);
   }
