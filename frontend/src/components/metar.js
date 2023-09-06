@@ -7,7 +7,7 @@ function Metar() {
 
     return (
         <div className="metar-container">
-            <p><a href='https://github.com/RyanFullStack' target="_blank" rel='noreferrer'>Created by: Ryan Erickson</a></p>
+            <p><a href='https://ryanerickson.netlify.app/' target="_blank" rel='noreferrer'>Created by: Ryan Erickson</a></p>
             {metar}
             <p><a href='https://github.com/RyanFullStack' target="_blank" rel='noreferrer'>Github</a></p>
         </div>
