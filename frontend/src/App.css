@@ -357,6 +357,7 @@
 .wind-gusts {
   font-size: calc(10px + 4vmin);
   text-align: center;
+  margin-bottom: .5rem;
 }
 
 .gusting {
@@ -435,6 +436,7 @@
 
   .small {
     font-size: 18px;
+    margin-left: 0;
   }
 
   .time-component {
@@ -469,12 +471,7 @@
     gap: 1vw;
   }
 
-  .temp-logos img {
-    max-width: 16px;
-    max-height: 16px;
-  }
-
-  .navbutton {
+   .navbutton {
     outline: 1px solid black;
     padding: 0.2em 0.5em;
   }
@@ -497,6 +494,10 @@
     max-width: 100%;
     z-index: 1;
     margin-top: 5vh;
+  }
+  .temp-logos img {
+    max-width: 16px;
+    max-height: 16px;
   }
   .chart-container {
     height: 72vh;
