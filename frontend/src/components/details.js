@@ -67,7 +67,7 @@ function DetailedPage() {
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Present Weather:</td>
-                            <td>{metarAbbr ? metarDesc + ' ' + metarAbbr : 'None'}</td>
+                            <td>{metarAbbr && metarDesc ? metarDesc + ' ' + metarAbbr : metarAbbr ? metarAbbr : 'None'}</td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Visibility:</td>
