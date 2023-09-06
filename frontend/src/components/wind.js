@@ -74,7 +74,7 @@ function Wind() {
             {direction ? `From ${direction}º` : speed === 0 ? `Calm` : null}
           </div>
           <div className={`wind-gusts ${gusting}`}>
-            {gustSpeed ? `Gusting to: ${gustSpeed} kts` : `No gusts, winds are steady!`}
+            {gustSpeed > 0 && gustSpeed <= 15 ? <span className="green">Gusting to: {gustSpeed} kts</span> : gustSpeed > 15 && gustSpeed <= 25 ? <span className="yellow">Gusting to: {gustSpeed} kts</span> : gustSpeed > 25 ? <span className="red">Gusting to: {gustSpeed} kts</span> : `No gusts, winds are steady!`}
           </div>
         </div>
       </div>
