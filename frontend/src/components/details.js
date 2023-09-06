@@ -10,7 +10,7 @@ function DetailedPage() {
 
     return (
         <div className='detailed-contents'>
-            <span className="student-wind-hold">{maxGust > 15 ? <span className="red">*** STUDENT WIND HOLD ***</span> : <span className="green">STUDENTS CLEAR TO JUMP!</span>}</span>
+            <span className="student-wind-hold">{maxGust > 15 && maxGust < 26 ? <span className="yellow">*** STUDENT WIND HOLD ***</span> : maxGust > 25 && maxGust < 41 ? <span className="red">*** DROPZONE WIND HOLD ***</span> : maxGust > 40 && maxGust < 51 ? <span className="red">*** HANG ON TIGHT!!! ***</span> : maxGust > 50 ? <span className="red">*** HOLY $h*T!!! ***</span> :<span className="green">STUDENTS CLEAR TO JUMP!</span>}</span>
                 <table>
                     <tbody>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
@@ -51,7 +51,7 @@ function DetailedPage() {
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Max Gust <small>(30 Min)</small>:</td>
-                            <td>{maxGust && maxGust !== -Infinity ? <span className={maxGust > 15 ? 'red' : 'green'}>{maxGust} kts</span> : 'No Gust'}</td>
+                            <td>{maxGust && maxGust !== -Infinity ? <span className={maxGust > 15 && maxGust < 26 ? 'yellow' : maxGust > 25 ? 'red' : 'green'}>{maxGust} kts</span> : 'No Gust'}</td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Wind direction:</td>
