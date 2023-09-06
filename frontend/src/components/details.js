@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { WeatherContext } from "../context/WeatherContext";
 import fb from '../images/fb.png'
-import audio from '../images/audio.png'
 import ig from '../images/ig.png'
 import wa from '../images/wa.png'
 
