@@ -31,7 +31,7 @@ function DetailedPage() {
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Density Altitude:</td>
-                            <td>{densityAlt && tempSetting === 'true' ? densityAlt + "'" : !densityAlt ? null : (densityAlt / 3.28).toFixed(0) + 'M'}</td>
+                            <td>{densityAlt && tempSetting === 'true' ? densityAlt + "'" : !densityAlt ? 'Field Level' : (densityAlt / 3.28).toFixed(0) + 'M'}</td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
                             <td>Pressure:</td>
