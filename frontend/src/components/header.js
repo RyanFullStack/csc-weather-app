@@ -2,6 +2,7 @@ import GetCst from './time'
 import CurrentTemp from './temp';
 import Theme from './theme';
 import LiveStatus from './livestatus';
+import audio from '../images/audio.png'
 
 function Header() {
 
@@ -16,9 +17,13 @@ function Header() {
             <div className='timeContainer'>
                 <GetCst />
             </div>
+            <div className="temp-logos">
+                <a href='http://audio.skydivecsc.com/' target='_blank' rel='noreferrer'><img src={audio} alt='audio' /></a>
+            </div>
             <div className='tempContainer'>
                 <CurrentTemp />
             </div>
+
         </>
     )
 }

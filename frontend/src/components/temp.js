@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react"
 import { WeatherContext } from "../context/WeatherContext"
-import audio from '../images/audio.png'
+
 
 
 function CurrentTemp() {
@@ -28,9 +28,6 @@ function CurrentTemp() {
 
     return (
         <div className='temp-content'>
-            <div className="temp-logos">
-                <a href='http://audio.skydivecsc.com/' target='_blank' rel='noreferrer'><img src={audio}  alt='audio'/></a>
-            </div>
             <div className="temp-temp" onClick={handleClick}>{tempSetting === 'true' && temp ? `${temp}º F` : tempC ? `${tempC}º C` : ''}</div>
         </div>
     )
