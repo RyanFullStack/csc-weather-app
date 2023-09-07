@@ -392,7 +392,6 @@
   max-height: 110%;
   max-width: 100%;
   z-index: 1;
-  margin-top: 5vh;
 }
 
 .sky-conditions {
@@ -499,7 +498,6 @@
     max-height: 100%;
     max-width: 100%;
     z-index: 1;
-    margin-top: 2vh;
   }
   .temp-logos img {
     max-width: 16px;
