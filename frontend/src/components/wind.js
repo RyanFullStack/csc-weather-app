@@ -57,8 +57,8 @@ function Wind() {
     <div className="wind-component">
       <div className='wind-component-left'>
         <div className="wind-speed">
-          {speed}
-          <div className="small">{(speed === 1) ? `kt` : `kts`}</div>
+          {speed > 25 ? <span className="red">{speed}</span> : speed}
+          <div className="small">{(speed === 1) ? `kt` : speed > 25 ? <span className="red">kts</span> : `kts`}</div>
         </div>
         <div className={`wind-gusts ${gusting}`}>
           {gustSpeed > 0 && gustSpeed <= 15 ? <span className="green">Gusting: {gustSpeed}<small>kts</small></span> : gustSpeed > 15 && gustSpeed <= 25 ? <span className="yellow">Gusting: {gustSpeed}<small>kts</small></span> : gustSpeed > 25 ? <span className="red">Gusting: {gustSpeed}<small>kts</small></span> : <span className="green">No Gusts</span>}
