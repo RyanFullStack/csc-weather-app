@@ -499,6 +499,9 @@
     max-width: 100%;
     z-index: 1;
   }
+  .mini {
+    font-size: calc(8px + 1vmin);
+  }
   .temp-logos img {
     max-width: 16px;
     max-height: 16px;

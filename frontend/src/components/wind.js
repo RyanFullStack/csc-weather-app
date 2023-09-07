@@ -72,7 +72,7 @@ function Wind() {
           <img src={arrow} alt='Wind Direction' className={`arrow  ${trackDirection}`}></img>
         </div>
         <div className="metar-abbr">
-          <div className='metar'>{metarDesc && metarAbbr ? `${metarDesc}  ${metarAbbr}` : metarAbbr ? `${metarAbbr}` : null}</div>
+          <div className={`metar ${mini}`}>{metarDesc && metarAbbr ? `${metarDesc}  ${metarAbbr}` : metarAbbr ? `${metarAbbr}` : null}</div>
           <div className={`sky-conditions ${mini}`}>{skyCondition1} {cloudCeiling1 ? cloudCeiling1 : null} {skyCondition2 ? <br /> : null} {skyCondition2 && cloudCeiling2 ? `${skyCondition2} ${cloudCeiling2}` : null} {skyCondition3 ? <br /> : null}{skyCondition3 && cloudCeiling3 ? `${skyCondition3} ${cloudCeiling3}` : null}</div>
         </div>
       </div>
