@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { WeatherContext } from "../context/WeatherContext";
 import fb from '../images/fb.png'
 import ig from '../images/ig.png'
@@ -10,6 +10,29 @@ function DetailedPage() {
         skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3,
         speed, gustSpeed, maxGust, maxSpeed, direction, variableDirection, metarAbbr, metarDesc } =
         useContext(WeatherContext);
+
+    const [varDir1, setVarDir1] = useState()
+    const [varDir2, setVarDir2] = useState()
+
+    useEffect(() => {
+        if (variableDirection) {
+            const directionStr = variableDirection.toString();
+            let value1, value2;
+
+            const thirdChar = directionStr[2];
+
+            if (thirdChar === '0') {
+                value1 = parseInt(directionStr.slice(0, 3));
+                value2 = parseInt(directionStr.slice(3));
+            } else {
+                value1 = parseInt(directionStr.slice(0, 2));
+                value2 = parseInt(directionStr.slice(2));
+            }
+            setVarDir1(value1)
+            setVarDir2(value2)
+        }
+    }, [variableDirection])
+
 
     return (
         <div className='detailed-contents'>
@@ -66,7 +89,7 @@ function DetailedPage() {
                     </tr>
                     <tr className={darkTheme === "true" ? "table" : "table-light"}>
                         <td>Variable Direction:</td>
-                        <td>{variableDirection ? variableDirection : 'Steady'}</td>
+                        <td>{variableDirection ? `${varDir1}º - ${varDir2}º` : 'Steady'}</td>
                     </tr>
                     <tr className={darkTheme === "true" ? "table" : "table-light"}>
                         <td>Present Weather:</td>
