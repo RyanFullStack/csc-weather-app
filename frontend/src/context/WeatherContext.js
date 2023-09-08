@@ -92,6 +92,8 @@ const WindSpeedProvider = props => {
             windData.unshift(res.payload)
             if (windData[0]) {
 
+                console.log(windData)
+
                 setVariableDirection(windData[0].data.wind.variableDirection)
                 setSpeed(windData[0].data.wind.speed)
                 setGustSpeed(windData[0].data.wind.gustSpeed)

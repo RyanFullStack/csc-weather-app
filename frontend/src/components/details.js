@@ -69,7 +69,7 @@ function DetailedPage() {
                     </tr>
                     <tr className={darkTheme === "true" ? "table" : "table-light"}>
                         <td>Current Speed:</td>
-                        <td>{!speed ? null : speed === 1 ? speed + ' kt' : speed + ' kts'}</td>
+                        <td>{speed === 0 ? '0 kts' : !speed ? null : speed === 1 ? speed + ' kt' : speed + ' kts'}</td>
                     </tr>
                     <tr className={darkTheme === "true" ? "table" : "table-light"}>
                         <td>Current Gust:</td>
