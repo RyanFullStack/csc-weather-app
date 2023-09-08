@@ -1,10 +1,24 @@
+import { useRef, useState } from 'react';
 import GetCst from './time'
 import CurrentTemp from './temp';
 import Theme from './theme';
 import LiveStatus from './livestatus';
-import audio from '../images/audio.png'
+
 
 function Header() {
+    const audioRef = useRef(null);
+    const [audio, setAudio] = useState('fa-solid fa-volume-xmark')
+
+    const playpause = () => {
+        if (audioRef.current.paused) {
+        audioRef.current.load()
+        audioRef.current.play()
+        setAudio('fa-solid fa-volume-high')
+        } else {
+            audioRef.current.pause()
+        setAudio('fa-solid fa-volume-xmark')
+        }
+    }
 
     return (
         <>
@@ -18,7 +32,8 @@ function Header() {
                 <GetCst />
             </div>
             <div className="temp-logos">
-                <a href='http://audio.skydivecsc.com/' target='_blank' rel='noreferrer'><img src={audio} alt='audio' /></a>
+                <i className={audio} onClick={playpause} title='CLICK ME!'/>
+                <audio src='http://audio-live.skydivecsc.com:8000/audio' type='audio/mpeg' ref={audioRef}/>
             </div>
             <div className='tempContainer'>
                 <CurrentTemp />
