@@ -184,6 +184,18 @@
   overflow-x: hidden;
 }
 
+.my-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 74vh;
+  width: 100%;
+  margin-top: 2vh;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
 .detailed-contents, .aloft-contents {
   display: flex;
   flex-direction: column;
