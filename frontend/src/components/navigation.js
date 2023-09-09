@@ -24,8 +24,11 @@ function NavBar() {
     else if (path === '/detailed') {
       setActive('5');
     }
-    else if (path === '/radar') {
+    else if (path === '/me') {
       setActive('6');
+    }
+    else if (path === '/radar') {
+      setActive('7');
     }
   }, [location]);
 
@@ -62,7 +65,10 @@ function NavBar() {
           <NavLink exact to="/detailed" id="5" className={active === '5' && darkTheme === 'true' ? 'navbuttonactive' : active === '5' && darkTheme === 'false' ? 'navbuttonactivelight' : 'navbutton'} onClick={handleClick}>DETAILED</NavLink>
         </div>
         <div>
-          <NavLink exact to="/radar" id="6" className={active === '6' && darkTheme === 'true' ? 'navbuttonactive' : active === '6' && darkTheme === 'false' ? 'navbuttonactivelight' : 'navbutton'} onClick={handleClick}>RADAR</NavLink>
+          <NavLink exact to="/me" id="6" className={active === '6' && darkTheme === 'true' ? 'navbuttonactive' : active === '6' && darkTheme === 'false' ? 'navbuttonactivelight' : 'navbutton'} onClick={handleClick}>ME</NavLink>
+        </div>
+        <div>
+          <NavLink exact to="/radar" id="7" className={active === '7' && darkTheme === 'true' ? 'navbuttonactive' : active === '6' && darkTheme === 'false' ? 'navbuttonactivelight' : 'navbutton'} onClick={handleClick}>RADAR</NavLink>
         </div>
         <a href="https://dzm.burblesoft.com/jmp?dz_id=408&columns=5&display_menu=0&font_size=12" target="_blank" rel="noreferrer"><div className="navbutton">
           MANIFEST&nbsp;<i className="fa fa-external-link" />

@@ -10,7 +10,7 @@ import NavBar from './components/navigation';
 import WindsAloft from './components/aloft';
 import CscRadar from './components/radar';
 import DetailedPage from './components/details';
-import My from './components/my';
+import Me from './components/me';
 import './App.css';
 
 function App() {
@@ -60,9 +60,9 @@ function App() {
         </div>
         </Route>
 
-      <Route path='/my'>
+      <Route path='/me'>
         <div className='my-container'>
-          <My />
+          <Me />
         </div>
         </Route>
 
