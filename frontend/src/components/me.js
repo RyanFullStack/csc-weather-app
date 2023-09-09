@@ -75,17 +75,17 @@ function Me() {
 
   return (
     <div className="my-csc">
-      <p>
+      <div className="my-small">
         {!userLicense && !userMaxSpeed && !userMaxGust && !userDif ? (
           <small><span className="yellow">Select one or more options...</span></small>
         ) : isSafe ? (
-          <b><span className="green">Conditions are OK</span></b>
+          <b><span className="green">CONDITIONS ARE OK!</span></b>
         ) : (
-          <b><span className="red">CSC Recommends Stand Down</span></b>
+          <b><span className="red">CSC RECOMMENDS STAND DOWN</span></b>
         )}
-      </p>
+      </div>
       <div className="my-csc-content">
-        <span>My License:</span>
+        <span className="me-label">My License:</span>
         <select onChange={handleLicense} value={userLicense}>
           <option disabled value=''>Choose a License</option>
           <option value='A'>A</option>
@@ -93,7 +93,7 @@ function Me() {
           <option value='C'>C</option>
           <option value='D'>D</option>
         </select>
-        <span>My Max Speed:</span>
+        <span className="me-label">My Max Speed:</span>
         <select onChange={handleSpeed} value={userMaxSpeed}>
           <option disabled value=''>Choose a Max Speed</option>
           {[...Array(16).keys()].map((value) => (
@@ -102,7 +102,7 @@ function Me() {
             </option>
           ))}
         </select>
-        <span>My Max Gust:</span>
+        <span className="me-label">My Max Gust:</span>
         <select onChange={handleGust} value={userMaxGust}>
           <option disabled value=''>Choose a Max Gust</option>
           {[...Array(11).keys()].map((value) => (
@@ -111,7 +111,7 @@ function Me() {
             </option>
           ))}
         </select>
-        <span>My Max Differential:</span>
+        <span className="me-label">My Max Differential:</span>
         <select onChange={handleDif} value={userDif}>
           <option disabled value=''>Choose a Max Differential</option>
           {[...Array(11).keys()].map((value) => (
@@ -121,13 +121,13 @@ function Me() {
           ))}
         </select>
         <button onClick={handleClear}>CLEAR</button>
-    </div>
-        <div className="me-details">
+      </div>
+      <div className="me-details">
         <small>This is a recommendation.</small><br />
         <small>As a licensed skydiver,</small><br />
         <small>you are responsible for yourself.</small>
-        </div>
       </div>
+    </div>
   );
 }
 

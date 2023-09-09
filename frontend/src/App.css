@@ -450,6 +450,14 @@
   align-items: center;
   gap: 2vh;
 }
+.my-small {
+  font-size: calc(8px + 1.3vmin);
+  margin-bottom: 1vmin;
+}
+.me-label {
+  font-size: calc(8px + 1.5vmin);
+}
+
 
 select {
   width: 100%;
@@ -473,11 +481,11 @@ button:hover {
 }
 
 .me-details {
-  font-size: calc(6px + 2vmin);
+  font-size: calc(8px + 1vmin);
 }
 
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1250px) {
   .footer-container {
     font-size: calc(6px + 1vmin);
   }
@@ -549,7 +557,7 @@ button:hover {
 
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
   .arrow {
     max-height: 100%;
     max-width: 100%;
@@ -572,6 +580,10 @@ button:hover {
     width: 100%;
   }
   .aloft-container {
+    height: 71vh;
+    margin-top: 5vh;
+  }
+  .my-container {
     height: 71vh;
     margin-top: 5vh;
   }
