@@ -451,11 +451,11 @@
   gap: 2vh;
 }
 .my-small {
-  font-size: calc(8px + 1.3vmin);
+  font-size: calc(8px + 1.5vmin);
   margin-bottom: 1vmin;
 }
 .me-label {
-  font-size: calc(8px + 1.5vmin);
+  font-size: calc(8px + 2vmin);
 }
 
 
@@ -481,7 +481,7 @@ button:hover {
 }
 
 .me-details {
-  font-size: calc(8px + 1vmin);
+  font-size: calc(8px + 1.5vmin);
 }
 
 
