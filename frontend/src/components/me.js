@@ -77,7 +77,7 @@ function Me() {
     <div className="my-csc">
       <div className="my-small">
         {!userLicense && !userMaxSpeed && !userMaxGust && !userDif ? (
-          <small><span className="yellow">Select one or more options...</span></small>
+          <span className="yellow">Select one or more options...</span>
         ) : isSafe ? (
           <b><span className="green">CONDITIONS ARE OK!</span></b>
         ) : (
