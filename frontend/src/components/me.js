@@ -98,7 +98,7 @@ function Me() {
           <option disabled value=''>Choose a Max Speed</option>
           {[...Array(16).keys()].map((value) => (
             <option key={value} value={value + 10}>
-              {value + 10}
+              {value + 10} kts
             </option>
           ))}
         </select>
@@ -107,7 +107,7 @@ function Me() {
           <option disabled value=''>Choose a Max Gust</option>
           {[...Array(11).keys()].map((value) => (
             <option key={value} value={value + 15}>
-              {value + 15}
+              {value + 15} kts
             </option>
           ))}
         </select>
@@ -116,7 +116,7 @@ function Me() {
           <option disabled value=''>Choose a Max Differential</option>
           {[...Array(11).keys()].map((value) => (
             <option key={value} value={value + 5}>
-              {value + 5}
+              {value + 5} kts
             </option>
           ))}
         </select>
