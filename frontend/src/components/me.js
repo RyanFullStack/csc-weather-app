@@ -77,11 +77,11 @@ function Me() {
     <div className="my-csc">
       <p>
         {!userLicense && !userMaxSpeed && !userMaxGust && !userDif ? (
-          <small>Select one or more options...</small>
+          <small><span className="yellow">Select one or more options...</span></small>
         ) : isSafe ? (
-          <span className="green">Conditions are OK</span>
+          <b><span className="green">Conditions are OK</span></b>
         ) : (
-          <span className="red">CSC Recommends Stand Down</span>
+          <b><span className="red">CSC Recommends Stand Down</span></b>
         )}
       </p>
       <div className="my-csc-content">
