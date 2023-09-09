@@ -121,11 +121,13 @@ function Me() {
           ))}
         </select>
         <button onClick={handleClear}>CLEAR</button>
-        <small>This is a recommendation.</small>
-        <small>As a licensed skydiver,</small>
-        <small>you are responsible for yourself.</small>
-      </div>
     </div>
+        <div className="me-details">
+        <small>This is a recommendation.</small><br />
+        <small>As a licensed skydiver,</small><br />
+        <small>you are responsible for yourself.</small>
+        </div>
+      </div>
   );
 }
 
