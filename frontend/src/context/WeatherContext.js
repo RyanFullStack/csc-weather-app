@@ -35,7 +35,7 @@ const WindSpeedProvider = props => {
     const [noon, setNoon] = useState()
     const [maxGust, setMaxGust] = useState()
     const [maxSpeed, setMaxSpeed] = useState()
-    const [variableDirection, setVariableDirection] = useState()
+    const [variableDirection, setVariableDirection] = useState([])
 
     // eslint-disable-next-line
     const windData = []

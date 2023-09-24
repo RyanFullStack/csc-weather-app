@@ -15,19 +15,9 @@ function DetailedPage() {
     const [varDir2, setVarDir2] = useState()
 
     useEffect(() => {
+
         if (variableDirection) {
-            const directionStr = variableDirection.toString();
-            let value1, value2;
-
-            const thirdChar = directionStr[2];
-
-            if (thirdChar === '0') {
-                value1 = parseInt(directionStr.slice(0, 3));
-                value2 = parseInt(directionStr.slice(3));
-            } else {
-                value1 = parseInt(directionStr.slice(0, 2));
-                value2 = parseInt(directionStr.slice(2));
-            }
+            const [value1, value2] = variableDirection
             setVarDir1(value1)
             setVarDir2(value2)
         }
@@ -89,7 +79,7 @@ function DetailedPage() {
                     </tr>
                     <tr className={darkTheme === "true" ? "table" : "table-light"}>
                         <td>Variable Direction:</td>
-                        <td>{variableDirection ? `${varDir1}º - ${varDir2}º` : 'Steady'}</td>
+                        <td>{varDir1 && varDir2 ? `${varDir1}º - ${varDir2}º` : 'Steady'}</td>
                     </tr>
                     <tr className={darkTheme === "true" ? "table" : "table-light"}>
                         <td>Present Weather:</td>
