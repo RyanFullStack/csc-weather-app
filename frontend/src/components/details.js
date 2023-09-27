@@ -26,7 +26,20 @@ function DetailedPage() {
 
     return (
         <div className='detailed-contents'>
-            <span className="student-wind-hold">{(maxGust > 15 && maxGust < 26) || (maxSpeed > 15 && maxSpeed < 26) ? <span className="yellow">*** STUDENT WIND HOLD ***</span> : (maxGust > 25 && maxGust < 41) || (maxSpeed > 25 && maxSpeed < 41) ? <span className="red">*** DROPZONE WIND HOLD ***</span> : (maxGust > 40 && maxGust < 51) || (maxSpeed > 40 && maxSpeed < 51) ? <span className="red">*** HANG ON TIGHT!!! ***</span> : maxGust > 50 || maxSpeed > 50 ? <span className="red">*** HOLY $h*T!!! ***</span> : <span className="green">WINDS OK FOR STUDENTS!</span>}</span>
+            <span className="student-wind-hold">
+                {(maxGust > 50 || maxSpeed > 50) ? (
+                    <span className="red">*** HOLY $h*T!!! ***</span>
+                ) : (maxGust > 40 || maxSpeed > 40) ? (
+                    <span className="red">*** HANG ON TIGHT!!! ***</span>
+                ) : (maxGust > 25 || maxSpeed > 25) ? (
+                    <span className="red">*** DROPZONE WIND HOLD ***</span>
+                ) : (maxGust > 15 || maxSpeed > 15) ? (
+                    <span className="yellow">*** STUDENT WIND HOLD ***</span>
+                ) : (
+                    <span className="green">WINDS OK FOR STUDENTS!</span>
+                )}
+            </span>
+
             <table>
                 <tbody>
                     <tr className={darkTheme === "true" ? "table" : "table-light"}>
