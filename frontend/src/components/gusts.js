@@ -49,9 +49,9 @@ function GustChart() {
                 data: speeds,
 
                 fill: true, // Enable fill
-                backgroundColor: 'rgba(0,0,255,.8)', // Fill color
+                backgroundColor: 'rgba(16,163,144,.8)', // Fill color
                 borderColor: 'rgba(0,0,0,1)', // Line color
-                pointBackgroundColor: 'rgba(0,0,255,1)',
+                pointBackgroundColor: 'rgba(16,163,144,1)',
                 pointBorderColor: '#fff',
                 pointHoverBackgroundColor: '#fff',
                 pointHoverBorderColor: 'rgba(75,192,192,1)',
@@ -62,7 +62,7 @@ function GustChart() {
                 data: gusts,
 
                 fill: true, // Enable fill
-                backgroundColor: 'rgba(255,0,0,.8)', // Fill color
+                backgroundColor: 'rgba(255,0,0,.7)', // Fill color
                 borderColor: 'rgba(0,0,0,1)', // Line color
                 pointBackgroundColor: 'rgba(255,0,0,1)',
                 pointBorderColor: '#fff',

@@ -80,41 +80,43 @@ function LoadingArea() {
                     No Jumprun Set
                 </div> : null}
                 <table>
-                    {jumpruns[0] ?
-                        <>
-                            <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                                <td>Jump Run:</td>
-                                <td>{jumpruns[0]?.heading}º</td>
-                            </tr>
-                            <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                                <td>Spot:</td>
-                                <td>{newSpot} {jumpruns[0].selectedSpot}</td>
-                            </tr>
-                            <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                                <td>Offset:</td>
-                                <td>{newOffset} {jumpruns[0].selectedOffset}</td>
-                            </tr>
-                        </>
-                        : null}
+                    <tbody>
+                        {jumpruns[0] ?
+                            <>
+                                <tr className={darkTheme === "true" ? "table" : "table-light"}>
+                                    <td>Jump Run:</td>
+                                    <td>{jumpruns[0]?.heading}º</td>
+                                </tr>
+                                <tr className={darkTheme === "true" ? "table" : "table-light"}>
+                                    <td>Spot:</td>
+                                    <td>{newSpot} {jumpruns[0].selectedSpot}</td>
+                                </tr>
+                                <tr className={darkTheme === "true" ? "table" : "table-light"}>
+                                    <td>Offset:</td>
+                                    <td>{newOffset} {jumpruns[0].selectedOffset}</td>
+                                </tr>
+                            </>
+                            : null}
 
-                    {jumpruns[0]?.groundSpeed ?
+                        {jumpruns[0]?.groundSpeed ?
+                            <tr className={darkTheme === "true" ? "table" : "table-light"}>
+                                <td>Est. Ground Speed:</td>
+                                <td>{jumpruns[0]?.groundSpeed} kts</td>
+                            </tr>
+                            : null}
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                            <td>Est. Ground Speed:</td>
-                            <td>{jumpruns[0]?.groundSpeed} kts</td>
+                            <td>Sunset:</td>
+                            <td>{sunset}</td>
                         </tr>
-                        : null}
-                    <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                        <td>Sunset:</td>
-                        <td>{sunset}</td>
-                    </tr>
-                    <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                        <td>Max Speed <small>(30 Min)</small>:</td>
-                        <td>{maxSpeed && maxSpeed !== -Infinity ? <span className={maxSpeed > 15 && maxSpeed < 26 ? 'yellow' : maxSpeed > 25 ? 'red' : 'green'}>{maxSpeed === 1 ? '1 kt' : maxSpeed + ' kts'}</span> : '0 kts'}</td>
-                    </tr>
-                    <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                        <td>Max Gust <small>(30 Min)</small>:</td>
-                        <td>{maxGust && maxGust !== -Infinity ? <span className={maxGust > 15 && maxGust < 26 ? 'yellow' : maxGust > 25 ? 'red' : 'green'}>{maxGust} kts</span> : 'None'}</td>
-                    </tr>
+                        <tr className={darkTheme === "true" ? "table" : "table-light"}>
+                            <td>Max Speed <small>(30 Min)</small>:</td>
+                            <td>{maxSpeed && maxSpeed !== -Infinity ? <span className={maxSpeed > 15 && maxSpeed < 26 ? 'yellow' : maxSpeed > 25 ? 'red' : 'green'}>{maxSpeed === 1 ? '1 kt' : maxSpeed + ' kts'}</span> : '0 kts'}</td>
+                        </tr>
+                        <tr className={darkTheme === "true" ? "table" : "table-light"}>
+                            <td>Max Gust <small>(30 Min)</small>:</td>
+                            <td>{maxGust && maxGust !== -Infinity ? <span className={maxGust > 15 && maxGust < 26 ? 'yellow' : maxGust > 25 ? 'red' : 'green'}>{maxGust} kts</span> : 'None'}</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
 
