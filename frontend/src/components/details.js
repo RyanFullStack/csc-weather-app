@@ -132,6 +132,10 @@ function DetailedPage() {
                         <td>{!dewPoint ? null : tempSetting === 'true' ? dewPoint + 'ºF' : ((dewPoint - 32) * 5 / 9).toFixed(1) + 'ºC'}</td>
                     </tr>
                     <tr className={darkTheme === "true" ? "table" : "table-light"}>
+                        <td>Loading Area View:</td>
+                        <td><a href='/loadingarea'>Click to view</a></td>
+                    </tr>
+                    <tr className={darkTheme === "true" ? "table" : "table-light"}>
                         <td>Links:</td>
                         <td><div className="temp-logos">
                             <a href='https://www.facebook.com/groups/csc.experienced' target='_blank' rel='noreferrer'><img src={fb} alt='fb' /></a>&nbsp;

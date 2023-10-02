@@ -495,6 +495,13 @@ button:hover {
   font-size: calc(8px + 1.5vmin);
 }
 
+a {
+  color: inherit;
+}
+a:hover {
+  color: white;
+}
+
 
 @media screen and (max-width: 1250px) {
   .footer-container {
