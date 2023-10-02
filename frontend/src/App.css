@@ -490,6 +490,7 @@ button:hover {
     font-size: calc(6px + 1vmin);
   }
 
+
   .wind-gusts {
     font-size: calc(10px + 3vmin);
   }
@@ -610,4 +611,10 @@ button:hover {
     border: 1px solid rgb(0, 0, 0);
     font-weight: 700;
   }
+}
+
+@media screen and (max-width: 500px) {
+  .footer-jumprun {
+    font-size: .7rem;
+}
 }

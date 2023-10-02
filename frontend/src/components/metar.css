@@ -17,3 +17,8 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+.footer-jumprun {
+    font-size: 1.2rem;
+    color: rgb(43, 209, 187);
+}

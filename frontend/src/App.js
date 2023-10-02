@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { WeatherContext } from './context/WeatherContext';
 import { useContext } from 'react';
-import Metar from './components/metar';
+import Footer from './components/footer';
 import Header from './components/header';
 import Wind from './components/wind';
 import HangarCam from './components/hangar';
@@ -75,7 +75,7 @@ function App() {
       </Switch>
 
         <div className='footer-container'>
-          <Metar />
+          <Footer />
         </div>
       </div>
     </Router>
