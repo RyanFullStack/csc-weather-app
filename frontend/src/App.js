@@ -10,6 +10,7 @@ import NavBar from './components/navigation';
 import WindsAloft from './components/aloft';
 import CscRadar from './components/radar';
 import DetailedPage from './components/details';
+import LoadingArea from './components/loadingarea';
 import Me from './components/me';
 import './App.css';
 
@@ -24,58 +25,71 @@ function App() {
         <div className='header-container'>
           <Header />
         </div>
-        <div className='nav-container'>
-          <NavBar />
-        </div>
+
+        {window.location.pathname !== '/loadingarea' && (
+          <div className='nav-container'>
+            <NavBar />
+          </div>
+        )}
 
 
-    <Switch>
-      <Route exact path='/hangar'>
-        <div className='hangar-cam-container'>
-          <HangarCam />
-        </div>
-      </Route>
+        <Switch>
+          <Route exact path='/loadingarea'>
+            <div className='loadingarea-container'>
+              <LoadingArea />
+            </div>
+          </Route>
 
-      <Route exact path='/gusts'>
-        <div className='gusts-container'>
-          <GustChart />
-        </div>
-        </Route>
+          <Route exact path='/hangar'>
+            <div className='hangar-cam-container'>
+              <HangarCam />
+            </div>
+          </Route>
 
-      <Route exact path='/aloft'>
-        <div className='aloft-container'>
-          <WindsAloft />
-        </div>
-        </Route>
+          <Route exact path='/gusts'>
+            <div className='gusts-container'>
+              <GustChart />
+            </div>
+          </Route>
 
-      <Route path='/radar'>
-        <div className='radar-container'>
-          <CscRadar />
-        </div>
-        </Route>
+          <Route exact path='/aloft'>
+            <div className='aloft-container'>
+              <WindsAloft />
+            </div>
+          </Route>
 
-      <Route path='/detailed'>
-        <div className='detailed-container'>
-          <DetailedPage />
-        </div>
-        </Route>
+          <Route exact path='/radar'>
+            <div className='radar-container'>
+              <CscRadar />
+            </div>
+          </Route>
 
-      <Route path='/me'>
-        <div className='my-container'>
-          <Me />
-        </div>
-        </Route>
+          <Route exact path='/detailed'>
+            <div className='detailed-container'>
+              <DetailedPage />
+            </div>
+          </Route>
 
-      <Route path='/'>
-        <div className='chart-container'>
-          <Wind />
-        </div>
-        </Route>
+          <Route exact path='/me'>
+            <div className='my-container'>
+              <Me />
+            </div>
+          </Route>
 
-      </Switch>
+          <Route path='/'>
+            <div className='chart-container'>
+              <Wind />
+            </div>
+          </Route>
+
+        </Switch>
 
         <div className='footer-container'>
-          <Footer />
+          {window.location.pathname !== '/loadingarea' ? <Footer /> :
+            <div className="footer-jumprun">
+              Chicagoland Skydiving Center
+            </div>
+          }
         </div>
       </div>
     </Router>
