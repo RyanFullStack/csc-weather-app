@@ -8,18 +8,18 @@ function Header() {
 
     return (
         <>
-            <div className='themecontainer'>
+            {window.location.pathname !== '/loadingarea' ? <div className='themecontainer'>
                 <Theme />
-            </div>
+            </div> :null}
             <div className='livestatus'>
                 <LiveStatus />
             </div>
             <div className='timeContainer'>
                 <GetCst />
             </div>
-            <div className="temp-logos">
+            {window.location.pathname !== '/loadingarea' ? <div className="temp-logos">
                 <a href='http://audio.skydivecsc.com/' target='_blank' rel='noreferrer'><img src={audio} alt='audio' /></a>
-            </div>
+            </div> : null}
             <div className='tempContainer'>
                 <CurrentTemp />
             </div>

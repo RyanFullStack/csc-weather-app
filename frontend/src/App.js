@@ -22,7 +22,7 @@ function App() {
     <Router>
       <div className={darkTheme === 'true' ? 'App' : 'Applight'}>
 
-        <div className='header-container'>
+        <div className={window.location.pathname !== '/loadingarea' ? 'header-container' : 'header-container-loadingarea'}>
           <Header />
         </div>
 
@@ -86,8 +86,9 @@ function App() {
 
         <div className='footer-container'>
           {window.location.pathname !== '/loadingarea' ? <Footer /> :
-            <div className="footer-jumprun">
-              Chicagoland Skydiving Center
+            <div className="footer-jumprun-loading">
+              <div>app.skydivecsc.com</div>
+              <div>Chicagoland Skydiving Center</div>
             </div>
           }
         </div>
