@@ -499,9 +499,11 @@ a {
   color: inherit;
 }
 a:hover {
+  color: inherit;
+}
+.table a:hover {
   color: white;
 }
-
 
 @media screen and (max-width: 1250px) {
   .footer-container {
