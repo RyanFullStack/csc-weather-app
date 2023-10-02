@@ -36,6 +36,9 @@ const WindSpeedProvider = props => {
     const [maxGust, setMaxGust] = useState()
     const [maxSpeed, setMaxSpeed] = useState()
     const [variableDirection, setVariableDirection] = useState([])
+    const [jumpruns, setJumpruns] = useState([])
+    const [newSpot, setNewSpot] = useState('')
+    const [newOffset, setNewOffset] = useState('')
 
     // eslint-disable-next-line
     const windData = []
@@ -404,8 +407,61 @@ const WindSpeedProvider = props => {
         getAstornomy()
     }, [])
 
+
+    useEffect(() => {
+        const getJumprun = async () => {
+            const res = await fetch('https://csc-login.onrender.com/api/jumpruns/')
+            const data = await res.json()
+
+            if (data.jumpruns) {
+                setJumpruns(data.jumpruns)
+            } else {
+                setJumpruns([])
+            }
+        }
+        getJumprun()
+
+        const intervalId = setInterval(() => {
+            getJumprun();
+        }, 30000);
+
+        return function () {
+            setJumpruns([])
+            clearInterval(intervalId)
+        }
+    }, [])
+
+
+    useEffect(() => {
+        if (jumpruns[0]) {
+
+            if (jumpruns[0].spot > 0 && jumpruns[0].spot < 10) {
+                setNewSpot(`.${jumpruns[0].spot}`)
+            }
+            if (jumpruns[0].spot > 10) {
+                const numStr = jumpruns[0].spot.toString();
+                const beforeDecimal = numStr.slice(0, -1);
+                const afterDecimal = numStr.slice(-1);
+                setNewSpot(`${beforeDecimal}.${afterDecimal}`)
+            }
+            if (jumpruns[0].offset > 0 && jumpruns[0].offset < 10) {
+                setNewOffset(`.${jumpruns[0].offset}`)
+            }
+            if (jumpruns[0].offset > 10) {
+                const numStr = jumpruns[0].offset.toString();
+                const beforeDecimal = numStr.slice(0, -1);
+                const afterDecimal = numStr.slice(-1);
+                setNewOffset(`${beforeDecimal}.${afterDecimal}`)
+            }
+
+
+
+        }
+    }, [jumpruns])
+
+
     return (
-        <WeatherContext.Provider value={{ speed, gustSpeed, direction, metar, temp, tempC, tempSetting, setTempSetting, skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3, metarAbbr, metarDesc, gustData, darkTheme, setDarkTheme, directions, speeds, temps, received, pressure, visibility, densityAlt, dewPoint, sunset, sunrise, twilight, noon, maxGust, variableDirection, maxSpeed }}>
+        <WeatherContext.Provider value={{ jumpruns, newSpot, newOffset, speed, gustSpeed, direction, metar, temp, tempC, tempSetting, setTempSetting, skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3, metarAbbr, metarDesc, gustData, darkTheme, setDarkTheme, directions, speeds, temps, received, pressure, visibility, densityAlt, dewPoint, sunset, sunrise, twilight, noon, maxGust, variableDirection, maxSpeed }}>
             {props.children}
         </WeatherContext.Provider>
     )

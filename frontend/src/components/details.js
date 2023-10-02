@@ -6,18 +6,13 @@ import wa from '../images/wa.png'
 
 
 function DetailedPage() {
-    const { darkTheme, tempSetting, densityAlt, pressure, dewPoint, visibility, sunset, sunrise, twilight,
+    const { jumpruns, newSpot, newOffset, darkTheme, tempSetting, densityAlt, pressure, dewPoint, visibility, sunset, sunrise, twilight,
         skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3,
         speed, gustSpeed, maxGust, maxSpeed, direction, variableDirection, metarAbbr, metarDesc } =
         useContext(WeatherContext);
 
     const [varDir1, setVarDir1] = useState()
     const [varDir2, setVarDir2] = useState()
-
-    const [jumpruns, setJumpruns] = useState([])
-
-    const [newSpot, setNewSpot] = useState('')
-    const [newOffset, setNewOffset] = useState('')
 
 
     useEffect(() => {
@@ -28,58 +23,6 @@ function DetailedPage() {
             setVarDir2(value2)
         }
     }, [variableDirection])
-
-
-    useEffect(() => {
-        const getJumprun = async () => {
-            const res = await fetch('https://csc-login.onrender.com/api/jumpruns/')
-            const data = await res.json()
-
-            if (data.jumpruns) {
-                setJumpruns(data.jumpruns)
-            } else {
-                setJumpruns([])
-            }
-        }
-        getJumprun()
-
-        const intervalId = setInterval(() => {
-            getJumprun();
-        }, 30000);
-
-        return function () {
-            setJumpruns([])
-            clearInterval(intervalId)
-        }
-    }, [])
-
-
-    useEffect(() => {
-        if (jumpruns[0]) {
-
-            if (jumpruns[0].spot > 0 && jumpruns[0].spot < 10) {
-                setNewSpot(`.${jumpruns[0].spot}`)
-            }
-            if (jumpruns[0].spot > 10) {
-                const numStr = jumpruns[0].spot.toString();
-                const beforeDecimal = numStr.slice(0, -1);
-                const afterDecimal = numStr.slice(-1);
-                setNewSpot(`${beforeDecimal}.${afterDecimal}`)
-            }
-            if (jumpruns[0].offset > 0 && jumpruns[0].offset < 10) {
-                setNewOffset(`.${jumpruns[0].offset}`)
-            }
-            if (jumpruns[0].offset > 10) {
-                const numStr = jumpruns[0].offset.toString();
-                const beforeDecimal = numStr.slice(0, -1);
-                const afterDecimal = numStr.slice(-1);
-                setNewOffset(`${beforeDecimal}.${afterDecimal}`)
-            }
-
-
-
-        }
-    }, [jumpruns])
 
 
     return (
