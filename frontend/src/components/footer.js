@@ -4,7 +4,7 @@ import './metar.css';
 
 function Footer() {
 
-const { jumpruns, newSpot, newOffset } = useContext(WeatherContext)
+const { jumpruns, newSpot, newOffset, metar } = useContext(WeatherContext)
 
 
     return (
@@ -15,7 +15,7 @@ const { jumpruns, newSpot, newOffset } = useContext(WeatherContext)
                 <div className="footer-jumprun">
                     Jump Run: {jumpruns[0]?.heading}º | {newSpot} {jumpruns[0].selectedSpot} {jumpruns[0].selectedOffset === 'None' ? null : `| ${newOffset} ${jumpruns[0].selectedOffset}`}
                 </div>
-                : null}
+                : metar}
 
             <p><a href='https://github.com/RyanFullStack' target="_blank" rel='noreferrer'>Github</a></p>
         </div>
