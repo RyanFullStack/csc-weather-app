@@ -6,13 +6,19 @@ import wa from '../images/wa.png'
 
 
 function DetailedPage() {
-    const { darkTheme, tempSetting, densityAlt, pressure, dewPoint, visibility, sunset, sunrise, twilight, noon,
+    const { darkTheme, tempSetting, densityAlt, pressure, dewPoint, visibility, sunset, sunrise, twilight,
         skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3,
         speed, gustSpeed, maxGust, maxSpeed, direction, variableDirection, metarAbbr, metarDesc } =
         useContext(WeatherContext);
 
     const [varDir1, setVarDir1] = useState()
     const [varDir2, setVarDir2] = useState()
+
+    const [jumpruns, setJumpruns] = useState([])
+
+    const [newSpot, setNewSpot] = useState('')
+    const [newOffset, setNewOffset] = useState('')
+
 
     useEffect(() => {
 
@@ -22,6 +28,58 @@ function DetailedPage() {
             setVarDir2(value2)
         }
     }, [variableDirection])
+
+
+    useEffect(() => {
+        const getJumprun = async () => {
+            const res = await fetch('https://csc-login.onrender.com/api/jumpruns/')
+            const data = await res.json()
+
+            if (data.jumpruns) {
+                setJumpruns(data.jumpruns)
+            } else {
+                setJumpruns([])
+            }
+        }
+        getJumprun()
+
+        const intervalId = setInterval(() => {
+            getJumprun();
+        }, 30000);
+
+        return function () {
+            setJumpruns([])
+            clearInterval(intervalId)
+        }
+    }, [])
+
+
+    useEffect(() => {
+        if (jumpruns[0]) {
+
+            if (jumpruns[0].spot > 0 && jumpruns[0].spot < 10) {
+                setNewSpot(`.${jumpruns[0].spot}`)
+            }
+            if (jumpruns[0].spot > 10) {
+                const numStr = jumpruns[0].spot.toString();
+                const beforeDecimal = numStr.slice(0, -1);
+                const afterDecimal = numStr.slice(-1);
+                setNewSpot(`${beforeDecimal}.${afterDecimal}`)
+            }
+            if (jumpruns[0].offset > 0 && jumpruns[0].offset < 10) {
+                setNewOffset(`.${jumpruns[0].offset}`)
+            }
+            if (jumpruns[0].offset > 10) {
+                const numStr = jumpruns[0].offset.toString();
+                const beforeDecimal = numStr.slice(0, -1);
+                const afterDecimal = numStr.slice(-1);
+                setNewOffset(`${beforeDecimal}.${afterDecimal}`)
+            }
+
+
+
+        }
+    }, [jumpruns])
 
 
     return (
@@ -54,22 +112,34 @@ function DetailedPage() {
                         <td>Sunrise:</td>
                         <td>{sunrise}</td>
                     </tr>
-                    <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                        <td>Solar Noon:</td>
-                        <td>{noon}</td>
-                    </tr>
-                    <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                        <td>Density Altitude:</td>
-                        <td>{densityAlt && tempSetting === 'true' ? densityAlt + "'" : !densityAlt ? 'Field Level' : (densityAlt / 3.28).toFixed(0) + 'M'}</td>
-                    </tr>
-                    <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                        <td>Pressure:</td>
-                        <td>{!pressure ? null : pressure + '" Hg'}</td>
-                    </tr>
-                    <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                        <td>Dew Point:</td>
-                        <td>{!dewPoint ? null : tempSetting === 'true' ? dewPoint + 'ºF' : ((dewPoint - 32) * 5 / 9).toFixed(1) + 'ºC'}</td>
-                    </tr>
+
+                    {jumpruns[0] ?
+                        <>
+                            <tr className={darkTheme === "true" ? "table" : "table-light"}>
+                                <td>Jump Run:</td>
+                                <td>{jumpruns[0]?.heading}º</td>
+                            </tr>
+                            <tr className={darkTheme === "true" ? "table" : "table-light"}>
+                                <td>Spot:</td>
+                                <td>{newSpot} {jumpruns[0].selectedSpot}</td>
+                            </tr>
+                            <tr className={darkTheme === "true" ? "table" : "table-light"}>
+                                <td>Offset:</td>
+                                <td>{newOffset} {jumpruns[0].selectedOffset}</td>
+                            </tr>
+                        </>
+                        : null}
+
+                    {jumpruns[0]?.groundSpeed ?
+
+                        <tr className={darkTheme === "true" ? "table" : "table-light"}>
+                            <td>Est. Ground Speed:</td>
+                            <td>{jumpruns[0]?.groundSpeed} kts</td>
+                        </tr>
+
+                        : null}
+
+
                     <tr className={darkTheme === "true" ? "table" : "table-light"}>
                         <td>Current Speed:</td>
                         <td>{speed === 0 ? '0 kts' : !speed ? null : speed === 1 ? speed + ' kt' : speed + ' kts'}</td>
@@ -105,6 +175,18 @@ function DetailedPage() {
                     <tr className={darkTheme === "true" ? "table" : "table-light"}>
                         <td>Sky Condition:</td>
                         <td>{skyCondition1} {cloudCeiling1}{skyCondition2 ? <br /> : null}{skyCondition2} {cloudCeiling2}{skyCondition3 ? <br /> : null} {skyCondition3} {cloudCeiling3}</td>
+                    </tr>
+                    <tr className={darkTheme === "true" ? "table" : "table-light"}>
+                        <td>Density Altitude:</td>
+                        <td>{densityAlt && tempSetting === 'true' ? densityAlt + "'" : !densityAlt ? 'Field Level' : (densityAlt / 3.28).toFixed(0) + 'M'}</td>
+                    </tr>
+                    <tr className={darkTheme === "true" ? "table" : "table-light"}>
+                        <td>Pressure:</td>
+                        <td>{!pressure ? null : pressure + '" Hg'}</td>
+                    </tr>
+                    <tr className={darkTheme === "true" ? "table" : "table-light"}>
+                        <td>Dew Point:</td>
+                        <td>{!dewPoint ? null : tempSetting === 'true' ? dewPoint + 'ºF' : ((dewPoint - 32) * 5 / 9).toFixed(1) + 'ºC'}</td>
                     </tr>
                     <tr className={darkTheme === "true" ? "table" : "table-light"}>
                         <td>Links:</td>
