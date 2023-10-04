@@ -53,7 +53,7 @@ function LoadingArea() {
                     <div className="small">{(speed === 1) ? `kt` : speed > 25 ? <span className="red">kts</span> : `kts`}</div>
                 </div>
                 <div className={`wind-gusts ${gusting}`}>
-                    {gustSpeed > 0 && gustSpeed <= 15 ? <span className="green gust"><div>Gusting:</div><div>{gustSpeed}<small>kts</small></div></span> : gustSpeed > 15 && gustSpeed <= 25 ? <span className="yellow gust"><div>Gusting:</div><div>{gustSpeed}<small>kts</small></div></span> : gustSpeed > 25 ? <span className="red gust"><div>Gusting:</div><div>{gustSpeed}<small>kts</small></div></span> : <span className="green">&nbsp;No Gusts</span>}
+                    {gustSpeed > 0 && gustSpeed <= 15 ? <span className="green gust"><div>&nbsp;Gusting:</div><div>&nbsp;{gustSpeed}<small>kts</small></div></span> : gustSpeed > 15 && gustSpeed <= 25 ? <span className="yellow gust"><div>&nbsp;Gusting:</div><div>&nbsp;{gustSpeed}<small>kts</small></div></span> : gustSpeed > 25 ? <span className="red gust"><div>&nbsp;Gusting:</div><div>&nbsp;{gustSpeed}<small>kts</small></div></span> : <span className="green">&nbsp;No Gusts</span>}
                 </div>
 
                 <div className='arrow-loading'>
