@@ -1,11 +1,12 @@
 import GustChart from './gusts';
 import { WeatherContext } from '../context/WeatherContext';
 import { useContext, useState, useEffect } from 'react';
+import WindsAloftLoading from './windsaloftloadingarea';
 import arrow from '../images/arrow.png'
 import './loadingarea.css'
 
 function LoadingArea() {
-    const { maxSpeed, maxGust, sunset, jumpruns, newSpot, newOffset, direction, directions, speeds, temps, darkTheme, tempSetting, speed, gustSpeed } =
+    const { maxSpeed, maxGust, sunset, jumpruns, newSpot, newOffset, direction, darkTheme, speed, gustSpeed } =
         useContext(WeatherContext);
     const [gusting, setGusting] = useState('')
     const [trackDirection, setTrackDirection] = useState('')
@@ -124,134 +125,7 @@ function LoadingArea() {
 
 
             <div className="loading-area-content">
-                <div className="wind-aloft-table">
-                    <div className="aloft-contents">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Altitude</th>
-                                    <th>Direction</th>
-                                    <th>Speed</th>
-                                    <th>Temp</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                                    <td>{tempSetting === 'true' ? "2,000'" : "609M"}</td>
-                                    <td>
-                                        {directions["2000"]}º{" "}
-                                        <i
-                                            className="fas fa-chevron-up"
-                                            style={{ transform: `rotate(${directions["2000"] + 180}deg)` }}
-                                        ></i>
-                                    </td>
-                                    <td>{speeds["2000"]} kts</td>
-                                    <td>
-                                        {tempSetting === "false"
-                                            ? `${temps["2000"]}º C`
-                                            : `${Math.round(temps["2000"] * (9 / 5) + 32)}º F`}
-                                    </td>
-                                </tr>
-                                <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                                    <td>{tempSetting === 'true' ? "4,000'" : "1219M"}</td>
-                                    <td>
-                                        {directions["4000"]}º{" "}
-                                        <i
-                                            className="fas fa-chevron-up"
-                                            style={{ transform: `rotate(${directions["4000"] + 180}deg)` }}
-                                        ></i>
-                                    </td>
-                                    <td>{speeds["4000"]} kts</td>
-                                    <td>
-                                        {tempSetting === "false"
-                                            ? `${temps["4000"]}º C`
-                                            : `${Math.round(temps["4000"] * (9 / 5) + 32)}º F`}
-                                    </td>
-                                </tr>
-                                <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                                    <td>{tempSetting === 'true' ? "6,000'" : "1828M"}</td>
-                                    <td>
-                                        {directions["6000"]}º{" "}
-                                        <i
-                                            className="fas fa-chevron-up"
-                                            style={{ transform: `rotate(${directions["6000"] + 180}deg)` }}
-                                        ></i>
-                                    </td>
-                                    <td>{speeds["6000"]} kts</td>
-                                    <td>
-                                        {tempSetting === "false"
-                                            ? `${temps["6000"]}º C`
-                                            : `${Math.round(temps["6000"] * (9 / 5) + 32)}º F`}
-                                    </td>
-                                </tr>
-                                <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                                    <td>{tempSetting === 'true' ? "8,000'" : "2438M"}</td>
-                                    <td>
-                                        {directions["8000"]}º{" "}
-                                        <i
-                                            className="fas fa-chevron-up"
-                                            style={{ transform: `rotate(${directions["8000"] + 180}deg)` }}
-                                        ></i>
-                                    </td>
-                                    <td>{speeds["8000"]} kts</td>
-                                    <td>
-                                        {tempSetting === "false"
-                                            ? `${temps["8000"]}º C`
-                                            : `${Math.round(temps["8000"] * (9 / 5) + 32)}º F`}
-                                    </td>
-                                </tr>
-                                <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                                    <td>{tempSetting === 'true' ? "10,000'" : "3048M"}</td>
-                                    <td>
-                                        {directions["10000"]}º{" "}
-                                        <i
-                                            className="fas fa-chevron-up"
-                                            style={{ transform: `rotate(${directions["10000"] + 180}deg)` }}
-                                        ></i>
-                                    </td>
-                                    <td>{speeds["10000"]} kts</td>
-                                    <td>
-                                        {tempSetting === "false"
-                                            ? `${temps["10000"]}º C`
-                                            : `${Math.round(temps["10000"] * (9 / 5) + 32)}º F`}
-                                    </td>
-                                </tr>
-                                <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                                    <td>{tempSetting === 'true' ? "12,000'" : "3657M"}</td>
-                                    <td>
-                                        {directions["12000"]}º{" "}
-                                        <i
-                                            className="fas fa-chevron-up"
-                                            style={{ transform: `rotate(${directions["12000"] + 180}deg)` }}
-                                        ></i>
-                                    </td>
-                                    <td>{speeds["12000"]} kts</td>
-                                    <td>
-                                        {tempSetting === "false"
-                                            ? `${temps["12000"]}º C`
-                                            : `${Math.round(temps["12000"] * (9 / 5) + 32)}º F`}
-                                    </td>
-                                </tr>
-                                <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                                    <td>{tempSetting === 'true' ? "14,000'" : "4267M"}</td>
-                                    <td>
-                                        {directions["14000"]}º{" "}
-                                        <i
-                                            className="fas fa-chevron-up"
-                                            style={{ transform: `rotate(${directions["14000"] + 180}deg)` }}
-                                        ></i>
-                                    </td>
-                                    <td>{speeds["14000"]} kts</td>
-                                    <td>
-                                        {tempSetting === "false"
-                                            ? `${temps["14000"]}º C`
-                                            : `${Math.round(temps["14000"] * (9 / 5) + 32)}º F`}
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                <WindsAloftLoading />
             </div>
         </div>
     )
