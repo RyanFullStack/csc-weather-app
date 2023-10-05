@@ -97,7 +97,7 @@ const WindSpeedProvider = props => {
 
                 setVariableDirection(windData[0].data.wind.variableDirection)
                 setSpeed(windData[0].data.wind.speed)
-                setGustSpeed(18)
+                setGustSpeed(windData[0].data.wind.gustSpeed)
                 if (windData[0].data.wind.direction) {
                     setDirection(windData[0].data.wind.direction)
                 } else {
