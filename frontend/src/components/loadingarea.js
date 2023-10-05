@@ -44,6 +44,10 @@ function LoadingArea() {
 
     }, [gustSpeed])
 
+    if (!directions || !speeds || !temps) {
+        return <div className="loading">Winds Aloft Loading!</div>;
+    }
+
     return (
         <div className="loadingarea-grid">
 
