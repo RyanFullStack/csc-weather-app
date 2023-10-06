@@ -43,10 +43,10 @@ function Me() {
 
   useEffect(() => {
     if (
-      (userLicense === 'A' && (speed !== null && (speed >= 17 || gustSpeed >= 17))) ||
-      (userLicense === 'B' && (speed !== null && (speed >= 19 || gustSpeed >= 19))) ||
-      (userLicense === 'C' && (speed !== null && (speed >= 21 || gustSpeed >= 21))) ||
-      (userLicense === 'D' && (speed !== null && (speed >= 25 || gustSpeed >= 25)))
+      (userLicense === 'A' && (speed !== null && (speed >= 17 || gustSpeed >= 17) || maxSpeed >= 17 || maxGust >= 17)) ||
+      (userLicense === 'B' && (speed !== null && (speed >= 19 || gustSpeed >= 19) || maxSpeed >= 19 || maxGust >= 19)) ||
+      (userLicense === 'C' && (speed !== null && (speed >= 21 || gustSpeed >= 21) || maxSpeed >= 21 || maxGust >= 21)) ||
+      (userLicense === 'D' && (speed !== null && (speed >= 25 || gustSpeed >= 25) || maxSpeed >= 25 || maxGust >= 25))
     ) {
       setIsSafe(false);
     }
