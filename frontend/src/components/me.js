@@ -7,7 +7,7 @@ function Me() {
   const [userMaxGust, setUserMaxGust] = useState(localStorage.getItem('userMaxGust') || '');
   const [userDif, setUserDif] = useState(localStorage.getItem('userDif') || '');
   const [userLicense, setUserLicense] = useState(localStorage.getItem('userLicense') || '');
-  const [isSafe, setIsSafe] = useState(true);
+  const [isSafe, setIsSafe] = useState(!(speed > 25 || gustSpeed > 25 || maxSpeed > 25 || maxGust > 25));
 
   const handleLicense = (e) => {
     setUserLicense(e.target.value);
@@ -34,7 +34,7 @@ function Me() {
     setUserMaxSpeed('');
     setUserDif('');
     setUserLicense('');
-    setIsSafe(true);
+    setIsSafe(!(speed > 25 || gustSpeed > 25 || maxSpeed > 25 || maxGust > 25));
     localStorage.removeItem('userLicense');
     localStorage.removeItem('userMaxSpeed');
     localStorage.removeItem('userMaxGust');
@@ -66,9 +66,6 @@ function Me() {
       (speed !== null && userDif !== '' && userDif < gustSpeed - speed)
     ) {
       setIsSafe(false);
-    }
-    if (speed > 25 || gustSpeed > 25 || maxSpeed > 25 || maxGust > 25) {
-      setIsSafe(false)
     }
 
     return function () {
