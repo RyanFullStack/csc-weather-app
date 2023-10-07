@@ -515,6 +515,12 @@ a:hover {
   color: white;
 }
 
+.footer-jumprun {
+  display: flex;
+  flex-direction: column;
+  font-size: .9rem;
+}
+
 @media screen and (max-width: 1250px) {
   .footer-container {
     font-size: calc(6px + 1vmin);
@@ -645,6 +651,6 @@ a:hover {
 
 @media screen and (max-width: 500px) {
   .footer-jumprun {
-    font-size: .7rem;
+    font-size: .65rem;
 }
 }

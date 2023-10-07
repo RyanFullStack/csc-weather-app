@@ -13,7 +13,9 @@ const { jumpruns, newSpot, newOffset, metar } = useContext(WeatherContext)
 
             {jumpruns[0] ?
                 <div className="footer-jumprun">
-                    Jump Run: {jumpruns[0]?.heading}º | {newSpot} {jumpruns[0].selectedSpot} {jumpruns[0].selectedOffset === 'None' ? null : `| ${newOffset} ${jumpruns[0].selectedOffset}`}
+                    <div><small>Jump Run</small></div>
+                    <div>Direction: {jumpruns[0]?.heading}º </div>
+                    <div>Green Light: {newSpot} {jumpruns[0].selectedSpot} {jumpruns[0].selectedOffset === 'None' ? null : `| ${newOffset} ${jumpruns[0].selectedOffset}`}</div>
                 </div>
                 : metar}
 

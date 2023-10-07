@@ -63,7 +63,7 @@ function DetailedPage() {
                                 <td>{jumpruns[0]?.heading}º</td>
                             </tr>
                             <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                                <td>Spot:</td>
+                                <td>Green Light:</td>
                                 <td>{newSpot} {jumpruns[0].selectedSpot}</td>
                             </tr>
                             <tr className={darkTheme === "true" ? "table" : "table-light"}>
