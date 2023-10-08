@@ -41,7 +41,7 @@ The Detailed section displays a collection of information of weather info displa
 
     An SQLdatabase is kept alive from 5am-12am with an auto delete at 12am for old data.
 
-### MW
+### ME
 
 The Me tab lets users set custom values to get current recommendations.
 
