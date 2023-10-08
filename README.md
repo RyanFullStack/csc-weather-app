@@ -35,6 +35,16 @@ The Aloft section displays wind conditions aloft according to NOAA forecasts. Th
 
 The Detailed section displays a collection of information of weather info displayed in a table. Also has a live Student Weather Hold Indicator.
 
+    The detailed section contains the only live link to view the loading area display. This is a desktop mode only, made specifically for jumpers to view prior to boarding the aircraft.
+
+    Within this view is a custom backend with Python and Flask for secure login for verified users. Only staff has access to this custom portal which is used for updating day to day changing values.
+
+    An SQLdatabase is kept alive from 5am-12am with an auto delete at 12am for old data.
+
+### MW
+
+The Me tab lets users set custom values to get current recommendations.
+
 ### Radar
 
 The Radar section displays an embed of the Windy App.
@@ -46,3 +56,7 @@ This is a live view of the hangar at Chicagoland Skydiving Center.
 ### Manifest
 
 This will open an external link displaying the live manifest activity at the dropzone.
+
+#### Small Features:
+    Click the top left icon for Dark/Light Mode
+    Click the top right temp for F/C and Feet/M conversion
