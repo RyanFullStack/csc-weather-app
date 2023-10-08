@@ -6,7 +6,7 @@ import arrow from '../images/arrow.png'
 import './loadingarea.css'
 
 function LoadingArea() {
-    const { maxSpeed, maxGust, sunset, jumpruns, newSpot, newOffset, direction, darkTheme, speed, gustSpeed } =
+    const { skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3, maxSpeed, maxGust, sunset, jumpruns, newSpot, newOffset, direction, darkTheme, speed, gustSpeed } =
         useContext(WeatherContext);
     const [gusting, setGusting] = useState('')
     const [trackDirection, setTrackDirection] = useState('')
@@ -118,6 +118,10 @@ function LoadingArea() {
                             <td>Max Gust <small>(30 Min)</small>:</td>
                             <td>{maxGust && maxGust !== -Infinity ? <span className={maxGust > 15 && maxGust < 26 ? 'yellow' : maxGust > 25 ? 'red' : 'green'}>{maxGust} kts</span> : 'None'}</td>
                         </tr>
+                        <tr className={darkTheme === "true" ? "table" : "table-light"}>
+                        <td>Sky Condition:</td>
+                        <td>{skyCondition1} {cloudCeiling1}{skyCondition2 ? <br /> : null}{skyCondition2} {cloudCeiling2}{skyCondition3 ? <br /> : null} {skyCondition3} {cloudCeiling3}</td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
