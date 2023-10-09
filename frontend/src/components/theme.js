@@ -25,7 +25,7 @@ function Theme() {
 
     return (
         <div className="theme-content" onClick={handleClick}>
-           {darkTheme === 'true' ? <i className="fa-solid fa-sun"/> : <i className="fa-solid fa-moon"/>}
+           {darkTheme === 'true' ? <i className="fas fa-sun"/> : <i className="fas fa-moon"/>}
         </div>
     )
 }

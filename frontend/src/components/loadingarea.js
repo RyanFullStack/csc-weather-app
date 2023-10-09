@@ -87,7 +87,7 @@ function LoadingArea() {
                             <>
                                 <tr className={darkTheme === "true" ? "table" : "table-light"}>
                                     <td>Jump Run:</td>
-                                    <td>{jumpruns[0]?.heading}º</td>
+                                    <td>{jumpruns[0].heading}º <i className='fas fa-plane' style={{ transform: `rotate(${jumpruns[0].heading - 90}deg`}}/></td>
                                 </tr>
                                 <tr className={darkTheme === "true" ? "table" : "table-light"}>
                                     <td>Green Light:</td>
