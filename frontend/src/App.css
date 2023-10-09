@@ -518,7 +518,7 @@ a:hover {
 .footer-jumprun {
   display: flex;
   flex-direction: column;
-  font-size: .9rem;
+  font-size: 1.8vh;
 }
 
 @media screen and (max-width: 1250px) {
@@ -647,10 +647,4 @@ a:hover {
     border: 1px solid rgb(0, 0, 0);
     font-weight: 700;
   }
-}
-
-@media screen and (max-width: 500px) {
-  .footer-jumprun {
-    font-size: .65rem;
-}
 }
