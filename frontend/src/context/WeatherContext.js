@@ -47,7 +47,7 @@ const WindSpeedProvider = props => {
 
     useEffect(() => {
         const data = async () => {
-            const res = await fetch('https://corsproxy.io/?https://markschulze.net/winds/winds.php?lat=41.8930014&lon=-89.07829&hourOffset=0&referrer=MSWA')
+            const res = await fetch('https://corsproxy.io/?https://windsaloft.us/winds.php?lat=41.8930014&lon=-89.07829&hourOffset=0&referrer=MSWA')
             const winds = await res.json()
             setDirections(winds.direction)
             setTemps(winds.temp)
