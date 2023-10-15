@@ -27,19 +27,24 @@ function DetailedPage() {
 
     return (
         <div className='detailed-contents'>
-            <span className="student-wind-hold">
-                {(maxGust > 50 || maxSpeed > 50) ? (
-                    <span className="red">*** HOLY $h*T!!! ***</span>
-                ) : (maxGust > 40 || maxSpeed > 40) ? (
-                    <span className="red">*** HANG ON TIGHT!!! ***</span>
-                ) : (maxGust > 25 || maxSpeed > 25) ? (
-                    <span className="red">*** DROPZONE WIND HOLD ***</span>
-                ) : (maxGust > 15 || maxSpeed > 15) ? (
-                    <span className="yellow">*** STUDENT WIND HOLD ***</span>
-                ) : (
-                    <span className="green">WINDS OK FOR STUDENTS!</span>
-                )}
-            </span>
+            {jumpruns[0]?.weatherHold ?
+                <div>
+                    <span className="red student-wind-hold">*** DZ WEATHER HOLD ***</span>
+                </div> :
+                <span className="student-wind-hold">
+                    {(maxGust > 50 || maxSpeed > 50) ? (
+                        <span className="red">*** HOLY $h*T!!! ***</span>
+                    ) : (maxGust > 40 || maxSpeed > 40) ? (
+                        <span className="red">*** HANG ON TIGHT!!! ***</span>
+                    ) : (maxGust > 25 || maxSpeed > 25) ? (
+                        <span className="red">*** DROPZONE WIND HOLD ***</span>
+                    ) : (maxGust > 15 || maxSpeed > 15) ? (
+                        <span className="yellow">*** STUDENT WIND HOLD ***</span>
+                    ) : (
+                        <span className="green">WINDS OK FOR STUDENTS!</span>
+                    )}
+                </span>}
+
 
             <table>
                 <tbody>
@@ -60,7 +65,7 @@ function DetailedPage() {
                         <>
                             <tr className={darkTheme === "true" ? "table" : "table-light"}>
                                 <td>Jump Run:</td>
-                                <td>{jumpruns[0]?.heading}º <i className='fas fa-plane' style={{ transform: `rotate(${jumpruns[0].heading - 90}deg`}}/></td>
+                                <td>{jumpruns[0]?.heading}º <i className='fas fa-plane' style={{ transform: `rotate(${jumpruns[0].heading - 90}deg` }} /></td>
                             </tr>
                             <tr className={darkTheme === "true" ? "table" : "table-light"}>
                                 <td>Green Light:</td>

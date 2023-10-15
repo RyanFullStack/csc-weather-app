@@ -520,6 +520,9 @@ a:hover {
   flex-direction: column;
   font-size: 1.8vh;
 }
+.weather-hold {
+  font-size: 2.5vh;
+}
 
 @media screen and (max-width: 1250px) {
   .footer-container {

@@ -16,7 +16,7 @@ import './App.css';
 
 function App() {
 
-  const { darkTheme } = useContext(WeatherContext)
+  const { darkTheme, jumpruns } = useContext(WeatherContext)
 
   return (
     <Router>
@@ -88,6 +88,9 @@ function App() {
           {window.location.pathname !== '/loadingarea' ? <Footer /> :
             <div className="footer-jumprun-loading">
               <div>app.skydivecsc.com</div>
+
+              {jumpruns[0]?.weatherHold ?  <span className="red weather-hold">*** DZ WEATHER HOLD ***</span> : null}
+
               <div>Chicagoland Skydiving Center</div>
             </div>
           }
