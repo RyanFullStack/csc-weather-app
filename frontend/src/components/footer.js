@@ -14,10 +14,8 @@ function Footer() {
             {
                 jumpruns[0] ? (
                     jumpruns[0].weatherHold ? (
-                        // Display if jumpruns[0].weatherHold is true
-                        <span className="red weather-hold">*** DZ WEATHER HOLD ***</span>
+                        <span className="red weather-hold">*** DZ {jumpruns[0].weatherType} HOLD ***</span>
                     ) : (
-                        // Display if jumpruns[0].weatherHold is false
                         <div className="footer-jumprun">
                             <div><small>Jump Run</small></div>
                             <div>Direction: {jumpruns[0]?.heading}º</div>
@@ -25,7 +23,6 @@ function Footer() {
                         </div>
                     )
                 ) : (
-                    // Display if there is no jumpruns[0]
                     metar
                 )
             }

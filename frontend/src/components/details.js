@@ -29,7 +29,7 @@ function DetailedPage() {
         <div className='detailed-contents'>
             {jumpruns[0]?.weatherHold ?
                 <div>
-                    <span className="red student-wind-hold">*** DZ WEATHER HOLD ***</span>
+                    <span className="student-wind-hold"><span className="red">*** DZ {jumpruns[0].weatherType} HOLD ***</span></span>
                 </div> :
                 <span className="student-wind-hold">
                     {(maxGust > 50 || maxSpeed > 50) ? (

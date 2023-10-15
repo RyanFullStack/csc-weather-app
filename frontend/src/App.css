@@ -522,6 +522,7 @@ a:hover {
 }
 .weather-hold {
   font-size: 2.5vh;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 1250px) {
