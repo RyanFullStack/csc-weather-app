@@ -340,6 +340,8 @@
 
 .time-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 1vw;
 }
 .time-container img {
@@ -661,5 +663,8 @@ a:hover {
   }
   .weather-hold {
     font-size: 2vh;
+  }
+  .time-container img {
+    height: 5vh;
   }
 }
