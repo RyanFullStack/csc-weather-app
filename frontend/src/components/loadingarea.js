@@ -78,12 +78,12 @@ function LoadingArea() {
 
 
             <div className="loading-area-content">
-                {!jumpruns[0] ? <div className='no-jumprun'>
+                {!jumpruns[0]?.heading ? <div className='no-jumprun'>
                     No Jumprun Set
                 </div> : null}
                 <table>
                     <tbody>
-                        {jumpruns[0] ?
+                        {jumpruns[0]?.heading ?
                             <>
                                 <tr className={darkTheme === "true" ? "table" : "table-light"}>
                                     <td>Jump Run:</td>

@@ -13,19 +13,22 @@ function Footer() {
 
             {
                 jumpruns[0] ? (
-                    jumpruns[0].weatherHold ? (
+                    jumpruns[0].beerLight ? (
+                        <span className="yellow weather-hold">*** BEER LIGHT IS ON! ***</span>
+                    ) : jumpruns[0].weatherHold ? (
                         <span className="red weather-hold">*** DZ {jumpruns[0].weatherType} HOLD ***</span>
-                    ) : (
+                    ) : jumpruns[0].heading ? (
                         <div className="footer-jumprun">
                             <div><small>Jump Run</small></div>
                             <div>Direction: {jumpruns[0]?.heading}º</div>
                             <div>Green Light: {newSpot} {jumpruns[0].selectedSpot} {jumpruns[0].selectedOffset === 'None' ? null : `| ${newOffset} ${jumpruns[0].selectedOffset}`}</div>
                         </div>
-                    )
+                    ) : null
                 ) : (
                     metar
                 )
             }
+
 
             <p><a href='https://github.com/RyanFullStack' target="_blank" rel='noreferrer'>Github</a></p>
         </div>

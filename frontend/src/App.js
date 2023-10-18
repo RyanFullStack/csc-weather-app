@@ -89,7 +89,7 @@ function App() {
             <div className="footer-jumprun-loading">
               <div>app.skydivecsc.com</div>
 
-              {jumpruns[0]?.weatherHold ?  <span className="red weather-hold">*** DZ {jumpruns[0].weatherType} HOLD ***</span> : null}
+              {jumpruns[0]?.beerLight ? <span className="yellow weather-hold">*** BEER LIGHT IS ON! ***</span> : jumpruns[0]?.weatherHold ?  <span className="red weather-hold">*** DZ {jumpruns[0].weatherType} HOLD ***</span> : null}
 
               <div>Chicagoland Skydiving Center</div>
             </div>

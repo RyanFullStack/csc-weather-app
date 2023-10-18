@@ -27,23 +27,25 @@ function DetailedPage() {
 
     return (
         <div className='detailed-contents'>
-            {jumpruns[0]?.weatherHold ?
-                <div>
-                    <span className="student-wind-hold"><span className="red">*** DZ {jumpruns[0].weatherType} HOLD ***</span></span>
-                </div> :
-                <span className="student-wind-hold">
-                    {(maxGust > 50 || maxSpeed > 50) ? (
-                        <span className="red">*** HOLY $h*T!!! ***</span>
-                    ) : (maxGust > 40 || maxSpeed > 40) ? (
-                        <span className="red">*** HANG ON TIGHT!!! ***</span>
-                    ) : (maxGust > 25 || maxSpeed > 25) ? (
-                        <span className="red">*** DROPZONE WIND HOLD ***</span>
-                    ) : (maxGust > 15 || maxSpeed > 15) ? (
-                        <span className="yellow">*** STUDENT WIND HOLD ***</span>
-                    ) : (
-                        <span className="green">WINDS OK FOR STUDENTS!</span>
-                    )}
-                </span>}
+            {jumpruns[0]?.beerLight ?
+                <span className="yellow weather-hold">*** BEER LIGHT IS ON! ***</span> :
+                jumpruns[0]?.weatherHold ?
+                    <div>
+                        <span className="student-wind-hold"><span className="red">*** DZ {jumpruns[0].weatherType} HOLD ***</span></span>
+                    </div> :
+                    <span className="student-wind-hold">
+                        {(maxGust > 50 || maxSpeed > 50) ? (
+                            <span className="red">*** HOLY $h*T!!! ***</span>
+                        ) : (maxGust > 40 || maxSpeed > 40) ? (
+                            <span className="red">*** HANG ON TIGHT!!! ***</span>
+                        ) : (maxGust > 25 || maxSpeed > 25) ? (
+                            <span className="red">*** DROPZONE WIND HOLD ***</span>
+                        ) : (maxGust > 15 || maxSpeed > 15) ? (
+                            <span className="yellow">*** STUDENT WIND HOLD ***</span>
+                        ) : (
+                            <span className="green">WINDS OK FOR STUDENTS!</span>
+                        )}
+                    </span>}
 
 
             <table>
@@ -61,7 +63,7 @@ function DetailedPage() {
                         <td>{sunrise}</td>
                     </tr>
 
-                    {jumpruns[0] ?
+                    {jumpruns[0]?.heading ?
                         <>
                             <tr className={darkTheme === "true" ? "table" : "table-light"}>
                                 <td>Jump Run:</td>
