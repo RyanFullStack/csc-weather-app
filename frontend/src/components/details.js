@@ -39,7 +39,7 @@ function DetailedPage() {
                         ) : (maxGust > 40 || maxSpeed > 40) ? (
                             <span className="red">*** HANG ON TIGHT!!! ***</span>
                         ) : (maxGust > 25 || maxSpeed > 25) ? (
-                            <span className="red">*** DROPZONE WIND HOLD ***</span>
+                            <span className="red">*** DZ WIND LIMIT HIT ***</span>
                         ) : (maxGust > 15 || maxSpeed > 15) ? (
                             <span className="yellow">*** STUDENT WIND HOLD ***</span>
                         ) : (
