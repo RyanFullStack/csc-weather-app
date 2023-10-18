@@ -338,6 +338,14 @@
   cursor: pointer;
 }
 
+.time-container {
+  display: flex;
+  gap: 1vw;
+}
+.time-container img {
+  height: 6vh;
+}
+
 .time-component {
   font-size: calc(10px + 3vmin);
   text-align: center;

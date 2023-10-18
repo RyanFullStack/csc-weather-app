@@ -1,10 +1,17 @@
+import { useContext } from "react";
+import { WeatherContext } from "../context/WeatherContext";
 import GetCst from './time'
 import CurrentTemp from './temp';
 import Theme from './theme';
 import LiveStatus from './livestatus';
 import audio from '../images/audio.png'
+import redLight from '../images/redlight.png'
+import yellowLight from '../images/yellowlight.png'
+import greenLight from '../images/greenlight.png'
 
 function Header() {
+
+    const { jumpruns } = useContext(WeatherContext)
 
     return (
         <>
@@ -14,8 +21,10 @@ function Header() {
             <div className='livestatus'>
                 <LiveStatus />
             </div>
-            <div className='timeContainer'>
+            <div className='time-container'>
+                {jumpruns[0] ? <img src={jumpruns[0]?.beerLight ? yellowLight : jumpruns[0]?.weatherHold ? redLight : jumpruns[0]?.heading ? greenLight : null} alt='beerlight'/> : null}
                 <GetCst />
+                {jumpruns[0] ? <img src={jumpruns[0]?.beerLight ? yellowLight : jumpruns[0]?.weatherHold ? redLight : jumpruns[0]?.heading ? greenLight : null} alt='beerlight'/> : null}
             </div>
             {window.location.pathname !== '/loadingarea' ? <div className="temp-logos">
                 <a href='http://audio.skydivecsc.com/' target='_blank' rel='noreferrer'><img src={audio} alt='audio' /></a>
