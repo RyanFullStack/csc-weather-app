@@ -665,6 +665,9 @@ a:hover {
     font-size: 2vh;
   }
   .time-container img {
-    height: 5vh;
+    height: 4vh;
+  }
+  .time-component {
+    font-size: calc(6px + 1.8vmin);
   }
 }
