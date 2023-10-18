@@ -92,11 +92,11 @@ function DetailedPage() {
 
                     <tr className={darkTheme === "true" ? "table" : "table-light"}>
                         <td>Current Speed:</td>
-                        <td>{speed === 0 ? '0 kts' : !speed ? null : speed === 1 ? speed + ' kt' : speed + ' kts'}</td>
+                        <td>{speed === 0 ? '0 kts' : !speed ? null : speed === 1 ? speed + ' kt' : speed > 25 ? <span className='red'>{speed} kts</span> : speed > 15 ? <span className='yellow'>{speed} kts</span> : speed + ' kts'}</td>
                     </tr>
                     <tr className={darkTheme === "true" ? "table" : "table-light"}>
                         <td>Current Gust:</td>
-                        <td>{gustSpeed ? gustSpeed + ' kts' : 'No Gust'}</td>
+                        <td>{gustSpeed && gustSpeed > 25 ? <span className="red">{gustSpeed} kts</span> : gustSpeed && gustSpeed > 15 ? <span className="yellow">{gustSpeed} kts</span> : gustSpeed ? gustSpeed + ' kts' : 'No Gust'}</td>
                     </tr>
                     <tr className={darkTheme === "true" ? "table" : "table-light"}>
                         <td>Max Speed <small>(30 Min)</small>:</td>
