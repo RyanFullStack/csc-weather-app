@@ -8,6 +8,7 @@ import audio from '../images/audio.png'
 import redLight from '../images/redlight.png'
 import yellowLight from '../images/yellowlight.png'
 import greenLight from '../images/greenlight.png'
+import noLight from '../images/nolight.png'
 
 function Header() {
 
@@ -22,9 +23,9 @@ function Header() {
                 <LiveStatus />
             </div>
             <div className='time-container'>
-                {jumpruns[0] ? <img src={jumpruns[0]?.beerLight ? yellowLight : jumpruns[0]?.weatherHold ? redLight : jumpruns[0]?.heading ? greenLight : null} alt='beerlight'/> : null}
+                {jumpruns[0] ? <img src={jumpruns[0]?.beerLight ? yellowLight : jumpruns[0]?.weatherHold ? redLight : jumpruns[0]?.heading ? greenLight : null} alt='beerlight'/> : <img src={noLight} alt='beerlight'/>}
                 <GetCst />
-                {jumpruns[0] ? <img src={jumpruns[0]?.beerLight ? yellowLight : jumpruns[0]?.weatherHold ? redLight : jumpruns[0]?.heading ? greenLight : null} alt='beerlight'/> : null}
+                {jumpruns[0] ? <img src={jumpruns[0]?.beerLight ? yellowLight : jumpruns[0]?.weatherHold ? redLight : jumpruns[0]?.heading ? greenLight : null} alt='beerlight'/> : <img src={noLight} alt='beerlight'/>}
             </div>
             {window.location.pathname !== '/loadingarea' ? <div className="temp-logos">
                 <a href='http://audio.skydivecsc.com/' target='_blank' rel='noreferrer'><img src={audio} alt='audio' /></a>
