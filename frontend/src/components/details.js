@@ -113,28 +113,28 @@ function DetailedPage() {
                         <td>{varDir1 && varDir2 ? `${varDir1}º - ${varDir2}º` : 'Steady'}</td>
                     </tr>
                     <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                        <td>Present Weather:</td>
-                        <td>{metarAbbr && metarDesc ? metarDesc + ' ' + metarAbbr : metarAbbr ? metarAbbr : 'None'}</td>
+                        <td>Density Altitude:</td>
+                        <td>{densityAlt && tempSetting === 'true' ? densityAlt + "'" : !densityAlt ? 'Field Level' : (densityAlt / 3.28).toFixed(0) + 'M'}</td>
                     </tr>
                     <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                        <td>Visibility:</td>
-                        <td>{visibility < 1 ? visibility?.toFixed(2) : visibility} SM</td>
+                        <td>Present Weather:</td>
+                        <td>{metarAbbr && metarDesc ? metarDesc + ' ' + metarAbbr : metarAbbr ? metarAbbr : 'None'}</td>
                     </tr>
                     <tr className={darkTheme === "true" ? "table" : "table-light"}>
                         <td>Sky Condition:</td>
                         <td>{skyCondition1} {cloudCeiling1}{skyCondition2 ? <br /> : null}{skyCondition2} {cloudCeiling2}{skyCondition3 ? <br /> : null} {skyCondition3} {cloudCeiling3}</td>
                     </tr>
                     <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                        <td>Density Altitude:</td>
-                        <td>{densityAlt && tempSetting === 'true' ? densityAlt + "'" : !densityAlt ? 'Field Level' : (densityAlt / 3.28).toFixed(0) + 'M'}</td>
-                    </tr>
-                    <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                        <td>Pressure:</td>
-                        <td>{!pressure ? null : pressure + '" Hg'}</td>
+                        <td>Visibility:</td>
+                        <td>{visibility < 1 ? visibility?.toFixed(2) : visibility} SM</td>
                     </tr>
                     <tr className={darkTheme === "true" ? "table" : "table-light"}>
                         <td>Dew Point:</td>
                         <td>{!dewPoint ? null : tempSetting === 'true' ? dewPoint + 'ºF' : ((dewPoint - 32) * 5 / 9).toFixed(1) + 'ºC'}</td>
+                    </tr>
+                    <tr className={darkTheme === "true" ? "table" : "table-light"}>
+                        <td>Pressure:</td>
+                        <td>{!pressure ? null : pressure + '" Hg'}</td>
                     </tr>
                     <tr className={darkTheme === "true" ? "table" : "table-light"}>
                         <td>Loading Area View:</td>
