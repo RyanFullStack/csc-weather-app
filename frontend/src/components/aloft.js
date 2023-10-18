@@ -16,7 +16,7 @@ function WindsAloft() {
   }
 
   const calculateTemperatureColor = (temperature) => {
-    const minTemperature = 0;
+    const minTemperature = 25;
     const maxTemperature = 70;
 
     temperature = Math.max(minTemperature, Math.min(maxTemperature, temperature));
@@ -59,7 +59,7 @@ function WindsAloft() {
                 ></i>
               </td>
               <td>{speeds["1000"]} kts</td>
-              <td style={{ color: calculateTemperatureColor((temps['1000'] * (9 / 5) + 32)), fontWeight: 'bold', textShadow: '1px 1px 1px black' }}>
+              <td style={{ color: calculateTemperatureColor((temps['1000'] * (9 / 5) + 32)), fontWeight: 'bold', textShadow: '1px 1px 2px black' }}>
                 {tempSetting === "false"
                   ? `${temps["1000"]}º C`
                   : `${Math.round(temps["1000"] * (9 / 5) + 32)}º F`}
@@ -75,7 +75,7 @@ function WindsAloft() {
                 ></i>
               </td>
               <td>{speeds["2000"]} kts</td>
-              <td style={{ color: calculateTemperatureColor(temps['2000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 1px black' }}>
+              <td style={{ color: calculateTemperatureColor(temps['2000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 2px black' }}>
                 {tempSetting === "false"
                   ? `${temps["2000"]}º C`
                   : `${Math.round(temps["2000"] * (9 / 5) + 32)}º F`}
@@ -91,7 +91,7 @@ function WindsAloft() {
                 ></i>
               </td>
               <td>{speeds["3000"]} kts</td>
-              <td style={{ color: calculateTemperatureColor(temps['3000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 1px black'    }}>
+              <td style={{ color: calculateTemperatureColor(temps['3000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 2px black'    }}>
                 {tempSetting === "false"
                   ? `${temps["3000"]}º C`
                   : `${Math.round(temps["3000"] * (9 / 5) + 32)}º F`}
@@ -107,7 +107,7 @@ function WindsAloft() {
                 ></i>
               </td>
               <td>{speeds["4000"]} kts</td>
-              <td style={{ color: calculateTemperatureColor(temps['4000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 1px black'    }}>
+              <td style={{ color: calculateTemperatureColor(temps['4000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 2px black'    }}>
                 {tempSetting === "false"
                   ? `${temps["4000"]}º C`
                   : `${Math.round(temps["4000"] * (9 / 5) + 32)}º F`}
@@ -123,7 +123,7 @@ function WindsAloft() {
                 ></i>
               </td>
               <td>{speeds["5000"]} kts</td>
-              <td style={{ color: calculateTemperatureColor(temps['5000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 1px black'    }}>
+              <td style={{ color: calculateTemperatureColor(temps['5000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 2px black'    }}>
                 {tempSetting === "false"
                   ? `${temps["5000"]}º C`
                   : `${Math.round(temps["5000"] * (9 / 5) + 32)}º F`}
@@ -139,7 +139,7 @@ function WindsAloft() {
                 ></i>
               </td>
               <td>{speeds["6000"]} kts</td>
-              <td style={{ color: calculateTemperatureColor(temps['6000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 1px black'    }}>
+              <td style={{ color: calculateTemperatureColor(temps['6000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 2px black'    }}>
                 {tempSetting === "false"
                   ? `${temps["6000"]}º C`
                   : `${Math.round(temps["6000"] * (9 / 5) + 32)}º F`}
@@ -155,7 +155,7 @@ function WindsAloft() {
                 ></i>
               </td>
               <td>{speeds["7000"]} kts</td>
-              <td style={{ color: calculateTemperatureColor(temps['7000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 1px black'    }}>
+              <td style={{ color: calculateTemperatureColor(temps['7000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 2px black'    }}>
                 {tempSetting === "false"
                   ? `${temps["7000"]}º C`
                   : `${Math.round(temps["7000"] * (9 / 5) + 32)}º F`}
@@ -171,7 +171,7 @@ function WindsAloft() {
                 ></i>
               </td>
               <td>{speeds["8000"]} kts</td>
-              <td style={{ color: calculateTemperatureColor(temps['8000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 1px black'    }}>
+              <td style={{ color: calculateTemperatureColor(temps['8000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 2px black'    }}>
                 {tempSetting === "false"
                   ? `${temps["8000"]}º C`
                   : `${Math.round(temps["8000"] * (9 / 5) + 32)}º F`}
@@ -187,7 +187,7 @@ function WindsAloft() {
                 ></i>
               </td>
               <td>{speeds["9000"]} kts</td>
-              <td style={{ color: calculateTemperatureColor(temps['9000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 1px black'    }}>
+              <td style={{ color: calculateTemperatureColor(temps['9000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 2px black'    }}>
                 {tempSetting === "false"
                   ? `${temps["9000"]}º C`
                   : `${Math.round(temps["9000"] * (9 / 5) + 32)}º F`}
@@ -203,7 +203,7 @@ function WindsAloft() {
                 ></i>
               </td>
               <td>{speeds["10000"]} kts</td>
-              <td style={{ color: calculateTemperatureColor(temps['10000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 1px black'    }}>
+              <td style={{ color: calculateTemperatureColor(temps['10000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 2px black'    }}>
                 {tempSetting === "false"
                   ? `${temps["10000"]}º C`
                   : `${Math.round(temps["10000"] * (9 / 5) + 32)}º F`}
@@ -219,7 +219,7 @@ function WindsAloft() {
                 ></i>
               </td>
               <td>{speeds["11000"]} kts</td>
-              <td style={{ color: calculateTemperatureColor(temps['11000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 1px black'    }}>
+              <td style={{ color: calculateTemperatureColor(temps['11000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 2px black'    }}>
                 {tempSetting === "false"
                   ? `${temps["11000"]}º C`
                   : `${Math.round(temps["11000"] * (9 / 5) + 32)}º F`}
@@ -235,7 +235,7 @@ function WindsAloft() {
                 ></i>
               </td>
               <td>{speeds["12000"]} kts</td>
-              <td style={{ color: calculateTemperatureColor(temps['12000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 1px black'    }}>
+              <td style={{ color: calculateTemperatureColor(temps['12000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 2px black'    }}>
                 {tempSetting === "false"
                   ? `${temps["12000"]}º C`
                   : `${Math.round(temps["12000"] * (9 / 5) + 32)}º F`}
@@ -251,7 +251,7 @@ function WindsAloft() {
                 ></i>
               </td>
               <td>{speeds["13000"]} kts</td>
-              <td style={{ color: calculateTemperatureColor(temps['13000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 1px black'   }}>
+              <td style={{ color: calculateTemperatureColor(temps['13000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 2px black'   }}>
                 {tempSetting === "false"
                   ? `${temps["13000"]}º C`
                   : `${Math.round(temps["13000"] * (9 / 5) + 32)}º F`}
@@ -267,7 +267,7 @@ function WindsAloft() {
                 ></i>
               </td>
               <td>{speeds["14000"]} kts</td>
-              <td style={{ color: calculateTemperatureColor(temps['14000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 1px black'    }}>
+              <td style={{ color: calculateTemperatureColor(temps['14000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 2px black'    }}>
                 {tempSetting === "false"
                   ? `${temps["14000"]}º C`
                   : `${Math.round(temps["14000"] * (9 / 5) + 32)}º F`}
@@ -283,7 +283,7 @@ function WindsAloft() {
                 ></i>
               </td>
               <td>{speeds["15000"]} kts</td>
-              <td style={{ color: calculateTemperatureColor(temps['15000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 1px black'    }}>
+              <td style={{ color: calculateTemperatureColor(temps['15000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 2px black'    }}>
                 {tempSetting === "false"
                   ? `${temps["15000"]}º C`
                   : `${Math.round(temps["15000"] * (9 / 5) + 32)}º F`}
@@ -299,7 +299,7 @@ function WindsAloft() {
                 ></i>
               </td>
               <td>{speeds["16000"]} kts</td>
-              <td style={{ color: calculateTemperatureColor(temps['16000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 1px black'    }}>
+              <td style={{ color: calculateTemperatureColor(temps['16000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 2px black'    }}>
                 {tempSetting === "false"
                   ? `${temps["16000"]}º C`
                   : `${Math.round(temps["16000"] * (9 / 5) + 32)}º F`}
@@ -315,7 +315,7 @@ function WindsAloft() {
                 ></i>
               </td>
               <td>{speeds["17000"]} kts</td>
-              <td style={{ color: calculateTemperatureColor(temps['17000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 1px black'    }}>
+              <td style={{ color: calculateTemperatureColor(temps['17000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 2px black'    }}>
                 {tempSetting === "false"
                   ? `${temps["17000"]}º C`
                   : `${Math.round(temps["17000"] * (9 / 5) + 32)}º F`}
@@ -331,7 +331,7 @@ function WindsAloft() {
                 ></i>
               </td>
               <td>{speeds["18000"]} kts</td>
-              <td style={{ color: calculateTemperatureColor(temps['18000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 1px black'    }}>
+              <td style={{ color: calculateTemperatureColor(temps['18000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '1px 1px 2px black'    }}>
                 {tempSetting === "false"
                   ? `${temps["18000"]}º C`
                   : `${Math.round(temps["18000"] * (9 / 5) + 32)}º F`}
