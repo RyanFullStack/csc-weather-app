@@ -30,9 +30,8 @@ function DetailedPage() {
             {jumpruns[0]?.beerLight ?
                 <span className="yellow weather-hold">*** BEER LIGHT IS ON! ***</span> :
                 jumpruns[0]?.weatherHold ?
-                    <div>
                         <span className="student-wind-hold"><span className="red">*** DZ {jumpruns[0].weatherType} HOLD ***</span></span>
-                    </div> :
+                    :
                     <span className="student-wind-hold">
                         {(maxGust > 50 || maxSpeed > 50) ? (
                             <span className="red">*** HOLY $h*T!!! ***</span>
