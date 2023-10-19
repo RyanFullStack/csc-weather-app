@@ -18,18 +18,26 @@ function WindsAloft() {
   const calculateTemperatureColor = (temperature) => {
     const minTemperature = 25;
     const maxTemperature = 70;
+    const midTemperature = (minTemperature + maxTemperature) / 2;
 
     temperature = Math.max(minTemperature, Math.min(maxTemperature, temperature));
 
-    const normalizedValue = (temperature - minTemperature) / (maxTemperature - minTemperature);
+    let r, g, b;
 
-    const r = Math.round(255 * normalizedValue);
-    const g = 0;
-    const b = Math.round(255 * (1 - normalizedValue));
+    if (temperature <= midTemperature) {
+        const normalizedValue = (temperature - minTemperature) / (midTemperature - minTemperature);
+        r = Math.round(255 * normalizedValue);
+        g = 0;
+        b = Math.round(255 + (255 - 255 * normalizedValue));
+    } else {
+        const normalizedValue = (temperature - midTemperature) / (maxTemperature - midTemperature);
+        r = Math.round(255 + (255 - 255 * normalizedValue));
+        g = 0;
+        b = Math.round(255 * (1 - normalizedValue));
+    }
 
     return `rgb(${r}, ${g}, ${b})`;
-  };
-
+};
 
 
   return (
