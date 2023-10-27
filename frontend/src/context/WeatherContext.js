@@ -21,6 +21,7 @@ const WindSpeedProvider = props => {
     const [gustData, setGustData] = useState([])
     const [darkTheme, setDarkTheme] = useState('true')
     const [tempSetting, setTempSetting] = useState('true')
+    const [unitSetting, setUnitSetting] = useState('true')
     const [directions, setDirections] = useState({})
     const [temps, setTemps] = useState({})
     const [speeds, setSpeeds] = useState({})
@@ -461,7 +462,7 @@ const WindSpeedProvider = props => {
 
 
     return (
-        <WeatherContext.Provider value={{ jumpruns, newSpot, newOffset, speed, gustSpeed, direction, metar, temp, tempC, tempSetting, setTempSetting, skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3, metarAbbr, metarDesc, gustData, darkTheme, setDarkTheme, directions, speeds, temps, received, pressure, visibility, densityAlt, dewPoint, sunset, sunrise, twilight, noon, maxGust, variableDirection, maxSpeed }}>
+        <WeatherContext.Provider value={{ jumpruns, newSpot, newOffset, speed, gustSpeed, direction, metar, temp, tempC, tempSetting, setTempSetting, skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3, metarAbbr, metarDesc, gustData, darkTheme, setDarkTheme, unitSetting, setUnitSetting, directions, speeds, temps, received, pressure, visibility, densityAlt, dewPoint, sunset, sunrise, twilight, noon, maxGust, variableDirection, maxSpeed }}>
             {props.children}
         </WeatherContext.Provider>
     )

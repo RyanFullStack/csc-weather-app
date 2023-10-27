@@ -1,0 +1,34 @@
+.fa-bars {
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1vh;
+    align-items: center;
+    position: absolute;
+    background-color: rgb(224, 167, 9);
+    padding: 10px;
+    border-radius: 1rem;
+    width: 220px;
+    z-index: 3;
+    top: 10.5vh;
+    left: 10px;
+    transition: left 0.3s ease;
+}
+
+.hidden {
+    left: -240px;
+}
+
+.menu-button-container {
+    display: flex;
+    width: 200px;
+}
+
+.menu-button-container button {
+    margin: 1px;
+}
