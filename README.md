@@ -11,7 +11,7 @@ CSC WX APP is a commercial app developed for Chicagoland Skydiving Center. This 
 
 ## Getting Started
 
-View this app live at [app.skydivecsc.com](app.skydivecsc.com)
+View this app live at [http://app.skydivecsc.com](http://app.skydivecsc.com)
 
 Change from dark to light mode at the top left.
 
