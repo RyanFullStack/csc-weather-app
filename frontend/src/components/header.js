@@ -2,7 +2,6 @@ import { useContext, useState, useRef, useEffect } from "react";
 import { WeatherContext } from "../context/WeatherContext";
 import GetCst from './time'
 import CurrentTemp from './temp';
-import Theme from './theme';
 import LiveStatus from './livestatus';
 import audio from '../images/audio.png'
 // import redLight from '../images/redlight.png'
@@ -102,7 +101,6 @@ function Header() {
     return (
         <>
             {window.location.pathname !== '/loadingarea' ? <div className='themecontainer'>
-                {/* <Theme /> */}
                 <i className="fas fa-bars" onClick={handleMenu} />
                 <div ref={menuRef} className={`menu ${menu}`}>
                     Options

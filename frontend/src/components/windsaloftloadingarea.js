@@ -2,7 +2,7 @@ import { WeatherContext } from '../context/WeatherContext';
 import { useContext } from 'react';
 
 function WindsAloftLoading() {
-    const { directions, speeds, temps, darkTheme, tempSetting } =
+    const { directions, speeds, temps, darkTheme, tempSetting, unitSetting } =
         useContext(WeatherContext);
 
     if (Object.keys(directions).length === 0 ||
@@ -51,7 +51,7 @@ function WindsAloftLoading() {
                     </thead>
                     <tbody>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                            <td>{tempSetting === 'true' ? "2,000'" : "609M"}</td>
+                            <td>{unitSetting === 'true' ? "2,000'" : "609M"}</td>
                             <td>
                                 {directions["2000"]}º{" "}
                                 <i
@@ -67,7 +67,7 @@ function WindsAloftLoading() {
                             </td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                            <td>{tempSetting === 'true' ? "4,000'" : "1219M"}</td>
+                            <td>{unitSetting === 'true' ? "4,000'" : "1219M"}</td>
                             <td>
                                 {directions["4000"]}º{" "}
                                 <i
@@ -83,7 +83,7 @@ function WindsAloftLoading() {
                             </td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                            <td>{tempSetting === 'true' ? "6,000'" : "1828M"}</td>
+                            <td>{unitSetting === 'true' ? "6,000'" : "1828M"}</td>
                             <td>
                                 {directions["6000"]}º{" "}
                                 <i
@@ -99,7 +99,7 @@ function WindsAloftLoading() {
                             </td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                            <td>{tempSetting === 'true' ? "8,000'" : "2438M"}</td>
+                            <td>{unitSetting === 'true' ? "8,000'" : "2438M"}</td>
                             <td>
                                 {directions["8000"]}º{" "}
                                 <i
@@ -115,7 +115,7 @@ function WindsAloftLoading() {
                             </td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                            <td>{tempSetting === 'true' ? "10,000'" : "3048M"}</td>
+                            <td>{unitSetting === 'true' ? "10,000'" : "3048M"}</td>
                             <td>
                                 {directions["10000"]}º{" "}
                                 <i
@@ -131,7 +131,7 @@ function WindsAloftLoading() {
                             </td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                            <td>{tempSetting === 'true' ? "12,000'" : "3657M"}</td>
+                            <td>{unitSetting === 'true' ? "12,000'" : "3657M"}</td>
                             <td>
                                 {directions["12000"]}º{" "}
                                 <i
@@ -147,7 +147,7 @@ function WindsAloftLoading() {
                             </td>
                         </tr>
                         <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                            <td>{tempSetting === 'true' ? "14,000'" : "4267M"}</td>
+                            <td>{unitSetting === 'true' ? "14,000'" : "4267M"}</td>
                             <td>
                                 {directions["14000"]}º{" "}
                                 <i

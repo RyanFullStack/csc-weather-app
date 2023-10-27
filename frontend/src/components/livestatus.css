@@ -3,7 +3,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    color: rgb(185, 0, 0);
+    color: rgb(243, 16, 16);
     gap: .5vw;
     font-size: calc(6px + 1vmin);
 }
