@@ -25,7 +25,7 @@ function Footer() {
                         </div>
                     ) : null
                 ) : (
-                    metar
+                    <div id ='scroll-container'><div id='scroll-text'>Happy Halloween from CSC!</div></div>
                 )
             }
 

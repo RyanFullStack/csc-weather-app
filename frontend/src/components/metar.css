@@ -1,32 +1,86 @@
 .metar-container {
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    justify-content: space-between;
-    align-items: center;
-    font-size: calc(6px + 1vmin);
-    text-align: center;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+  font-size: calc(6px + 1vmin);
+  text-align: center;
 }
 
 .metar-container a {
-    display: flex;
-    font-size: calc(4px + 1vmin);
-    text-align: center;
-    margin: 0px 3vw;
-    color: inherit;
-    text-decoration: none;
-    cursor: pointer;
+  display: flex;
+  font-size: calc(4px + 1vmin);
+  text-align: center;
+  margin: 0px 3vw;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .footer-jumprun {
-    font-size: 1.2rem;
-    color: rgb(224, 167, 9);
+  font-size: 1.2rem;
+  color: rgb(224, 167, 9);
 }
 .footer-jumprun-loading {
-    display: flex;
-    flex-direction: row;
-    width: 80vw;
-    justify-content: space-between;
-    font-size: 1.2rem;
-    color: rgb(224, 167, 9);
+  display: flex;
+  flex-direction: row;
+  width: 80vw;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  color: rgb(224, 167, 9);
+}
+
+#scroll-container {
+  overflow: hidden;
+  width: 50%;
+}
+
+#scroll-text {
+  /* animation properties */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(4px + 1.5vmin);
+  color: rgb(224, 167, 9);
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+
+  -moz-animation: my-animation 10s linear infinite;
+  -webkit-animation: my-animation 10s linear infinite;
+  animation: my-animation 10s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+  from {
+    -moz-transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+  }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  from {
+    -webkit-transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
 }
