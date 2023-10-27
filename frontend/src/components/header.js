@@ -105,16 +105,16 @@ function Header() {
                 <div ref={menuRef} className={`menu ${menu}`}>
                     Options
                     <div className="menu-button-container">
-                        <button disabled={tempSetting === 'true'} onClick={handleTemp}>ºF</button>
-                        <button disabled={tempSetting === 'false'} onClick={handleTemp}>ºC</button>
+                        <button className={tempSetting==='true' ? 'disabled-button' :'active-button'} disabled={tempSetting === 'true'} onClick={handleTemp}>ºF</button>
+                        <button className={tempSetting==='true' ? 'active-button' :'disabled-button'} disabled={tempSetting === 'false'} onClick={handleTemp}>ºC</button>
                     </div>
                     <div className="menu-button-container">
-                        <button disabled={unitSetting === 'true'} onClick={handleUnit}>FEET</button>
-                        <button disabled={unitSetting === 'false'} onClick={handleUnit}>METERS</button>
+                        <button className={unitSetting==='true' ? 'disabled-button' :'active-button'} disabled={unitSetting === 'true'} onClick={handleUnit}>FEET</button>
+                        <button className={unitSetting==='true' ? 'active-button' :'disabled-button'} disabled={unitSetting === 'false'} onClick={handleUnit}>METERS</button>
                     </div>
                     <div className="menu-button-container">
-                        <button disabled={darkTheme === 'true'} onClick={handleTheme}>DARK</button>
-                        <button disabled={darkTheme === 'false'} onClick={handleTheme}>LIGHT</button>
+                        <button className={darkTheme==='true' ? 'disabled-button' :'active-button'} disabled={darkTheme === 'true'} onClick={handleTheme}>DARK</button>
+                        <button className={darkTheme==='true' ? 'active-button' :'disabled-button'} disabled={darkTheme === 'false'} onClick={handleTheme}>LIGHT</button>
                     </div>
 
                 </div>

@@ -32,3 +32,10 @@
 .menu-button-container button {
     margin: 1px;
 }
+.active-button {
+    background-color: transparent;
+}
+.disabled-button {
+    color: rgb(224, 167, 9);
+    background-color: rgb(0, 0, 0);
+}
