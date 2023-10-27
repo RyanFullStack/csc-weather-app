@@ -4,7 +4,7 @@ import './metar.css';
 
 function Footer() {
 
-    const { jumpruns, newSpot, newOffset, metar } = useContext(WeatherContext)
+    const { jumpruns, newSpot, newOffset } = useContext(WeatherContext)
 
 
     return (
