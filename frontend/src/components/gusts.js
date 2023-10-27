@@ -49,9 +49,9 @@ function GustChart() {
                 data: speeds,
 
                 fill: true, // Enable fill
-                backgroundColor: 'rgba(16,163,144,.8)', // Fill color
+                backgroundColor: 'rgba(224, 167, 9, .8)', // Fill color
                 borderColor: 'rgba(0,0,0,1)', // Line color
-                pointBackgroundColor: 'rgba(16,163,144,1)',
+                pointBackgroundColor: 'rgb(224, 167, 9)',
                 pointBorderColor: '#fff',
                 pointHoverBackgroundColor: '#fff',
                 pointHoverBorderColor: 'rgba(75,192,192,1)',
@@ -105,10 +105,10 @@ function GustChart() {
                             min: 0,
                             max: 30,
                             ticks: {
-                                color: darkTheme === 'true' ? 'rgb(14, 173, 152)' : 'rgb(0, 0, 0)',
+                                color: darkTheme === 'true' ? 'rgb(224, 167, 9)' : 'rgb(0, 0, 0)',
                             },
                             grid: {
-                                color: darkTheme === 'true' ? 'rgb(14, 173, 152)' : 'rgb(0, 0, 0)',
+                                color: darkTheme === 'true' ? 'rgb(224, 167, 9)' : 'rgb(0, 0, 0)',
                             },
                         },
                         x: {
