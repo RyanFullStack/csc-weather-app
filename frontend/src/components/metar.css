@@ -20,7 +20,7 @@
 
 .footer-jumprun {
     font-size: 1.2rem;
-    color: rgb(43, 209, 187);
+    color: rgb(224, 167, 9);
 }
 .footer-jumprun-loading {
     display: flex;
@@ -28,5 +28,5 @@
     width: 80vw;
     justify-content: space-between;
     font-size: 1.2rem;
-    color: rgb(43, 209, 187);
+    color: rgb(224, 167, 9);
 }

@@ -9,10 +9,10 @@
     rgba(0, 0, 0, 1) 7%,
     rgba(34, 34, 34, 0.9) 10%,
     rgba(34, 34, 34, 0.9) 90%,
-    rgb(16, 163, 144) 95%
+    rgb(224, 167, 9) 95%
   );
   font-size: calc(10px + 2vmin);
-  color: rgb(14, 173, 152);
+  color: rgb(224, 167, 9);
   overflow: hidden;
 }
 
@@ -132,11 +132,11 @@
   border-radius: 10px;
   cursor: pointer;
   height: 3vh;
-  background-color: rgb(14, 173, 152);
+  background-color: rgb(224, 167, 9);
 }
 
 .navbutton:hover {
-  background-color: rgba(111, 177, 168, 0.658);
+  background-color: rgb(224, 167, 9);
 }
 
 .fa-external-link {
@@ -145,7 +145,7 @@
 }
 
 .nav-component a {
-  color: rgb(14, 173, 152);
+  color: rgb(224, 167, 9);
 }
 
 .light a {
@@ -655,7 +655,7 @@ a:hover {
     width: 100%;
   }
   .table {
-    border: 2px solid rgba(14, 173, 152, 0.6);
+    border: 2px solid rgb(224, 167, 9);
     font-weight: 500;
   }
   .table-light {
