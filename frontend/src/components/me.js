@@ -42,6 +42,10 @@ function Me() {
   };
 
   useEffect(() => {
+    if ((userLicense || userMaxSpeed || userMaxGust || userDif) && (speed > 25 || gustSpeed > 25 || maxSpeed > 25 || maxGust > 25)) {
+      setIsSafe(false)
+    }
+
     if (
       (userLicense === 'A' && (speed !== null && (speed >= 17 || gustSpeed >= 17 || maxSpeed >= 17 || maxGust >= 17))) ||
       (userLicense === 'B' && (speed !== null && (speed >= 19 || gustSpeed >= 19 || maxSpeed >= 19 || maxGust >= 19))) ||
