@@ -143,7 +143,7 @@ const WindSpeedProvider = props => {
             const res = JSON.parse(event.data)
 
             weatherData.unshift(res.payload)
-            console.log(weatherData[0])
+            
             if (weatherData[0]) {
 
                 if (weatherData[0].data.weather.altimeterSetting) {
