@@ -4,20 +4,20 @@ export const WeatherContext = createContext()
 
 
 const WindSpeedProvider = props => {
-    const [speed, setSpeed] = useState()
-    const [gustSpeed, setGustSpeed] = useState()
+    const [speed, setSpeed] = useState(null)
+    const [gustSpeed, setGustSpeed] = useState(null)
     const [direction, setDirection] = useState(0)
-    const [metar, setMetar] = useState()
-    const [temp, setTemp] = useState()
-    const [tempC, setTempC] = useState()
-    const [skyCondition1, setSkyCondition1] = useState()
-    const [skyCondition2, setSkyCondition2] = useState()
-    const [skyCondition3, setSkyCondition3] = useState()
-    const [cloudCeiling1, setCloudCeiling1] = useState()
-    const [cloudCeiling2, setCloudCeiling2] = useState()
-    const [cloudCeiling3, setCloudCeiling3] = useState()
-    const [metarAbbr, setMetarAbbr] = useState()
-    const [metarDesc, setMetarDesc] = useState()
+    const [metar, setMetar] = useState(null)
+    const [temp, setTemp] = useState(null)
+    const [tempC, setTempC] = useState(null)
+    const [skyCondition1, setSkyCondition1] = useState('')
+    const [skyCondition2, setSkyCondition2] = useState('')
+    const [skyCondition3, setSkyCondition3] = useState('')
+    const [cloudCeiling1, setCloudCeiling1] = useState('')
+    const [cloudCeiling2, setCloudCeiling2] = useState('')
+    const [cloudCeiling3, setCloudCeiling3] = useState('')
+    const [metarAbbr, setMetarAbbr] = useState('')
+    const [metarDesc, setMetarDesc] = useState('')
     const [gustData, setGustData] = useState([])
     const [darkTheme, setDarkTheme] = useState('true')
     const [tempSetting, setTempSetting] = useState('true')
@@ -25,17 +25,17 @@ const WindSpeedProvider = props => {
     const [directions, setDirections] = useState({})
     const [temps, setTemps] = useState({})
     const [speeds, setSpeeds] = useState({})
-    const [received, setReceived] = useState()
-    const [dewPoint, setDewPoint] = useState()
-    const [pressure, setPressure] = useState()
-    const [densityAlt, setDensityAlt] = useState()
-    const [visibility, setVisibility] = useState()
-    const [sunset, setSunset] = useState()
-    const [sunrise, setSunrise] = useState()
-    const [twilight, setTwilight] = useState()
-    const [noon, setNoon] = useState()
-    const [maxGust, setMaxGust] = useState()
-    const [maxSpeed, setMaxSpeed] = useState()
+    const [received, setReceived] = useState(null)
+    const [dewPoint, setDewPoint] = useState(null)
+    const [pressure, setPressure] = useState(null)
+    const [densityAlt, setDensityAlt] = useState(null)
+    const [visibility, setVisibility] = useState(null)
+    const [sunset, setSunset] = useState(null)
+    const [sunrise, setSunrise] = useState(null)
+    const [twilight, setTwilight] = useState(null)
+    const [noon, setNoon] = useState(null)
+    const [maxGust, setMaxGust] = useState(null)
+    const [maxSpeed, setMaxSpeed] = useState(null)
     const [variableDirection, setVariableDirection] = useState([])
     const [jumpruns, setJumpruns] = useState([])
     const [newSpot, setNewSpot] = useState('')
@@ -143,6 +143,7 @@ const WindSpeedProvider = props => {
             const res = JSON.parse(event.data)
 
             weatherData.unshift(res.payload)
+            console.log(weatherData[0])
             if (weatherData[0]) {
 
                 if (weatherData[0].data.weather.altimeterSetting) {
@@ -181,7 +182,8 @@ const WindSpeedProvider = props => {
                 }
 
                 if (weatherData[0].data.weather.skyCondition[0].altitude === null) {
-                    setCloudCeiling1()
+                    setSkyCondition1('Clear Sky')
+                    setCloudCeiling1('')
                 }
 
                 if (weatherData[0].data.weather.skyCondition[1]) {
@@ -193,7 +195,7 @@ const WindSpeedProvider = props => {
                 }
 
                 if (weatherData[0].data.weather.skyCondition[1] === undefined) {
-                    setCloudCeiling2()
+                    setCloudCeiling2('')
                     setSkyCondition2('')
                 }
 
@@ -292,6 +294,7 @@ const WindSpeedProvider = props => {
                 if (weatherData[0].data.weather.skyCondition[0].cloudCover) {
                     if (weatherData[0].data.weather.skyCondition[0].cloudCover === 'CLR') {
                         setSkyCondition1('Clear Sky')
+                        setCloudCeiling1('')
                     }
                     if (weatherData[0].data.weather.skyCondition[0].cloudCover === 'SCT') {
                         setSkyCondition1('Scattered')
@@ -337,8 +340,11 @@ const WindSpeedProvider = props => {
                     (!weatherData[0].data.weather.skyCondition[1] || !weatherData[0].data.weather.skyCondition[1].cloudCover) &&
                     (!weatherData[0].data.weather.skyCondition[2] || !weatherData[0].data.weather.skyCondition[2].cloudCover)) {
                     setSkyCondition1('Clear Sky');
-                    setSkyCondition2('');
-                    setSkyCondition3('');
+                    setCloudCeiling1('')
+                    setSkyCondition2('')
+                    setCloudCeiling2('')
+                    setSkyCondition3('')
+                    setCloudCeiling3('')
                 }
             }
         };
