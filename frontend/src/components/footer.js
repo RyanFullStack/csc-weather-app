@@ -25,7 +25,11 @@ function Footer() {
                         </div>
                     ) : null
                 ) : (
-                    <div id ='scroll-container'><div id='scroll-text'>Happy Halloween from CSC!</div></div>
+                    <div id='scroll-container'>
+                        <div id='scroll-text'>
+                            <span>HAPPY HOLIDAYS FROM CSC!!</span><span>SAFETY DAY 4/6/24</span>
+                        </div>
+                    </div>
                 )
             }
 

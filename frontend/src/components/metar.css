@@ -20,7 +20,7 @@
 
 .footer-jumprun {
   font-size: 1.2rem;
-  color: rgb(224, 167, 9);
+  color: rgb(49, 196, 159);
 }
 .footer-jumprun-loading {
   display: flex;
@@ -28,7 +28,7 @@
   width: 80vw;
   justify-content: space-between;
   font-size: 1.2rem;
-  color: rgb(224, 167, 9);
+  color: rgb(49, 196, 159);
 }
 
 #scroll-container {
@@ -42,46 +42,46 @@
   align-items: center;
   justify-content: center;
   font-size: calc(6px + 2vmin);
-  color: rgb(224, 167, 9);
-  -moz-transform: translateX(100%);
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%);
+  color: rgb(49, 196, 159);
+  gap: 50vw;
+  -moz-transform: translateX(200%);
+  -webkit-transform: translateX(200%);
+  transform: translateX(200%);
   white-space: nowrap;
-
-  -moz-animation: my-animation 10s linear infinite;
-  -webkit-animation: my-animation 10s linear infinite;
-  animation: my-animation 10s linear infinite;
+  -moz-animation: my-animation 15s linear infinite;
+  -webkit-animation: my-animation 15s linear infinite;
+  animation: my-animation 15s linear infinite;
 }
 
 /* for Firefox */
 @-moz-keyframes my-animation {
   from {
-    -moz-transform: translateX(100%);
+    -moz-transform: translateX(200%);
   }
   to {
-    -moz-transform: translateX(-100%);
+    -moz-transform: translateX(-200%);
   }
 }
 
 /* for Chrome */
 @-webkit-keyframes my-animation {
   from {
-    -webkit-transform: translateX(100%);
+    -webkit-transform: translateX(200%);
   }
   to {
-    -webkit-transform: translateX(-100%);
+    -webkit-transform: translateX(-200%);
   }
 }
 
 @keyframes my-animation {
   from {
-    -moz-transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
+    -moz-transform: translateX(200%);
+    -webkit-transform: translateX(200%);
+    transform: translateX(200%);
   }
   to {
-    -moz-transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
+    -moz-transform: translateX(-200%);
+    -webkit-transform: translateX(-200%);
+    transform: translateX(-200%);
   }
 }

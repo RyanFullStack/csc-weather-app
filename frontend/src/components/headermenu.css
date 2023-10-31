@@ -10,7 +10,7 @@
     gap: 1vh;
     align-items: center;
     position: absolute;
-    background-color: rgb(224, 167, 9);
+    background-color: rgb(49, 196, 159);
     padding: 10px;
     border-radius: 1rem;
     width: 220px;
@@ -33,13 +33,13 @@
     margin: 1px;
 }
 .menu-button-container button:hover {
-    color: rgb(224, 167, 9);
+    color: rgb(49, 196, 159);
     background-color: rgb(0, 0, 0);
 }
 .active-button {
     background-color: transparent;
 }
 .disabled-button {
-    color: rgb(224, 167, 9);
+    color: rgb(49, 196, 159);
     background-color: rgb(0, 0, 0);
 }

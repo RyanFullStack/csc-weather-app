@@ -6,6 +6,7 @@
     color: rgb(243, 16, 16);
     gap: .5vw;
     font-size: calc(6px + 1vmin);
+    text-shadow: 1px 1px 3px black;
 }
 
 @keyframes blink {
