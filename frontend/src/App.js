@@ -87,11 +87,11 @@ function App() {
         <div className='footer-container'>
           {window.location.pathname !== '/loadingarea' ? <Footer /> :
             <div className="footer-jumprun-loading">
-              <div>app.skydivecsc.com</div>
+              <div className='loading-footer-content'>app.skydivecsc.com</div>
 
-              {jumpruns[0]?.beerLight ? <span className="yellow weather-hold">*** BEER LIGHT IS ON! ***</span> : jumpruns[0]?.weatherHold ?  <span className="red weather-hold">*** DZ {jumpruns[0].weatherType} HOLD ***</span> : null}
+              {jumpruns[0]?.beerLight ? <span className="yellow weather-hold" id='loading-footer-light'>*** BEER LIGHT IS ON! ***</span> : jumpruns[0]?.weatherHold ? <span className="red weather-hold" id='loading-footer-light'>*** DZ {jumpruns[0].weatherType} HOLD ***</span> : null}
 
-              <div>Chicagoland Skydiving Center</div>
+              <div className='loading-footer-content'>Chicagoland Skydiving Center</div>
             </div>
           }
         </div>

@@ -73,9 +73,22 @@
     overflow-x: hidden;
   }
   .footer-jumprun-loading {
-    font-size: calc(7px + 1vmin)
+    font-size: calc(7px + 1vmin);
   }
   #aloft-loading, .no-jumprun, #loading-details {
     font-size: calc(12px + 1vmin);
+  }
+  #loading-footer-light {
+    font-size: calc(4px + 1vmin);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .loading-footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 }
