@@ -77,7 +77,7 @@ function LoadingArea() {
 
 
 
-            <div className="loading-area-content">
+            <div className="loading-area-content" id='loading-details'>
                 {!jumpruns[0]?.heading ? <div className='no-jumprun'>
                     No Jumprun Set
                 </div> : null}

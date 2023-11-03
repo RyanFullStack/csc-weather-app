@@ -39,7 +39,7 @@ function WindsAloftLoading() {
 
     return (
         <div className="wind-aloft-table">
-            <div className="aloft-contents">
+            <div className="aloft-contents" id='aloft-loading'>
                 <table>
                     <thead>
                         <tr>
