@@ -72,30 +72,6 @@ function Header() {
     }, []);
 
 
-    useEffect(() => {
-        if (!localStorage.getItem('darktheme')) {
-            localStorage.setItem('darktheme', 'true')
-        } else {
-            setDarkTheme(localStorage.getItem('darktheme'))
-        }
-    }, [darkTheme, setDarkTheme])
-
-    useEffect(() => {
-        if (!localStorage.getItem('tempSetting')) {
-            localStorage.setItem('tempSetting', 'true')
-        } else {
-            setTempSetting(localStorage.getItem('tempSetting'))
-        }
-    }, [tempSetting, setTempSetting])
-
-    useEffect(() => {
-        if (!localStorage.getItem('unitSetting')) {
-            localStorage.setItem('unitSetting', 'true')
-        } else {
-            setUnitSetting(localStorage.getItem('unitSetting'))
-        }
-    }, [unitSetting, setUnitSetting])
-
     return (
         <>
             {window.location.pathname !== '/loadingarea' ? <div className='themecontainer'>

@@ -60,7 +60,7 @@ const WindSpeedProvider = props => {
             data()
         }, 200000)
 
-        return function() {
+        return function () {
             clearInterval(interval)
         }
     }, [])
@@ -143,7 +143,7 @@ const WindSpeedProvider = props => {
             const res = JSON.parse(event.data)
 
             weatherData.unshift(res.payload)
-            
+
             if (weatherData[0]) {
 
                 if (weatherData[0].data.weather.altimeterSetting) {
@@ -169,13 +169,13 @@ const WindSpeedProvider = props => {
 
                 setMetar(metArr2)
                 if (weatherData[0].data.weather.temperature) {
-                setTemp(weatherData[0].data.weather.temperature)
-                setTempC(((weatherData[0].data.weather.temperature - 32) / 1.8).toFixed(1))
+                    setTemp(weatherData[0].data.weather.temperature)
+                    setTempC(((weatherData[0].data.weather.temperature - 32) / 1.8).toFixed(1))
                 }
 
                 if (weatherData[0].data.weather.skyCondition[0].altitude) {
                     if (unitSetting === 'true') {
-                    setCloudCeiling1(`${weatherData[0].data.weather.skyCondition[0].altitude}'`)
+                        setCloudCeiling1(`${weatherData[0].data.weather.skyCondition[0].altitude}'`)
                     } else {
                         setCloudCeiling1(`${(weatherData[0].data.weather.skyCondition[0].altitude / 3.28).toFixed(0)}M`)
                     }
@@ -189,9 +189,9 @@ const WindSpeedProvider = props => {
                 if (weatherData[0].data.weather.skyCondition[1]) {
                     if (unitSetting === 'true') {
                         setCloudCeiling2(`${weatherData[0].data.weather.skyCondition[1].altitude}'`)
-                        } else {
-                            setCloudCeiling2(`${(weatherData[0].data.weather.skyCondition[1].altitude  / 3.28).toFixed(0)}M`)
-                        }
+                    } else {
+                        setCloudCeiling2(`${(weatherData[0].data.weather.skyCondition[1].altitude / 3.28).toFixed(0)}M`)
+                    }
                 }
 
                 if (weatherData[0].data.weather.skyCondition[1] === undefined) {
@@ -202,9 +202,9 @@ const WindSpeedProvider = props => {
                 if (weatherData[0].data.weather.skyCondition[2]) {
                     if (unitSetting === 'true') {
                         setCloudCeiling3(`${weatherData[0].data.weather.skyCondition[2].altitude}'`)
-                        } else {
-                            setCloudCeiling3(`${(weatherData[0].data.weather.skyCondition[2].altitude  / 3.28).toFixed(0)}M`)
-                        }
+                    } else {
+                        setCloudCeiling3(`${(weatherData[0].data.weather.skyCondition[2].altitude / 3.28).toFixed(0)}M`)
+                    }
                 }
 
                 if (weatherData[0].data.weather.skyCondition[2] === undefined) {
@@ -354,23 +354,23 @@ const WindSpeedProvider = props => {
 
     useEffect(() => {
         const getWind = async () => {
-          const res = await fetch('https://corsproxy.io/?https://lifeatterminalvelocity.com/csc_awos/data.php');
-          const resArr = await res.json();
+            const res = await fetch('https://corsproxy.io/?https://lifeatterminalvelocity.com/csc_awos/data.php');
+            const resArr = await res.json();
 
-          if (!gustData.length || gustData[0].receivedAt !== resArr[0].receivedAt) {
-            setGustData([...resArr]);
-          }
+            if (!gustData.length || gustData[0].receivedAt !== resArr[0].receivedAt) {
+                setGustData([...resArr]);
+            }
         };
         getWind()
         const interval = setInterval(() => {
-          getWind();
+            getWind();
         }, 20000);
 
         return () => {
-          clearInterval(interval);
+            clearInterval(interval);
         };
         // eslint-disable-next-line
-      }, []);
+    }, []);
 
 
     useEffect(() => {
@@ -379,9 +379,9 @@ const WindSpeedProvider = props => {
         if (max < gustSpeed) {
             setMaxGust(gustSpeed)
         } else {
-        setMaxGust(max)
+            setMaxGust(max)
         }
-    },[gustData, gustSpeed])
+    }, [gustData, gustSpeed])
 
     useEffect(() => {
         const maxSpeed = gustData.map(gust => gust.wind_speed)
@@ -445,26 +445,42 @@ const WindSpeedProvider = props => {
             if (jumpruns[0].spot > 0 && jumpruns[0].spot < 10) {
                 setNewSpot(`.${jumpruns[0].spot}`)
             }
-            if (jumpruns[0].spot > 10) {
-                const numStr = jumpruns[0].spot.toString();
-                const beforeDecimal = numStr.slice(0, -1);
-                const afterDecimal = numStr.slice(-1);
-                setNewSpot(`${beforeDecimal}.${afterDecimal}`)
+            if (jumpruns[0].spot >= 10) {
+                setNewSpot(`${(jumpruns[0].spot * .1).toFixed(1)}`)
             }
             if (jumpruns[0].offset > 0 && jumpruns[0].offset < 10) {
                 setNewOffset(`.${jumpruns[0].offset}`)
             }
-            if (jumpruns[0].offset > 10) {
-                const numStr = jumpruns[0].offset.toString();
-                const beforeDecimal = numStr.slice(0, -1);
-                const afterDecimal = numStr.slice(-1);
-                setNewOffset(`${beforeDecimal}.${afterDecimal}`)
+            if (jumpruns[0].offset >= 10) {
+                setNewOffset(`${(jumpruns[0].offset * .1).toFixed(1)}`)
             }
-
-
-
         }
     }, [jumpruns])
+
+
+    useEffect(() => {
+        if (!localStorage.getItem('darktheme')) {
+            localStorage.setItem('darktheme', 'true')
+        } else {
+            setDarkTheme(localStorage.getItem('darktheme'))
+        }
+    }, [darkTheme, setDarkTheme])
+
+    useEffect(() => {
+        if (!localStorage.getItem('tempSetting')) {
+            localStorage.setItem('tempSetting', 'true')
+        } else {
+            setTempSetting(localStorage.getItem('tempSetting'))
+        }
+    }, [tempSetting, setTempSetting])
+
+    useEffect(() => {
+        if (!localStorage.getItem('unitSetting')) {
+            localStorage.setItem('unitSetting', 'true')
+        } else {
+            setUnitSetting(localStorage.getItem('unitSetting'))
+        }
+    }, [unitSetting, setUnitSetting])
 
 
     return (
