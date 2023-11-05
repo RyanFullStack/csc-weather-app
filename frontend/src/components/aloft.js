@@ -6,14 +6,13 @@ function WindsAloft() {
   const { directions, speeds, temps, received, darkTheme, tempSetting, unitSetting } =
     useContext(WeatherContext);
 
-  const timeZoneOffset = -6;
-  let adjustedHour = (parseInt(received) + timeZoneOffset + 24) % 24;
-  const convertedHour = ((adjustedHour + 11) % 12) + 1;
-  const period = adjustedHour >= 12 ? "PM" : "AM";
+    if (!directions || !speeds || !temps || !received) {
+      return <div className="loading">Winds Aloft Loading!</div>;
+    }
 
-  if (!directions || !speeds || !temps || !received) {
-    return <div className="loading">Winds Aloft Loading!</div>;
-  }
+  const receivedDate = new Date()
+  receivedDate.setUTCHours(parseInt(received),0,0,0)
+  const localReveiced = receivedDate.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', timeZoneName: 'short', hour: 'numeric'})
 
   const calculateTemperatureColor = (temperature) => {
     const minTemperature = 25;
@@ -43,8 +42,7 @@ function WindsAloft() {
   return (
     <div className="wind-aloft-table">
       <div className="aloft-title">
-        Winds Received at {convertedHour}
-        {period} CST, valid now
+        Winds Received at {localReveiced}, valid now
       </div>
       <div className="aloft-contents">
         <table>
