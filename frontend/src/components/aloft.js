@@ -6,7 +6,7 @@ function WindsAloft() {
   const { directions, speeds, temps, received, darkTheme, tempSetting, unitSetting } =
     useContext(WeatherContext);
 
-  const timeZoneOffset = -5;
+  const timeZoneOffset = -6;
   let adjustedHour = (parseInt(received) + timeZoneOffset + 24) % 24;
   const convertedHour = ((adjustedHour + 11) % 12) + 1;
   const period = adjustedHour >= 12 ? "PM" : "AM";
