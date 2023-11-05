@@ -44,7 +44,7 @@ function WindsAloft() {
     <div className="wind-aloft-table">
       <div className="aloft-title">
         Winds Received at {convertedHour}
-        {period} CDT, valid now
+        {period} CST, valid now
       </div>
       <div className="aloft-contents">
         <table>
