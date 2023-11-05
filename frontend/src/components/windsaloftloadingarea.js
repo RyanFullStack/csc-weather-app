@@ -26,118 +26,33 @@ function WindsAloftLoading() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                            <td>{unitSetting === 'true' ? "2,000'" : "609M"}</td>
-                            <td>
-                                {directions["2000"]}º{" "}
-                                <i
-                                    className="fas fa-chevron-up"
-                                    style={{ transform: `rotate(${directions["2000"] + 180}deg)` }}
-                                ></i>
-                            </td>
-                            <td>{speeds["2000"]} kts</td>
-                            <td  style={{ color: calculateTemperatureColor(temps['2000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '2px 2px 1px black' }}>
-                                {tempSetting === "false"
-                                    ? `${temps["2000"]}º C`
-                                    : `${Math.round(temps["2000"] * (9 / 5) + 32)}º F`}
-                            </td>
-                        </tr>
-                        <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                            <td>{unitSetting === 'true' ? "4,000'" : "1219M"}</td>
-                            <td>
-                                {directions["4000"]}º{" "}
-                                <i
-                                    className="fas fa-chevron-up"
-                                    style={{ transform: `rotate(${directions["4000"] + 180}deg)` }}
-                                ></i>
-                            </td>
-                            <td>{speeds["4000"]} kts</td>
-                            <td  style={{ color: calculateTemperatureColor(temps['4000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '2px 2px 1px black'  }}>
-                                {tempSetting === "false"
-                                    ? `${temps["4000"]}º C`
-                                    : `${Math.round(temps["4000"] * (9 / 5) + 32)}º F`}
-                            </td>
-                        </tr>
-                        <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                            <td>{unitSetting === 'true' ? "6,000'" : "1828M"}</td>
-                            <td>
-                                {directions["6000"]}º{" "}
-                                <i
-                                    className="fas fa-chevron-up"
-                                    style={{ transform: `rotate(${directions["6000"] + 180}deg)` }}
-                                ></i>
-                            </td>
-                            <td>{speeds["6000"]} kts</td>
-                            <td  style={{ color: calculateTemperatureColor(temps['6000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '2px 2px 1px black'  }}>
-                                {tempSetting === "false"
-                                    ? `${temps["6000"]}º C`
-                                    : `${Math.round(temps["6000"] * (9 / 5) + 32)}º F`}
-                            </td>
-                        </tr>
-                        <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                            <td>{unitSetting === 'true' ? "8,000'" : "2438M"}</td>
-                            <td>
-                                {directions["8000"]}º{" "}
-                                <i
-                                    className="fas fa-chevron-up"
-                                    style={{ transform: `rotate(${directions["8000"] + 180}deg)` }}
-                                ></i>
-                            </td>
-                            <td>{speeds["8000"]} kts</td>
-                            <td  style={{ color: calculateTemperatureColor(temps['8000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '2px 2px 1px black'  }}>
-                                {tempSetting === "false"
-                                    ? `${temps["8000"]}º C`
-                                    : `${Math.round(temps["8000"] * (9 / 5) + 32)}º F`}
-                            </td>
-                        </tr>
-                        <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                            <td>{unitSetting === 'true' ? "10,000'" : "3048M"}</td>
-                            <td>
-                                {directions["10000"]}º{" "}
-                                <i
-                                    className="fas fa-chevron-up"
-                                    style={{ transform: `rotate(${directions["10000"] + 180}deg)` }}
-                                ></i>
-                            </td>
-                            <td>{speeds["10000"]} kts</td>
-                            <td  style={{ color: calculateTemperatureColor(temps['10000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '2px 2px 1px black'  }}>
-                                {tempSetting === "false"
-                                    ? `${temps["10000"]}º C`
-                                    : `${Math.round(temps["10000"] * (9 / 5) + 32)}º F`}
-                            </td>
-                        </tr>
-                        <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                            <td>{unitSetting === 'true' ? "12,000'" : "3657M"}</td>
-                            <td>
-                                {directions["12000"]}º{" "}
-                                <i
-                                    className="fas fa-chevron-up"
-                                    style={{ transform: `rotate(${directions["12000"] + 180}deg)` }}
-                                ></i>
-                            </td>
-                            <td>{speeds["12000"]} kts</td>
-                            <td  style={{ color: calculateTemperatureColor(temps['12000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '2px 2px 1px black'  }}>
-                                {tempSetting === "false"
-                                    ? `${temps["12000"]}º C`
-                                    : `${Math.round(temps["12000"] * (9 / 5) + 32)}º F`}
-                            </td>
-                        </tr>
-                        <tr className={darkTheme === "true" ? "table" : "table-light"}>
-                            <td>{unitSetting === 'true' ? "14,000'" : "4267M"}</td>
-                            <td>
-                                {directions["14000"]}º{" "}
-                                <i
-                                    className="fas fa-chevron-up"
-                                    style={{ transform: `rotate(${directions["14000"] + 180}deg)` }}
-                                ></i>
-                            </td>
-                            <td>{speeds["14000"]} kts</td>
-                            <td style={{ color: calculateTemperatureColor(temps['14000'] * (9 / 5) + 32), fontWeight: 'bold', textShadow: '2px 2px 1px black'  }}>
-                                {tempSetting === "false"
-                                    ? `${temps["14000"]}º C`
-                                    : `${Math.round(temps["14000"] * (9 / 5) + 32)}º F`}
-                            </td>
-                        </tr>
+                        {Array.from({ length: 7 }, (_, index) => {
+                            const altitude = (index + 1) * 2000;
+                            const altitudeKey = `${altitude}`;
+
+                            return (
+                                <tr className={darkTheme === 'true' ? 'table' : 'table-light'} key={altitudeKey}>
+                                    <td>{altitude}'</td>
+                                    <td>
+                                        {directions[altitudeKey]}º{' '}
+                                        <i
+                                            className="fas fa-chevron-up"
+                                            style={{ transform: `rotate(${directions[altitudeKey] + 180}deg)` }}
+                                        ></i>
+                                    </td>
+                                    <td>{speeds[altitudeKey]} kts</td>
+                                    <td style={{
+                                        color: calculateTemperatureColor(temps[altitudeKey] * (9 / 5) + 32),
+                                        fontWeight: 'bold',
+                                        textShadow: '2px 2px 1px black',
+                                    }}>
+                                        {tempSetting === 'false'
+                                            ? `${temps[altitudeKey]}º C`
+                                            : `${Math.round(temps[altitudeKey] * (9 / 5) + 32)}º F`}
+                                    </td>
+                                </tr>
+                            );
+                        })}
                     </tbody>
                 </table>
             </div>
