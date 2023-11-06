@@ -15,6 +15,7 @@ function WindsAloft() {
   receivedDate.setUTCHours(parseInt(received), 0, 0, 0)
   const localReceived = receivedDate.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', timeZoneName: 'short', hour: 'numeric' })
 
+    console.log(directions)
 
   return (
     <div className="wind-aloft-table">
@@ -34,7 +35,7 @@ function WindsAloft() {
           <tbody>
             {Array.from({ length: 18 }, (_, index) => {
               const altitude = unitSetting === 'true' ? `${index + 1},000'` : `${index * 304 + 304}M`;
-              const altitudeKey = `${index * 1000}`;
+              const altitudeKey = `${(index + 1) * 1000}`;
 
               return (
                 <tr className={darkTheme === 'true' ? 'table' : 'table-light'} key={altitudeKey}>
