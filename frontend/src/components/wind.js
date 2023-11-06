@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { WeatherContext } from "../context/WeatherContext";
 import arrow from '../images/arrow.png'
-import '../components/anamometer.css'
+import './anamometer.css'
 
 function Wind() {
   const { speed, gustSpeed, direction, metarAbbr, metarDesc, skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3 } = useContext(WeatherContext)
@@ -30,7 +30,7 @@ function Wind() {
         normalizedDirection = direction;
       }
 
-      setTrackDirection(`rotate-${normalizedDirection}`);
+      setTrackDirection(`${normalizedDirection}`);
     }
   }, [direction, trackDirection]);
 
@@ -69,7 +69,7 @@ function Wind() {
       </div>
       <div className="wind-component-right">
         <div className="wind-anamometer">
-          <img src={arrow} alt='Wind Direction' className={`arrow  ${trackDirection}`}></img>
+          <img src={arrow} alt='Wind Direction' className='arrow' style={{ transform: `rotate(${trackDirection}deg)` }}></img>
         </div>
         <div className="metar-abbr">
           <div className={`metar ${mini}`}>{metarDesc && metarAbbr ? `${metarDesc}  ${metarAbbr}` : metarAbbr ? `${metarAbbr}` : null}</div>
