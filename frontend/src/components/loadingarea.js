@@ -1,6 +1,6 @@
-import GustChart from './gusts';
 import { WeatherContext } from '../context/WeatherContext';
 import { useContext, useState, useEffect } from 'react';
+import GustChart from './gusts';
 import WindsAloftLoading from './windsaloftloadingarea';
 import arrow from '../images/arrow.png'
 import './loadingarea.css'

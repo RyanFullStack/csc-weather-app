@@ -2,7 +2,6 @@ import { useContext, useEffect } from "react"
 import { WeatherContext } from "../context/WeatherContext"
 
 
-
 function CurrentTemp() {
     const { temp, tempC, tempSetting, setTempSetting } = useContext(WeatherContext)
 

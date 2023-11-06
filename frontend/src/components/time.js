@@ -14,9 +14,7 @@ function GetCst() {
     useEffect(() => {
         const timeInt = setInterval(() => {
             const timeObj = getNewDate().toLocaleString('en-US', { timeZone: 'America/Chicago' })
-
             const timeArr = timeObj.split(',')
-
             const [date, time] = timeArr
 
             setCurrentTime(time.split(' ')[1])

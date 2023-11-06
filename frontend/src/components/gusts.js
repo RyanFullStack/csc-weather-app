@@ -42,7 +42,7 @@ function GustChart() {
                 label: 'Wind Speed',
                 data: speeds,
 
-                fill: true, // Enable fill
+                fill: true,
                 backgroundColor: 'rgba(49, 196, 159, .8)', // Fill color
                 borderColor: 'rgba(0,0,0,1)', // Line color
                 pointBackgroundColor: 'rgb(49, 196, 159)',
@@ -55,7 +55,7 @@ function GustChart() {
                 label: 'Gust Speed',
                 data: gusts,
 
-                fill: true, // Enable fill
+                fill: true,
                 backgroundColor: 'rgba(255,0,0,.7)', // Fill color
                 borderColor: 'rgba(0,0,0,1)', // Line color
                 pointBackgroundColor: 'rgba(255,0,0,1)',
