@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
-function HangarCam() {
+function WebCam() {
   useEffect(() => {
     const interval = setInterval(() => {
-      
+
       const timestamp = Date.now();
       const imgElement = document.getElementById('cam');
       imgElement.src = `https://webcam.skydivecsc.com/hangar_nw?1688604278611&_=${timestamp}`;
@@ -20,4 +20,4 @@ function HangarCam() {
   );
 }
 
-export default HangarCam;
+export default WebCam;

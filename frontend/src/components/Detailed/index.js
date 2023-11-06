@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import { WeatherContext } from "../context/WeatherContext";
-import fb from '../images/fb.png'
-import ig from '../images/ig.png'
-import wa from '../images/wa.png'
+import { WeatherContext } from "../../context/WeatherContext";
+import fb from '../../images/fb.png'
+import ig from '../../images/ig.png'
+import wa from '../../images/wa.png'
 
 
 function DetailedPage() {

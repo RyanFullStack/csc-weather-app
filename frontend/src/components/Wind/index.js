@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import { WeatherContext } from "../context/WeatherContext";
-import arrow from '../images/arrow.png'
+import { WeatherContext } from "../../context/WeatherContext";
+import arrow from '../../images/arrow.png'
 import './anamometer.css'
 
 function Wind() {
@@ -32,7 +32,8 @@ function Wind() {
 
       setTrackDirection(`${normalizedDirection}`);
     }
-  }, [direction, trackDirection]);
+    // eslint-disable-next-line
+  }, [direction]);
 
   useEffect(() => {
     if (gustSpeed) {

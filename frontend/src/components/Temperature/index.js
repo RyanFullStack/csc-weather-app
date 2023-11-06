@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react"
-import { WeatherContext } from "../context/WeatherContext"
+import { WeatherContext } from "../../context/WeatherContext"
 
 
 function CurrentTemp() {

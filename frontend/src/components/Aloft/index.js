@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { WeatherContext } from "../context/WeatherContext";
-import { calculateTemperatureColor } from "./utils";
+import { WeatherContext } from "../../context/WeatherContext";
+import { calculateTemperatureColor } from "../utils";
 import "./aloft.css";
 
 function WindsAloft() {

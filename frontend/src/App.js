@@ -1,17 +1,17 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { WeatherContext } from './context/WeatherContext';
 import { useContext } from 'react';
-import Footer from './components/footer';
-import Header from './components/header';
-import Wind from './components/wind';
-import HangarCam from './components/hangar';
-import GustChart from './components/gusts';
-import NavBar from './components/navigation';
-import WindsAloft from './components/aloft';
-import CscRadar from './components/radar';
-import DetailedPage from './components/details';
-import LoadingArea from './components/loadingarea';
-import Me from './components/me';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Wind from './components/Wind';
+import WebCam from './components/Webcam';
+import GustChart from './components/Gusts';
+import NavBar from './components/Navigation';
+import WindsAloft from './components/Aloft';
+import CscRadar from './components/Radar';
+import DetailedPage from './components/Detailed';
+import LoadingArea from './components/LoadingArea';
+import Me from './components/Me';
 import './App.css';
 
 function App() {
@@ -42,7 +42,7 @@ function App() {
 
           <Route exact path='/hangar'>
             <div className='hangar-cam-container'>
-              <HangarCam />
+              <WebCam />
             </div>
           </Route>
 

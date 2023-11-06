@@ -1,6 +1,6 @@
-import live from "../images/live.png";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import live from "../../images/live.png";
 import "./livestatus.css";
 
 function LiveStatus() {

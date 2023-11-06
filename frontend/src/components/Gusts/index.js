@@ -3,7 +3,7 @@ import Chart from 'chart.js/auto';
 import { Line } from 'react-chartjs-2'
 import 'chartjs-plugin-annotation';
 import { useContext, useEffect, useState } from 'react';
-import { WeatherContext } from '../context/WeatherContext';
+import { WeatherContext } from '../../context/WeatherContext';
 
 function GustChart() {
     const { gustData, darkTheme } = useContext(WeatherContext)

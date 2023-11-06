@@ -1,6 +1,6 @@
-import { WeatherContext } from '../context/WeatherContext';
+import { WeatherContext } from '../../context/WeatherContext';
 import { useContext } from 'react';
-import { calculateTemperatureColor } from './utils';
+import { calculateTemperatureColor } from '../utils';
 
 function WindsAloftLoading() {
     const { directions, speeds, temps, darkTheme, tempSetting } =

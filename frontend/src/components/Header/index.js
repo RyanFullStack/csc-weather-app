@@ -1,15 +1,15 @@
 import { useContext, useState, useRef, useEffect } from "react";
-import { WeatherContext } from "../context/WeatherContext";
-import GetCst from './time'
-import CurrentTemp from './temp';
-import LiveStatus from './livestatus';
-import audio from '../images/audio.png'
-import redLight from '../images/redlight.png'
-import yellowLight from '../images/yellowlight.png'
-import greenLight from '../images/greenlight.png'
-// import noLight from '../images/nolight.png'
-import pumpkin from '../images/pumpkin.png'
-import turkey from '../images/turkey.png'
+import { WeatherContext } from "../../context/WeatherContext";
+import GetCst from '../Time'
+import CurrentTemp from '../Temperature';
+import LiveStatus from '../LiveStatus';
+import audio from '../../images/audio.png'
+import redLight from '../../images/redlight.png'
+import yellowLight from '../../images/yellowlight.png'
+import greenLight from '../../images/greenlight.png'
+// import noLight from '../../images/nolight.png'
+import pumpkin from '../../images/pumpkin.png'
+import turkey from '../../images/turkey.png'
 import './headermenu.css'
 
 function Header() {
