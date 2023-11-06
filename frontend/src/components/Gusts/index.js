@@ -15,7 +15,7 @@ function GustChart() {
     useEffect(() => {
         const timeStamps = gustData.map(gust => {
             const timeObj = new Date(gust.timestamp_stored + 'Z')
-            const localTime = timeObj.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit' })
+            const localTime = timeObj.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit' }).split(' ')[0]
             return localTime
         })
 
