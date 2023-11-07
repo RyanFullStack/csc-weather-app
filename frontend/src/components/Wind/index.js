@@ -5,35 +5,9 @@ import './anamometer.css'
 
 function Wind() {
   const { speed, gustSpeed, direction, metarAbbr, metarDesc, skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3 } = useContext(WeatherContext)
-  const [trackDirection, setTrackDirection] = useState('')
   const [gusting, setGusting] = useState('')
   const [mini, setMini] = useState('')
 
-
-  useEffect(() => {
-    if (direction === null) {
-      setTrackDirection('');
-    } else {
-      const currentDirection = trackDirection ? parseInt(trackDirection.split('-')[1]) : null;
-      let normalizedDirection;
-
-      if (currentDirection !== null) {
-        const clockwiseDistance = (direction - currentDirection + 360) % 360;
-        const counterclockwiseDistance = (currentDirection - direction + 360) % 360;
-
-        if (clockwiseDistance <= counterclockwiseDistance) {
-          normalizedDirection = direction;
-        } else {
-          normalizedDirection = direction >= 0 ? direction - 360 : direction;
-        }
-      } else {
-        normalizedDirection = direction;
-      }
-
-      setTrackDirection(`${normalizedDirection}`);
-    }
-    // eslint-disable-next-line
-  }, [direction]);
 
   useEffect(() => {
     if (gustSpeed) {
@@ -70,7 +44,7 @@ function Wind() {
       </div>
       <div className="wind-component-right">
         <div className="wind-anamometer">
-          <img src={arrow} alt='Wind Direction' className='arrow' style={{ transform: `rotate(${trackDirection}deg)` }}></img>
+          <img src={arrow} alt='Wind Direction' className='arrow' style={{ transform: `rotate(${direction}deg)` }}></img>
         </div>
         <div className="metar-abbr">
           <div className={`metar ${mini}`}>{metarDesc && metarAbbr ? `${metarDesc}  ${metarAbbr}` : metarAbbr ? `${metarAbbr}` : null}</div>

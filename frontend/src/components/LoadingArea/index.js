@@ -9,32 +9,7 @@ function LoadingArea() {
     const { skyCondition1, skyCondition2, skyCondition3, cloudCeiling1, cloudCeiling2, cloudCeiling3, maxSpeed, maxGust, sunset, jumpruns, newSpot, newOffset, direction, darkTheme, speed, gustSpeed } =
         useContext(WeatherContext);
     const [gusting, setGusting] = useState('')
-    const [trackDirection, setTrackDirection] = useState('')
 
-
-    useEffect(() => {
-        if (direction === null) {
-            setTrackDirection('');
-        } else {
-            const currentDirection = trackDirection ? parseInt(trackDirection.split('-')[1]) : null;
-            let normalizedDirection;
-
-            if (currentDirection !== null) {
-                const clockwiseDistance = (direction - currentDirection + 360) % 360;
-                const counterclockwiseDistance = (currentDirection - direction + 360) % 360;
-
-                if (clockwiseDistance <= counterclockwiseDistance) {
-                    normalizedDirection = direction;
-                } else {
-                    normalizedDirection = direction >= 0 ? direction - 360 : direction;
-                }
-            } else {
-                normalizedDirection = direction;
-            }
-
-            setTrackDirection(`rotate-${normalizedDirection}`);
-        }
-    }, [direction, trackDirection]);
 
     useEffect(() => {
         if (gustSpeed) {
@@ -60,7 +35,7 @@ function LoadingArea() {
 
                 <div className='arrow-loading'>
                     <div className="wind-anamometer-loading">
-                        <img src={arrow} alt='Wind Direction' className={`arrow  ${trackDirection}`}></img>
+                        <img src={arrow} alt='Wind Direction' className='arrow' style={{ transform: `rotate(${direction}deg)` }}></img>
                     </div>
                     <div className="wind-direction">
                         {direction ? `From ${direction}º` : speed === 0 ? `Calm` : null}
