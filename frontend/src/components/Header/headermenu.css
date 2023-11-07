@@ -24,12 +24,12 @@
     left: -240px;
 }
 
-.menu-button-container {
+.menu-button-container, .menu-button-container-light {
     display: flex;
     width: 200px;
 }
 
-.menu-button-container button {
+.menu-button-container button, .menu-button-container-light button {
     margin: 1px;
 }
 .menu-button-container button:hover {
@@ -42,4 +42,20 @@
 .disabled-button {
     color: rgb(49, 196, 159);
     background-color: rgb(0, 0, 0);
+}
+.active-button-light {
+    background-color: rgb(49, 196, 159);
+    color: black;
+    border: 2px solid black;
+}
+.disabled-button-light {
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+}
+#menu-light {
+    background-color: rgba(255, 255, 255, .5);
+}
+.menu-button-container-light button:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(139, 219, 199);
 }

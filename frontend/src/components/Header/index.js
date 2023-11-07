@@ -76,19 +76,19 @@ function Header() {
         <>
             {window.location.pathname !== '/loadingarea' ? <div className='themecontainer'>
                 <i className="fas fa-bars" onClick={handleMenu} />
-                <div ref={menuRef} className={`menu ${menu}`}>
+                <div ref={menuRef} className={`menu ${menu}`} id={darkTheme==='false'?'menu-light':''}>
                     Options
-                    <div className="menu-button-container">
-                        <button className={tempSetting==='true' ? 'disabled-button' :'active-button'} disabled={tempSetting === 'true'} onClick={handleTemp}>ºF</button>
-                        <button className={tempSetting==='true' ? 'active-button' :'disabled-button'} disabled={tempSetting === 'false'} onClick={handleTemp}>ºC</button>
+                    <div className={darkTheme==='true'?'menu-button-container':'menu-button-container-light'}>
+                        <button className={tempSetting==='true' && darkTheme==='true' ? 'disabled-button' : tempSetting==='false' && darkTheme==='false' ? 'disabled-button-light': tempSetting==='true' && darkTheme === 'true' ? 'active-button': 'active-button-light'} disabled={tempSetting === 'true'} onClick={handleTemp}>ºF</button>
+                        <button className={tempSetting==='false' && darkTheme==='true' ? 'disabled-button' : tempSetting==='true' && darkTheme==='false' ? 'disabled-button-light': tempSetting==='false' && darkTheme === 'true' ? 'active-button': 'active-button-light'} disabled={tempSetting === 'false'} onClick={handleTemp}>ºC</button>
                     </div>
-                    <div className="menu-button-container">
-                        <button className={unitSetting==='true' ? 'disabled-button' :'active-button'} disabled={unitSetting === 'true'} onClick={handleUnit}>FEET</button>
-                        <button className={unitSetting==='true' ? 'active-button' :'disabled-button'} disabled={unitSetting === 'false'} onClick={handleUnit}>METERS</button>
+                    <div className={darkTheme==='true'?'menu-button-container':'menu-button-container-light'}>
+                        <button className={unitSetting==='true' && darkTheme==='true' ? 'disabled-button' : unitSetting==='false' && darkTheme==='false' ? 'disabled-button-light': unitSetting==='true' && darkTheme === 'true' ? 'active-button': 'active-button-light'} disabled={unitSetting === 'true'} onClick={handleUnit}>FEET</button>
+                        <button className={unitSetting==='false' && darkTheme==='true' ? 'disabled-button' : unitSetting==='true' && darkTheme==='false' ? 'disabled-button-light': unitSetting==='false' && darkTheme === 'true' ? 'active-button': 'active-button-light'} disabled={unitSetting === 'false'} onClick={handleUnit}>METERS</button>
                     </div>
-                    <div className="menu-button-container">
-                        <button className={darkTheme==='true' ? 'disabled-button' :'active-button'} disabled={darkTheme === 'true'} onClick={handleTheme}>DARK</button>
-                        <button className={darkTheme==='true' ? 'active-button' :'disabled-button'} disabled={darkTheme === 'false'} onClick={handleTheme}>LIGHT</button>
+                    <div className={darkTheme==='true'?'menu-button-container':'menu-button-container-light'}>
+                        <button className={darkTheme==='true' && darkTheme==='true' ? 'disabled-button' : darkTheme==='false' && darkTheme==='false' ? 'disabled-button-light': darkTheme==='true' && darkTheme === 'true' ? 'active-button': 'active-button-light'} disabled={darkTheme === 'true'} onClick={handleTheme}>DARK</button>
+                        <button className={darkTheme==='false' && darkTheme==='true' ? 'disabled-button' : darkTheme==='true' && darkTheme==='false' ? 'disabled-button-light': darkTheme==='false' && darkTheme === 'true' ? 'active-button': 'active-button-light'} disabled={darkTheme === 'false'} onClick={handleTheme}>LIGHT</button>
                     </div>
 
                 </div>
