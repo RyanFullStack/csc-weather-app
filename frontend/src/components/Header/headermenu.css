@@ -53,7 +53,7 @@
     background-color: transparent;
 }
 #menu-light {
-    background-color: rgba(255, 255, 255, .5);
+    background-color: rgb(255, 255, 255);
 }
 .menu-button-container-light button:hover {
     color: rgb(0, 0, 0);
