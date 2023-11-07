@@ -32,7 +32,7 @@ function WindsAloft() {
           </thead>
           <tbody>
             {Array.from({ length: 18 }, (_, index) => {
-              const altitude = unitSetting === 'true' ? `${index + 1},000'` : `${index * 304 + 304}M`;
+              const altitude = unitSetting === 'true' ? `${index + 1},000'` : `${(index + 1) * 304}M`;
               const altitudeKey = `${(index + 1) * 1000}`;
 
               return (
