@@ -3,6 +3,7 @@ import { useContext, useState, useEffect } from 'react';
 import GustChart from '../Gusts';
 import WindsAloftLoading from './windsaloft';
 import arrow from '../../images/arrow.png'
+import arrowright from '../../images/arrow-right.png'
 import './loadingarea.css'
 
 function LoadingArea() {
@@ -35,7 +36,7 @@ function LoadingArea() {
 
                 <div className='arrow-loading'>
                     <div className="wind-anamometer-loading">
-                        <img src={arrow} alt='Wind Direction' className='arrow' style={{ transform: `rotate(${direction}deg)` }}></img>
+                        <img src={direction && direction > 0 && direction < 180 ? arrowright : arrow} alt='Wind Direction' className='arrow' style={{ transform: `rotate(${direction}deg)` }}></img>
                     </div>
                     <div className="wind-direction">
                         {direction ? `From ${direction}º` : speed === 0 ? `Calm` : null}
