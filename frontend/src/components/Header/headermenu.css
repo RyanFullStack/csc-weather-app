@@ -40,10 +40,12 @@
 }
 .active-button {
     background-color: transparent;
+    border: 2px solid black;
 }
 .disabled-button {
     color: rgb(49, 196, 159);
     background-color: rgb(0, 0, 0);
+    border: 2px solid black;
 }
 .active-button-light {
     background-color: rgb(49, 196, 159);
@@ -53,6 +55,7 @@
 .disabled-button-light {
     color: rgb(0, 0, 0);
     background-color: transparent;
+    border: 2px solid black;
 }
 #menu-light {
     background-color: rgb(219, 217, 207);
