@@ -1,4 +1,4 @@
-.fa-bars {
+.fa-bars, .fa-angle-double-left {
     cursor: pointer;
     margin-left: 8px;
 }
@@ -17,11 +17,13 @@
     z-index: 3;
     top: 10.5vh;
     left: 10px;
-    transition: left 0.3s ease;
+    opacity: 1;
+    transition: left .3s ease, opacity 1s;
 }
 
 .hidden {
     left: -240px;
+    opacity: 0;
 }
 
 .menu-button-container, .menu-button-container-light {

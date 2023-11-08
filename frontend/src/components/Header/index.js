@@ -75,7 +75,7 @@ function Header() {
     return (
         <>
             {window.location.pathname !== '/loadingarea' ? <div className='themecontainer'>
-                <i className="fas fa-bars" onClick={handleMenu} />
+                <i className={menu === 'hidden' ? 'fas fa-bars' : 'fas fa-angle-double-left'} onClick={handleMenu} />
                 <div ref={menuRef} className={`menu ${menu}`} id={darkTheme==='false'?'menu-light':''}>
                     Options
                     <div className={darkTheme==='true'?'menu-button-container':'menu-button-container-light'}>
