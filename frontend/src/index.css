@@ -14,7 +14,7 @@ button, .navbutton, body, span, p, table {
   transition-duration: .3s;
 }
 
-#adsbexchange_mobile_pushdown-pushdown-cls {
+[data-freestar-ad] {
   height: 0 !important;
   width: 0 !important;
   display: none !important;
@@ -26,7 +26,7 @@ button, .navbutton, body, span, p, table {
   }
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
-  #adsbexchange_mobile_pushdown-pushdown-cls {
+  [data-freestar-ad] {
     height: 0 !important;
     width: 0 !important;
     display: none !important;
