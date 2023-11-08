@@ -18,7 +18,7 @@
     top: 10.5vh;
     left: 10px;
     opacity: 1;
-    transition: left .3s ease, opacity .5s;
+    transition: left .3s ease, opacity .5s, background-color .4s, color .4s;
 }
 
 .hidden {
@@ -55,7 +55,7 @@
     background-color: transparent;
 }
 #menu-light {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(219, 217, 207);
 }
 .menu-button-container-light button:hover {
     color: rgb(0, 0, 0);
