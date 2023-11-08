@@ -246,7 +246,7 @@
   margin-top: 2vh;
 }
 
-.windy-radar {
+.windy-radar, .aircraft-tracker {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -255,7 +255,7 @@
   width: 90%;
 }
 
-.windy-radar embed {
+.windy-radar embed, .aircraft-tracker embed {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -536,7 +536,7 @@ a:hover {
   margin-bottom: 2vh;
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1450px) {
   .footer-container {
     font-size: calc(6px + 1vmin);
   }
@@ -609,7 +609,7 @@ a:hover {
 
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1300px) {
   .arrow {
     max-height: 100%;
     max-width: 100%;
@@ -644,7 +644,7 @@ a:hover {
     margin-top: 4vh;
     width: 90%;
   }
-  .windy-radar {
+  .windy-radar, .aircraft-tracker {
     height: 74vh;
     margin-top: 2vh;
     width: 100%;
@@ -667,5 +667,15 @@ a:hover {
   }
   .time-component {
     font-size: calc(6px + 1.8vmin);
+  }
+
+  @media screen and (max-width: 500px) {
+    .nav-component a {
+      font-size: calc(10px + 1vmin)
+    }
+    .time-container img {
+      height: 7vmin;
+    }
+
   }
 }

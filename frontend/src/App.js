@@ -12,6 +12,7 @@ import CscRadar from './components/Radar';
 import DetailedPage from './components/Detailed';
 import LoadingArea from './components/LoadingArea';
 import Me from './components/Me';
+import Aircraft from './components/Aircraft'
 import './App.css';
 
 function App() {
@@ -61,6 +62,12 @@ function App() {
           <Route exact path='/radar'>
             <div className='radar-container'>
               <CscRadar />
+            </div>
+          </Route>
+
+          <Route exact path='/aircraft'>
+            <div className='radar-container'>
+              <Aircraft />
             </div>
           </Route>
 

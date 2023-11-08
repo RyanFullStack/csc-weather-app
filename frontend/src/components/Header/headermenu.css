@@ -18,7 +18,7 @@
     top: 10.5vh;
     left: 10px;
     opacity: 1;
-    transition: left .3s ease, opacity 1s;
+    transition: left .3s ease, opacity .5s;
 }
 
 .hidden {

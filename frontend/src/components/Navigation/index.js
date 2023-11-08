@@ -30,6 +30,9 @@ function NavBar() {
     else if (path === '/radar') {
       setActive('7');
     }
+    else if (path === '/aircraft') {
+      setActive('8');
+    }
   }, [location]);
 
   useEffect(() => {
@@ -55,17 +58,20 @@ function NavBar() {
           <NavLink exact to="/aloft" id="3" className={active === '3' && darkTheme === 'true' ? 'navbuttonactive' : active === '3' && darkTheme === 'false' ? 'navbuttonactivelight' : 'navbutton'} onClick={handleClick}>ALOFT</NavLink>
         </div>
         <div>
-          <NavLink exact to="/hangar" id="4" className={active === '4' && darkTheme === 'true' ? 'navbuttonactive' : active === '4' && darkTheme === 'false' ? 'navbuttonactivelight' : 'navbutton'} onClick={handleClick}>WEBCAM</NavLink>
+          <NavLink exact to="/detailed" id="5" className={active === '5' && darkTheme === 'true' ? 'navbuttonactive' : active === '5' && darkTheme === 'false' ? 'navbuttonactivelight' : 'navbutton'} onClick={handleClick}>DETAILED</NavLink>
+        </div>
+        <div>
+          <NavLink exact to="/me" id="6" className={active === '6' && darkTheme === 'true' ? 'navbuttonactive' : active === '6' && darkTheme === 'false' ? 'navbuttonactivelight' : 'navbutton'} onClick={handleClick}>ME</NavLink>
         </div>
       </div>
 
 
       <div className='nav-bottom-half'>
-        <div>
-          <NavLink exact to="/detailed" id="5" className={active === '5' && darkTheme === 'true' ? 'navbuttonactive' : active === '5' && darkTheme === 'false' ? 'navbuttonactivelight' : 'navbutton'} onClick={handleClick}>DETAILED</NavLink>
+      <div>
+          <NavLink exact to="/hangar" id="4" className={active === '4' && darkTheme === 'true' ? 'navbuttonactive' : active === '4' && darkTheme === 'false' ? 'navbuttonactivelight' : 'navbutton'} onClick={handleClick}>WEBCAM</NavLink>
         </div>
         <div>
-          <NavLink exact to="/me" id="6" className={active === '6' && darkTheme === 'true' ? 'navbuttonactive' : active === '6' && darkTheme === 'false' ? 'navbuttonactivelight' : 'navbutton'} onClick={handleClick}>ME</NavLink>
+          <NavLink exact to="/aircraft" id="8" className={active === '8' && darkTheme === 'true' ? 'navbuttonactive' : active === '8' && darkTheme === 'false' ? 'navbuttonactivelight' : 'navbutton'} onClick={handleClick}>AIRCRAFT</NavLink>
         </div>
         <div>
           <NavLink exact to="/radar" id="7" className={active === '7' && darkTheme === 'true' ? 'navbuttonactive' : active === '7' && darkTheme === 'false' ? 'navbuttonactivelight' : 'navbutton'} onClick={handleClick}>RADAR</NavLink>
