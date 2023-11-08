@@ -14,22 +14,8 @@ button, .navbutton, body, span, p, table {
   transition-duration: .3s;
 }
 
-[data-freestar-ad] {
-  height: 0 !important;
-  width: 0 !important;
-  display: none !important;
-}
-
 @media screen and (max-width: 768px) {
   body {
     background-size: auto 20vh, cover;
   }
-
-@media screen and (min-width: 320px) and (max-width: 768px) {
-  [data-freestar-ad] {
-    height: 0 !important;
-    width: 0 !important;
-    display: none !important;
-  }
-}
 }
