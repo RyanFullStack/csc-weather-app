@@ -14,11 +14,14 @@ function NavBar() {
     const path = location.pathname;
     if (path === '/') {
       setActive('1');
-    } else if (path === '/gusts') {
+    }
+    else if (path === '/gusts') {
       setActive('2');
-    } else if (path === '/aloft') {
+    }
+    else if (path === '/aloft') {
       setActive('3');
-    } else if (path === '/hangar') {
+    }
+    else if (path === '/hangar') {
       setActive('4');
     }
     else if (path === '/detailed') {
@@ -67,7 +70,7 @@ function NavBar() {
 
 
       <div className='nav-bottom-half'>
-      <div>
+        <div>
           <NavLink exact to="/hangar" id="4" className={active === '4' && darkTheme === 'true' ? 'navbuttonactive' : active === '4' && darkTheme === 'false' ? 'navbuttonactivelight' : 'navbutton'} onClick={handleClick}>WEBCAM</NavLink>
         </div>
         <div>
