@@ -9,10 +9,10 @@
     rgba(0, 0, 0, 1) 7%,
     rgba(34, 34, 34, 0.9) 10%,
     rgba(34, 34, 34, 0.9) 90%,
-    rgba(240, 223, 69, 0.3) 95%
+    rgba(0, 0, 0, .1) 95%
   );
   font-size: calc(10px + 2vmin);
-  color: rgb(49, 196, 159);
+  color: rgb(74, 196, 49);
   overflow: hidden;
 }
 
@@ -27,7 +27,7 @@
     rgba(0, 0, 0, 1) 7%,
     rgba(255, 255, 255, 0.5) 10%,
     rgba(255, 255, 255, 0.5) 90%,
-    rgba(240, 223, 69, 0.3) 95%
+    rgba(0, 0, 0, .1) 95%
   );
   font-size: calc(10px + 2vmin);
   color: rgb(0, 0, 0);
@@ -45,7 +45,8 @@
   align-items: center;
   height: 8vh;
   min-width: 100vw;
-  color: black;
+  color: rgb(255, 0, 0);
+  text-shadow: 2px 2px 5px black;
   font-weight: bold;
 }
 .header-container-loadingarea {
@@ -55,7 +56,8 @@
   align-items: center;
   height: 8vh;
   min-width: 100vw;
-  color: black;
+  color: rgb(255, 0, 0);
+  text-shadow: 2px 2px 5px black;
   font-weight: bold;
 }
 
@@ -132,11 +134,11 @@
   border-radius: 10px;
   cursor: pointer;
   height: 3vh;
-  background-color: rgb(49, 196, 159);
+  background-color: rgb(74, 196, 49);
 }
 
 .navbutton:hover {
-  background-color: rgb(139, 219, 199);
+  background-color: rgb(90, 247, 59);
 }
 
 .fa-external-link {
@@ -145,7 +147,7 @@
 }
 
 .nav-component a {
-  color: rgb(49, 196, 159);
+  color: rgb(74, 196, 49);
 }
 
 .light a {

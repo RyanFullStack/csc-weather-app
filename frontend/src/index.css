@@ -3,7 +3,7 @@ body {
   font-family: 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-    background-image: url('./images/fallleaves.png'), url('./images/csc.jpg');
+    background-image: url('./images/xmasbanner.png'), url('./images/csc.jpg');
     background-position: top, 50%;
     background-size: 100% 20vh, cover;
     background-repeat: no-repeat, no-repeat;

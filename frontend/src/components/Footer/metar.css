@@ -20,7 +20,7 @@
 
 .footer-jumprun {
   font-size: 1.2rem;
-  color: rgb(49, 196, 159);
+  color: rgb(74, 196, 49);
 }
 .footer-jumprun-loading {
   display: flex;
@@ -28,7 +28,7 @@
   width: 80vw;
   justify-content: space-between;
   font-size: 1.2rem;
-  color: rgb(49, 196, 159);
+  color: rgb(74, 196, 49);
 }
 
 #scroll-container {
@@ -42,7 +42,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(6px + 2vmin);
-  color: rgb(49, 196, 159);
+  color: rgb(74, 196, 49);
   gap: 50vw;
   -moz-transform: translateX(200%);
   -webkit-transform: translateX(200%);

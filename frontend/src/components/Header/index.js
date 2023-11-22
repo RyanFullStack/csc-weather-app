@@ -3,12 +3,10 @@ import { WeatherContext } from "../../context/WeatherContext";
 import GetCst from '../Time'
 import CurrentTemp from '../Temperature';
 import LiveStatus from '../LiveStatus';
-import audio from '../../images/audio.png'
+import audio from '../../images/audiored.png'
 import redLight from '../../images/redlight.png'
 import yellowLight from '../../images/yellowlight.png'
 import greenLight from '../../images/greenlight.png'
-import pumpkin from '../../images/pumpkin.png'
-import turkey from '../../images/turkey.png'
 import './headermenu.css'
 
 function Header() {
@@ -96,9 +94,9 @@ function Header() {
                 <LiveStatus />
             </div>
             <div className='time-container'>
-                {jumpruns[0] ? <img src={jumpruns[0]?.beerLight ? yellowLight : jumpruns[0]?.weatherHold ? redLight : jumpruns[0]?.heading ? greenLight : null} alt='beerlight' /> : <img src={turkey} alt='beerlight' />}
+                {jumpruns[0] ? <img src={jumpruns[0]?.beerLight ? yellowLight : jumpruns[0]?.weatherHold ? redLight : jumpruns[0]?.heading ? greenLight : null} alt='beerlight' /> : null}
                 <GetCst />
-                {jumpruns[0] ? <img src={jumpruns[0]?.beerLight ? yellowLight : jumpruns[0]?.weatherHold ? redLight : jumpruns[0]?.heading ? greenLight : null} alt='beerlight' /> : <img src={pumpkin} alt='beerlight' />}
+                {jumpruns[0] ? <img src={jumpruns[0]?.beerLight ? yellowLight : jumpruns[0]?.weatherHold ? redLight : jumpruns[0]?.heading ? greenLight : null} alt='beerlight' /> : null}
             </div>
             {window.location.pathname !== '/loadingarea' ? <div className="temp-logos">
                 <a href='http://audio.skydivecsc.com/' target='_blank' rel='noreferrer'><img src={audio} alt='audio' /></a>
