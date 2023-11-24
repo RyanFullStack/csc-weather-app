@@ -6,7 +6,7 @@ function WebCam() {
 
       const timestamp = Date.now();
       const imgElement = document.getElementById('cam');
-      imgElement.src = `http://webcam.skydivecsc.com/hangar_nw?${timestamp}`;
+      imgElement.src = `https://webcam.skydivecsc.com/hangar_nw?${timestamp}`;
     }, 1000);
 
 
@@ -15,7 +15,7 @@ function WebCam() {
 
   return (
     <div className='hangar-cam'>
-      <img src={`http://webcam.skydivecsc.com/hangar_nw?${Date.now()}`} id='cam' alt='Hangar camera feed not found, This is a problem with the source and not this app. Visit skydivecsc.com/skydiving-webcams to confirm.'/>
+      <img src={`https://webcam.skydivecsc.com/hangar_nw?${Date.now()}`} id='cam' alt='Hangar camera feed not found, This is a problem with the source and not this app. Visit skydivecsc.com/skydiving-webcams to confirm.'/>
     </div>
   );
 }
