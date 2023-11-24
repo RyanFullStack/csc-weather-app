@@ -12,7 +12,7 @@
     rgba(0, 0, 0, .5) 95%
   );
   font-size: calc(10px + 2vmin);
-  color: rgb(74, 196, 49);
+  color: rgb(55, 165, 33);
   overflow: hidden;
 }
 
@@ -134,7 +134,7 @@
   border-radius: 10px;
   cursor: pointer;
   height: 3vh;
-  background-color: rgb(74, 196, 49);
+  background-color: rgb(55, 165, 33);
 }
 
 .navbutton:hover {
@@ -147,7 +147,7 @@
 }
 
 .nav-component a {
-  color: rgb(74, 196, 49);
+  color: rgb(55, 165, 33);
 }
 
 .light a {
