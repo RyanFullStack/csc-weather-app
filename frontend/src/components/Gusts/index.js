@@ -107,7 +107,7 @@ function GustChart() {
                         },
                         x: {
                             grid: {
-                                color: `rgb(0, 0, 0)`,
+                                color: `rgba(130, 10, 10, .7)`,
                             }
                         }
                     }

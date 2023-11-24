@@ -127,9 +127,9 @@ function Me() {
         <button onClick={handleClear}>CLEAR</button>
       </div>
       <div className="me-details">
-        <small>This is a recommendation.</small><br />
-        <small>As a licensed skydiver,</small><br />
-        <small>you are responsible for yourself.</small>
+        <small className="red">This is a recommendation.</small><br />
+        <small className="red">As a licensed skydiver,</small><br />
+        <small className="red">you are responsible for yourself.</small>
       </div>
     </div>
   );
