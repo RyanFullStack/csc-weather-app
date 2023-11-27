@@ -1,4 +1,5 @@
 import { useEffect, useState, createContext } from 'react'
+import { w3cwebsocket as WebSocket } from 'websocket';
 
 export const WeatherContext = createContext()
 
@@ -67,7 +68,7 @@ const WindSpeedProvider = props => {
 
 
     useEffect(() => {
-        const WebSocket = require('websocket').w3cwebsocket
+
 
         const windQuery = `
         subscription {
@@ -109,7 +110,7 @@ const WindSpeedProvider = props => {
     }, [windData])
 
     useEffect(() => {
-        const WebSocket = require('websocket').w3cwebsocket
+
 
         const weatherQuery = `
         subscription {
