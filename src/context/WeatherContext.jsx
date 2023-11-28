@@ -522,10 +522,10 @@ const WindSpeedProvider = (props) => {
   }, [unitSetting, setUnitSetting]);
 
   useEffect(() => {
-    if (!localStorage.getItem("userWebcam")) {
-      localStorage.setItem("userWebcam", "west");
+    if (!localStorage.getItem("webcamDirection")) {
+      localStorage.setItem("webcamDirection", "west");
     } else {
-      setUnitSetting(localStorage.getItem("userWebcam"));
+      setWebcamDirection(localStorage.getItem("webcamDirection"));
     }
   }, [webcamDirection, setWebcamDirection]);
 
