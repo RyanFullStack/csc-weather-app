@@ -1,18 +1,22 @@
 import { useEffect, useState, useContext } from "react";
 import { WeatherContext } from "../../context/WeatherContext";
-import './webcam.css'
+import "./webcam.css";
 
 function WebCam() {
-  const { webcamDirection, setWebcamDirection, darkTheme } = useContext(WeatherContext);
+  const { webcamDirection, setWebcamDirection, darkTheme } =
+    useContext(WeatherContext);
 
   const handleWebcamEast = () => {
-      setWebcamDirection("east");
-      localStorage.setItem("webcamDirection", "east");
-
+    setWebcamDirection("east");
+    localStorage.setItem("webcamDirection", "east");
   };
   const handleWebcamWest = () => {
-      setWebcamDirection("west");
-      localStorage.setItem("webcamDirection", "west");
+    setWebcamDirection("west");
+    localStorage.setItem("webcamDirection", "west");
+  };
+  const handleWebcamPro = () => {
+    setWebcamDirection("pro");
+    localStorage.setItem("webcamDirection", "pro");
   };
 
   useEffect(() => {
@@ -21,8 +25,12 @@ function WebCam() {
       const imgElement = document.getElementById("cam");
       if (webcamDirection === "west") {
         imgElement.src = `https://webcam.skydivecsc.com/hangar_nw?${timestamp}`;
-      } else {
+      }
+      if (webcamDirection === "east") {
         imgElement.src = `https://webcam.skydivecsc.com/hangar_ne?${timestamp}`;
+      }
+      if (webcamDirection === "pro") {
+        imgElement.src = `https://webcam.skydivecsc.com/proshop?${timestamp}`;
       }
     }, 1000);
 
@@ -32,21 +40,53 @@ function WebCam() {
   return (
     <div className="hangar-cam">
       <div className="hangar-cam-buttons">
-        <button onClick={handleWebcamWest} className={webcamDirection==='west' && darkTheme==='true' ? 'hangar-button-active' : webcamDirection==='west' && darkTheme==='false' ? 'hangar-button-active-light' : 'hangar-button'}>
+        <button
+          onClick={handleWebcamWest}
+          className={
+            webcamDirection === "west" && darkTheme === "true"
+              ? "hangar-button-active"
+              : webcamDirection === "west" && darkTheme === "false"
+              ? "hangar-button-active-light"
+              : "hangar-button"
+          }
+        >
           West
         </button>
-        <button onClick={handleWebcamEast} className={webcamDirection==='east' && darkTheme==='true' ? 'hangar-button-active' : webcamDirection==='east' && darkTheme==='false' ? 'hangar-button-active-light' : 'hangar-button'}>
+        <button
+          onClick={handleWebcamEast}
+          className={
+            webcamDirection === "east" && darkTheme === "true"
+              ? "hangar-button-active"
+              : webcamDirection === "east" && darkTheme === "false"
+              ? "hangar-button-active-light"
+              : "hangar-button"
+          }
+        >
           East
+        </button>
+        <button
+          onClick={handleWebcamPro}
+          className={
+            webcamDirection === "pro" && darkTheme === "true"
+              ? "hangar-button-active"
+              : webcamDirection === "pro" && darkTheme === "false"
+              ? "hangar-button-active-light"
+              : "hangar-button"
+          }
+        >
+          Pro
         </button>
       </div>
       <img
         src={
           webcamDirection === "west"
             ? `https://webcam.skydivecsc.com/hangar_nw?${Date.now()}`
-            : `https://webcam.skydivecsc.com/hangar_ne?${Date.now()}`
+            : webcamDirection === "east"
+            ? `https://webcam.skydivecsc.com/hangar_ne?${Date.now()}`
+            : `https://webcam.skydivecsc.com/proshop?${Date.now()}`
         }
         id="cam"
-        alt="Hangar camera feed not found, This is a problem with the source and not this app. Visit skydivecsc.com/skydiving-webcams to confirm."
+        alt="Camera feed not found, This is a problem with the source and not this app. Visit webcams.skydivecsc.com to confirm."
       />
     </div>
   );
