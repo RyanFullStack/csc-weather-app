@@ -1,8 +1,9 @@
 import { useEffect, useState, useContext } from "react";
 import { WeatherContext } from "../../context/WeatherContext";
+import './webcam.css'
 
 function WebCam() {
-  const { webcamDirection, setWebcamDirection } = useContext(WeatherContext);
+  const { webcamDirection, setWebcamDirection, darkTheme } = useContext(WeatherContext);
 
   const handleWebcam = () => {
     if (webcamDirection === "west") {
@@ -30,8 +31,14 @@ function WebCam() {
 
   return (
     <div className="hangar-cam">
-      <button onClick={handleWebcam} disabled={webcamDirection==='west'}>West</button>
-      <button onClick={handleWebcam} disabled={webcamDirection==='east'}>East</button>
+      <div className="hangar-cam-buttons">
+        <button onClick={handleWebcam} disabled={webcamDirection === "west"} className={webcamDirection==='west' && darkTheme==='true' ? 'hangar-button-active' : webcamDirection==='west' && darkTheme==='false' ? 'hangar-button-active-light' : 'hangar-button'}>
+          West
+        </button>
+        <button onClick={handleWebcam} disabled={webcamDirection === "east"} className={webcamDirection==='east' && darkTheme==='true' ? 'hangar-button-active' : webcamDirection==='east' && darkTheme==='false' ? 'hangar-button-active-light' : 'hangar-button'}>
+          East
+        </button>
+      </div>
       <img
         src={
           webcamDirection === "west"

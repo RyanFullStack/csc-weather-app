@@ -1,0 +1,19 @@
+.hangar-button {
+    border: 2px solid black;
+}
+.hangar-button-active {
+    border: 2px solid black;
+    background-color: black;
+}
+.hangar-button-active-light {
+    border: 2px solid black;
+    background-color: rgb(255, 0, 0);
+}
+.hangar-button:hover {
+    background-color: rgb(26, 151, 26);
+}
+@media screen and (max-width: 1450px) {
+    .hangar-button, .hangar-button-active, .hangar-button-active-light {
+        border: 1px solid black;
+    }
+}
