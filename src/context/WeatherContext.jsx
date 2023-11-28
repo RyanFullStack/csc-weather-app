@@ -380,14 +380,7 @@ const WindSpeedProvider = (props) => {
           setCloudCeiling3("");
         }
       }
-    };
-    websocket.onerror = function (event) {
-      console.error('WebSocket error:', event);
-    };
-
-    websocket.onclose = function (event) {
-      console.log('WebSocket closed:', event);
-    };
+    }
   }, [weatherData, unitSetting]);
 
   useEffect(() => {
