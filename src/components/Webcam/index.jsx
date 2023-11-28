@@ -5,14 +5,14 @@ import './webcam.css'
 function WebCam() {
   const { webcamDirection, setWebcamDirection, darkTheme } = useContext(WeatherContext);
 
-  const handleWebcam = () => {
-    if (webcamDirection === "west") {
+  const handleWebcamEast = () => {
       setWebcamDirection("east");
       localStorage.setItem("webcamDirection", "east");
-    } else {
+
+  };
+  const handleWebcamWest = () => {
       setWebcamDirection("west");
       localStorage.setItem("webcamDirection", "west");
-    }
   };
 
   useEffect(() => {
@@ -32,10 +32,10 @@ function WebCam() {
   return (
     <div className="hangar-cam">
       <div className="hangar-cam-buttons">
-        <button onClick={handleWebcam} disabled={webcamDirection === "west"} className={webcamDirection==='west' && darkTheme==='true' ? 'hangar-button-active' : webcamDirection==='west' && darkTheme==='false' ? 'hangar-button-active-light' : 'hangar-button'}>
+        <button onClick={handleWebcamWest} className={webcamDirection==='west' && darkTheme==='true' ? 'hangar-button-active' : webcamDirection==='west' && darkTheme==='false' ? 'hangar-button-active-light' : 'hangar-button'}>
           West
         </button>
-        <button onClick={handleWebcam} disabled={webcamDirection === "east"} className={webcamDirection==='east' && darkTheme==='true' ? 'hangar-button-active' : webcamDirection==='east' && darkTheme==='false' ? 'hangar-button-active-light' : 'hangar-button'}>
+        <button onClick={handleWebcamEast} className={webcamDirection==='east' && darkTheme==='true' ? 'hangar-button-active' : webcamDirection==='east' && darkTheme==='false' ? 'hangar-button-active-light' : 'hangar-button'}>
           East
         </button>
       </div>

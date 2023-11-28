@@ -12,6 +12,13 @@
 .hangar-button:hover {
     background-color: rgb(26, 151, 26);
 }
+.hangar-button-active:hover {
+    background-color: black;
+}
+.hangar-button-active-light:hover {
+    background-color: red;
+}
+
 @media screen and (max-width: 1450px) {
     .hangar-button, .hangar-button-active, .hangar-button-active-light {
         border: 1px solid black;
