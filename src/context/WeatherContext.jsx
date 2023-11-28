@@ -41,6 +41,9 @@ const WindSpeedProvider = (props) => {
   const [newSpot, setNewSpot] = useState("");
   const [newOffset, setNewOffset] = useState("");
 
+  let weatherData = []
+  let windData = []
+
   useEffect(() => {
     const data = async () => {
       const res = await fetch(
@@ -92,17 +95,23 @@ const WindSpeedProvider = (props) => {
       const res = JSON.parse(event.data);
 
       if (res.payload) {
-        setVariableDirection(res.payload.data.wind.variableDirection);
-        if (res.payload.data.wind.speed) {
-          setSpeed(res.payload.data.wind.speed);
+
+        windData = []
+        windData.push(res.payload)
+
+        const wind = windData[0].data.wind
+
+        setVariableDirection(wind.variableDirection);
+        if (wind.speed) {
+          setSpeed(wind.speed);
         }
-        setGustSpeed(res.payload.data.wind.gustSpeed);
-        if (res.payload.data.wind.direction) {
-          setDirection(res.payload.data.wind.direction);
+        setGustSpeed(wind.gustSpeed);
+        if (wind.direction) {
+          setDirection(wind.direction);
         }
       }
     };
-  }, []);
+  }, [windData]);
 
   useEffect(() => {
     const weatherQuery = `
@@ -141,20 +150,26 @@ const WindSpeedProvider = (props) => {
       const res = JSON.parse(event.data);
 
       if (res.payload) {
-        if (res.payload.data.weather.altimeterSetting) {
-          setPressure(res.payload.data.weather.altimeterSetting);
+
+        weatherData = []
+        weatherData.push(res.payload)
+
+        const weather = weatherData[0].data.weather
+
+        if (weather.altimeterSetting) {
+          setPressure(weather.altimeterSetting);
         }
-        if (res.payload.data.weather.densityAltitude) {
-          setDensityAlt(res.payload.data.weather.densityAltitude);
+        if (weather.densityAltitude) {
+          setDensityAlt(weather.densityAltitude);
         }
-        if (res.payload.data.weather.visibility) {
-          setVisibility(res.payload.data.weather.visibility);
+        if (weather.visibility) {
+          setVisibility(weather.visibility);
         }
-        if (res.payload.data.weather.dewPoint) {
-          setDewPoint(res.payload.data.weather.dewPoint);
+        if (weather.dewPoint) {
+          setDewPoint(weather.dewPoint);
         }
 
-        const metArr = res.payload.data.weather.metar.split(" ");
+        const metArr = weather.metar.split(" ");
         metArr.pop();
         metArr.pop();
         metArr.pop();
@@ -163,199 +178,199 @@ const WindSpeedProvider = (props) => {
         const metArr2 = metArr.join(" ");
         setMetar(metArr2)
 
-        if (res.payload.data.weather.temperature) {
-          setTemp(res.payload.data.weather.temperature);
+        if (weather.temperature) {
+          setTemp(weather.temperature);
           setTempC(
-            ((res.payload.data.weather.temperature - 32) / 1.8).toFixed(1)
+            ((weather.temperature - 32) / 1.8).toFixed(1)
           );
         }
 
-        if (res.payload.data.weather.skyCondition[0].altitude) {
+        if (weather.skyCondition[0].altitude) {
           if (unitSetting === "true") {
             setCloudCeiling1(
-              `${res.payload.data.weather.skyCondition[0].altitude}'`
+              `${weather.skyCondition[0].altitude}'`
             );
           } else {
             setCloudCeiling1(
               `${(
-                res.payload.data.weather.skyCondition[0].altitude / 3.28
+                weather.skyCondition[0].altitude / 3.28
               ).toFixed(0)}M`
             );
           }
         }
 
-        if (res.payload.data.weather.skyCondition[0].altitude === null) {
+        if (weather.skyCondition[0].altitude === null) {
           setSkyCondition1("Clear Sky");
           setCloudCeiling1("");
         }
 
-        if (res.payload.data.weather.skyCondition[1]) {
+        if (weather.skyCondition[1]) {
           if (unitSetting === "true") {
             setCloudCeiling2(
-              `${res.payload.data.weather.skyCondition[1].altitude}'`
+              `${weather.skyCondition[1].altitude}'`
             );
           } else {
             setCloudCeiling2(
               `${(
-                res.payload.data.weather.skyCondition[1].altitude / 3.28
+                weather.skyCondition[1].altitude / 3.28
               ).toFixed(0)}M`
             );
           }
         }
 
-        if (res.payload.data.weather.skyCondition[1] === undefined) {
+        if (weather.skyCondition[1] === undefined) {
           setCloudCeiling2("");
           setSkyCondition2("");
         }
 
-        if (res.payload.data.weather.skyCondition[2]) {
+        if (weather.skyCondition[2]) {
           if (unitSetting === "true") {
             setCloudCeiling3(
-              `${res.payload.data.weather.skyCondition[2].altitude}'`
+              `${weather.skyCondition[2].altitude}'`
             );
           } else {
             setCloudCeiling3(
               `${(
-                res.payload.data.weather.skyCondition[2].altitude / 3.28
+                weather.skyCondition[2].altitude / 3.28
               ).toFixed(0)}M`
             );
           }
         }
 
-        if (res.payload.data.weather.skyCondition[2] === undefined) {
+        if (weather.skyCondition[2] === undefined) {
           setCloudCeiling3("");
           setSkyCondition3("");
         }
 
-        if (!res.payload.data.weather.presentWeather) {
+        if (!weather.presentWeather) {
           setMetarAbbr("");
           setMetarDesc("");
         }
 
-        if (res.payload.data.weather.presentWeather) {
-          if (res.payload.data.weather.presentWeather.includes("-")) {
+        if (weather.presentWeather) {
+          if (weather.presentWeather.includes("-")) {
             setMetarDesc("Light");
           }
-          if (res.payload.data.weather.presentWeather.includes("+")) {
+          if (weather.presentWeather.includes("+")) {
             setMetarDesc("Heavy");
           }
-          if (res.payload.data.weather.presentWeather.includes("VC")) {
+          if (weather.presentWeather.includes("VC")) {
             setMetarDesc("Vicinity");
           }
-          if (res.payload.data.weather.presentWeather.includes("MI")) {
+          if (weather.presentWeather.includes("MI")) {
             setMetarDesc("Shallow");
           }
-          if (res.payload.data.weather.presentWeather.includes("PR")) {
+          if (weather.presentWeather.includes("PR")) {
             setMetarDesc("Partial");
           }
-          if (res.payload.data.weather.presentWeather.includes("BC")) {
+          if (weather.presentWeather.includes("BC")) {
             setMetarDesc("Patches");
           }
-          if (res.payload.data.weather.presentWeather.includes("DR")) {
+          if (weather.presentWeather.includes("DR")) {
             setMetarDesc("Low Drifting");
           }
-          if (res.payload.data.weather.presentWeather.includes("BL")) {
+          if (weather.presentWeather.includes("BL")) {
             setMetarDesc("Blowing");
           }
-          if (res.payload.data.weather.presentWeather.includes("FZ")) {
+          if (weather.presentWeather.includes("FZ")) {
             setMetarDesc("Freezing");
           }
 
-          if (res.payload.data.weather.presentWeather.includes("BR")) {
+          if (weather.presentWeather.includes("BR")) {
             setMetarAbbr("Mist");
           }
-          if (res.payload.data.weather.presentWeather.includes("TS")) {
+          if (weather.presentWeather.includes("TS")) {
             setMetarAbbr("Thunderstorms");
           }
-          if (res.payload.data.weather.presentWeather.includes("SH")) {
+          if (weather.presentWeather.includes("SH")) {
             setMetarAbbr("Shower");
           }
-          if (res.payload.data.weather.presentWeather.includes("DZ")) {
+          if (weather.presentWeather.includes("DZ")) {
             setMetarAbbr("Drizzle");
           }
-          if (res.payload.data.weather.presentWeather.includes("RA")) {
+          if (weather.presentWeather.includes("RA")) {
             setMetarAbbr("Rain");
           }
-          if (res.payload.data.weather.presentWeather.includes("UP")) {
+          if (weather.presentWeather.includes("UP")) {
             setMetarAbbr("Precipitation");
           }
-          if (res.payload.data.weather.presentWeather.includes("SN")) {
+          if (weather.presentWeather.includes("SN")) {
             setMetarAbbr("Snow");
           }
-          if (res.payload.data.weather.presentWeather.includes("PO")) {
+          if (weather.presentWeather.includes("PO")) {
             setMetarAbbr("DUST DEVILS");
           }
-          if (res.payload.data.weather.presentWeather.includes("SS")) {
+          if (weather.presentWeather.includes("SS")) {
             setMetarAbbr("Sand Storm");
           }
-          if (res.payload.data.weather.presentWeather.includes("GR")) {
+          if (weather.presentWeather.includes("GR")) {
             setMetarAbbr("Hail");
           }
-          if (res.payload.data.weather.presentWeather.includes("FG")) {
+          if (weather.presentWeather.includes("FG")) {
             setMetarAbbr("Fog");
           }
-          if (res.payload.data.weather.presentWeather.includes("FU")) {
+          if (weather.presentWeather.includes("FU")) {
             setMetarAbbr("Smoke");
           }
-          if (res.payload.data.weather.presentWeather.includes("HZ")) {
+          if (weather.presentWeather.includes("HZ")) {
             setMetarAbbr("Haze");
           }
-          if (res.payload.data.weather.presentWeather.includes("FC")) {
+          if (weather.presentWeather.includes("FC")) {
             setMetarAbbr("Tornado");
           }
         }
 
-        if (res.payload.data.weather.skyCondition[0].cloudCover) {
-          if (res.payload.data.weather.skyCondition[0].cloudCover === "CLR") {
+        if (weather.skyCondition[0].cloudCover) {
+          if (weather.skyCondition[0].cloudCover === "CLR") {
             setSkyCondition1("Clear Sky");
             setCloudCeiling1("");
           }
-          if (res.payload.data.weather.skyCondition[0].cloudCover === "SCT") {
+          if (weather.skyCondition[0].cloudCover === "SCT") {
             setSkyCondition1("Scattered");
           }
-          if (res.payload.data.weather.skyCondition[0].cloudCover === "BKN") {
+          if (weather.skyCondition[0].cloudCover === "BKN") {
             setSkyCondition1("Broken");
           }
-          if (res.payload.data.weather.skyCondition[0].cloudCover === "OVC") {
+          if (weather.skyCondition[0].cloudCover === "OVC") {
             setSkyCondition1("Overcast");
           }
         }
 
-        if (res.payload.data.weather.skyCondition[1]) {
-          if (res.payload.data.weather.skyCondition[1].cloudCover === "CLR") {
+        if (weather.skyCondition[1]) {
+          if (weather.skyCondition[1].cloudCover === "CLR") {
             setSkyCondition2("Clear Sky");
           }
-          if (res.payload.data.weather.skyCondition[1].cloudCover === "SCT") {
+          if (weather.skyCondition[1].cloudCover === "SCT") {
             setSkyCondition2("Scattered");
           }
-          if (res.payload.data.weather.skyCondition[1].cloudCover === "BKN") {
+          if (weather.skyCondition[1].cloudCover === "BKN") {
             setSkyCondition2("Broken");
           }
-          if (res.payload.data.weather.skyCondition[1].cloudCover === "OVC") {
+          if (weather.skyCondition[1].cloudCover === "OVC") {
             setSkyCondition2("Overcast");
           }
         }
 
-        if (res.payload.data.weather.skyCondition[2]) {
-          if (res.payload.data.weather.skyCondition[2].cloudCover === "CLR") {
+        if (weather.skyCondition[2]) {
+          if (weather.skyCondition[2].cloudCover === "CLR") {
             setSkyCondition3("Clear Sky");
           }
-          if (res.payload.data.weather.skyCondition[2].cloudCover === "SCT") {
+          if (weather.skyCondition[2].cloudCover === "SCT") {
             setSkyCondition3("Scattered");
           }
-          if (res.payload.data.weather.skyCondition[2].cloudCover === "BKN") {
+          if (weather.skyCondition[2].cloudCover === "BKN") {
             setSkyCondition3("Broken");
           }
-          if (res.payload.data.weather.skyCondition[2].cloudCover === "OVC") {
+          if (weather.skyCondition[2].cloudCover === "OVC") {
             setSkyCondition3("Overcast");
           }
         }
         if (
-          res.payload.data.weather.skyCondition[0]?.cloudCover === "CLR" &&
-          (!res.payload.data.weather.skyCondition[1] ||
-            !res.payload.data.weather.skyCondition[1].cloudCover) &&
-          (!res.payload.data.weather.skyCondition[2] ||
-            !res.payload.data.weather.skyCondition[2].cloudCover)
+          weather.skyCondition[0]?.cloudCover === "CLR" &&
+          (!weather.skyCondition[1] ||
+            !weather.skyCondition[1].cloudCover) &&
+          (!weather.skyCondition[2] ||
+            !weather.skyCondition[2].cloudCover)
         ) {
           setSkyCondition1("Clear Sky");
           setCloudCeiling1("");
@@ -366,7 +381,14 @@ const WindSpeedProvider = (props) => {
         }
       }
     };
-  }, [unitSetting]);
+    websocket.onerror = function (event) {
+      console.error('WebSocket error:', event);
+    };
+
+    websocket.onclose = function (event) {
+      console.log('WebSocket closed:', event);
+    };
+  }, [weatherData, unitSetting]);
 
   useEffect(() => {
     const getWind = async () => {
@@ -387,7 +409,6 @@ const WindSpeedProvider = (props) => {
     return () => {
       clearInterval(interval);
     };
-    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
