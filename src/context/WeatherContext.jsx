@@ -277,7 +277,7 @@ const WindSpeedProvider = (props) => {
             setMetarAbbr("Rain");
           }
           if (res.payload.data.weather.presentWeather.includes("UP")) {
-            setMetarAbbr("Unknown Precipitation");
+            setMetarAbbr("Precipitation");
           }
           if (res.payload.data.weather.presentWeather.includes("SN")) {
             setMetarAbbr("Snow");
