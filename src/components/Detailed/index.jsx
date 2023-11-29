@@ -56,13 +56,13 @@ function DetailedPage() {
         </span>
       ) : (
         <span className="student-wind-hold">
-          {maxGust > 50 || maxSpeed > 50 ? (
+          {maxGust > 50 || maxSpeed > 50 || speed > 50 ? (
             <span className="red">*** HOLY $h*T!!! ***</span>
-          ) : maxGust > 40 || maxSpeed > 40 ? (
+          ) : maxGust > 40 || maxSpeed > 40 || speed > 40 ? (
             <span className="red">*** HANG ON TIGHT!!! ***</span>
-          ) : maxGust > 25 || maxSpeed > 25 ? (
+          ) : maxGust > 25 || maxSpeed > 25 || speed > 25 ? (
             <span className="red">*** DZ WIND LIMIT HIT ***</span>
-          ) : maxGust > 15 || maxSpeed > 15 ? (
+          ) : maxGust > 15 || maxSpeed > 15 || speed > 15 ? (
             <span className="yellow">*** STUDENT WIND HOLD ***</span>
           ) : (
             <span className="green">WINDS OK FOR STUDENTS!</span>
@@ -187,10 +187,10 @@ function DetailedPage() {
                     : Math.round(
                         maxSpeed * (speedUnit === "false" ? 1.151 : 1)
                       )}{" "}
-                  {speedUnit === "true" ? "kt" : "mph"}
+                  {speedUnit === "true" && maxSpeed === 1 ? "kt" : speedUnit === 'true' && maxSpeed > 1 ? 'kts' : "mph"}
                 </span>
               ) : (
-                "0 kts"
+                `0 ${speedUnit === 'true' ? 'kts' : 'mph'}`
               )}
             </td>
           </tr>
