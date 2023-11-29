@@ -6,7 +6,7 @@ import { useContext, useEffect, useState } from 'react';
 import { WeatherContext } from '../../context/WeatherContext';
 
 function GustChart() {
-    const { gustData, darkTheme } = useContext(WeatherContext)
+    const { gustData, darkTheme, speedUnit } = useContext(WeatherContext)
     const [times, setTimes] = useState([])
     const [speeds, setSpeeds] = useState([])
     const [gusts, setGusts] = useState([])
@@ -20,18 +20,28 @@ function GustChart() {
         })
 
         const windSpeeds = gustData.map(wind => {
-            const speed = wind.wind_speed
+            let speed;
+            if (speedUnit === 'true') {
+            speed = wind.wind_speed
+            } else {
+                speed = Math.round(wind.wind_speed * 1.151)
+            }
             return speed
         })
         const gustSpeeds = gustData.map(wind => {
-            const speed = wind.gust_speed
+            let speed;
+            if (speedUnit === 'true') {
+            speed = wind.gust_speed
+            } else {
+                speed = Math.round(wind.gust_speed * 1.151)
+            }
             return speed
         })
         setTimes(timeStamps)
         setSpeeds(windSpeeds)
         setGusts(gustSpeeds)
 
-    }, [gustData, darkTheme])
+    }, [gustData, darkTheme, speedUnit])
 
 
     const data = {
@@ -87,7 +97,7 @@ function GustChart() {
                                 weight: 'bold',
                                 color: 'rgba(0, 0, 0, .8)',
                             },
-                            text: "Wind Speed in Kts - Previous 30 Mins",
+                            text: `Wind Speed in ${speedUnit === 'true' ? 'kts' : 'mph'} - Previous 30 Mins`,
                         },
                         legend: {
                             display: false
