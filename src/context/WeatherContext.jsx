@@ -41,6 +41,7 @@ const WindSpeedProvider = (props) => {
   const [newSpot, setNewSpot] = useState("");
   const [newOffset, setNewOffset] = useState("");
   const [webcamDirection, setWebcamDirection] = useState('west')
+  const [speedUnit, setSpeedUnit] = useState('true')
 
   let weatherData = []
   let windData = []
@@ -529,6 +530,14 @@ const WindSpeedProvider = (props) => {
     }
   }, [webcamDirection, setWebcamDirection]);
 
+  useEffect(() => {
+    if (!localStorage.getItem("speedUnit")) {
+      localStorage.setItem("speedUnit", "true");
+    } else {
+      setSpeedUnit(localStorage.getItem("speedUnit"));
+    }
+  }, [speedUnit, setSpeedUnit]);
+
   return (
     <WeatherContext.Provider
       value={{
@@ -572,7 +581,9 @@ const WindSpeedProvider = (props) => {
         variableDirection,
         maxSpeed,
         webcamDirection,
-        setWebcamDirection
+        setWebcamDirection,
+        speedUnit,
+        setSpeedUnit
       }}
     >
       {props.children}

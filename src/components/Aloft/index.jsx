@@ -4,7 +4,7 @@ import { calculateTemperatureColor } from "../utils";
 import "./aloft.css";
 
 function WindsAloft() {
-  const { directions, speeds, temps, received, darkTheme, tempSetting, unitSetting } =
+  const { directions, speeds, temps, received, darkTheme, tempSetting, unitSetting, speedUnit } =
     useContext(WeatherContext);
 
   if (!directions || !speeds || !temps || !received) {
@@ -45,7 +45,7 @@ function WindsAloft() {
                       style={{ transform: `rotate(${directions[altitudeKey] + 180}deg)` }}
                     ></i>
                   </td>
-                  <td>{speeds[altitudeKey]} kts</td>
+                  <td>{speedUnit === 'true' ? `${speeds[altitudeKey]} kts` : `${Math.round(speeds[altitudeKey] * 1.151)} mph`}</td>
                   <td style={{
                     color: calculateTemperatureColor(temps[altitudeKey] * (9 / 5) + 32),
                     fontWeight: 'bold',
