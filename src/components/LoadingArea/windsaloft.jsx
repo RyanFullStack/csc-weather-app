@@ -46,9 +46,7 @@ function WindsAloftLoading() {
                                         fontWeight: 'bold',
                                         textShadow: '2px 2px 1px black',
                                     }}>
-                                        {tempSetting === 'false'
-                                            ? `${temps[altitudeKey]}º C`
-                                            : `${Math.round(temps[altitudeKey] * (9 / 5) + 32)}º F`}
+                                        {`${Math.round(temps[altitudeKey] * (9 / 5) + 32)}º F`}
                                     </td>
                                 </tr>
                             );

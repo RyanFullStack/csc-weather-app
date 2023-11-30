@@ -16,6 +16,9 @@ const WindSpeedProvider = (props) => {
   const [cloudCeiling1, setCloudCeiling1] = useState("");
   const [cloudCeiling2, setCloudCeiling2] = useState("");
   const [cloudCeiling3, setCloudCeiling3] = useState("");
+  const [cloudCeilingM1, setCloudCeilingM1] = useState("");
+  const [cloudCeilingM2, setCloudCeilingM2] = useState("");
+  const [cloudCeilingM3, setCloudCeilingM3] = useState("");
   const [metarAbbr, setMetarAbbr] = useState("");
   const [metarDesc, setMetarDesc] = useState("");
   const [gustData, setGustData] = useState([]);
@@ -40,11 +43,11 @@ const WindSpeedProvider = (props) => {
   const [jumpruns, setJumpruns] = useState([]);
   const [newSpot, setNewSpot] = useState("");
   const [newOffset, setNewOffset] = useState("");
-  const [webcamDirection, setWebcamDirection] = useState('west')
-  const [speedUnit, setSpeedUnit] = useState('true')
+  const [webcamDirection, setWebcamDirection] = useState("west");
+  const [speedUnit, setSpeedUnit] = useState("true");
 
-  let weatherData = []
-  let windData = []
+  let weatherData = [];
+  let windData = [];
 
   useEffect(() => {
     const data = async () => {
@@ -97,11 +100,10 @@ const WindSpeedProvider = (props) => {
       const res = JSON.parse(event.data);
 
       if (res.payload) {
+        windData = [];
+        windData.push(res.payload);
 
-        windData = []
-        windData.push(res.payload)
-
-        const wind = windData[0].data.wind
+        const wind = windData[0].data.wind;
 
         setVariableDirection(wind.variableDirection);
         if (wind.speed) {
@@ -152,11 +154,10 @@ const WindSpeedProvider = (props) => {
       const res = JSON.parse(event.data);
 
       if (res.payload) {
+        weatherData = [];
+        weatherData.push(res.payload);
 
-        weatherData = []
-        weatherData.push(res.payload)
-
-        const weather = weatherData[0].data.weather
+        const weather = weatherData[0].data.weather;
 
         if (weather.altimeterSetting) {
           setPressure(weather.altimeterSetting);
@@ -178,27 +179,18 @@ const WindSpeedProvider = (props) => {
         metArr.shift();
 
         const metArr2 = metArr.join(" ");
-        setMetar(metArr2)
+        setMetar(metArr2);
 
         if (weather.temperature) {
           setTemp(weather.temperature);
-          setTempC(
-            ((weather.temperature - 32) / 1.8).toFixed(1)
-          );
+          setTempC(((weather.temperature - 32) / 1.8).toFixed(1));
         }
 
         if (weather.skyCondition[0].altitude) {
-          if (unitSetting === "true") {
-            setCloudCeiling1(
-              `${weather.skyCondition[0].altitude}'`
-            );
-          } else {
-            setCloudCeiling1(
-              `${(
-                weather.skyCondition[0].altitude / 3.28
-              ).toFixed(0)}M`
-            );
-          }
+          setCloudCeiling1(`${weather.skyCondition[0].altitude}'`);
+          setCloudCeilingM1(
+            `${(weather.skyCondition[0].altitude / 3.28).toFixed(0)}M`
+          );
         }
 
         if (weather.skyCondition[0].altitude === null) {
@@ -207,17 +199,10 @@ const WindSpeedProvider = (props) => {
         }
 
         if (weather.skyCondition[1]) {
-          if (unitSetting === "true") {
-            setCloudCeiling2(
-              `${weather.skyCondition[1].altitude}'`
-            );
-          } else {
-            setCloudCeiling2(
-              `${(
-                weather.skyCondition[1].altitude / 3.28
-              ).toFixed(0)}M`
-            );
-          }
+          setCloudCeiling2(`${weather.skyCondition[1].altitude}'`);
+          setCloudCeilingM2(
+            `${(weather.skyCondition[1].altitude / 3.28).toFixed(0)}M`
+          );
         }
 
         if (weather.skyCondition[1] === undefined) {
@@ -226,17 +211,10 @@ const WindSpeedProvider = (props) => {
         }
 
         if (weather.skyCondition[2]) {
-          if (unitSetting === "true") {
-            setCloudCeiling3(
-              `${weather.skyCondition[2].altitude}'`
-            );
-          } else {
-            setCloudCeiling3(
-              `${(
-                weather.skyCondition[2].altitude / 3.28
-              ).toFixed(0)}M`
-            );
-          }
+          setCloudCeiling3(`${weather.skyCondition[2].altitude}'`);
+          setCloudCeilingM3(
+            `${(weather.skyCondition[2].altitude / 3.28).toFixed(0)}M`
+          );
         }
 
         if (weather.skyCondition[2] === undefined) {
@@ -369,10 +347,8 @@ const WindSpeedProvider = (props) => {
         }
         if (
           weather.skyCondition[0]?.cloudCover === "CLR" &&
-          (!weather.skyCondition[1] ||
-            !weather.skyCondition[1].cloudCover) &&
-          (!weather.skyCondition[2] ||
-            !weather.skyCondition[2].cloudCover)
+          (!weather.skyCondition[1] || !weather.skyCondition[1].cloudCover) &&
+          (!weather.skyCondition[2] || !weather.skyCondition[2].cloudCover)
         ) {
           setSkyCondition1("Clear Sky");
           setCloudCeiling1("");
@@ -382,7 +358,7 @@ const WindSpeedProvider = (props) => {
           setCloudCeiling3("");
         }
       }
-    }
+    };
   }, [weatherData, unitSetting]);
 
   useEffect(() => {
@@ -558,6 +534,9 @@ const WindSpeedProvider = (props) => {
         cloudCeiling1,
         cloudCeiling2,
         cloudCeiling3,
+        cloudCeilingM1,
+        cloudCeilingM2,
+        cloudCeilingM3,
         metarAbbr,
         metarDesc,
         gustData,
@@ -583,7 +562,7 @@ const WindSpeedProvider = (props) => {
         webcamDirection,
         setWebcamDirection,
         speedUnit,
-        setSpeedUnit
+        setSpeedUnit,
       }}
     >
       {props.children}

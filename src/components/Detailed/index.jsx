@@ -24,6 +24,9 @@ function DetailedPage() {
     cloudCeiling1,
     cloudCeiling2,
     cloudCeiling3,
+    cloudCeilingM1,
+    cloudCeilingM2,
+    cloudCeilingM3,
     speed,
     gustSpeed,
     maxGust,
@@ -33,6 +36,7 @@ function DetailedPage() {
     metarAbbr,
     metarDesc,
     speedUnit,
+    unitSetting
   } = useContext(WeatherContext);
 
   const [varDir1, setVarDir1] = useState();
@@ -251,10 +255,19 @@ function DetailedPage() {
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Sky Condition:</td>
             <td>
-              {skyCondition1} {cloudCeiling1}
-              {skyCondition2 ? <br /> : null}
-              {skyCondition2} {cloudCeiling2}
-              {skyCondition3 ? <br /> : null} {skyCondition3} {cloudCeiling3}
+            {skyCondition1} {cloudCeiling1 && unitSetting === 'true' ? cloudCeiling1 : cloudCeiling1 && unitSetting === 'false' ? cloudCeilingM1 : null}{" "}
+            {skyCondition2 ? <br /> : null}{" "}
+            {skyCondition2 && cloudCeiling2 && unitSetting === 'true'
+              ? `${skyCondition2} ${cloudCeiling2}`
+              : skyCondition2 && cloudCeiling2 && unitSetting === 'false'
+              ? `${skyCondition2} ${cloudCeilingM2}`
+              : null}{" "}
+            {skyCondition3 ? <br /> : null}
+            {skyCondition3 && cloudCeiling3 && unitSetting === 'true'
+              ? `${skyCondition3} ${cloudCeiling3}`
+              : skyCondition3 && cloudCeiling3 && unitSetting === 'false'
+              ? `${skyCondition3} ${cloudCeilingM3}`
+              : null}
             </td>
           </tr>
           <tr className={darkTheme === "true" ? "table" : "table-light"}>

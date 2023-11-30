@@ -17,7 +17,11 @@ function Wind() {
     cloudCeiling1,
     cloudCeiling2,
     cloudCeiling3,
+    cloudCeilingM1,
+    cloudCeilingM2,
+    cloudCeilingM3,
     speedUnit,
+    unitSetting
   } = useContext(WeatherContext);
   const [gusting, setGusting] = useState("");
   const [mini, setMini] = useState("");
@@ -111,14 +115,18 @@ function Wind() {
               : null}
           </div>
           <div className={`sky-conditions ${mini}`}>
-            {skyCondition1} {cloudCeiling1 ? cloudCeiling1 : null}{" "}
+            {skyCondition1} {cloudCeiling1 && unitSetting === 'true' ? cloudCeiling1 : cloudCeiling1 && unitSetting === 'false' ? cloudCeilingM1 : null}{" "}
             {skyCondition2 ? <br /> : null}{" "}
-            {skyCondition2 && cloudCeiling2
+            {skyCondition2 && cloudCeiling2 && unitSetting === 'true'
               ? `${skyCondition2} ${cloudCeiling2}`
+              : skyCondition2 && cloudCeiling2 && unitSetting === 'false'
+              ? `${skyCondition2} ${cloudCeilingM2}`
               : null}{" "}
             {skyCondition3 ? <br /> : null}
-            {skyCondition3 && cloudCeiling3
+            {skyCondition3 && cloudCeiling3 && unitSetting === 'true'
               ? `${skyCondition3} ${cloudCeiling3}`
+              : skyCondition3 && cloudCeiling3 && unitSetting === 'false'
+              ? `${skyCondition3} ${cloudCeilingM3}`
               : null}
           </div>
         </div>
