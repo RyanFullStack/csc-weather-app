@@ -26,6 +26,9 @@ function GustChart() {
             } else {
                 speed = Math.round(wind.wind_speed * 1.151)
             }
+            if (window.location.pathname === '/loadingarea') {
+                speed = wind.wind_speed
+            }
             return speed
         })
         const gustSpeeds = gustData.map(wind => {
@@ -34,6 +37,9 @@ function GustChart() {
             speed = wind.gust_speed
             } else {
                 speed = Math.round(wind.gust_speed * 1.151)
+            }
+            if (window.location.pathname === '/loadingarea') {
+                speed = wind.wind_speed
             }
             return speed
         })
@@ -97,7 +103,7 @@ function GustChart() {
                                 weight: 'bold',
                                 color: 'rgba(0, 0, 0, .8)',
                             },
-                            text: `Wind Speed in ${speedUnit === 'true' ? 'kts' : 'mph'} - Previous 30 Mins`,
+                            text: `Wind Speed in ${window.location.pathname === '/loadingarea' ? 'kts' : speedUnit === 'true' ? 'kts' : 'mph'} - Previous 30 Mins`,
                         },
                         legend: {
                             display: false
