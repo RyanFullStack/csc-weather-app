@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from "react";
+import { NavLink } from "react-router-dom";
 import { WeatherContext } from "../../context/WeatherContext";
 import "./webcam.css";
 
@@ -89,7 +90,7 @@ function WebCam() {
         alt="Camera feed not found, This is a problem with the source and not this app. View help below to fix."
       />
       <div className="webcam-help-info">
-        <a href='/webcamhelp'>Camera not loading? Click here for help.</a>
+        <NavLink exact to='/webcamhelp'>Camera not loading? Click here for help.</NavLink>
       </div>
     </div>
   );

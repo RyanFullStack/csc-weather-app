@@ -42,7 +42,7 @@ function App() {
             </div>
           </Route>
 
-          <Route exact path='/hangar'>
+          <Route exact path='/webcams'>
             <div className='hangar-cam-container'>
               <WebCam />
             </div>
