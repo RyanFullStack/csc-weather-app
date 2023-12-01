@@ -21,7 +21,7 @@ function NavBar() {
     else if (path === '/aloft') {
       setActive('3');
     }
-    else if (path === '/hangar') {
+    else if (path === '/webcams') {
       setActive('4');
     }
     else if (path === '/detailed') {
