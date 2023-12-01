@@ -5,16 +5,6 @@ import { WeatherContext } from "../../context/WeatherContext"
 function CurrentTemp() {
     const { temp, tempC, tempSetting, setTempSetting } = useContext(WeatherContext)
 
-    useEffect(() => {
-        if (!localStorage.getItem('tempSetting')) {
-            localStorage.setItem('tempSetting', 'true')
-        } else {
-            setTempSetting(localStorage.getItem('tempSetting'))
-        }
-
-    }, [tempSetting, setTempSetting])
-
-
     const handleClick = () => {
         if (tempSetting === 'true') {
             setTempSetting('false')

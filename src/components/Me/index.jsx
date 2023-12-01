@@ -67,7 +67,7 @@ function Me() {
       setIsSafe(false);
     }
     if (
-      (speed !== null && userDif !== '' && userDif < gustSpeed - speed)
+      (speed !== null && userDif !== '' && (userDif < gustSpeed - speed || userDif < maxGust - maxSpeed || userDif < maxGust - speed))
     ) {
       setIsSafe(false);
     }
