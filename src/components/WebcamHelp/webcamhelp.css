@@ -1,0 +1,12 @@
+.webcam-help {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+}
+.help-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: justify;
+}

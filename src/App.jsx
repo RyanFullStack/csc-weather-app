@@ -13,6 +13,7 @@ import DetailedPage from './components/Detailed';
 import LoadingArea from './components/LoadingArea';
 import Me from './components/Me';
 import Aircraft from './components/Aircraft'
+import WebcamHelp from './components/WebcamHelp'
 import './App.css';
 
 function App() {
@@ -80,6 +81,12 @@ function App() {
           <Route exact path='/me'>
             <div className='my-container'>
               <Me />
+            </div>
+          </Route>
+
+          <Route exact path='/webcamhelp'>
+            <div className='chart-container'>
+              <WebcamHelp />
             </div>
           </Route>
 

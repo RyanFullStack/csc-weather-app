@@ -86,8 +86,11 @@ function WebCam() {
             : `https://webcam.skydivecsc.com/proshop?${Date.now()}`
         }
         id="cam"
-        alt="Camera feed not found, This is a problem with the source and not this app. Visit webcams.skydivecsc.com to confirm."
+        alt="Camera feed not found, This is a problem with the source and not this app. View help below to fix."
       />
+      <div className="webcam-help-info">
+        <a href='/webcamhelp'>Camera not loading? Click here for help.</a>
+      </div>
     </div>
   );
 }
