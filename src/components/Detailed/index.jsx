@@ -3,6 +3,7 @@ import { WeatherContext } from "../../context/WeatherContext";
 import fb from "../../images/fb.png";
 import ig from "../../images/ig.png";
 import wa from "../../images/wa.png";
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
 function DetailedPage() {
   const {
@@ -287,6 +288,10 @@ function DetailedPage() {
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Pressure:</td>
             <td>{!pressure ? null : pressure + '" Hg'}</td>
+          </tr>
+          <tr className={darkTheme === "true" ? "table" : "table-light"}>
+            <td>Safety Card:</td>
+            <td><NavLink exact to="/safety">Click for safety</NavLink></td>
           </tr>
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Loading Area View:</td>

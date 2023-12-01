@@ -1,0 +1,14 @@
+.safety-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 68vh;
+    margin-top: 2vh;
+    gap: 2vh;
+    overflow-y: scroll;
+}
+
+.safety-card img {
+    width: auto;
+    max-height: 50vw;
+}

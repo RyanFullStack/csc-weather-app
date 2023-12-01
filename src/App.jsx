@@ -14,6 +14,7 @@ import LoadingArea from './components/LoadingArea';
 import Me from './components/Me';
 import Aircraft from './components/Aircraft'
 import WebcamHelp from './components/WebcamHelp'
+import Safety from './components/Safety';
 import './App.css';
 
 function App() {
@@ -87,6 +88,12 @@ function App() {
           <Route exact path='/webcamhelp'>
             <div className='chart-container'>
               <WebcamHelp />
+            </div>
+          </Route>
+
+          <Route exact path='/safety'>
+            <div className='chart-container'>
+              <Safety />
             </div>
           </Route>
 
