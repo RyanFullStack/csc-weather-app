@@ -39,7 +39,7 @@ function GustChart() {
                 speed = Math.round(wind.gust_speed * 1.151)
             }
             if (window.location.pathname === '/loadingarea') {
-                speed = wind.wind_speed
+                speed = wind.gust_speed
             }
             return speed
         })
