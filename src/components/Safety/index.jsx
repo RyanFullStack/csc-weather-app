@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
-import safetyFront from '../../images/safetycardfront.png'
-import safetyBack from '../../images/safetycardback.png'
+import safetyFront from '../../images/safetycardfront.jpg'
+import safetyBack from '../../images/safetycardback.jpg'
 import './safety.css'
 
 function Safety () {

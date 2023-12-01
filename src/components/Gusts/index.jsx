@@ -21,25 +21,27 @@ function GustChart() {
 
         const windSpeeds = gustData.map(wind => {
             let speed;
+            if (window.location.pathname === '/loadingarea') {
+                speed = wind.wind_speed
+                return speed
+            }
             if (speedUnit === 'true') {
             speed = wind.wind_speed
             } else {
                 speed = Math.round(wind.wind_speed * 1.151)
             }
-            if (window.location.pathname === '/loadingarea') {
-                speed = wind.wind_speed
-            }
             return speed
         })
         const gustSpeeds = gustData.map(wind => {
             let speed;
+            if (window.location.pathname === '/loadingarea') {
+                speed = wind.gust_speed
+                return speed
+            }
             if (speedUnit === 'true') {
             speed = wind.gust_speed
             } else {
                 speed = Math.round(wind.gust_speed * 1.151)
-            }
-            if (window.location.pathname === '/loadingarea') {
-                speed = wind.gust_speed
             }
             return speed
         })
