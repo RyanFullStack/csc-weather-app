@@ -21,10 +21,7 @@ function WebCam() {
     setWebcamDirection("pro");
     localStorage.setItem("webcamDirection", "pro");
   };
-  const handleWebcamYard = () => {
-    setWebcamDirection("yard");
-    localStorage.setItem("webcamDirection", "yard");
-  };
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -86,19 +83,8 @@ function WebCam() {
         >
           Pro
         </button>
-        <button
-          onClick={handleWebcamYard}
-          className={
-            webcamDirection === "yard" && darkTheme === "true"
-              ? "hangar-button-active"
-              : webcamDirection === "yard" && darkTheme === "false"
-              ? "hangar-button-active-light"
-              : "hangar-button"
-          }
-        >
-          Yard
-        </button>
       </div>
+      {/* YARD AND EAST LEFT IN ONLY FOR DEVS IF LOCAL STORAGE CHANGED DIRECTLY, NOT FOR USERS */}
       {webcamDirection === 'yard' ?
       <div className="yard-cam">
       <iframe title='yard-webcam' src='https://api.wetmet.net/widgets/stream/frame.php?uid=7795ed8bc355d24aee9b77b82884944a' />
@@ -117,7 +103,7 @@ function WebCam() {
       />
       }
       <div className="webcam-help-info">
-        {webcamDirection === 'yard' ? null : <NavLink exact to='/webcamhelp'>Camera not loading? Click here for help.</NavLink>}
+        <NavLink exact to='/webcamhelp'>Camera not loading? Click here for help.</NavLink>
       </div>
     </div>
   );
