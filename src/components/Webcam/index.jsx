@@ -47,7 +47,7 @@ function WebCam() {
     return () => clearInterval(interval);
   }, [webcamDirection]);
 
-  const isDesktop = window.innerWidth >= 800;
+  const isDesktop = window.innerWidth >= 300;
 
   return (
     <div className="hangar-cam">
