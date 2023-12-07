@@ -22,7 +22,7 @@ const WindSpeedProvider = (props) => {
   const [metarAbbr, setMetarAbbr] = useState("");
   const [metarDesc, setMetarDesc] = useState("");
   const [gustData, setGustData] = useState([]);
-  const [darkTheme, setDarkTheme] = useState(localStorage.getItem('darktheme') || "true");
+  const [darkTheme, setDarkTheme] = useState(localStorage.getItem('darkTheme') || "true");
   const [tempSetting, setTempSetting] = useState(localStorage.getItem('tempSetting') || "true");
   const [unitSetting, setUnitSetting] = useState(localStorage.getItem('unitSetting') || "true");
   const [directions, setDirections] = useState({});
@@ -46,6 +46,7 @@ const WindSpeedProvider = (props) => {
   const [webcamDirection, setWebcamDirection] = useState(localStorage.getItem('webcamDirection') || "west");
   const [speedUnit, setSpeedUnit] = useState(localStorage.getItem('speedUnit') || "true");
 
+  //necessary for websocket to function correctly, don't use state
   let weatherData = [];
   let windData = [];
 

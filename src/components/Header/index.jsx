@@ -36,10 +36,10 @@ function Header() {
   const handleTheme = () => {
     if (darkTheme === "true") {
       setDarkTheme("false");
-      localStorage.setItem("darktheme", "false");
+      localStorage.setItem("darkTheme", "false");
     } else {
       setDarkTheme("true");
-      localStorage.setItem("darktheme", "true");
+      localStorage.setItem("darkTheme", "true");
     }
   };
 
