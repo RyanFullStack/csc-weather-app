@@ -21,7 +21,10 @@ function WebCam() {
     setWebcamDirection("pro");
     localStorage.setItem("webcamDirection", "pro");
   };
-
+  const handleWebcamYard = () => {
+    setWebcamDirection("yard");
+    localStorage.setItem("webcamDirection", "yard");
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -44,6 +47,8 @@ function WebCam() {
     return () => clearInterval(interval);
   }, [webcamDirection]);
 
+  const isDesktop = window.innerWidth >= 800;
+
   return (
     <div className="hangar-cam">
       <div className="hangar-cam-buttons">
@@ -59,6 +64,8 @@ function WebCam() {
         >
           Hangar
         </button>
+
+        {/* LEAVE EAST BUTTON REMOVED, CAMERA NOT LIVE */}
         {/* <button
           onClick={handleWebcamEast}
           className={
@@ -71,6 +78,8 @@ function WebCam() {
         >
           East
         </button> */}
+
+
         <button
           onClick={handleWebcamPro}
           className={
@@ -83,27 +92,46 @@ function WebCam() {
         >
           Pro
         </button>
+        {isDesktop && (
+          <button
+            onClick={handleWebcamYard}
+            className={
+              webcamDirection === "yard" && darkTheme === "true"
+                ? "hangar-button-active"
+                : webcamDirection === "yard" && darkTheme === "false"
+                ? "hangar-button-active-light"
+                : "hangar-button"
+            }
+          >
+            Yard
+          </button>
+        )}
       </div>
-      {/* YARD AND EAST LEFT IN ONLY FOR DEVS IF LOCAL STORAGE CHANGED DIRECTLY, NOT FOR USERS */}
-      {webcamDirection === 'yard' ?
-      <div className="yard-cam">
-      <iframe title='yard-webcam' src='https://api.wetmet.net/widgets/stream/frame.php?uid=7795ed8bc355d24aee9b77b82884944a' />
-      </div>
-      :
-      <img
+      {/* EAST LEFT IN ONLY FOR DEVS IF LOCAL STORAGE CHANGED DIRECTLY, NOT FOR USERS */}
+      {webcamDirection === "yard" ? (
+        <div className="yard-cam">
+          <iframe
+            title="yard-webcam"
+            src="https://api.wetmet.net/widgets/stream/frame.php?uid=7795ed8bc355d24aee9b77b82884944a"
+            />
+        </div>
+      ) : (
+        <img
         src={
-          webcamDirection === "west"
-            ? `https://webcam.skydivecsc.com/hangar_nw?${Date.now()}`
-            : webcamDirection === "east"
-            ? `https://webcam.skydivecsc.com/hangar_ne?${Date.now()}`
-            : `https://webcam.skydivecsc.com/proshop?${Date.now()}`
-        }
-        id="cam"
-        alt="Camera feed not found, This is a problem with the source and not this app. View help below to fix."
-      />
-      }
+            webcamDirection === "west"
+              ? `https://webcam.skydivecsc.com/hangar_nw?${Date.now()}`
+              : webcamDirection === "east"
+              ? `https://webcam.skydivecsc.com/hangar_ne?${Date.now()}`
+              : `https://webcam.skydivecsc.com/proshop?${Date.now()}`
+          }
+          id="cam"
+          alt="Camera feed not found, This is a problem with the source and not this app. View help below to fix."
+        />
+      )}
       <div className="webcam-help-info">
-        <NavLink exact to='/webcamhelp'>Camera not loading? Click here for help.</NavLink>
+        <NavLink exact to="/webcamhelp">
+          Camera not loading? Click here for help.
+        </NavLink>
       </div>
     </div>
   );

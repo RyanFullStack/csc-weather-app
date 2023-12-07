@@ -264,6 +264,7 @@
   align-items: flex-start;
   height: 76vh;
   width: 90%;
+  overflow: hidden;
 }
 
 .yard-cam iframe{
