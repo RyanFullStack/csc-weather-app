@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { calculateTemperatureColor } from '../utils';
 
 function WindsAloftLoading() {
-    const { directions, speeds, temps, darkTheme, tempSetting } =
+    const { directions, speeds, temps, darkTheme } =
         useContext(WeatherContext);
 
     if (Object.keys(directions).length === 0 ||
