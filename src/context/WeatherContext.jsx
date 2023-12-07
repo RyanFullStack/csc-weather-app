@@ -22,9 +22,9 @@ const WindSpeedProvider = (props) => {
   const [metarAbbr, setMetarAbbr] = useState("");
   const [metarDesc, setMetarDesc] = useState("");
   const [gustData, setGustData] = useState([]);
-  const [darkTheme, setDarkTheme] = useState("true");
-  const [tempSetting, setTempSetting] = useState("true");
-  const [unitSetting, setUnitSetting] = useState("true");
+  const [darkTheme, setDarkTheme] = useState(localStorage.getItem('darktheme') || "true");
+  const [tempSetting, setTempSetting] = useState(localStorage.getItem('tempSetting') || "true");
+  const [unitSetting, setUnitSetting] = useState(localStorage.getItem('unitSetting') || "true");
   const [directions, setDirections] = useState({});
   const [temps, setTemps] = useState({});
   const [speeds, setSpeeds] = useState({});
@@ -43,8 +43,8 @@ const WindSpeedProvider = (props) => {
   const [jumpruns, setJumpruns] = useState([]);
   const [newSpot, setNewSpot] = useState("");
   const [newOffset, setNewOffset] = useState("");
-  const [webcamDirection, setWebcamDirection] = useState("west");
-  const [speedUnit, setSpeedUnit] = useState("true");
+  const [webcamDirection, setWebcamDirection] = useState(localStorage.getItem('webcamDirection') || "west");
+  const [speedUnit, setSpeedUnit] = useState(localStorage.getItem('speedUnit') || "true");
 
   let weatherData = [];
   let windData = [];
@@ -474,45 +474,6 @@ const WindSpeedProvider = (props) => {
     }
   }, [jumpruns]);
 
-  useEffect(() => {
-    if (!localStorage.getItem("darktheme")) {
-      localStorage.setItem("darktheme", "true");
-    } else {
-      setDarkTheme(localStorage.getItem("darktheme"));
-    }
-  }, [darkTheme, setDarkTheme]);
-
-  useEffect(() => {
-    if (!localStorage.getItem("tempSetting")) {
-      localStorage.setItem("tempSetting", "true");
-    } else {
-      setTempSetting(localStorage.getItem("tempSetting"));
-    }
-  }, [tempSetting, setTempSetting]);
-
-  useEffect(() => {
-    if (!localStorage.getItem("unitSetting")) {
-      localStorage.setItem("unitSetting", "true");
-    } else {
-      setUnitSetting(localStorage.getItem("unitSetting"));
-    }
-  }, [unitSetting, setUnitSetting]);
-
-  useEffect(() => {
-    if (!localStorage.getItem("webcamDirection")) {
-      localStorage.setItem("webcamDirection", "west");
-    } else {
-      setWebcamDirection(localStorage.getItem("webcamDirection"));
-    }
-  }, [webcamDirection, setWebcamDirection]);
-
-  useEffect(() => {
-    if (!localStorage.getItem("speedUnit")) {
-      localStorage.setItem("speedUnit", "true");
-    } else {
-      setSpeedUnit(localStorage.getItem("speedUnit"));
-    }
-  }, [speedUnit, setSpeedUnit]);
 
   return (
     <WeatherContext.Provider
