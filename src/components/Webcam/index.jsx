@@ -47,8 +47,6 @@ function WebCam() {
     return () => clearInterval(interval);
   }, [webcamDirection]);
 
-  const isDesktop = window.innerWidth >= 300;
-
   return (
     <div className="hangar-cam">
       <div className="hangar-cam-buttons">
@@ -79,7 +77,6 @@ function WebCam() {
           East
         </button> */}
 
-
         <button
           onClick={handleWebcamPro}
           className={
@@ -92,20 +89,18 @@ function WebCam() {
         >
           Pro
         </button>
-        {isDesktop && (
-          <button
-            onClick={handleWebcamYard}
-            className={
-              webcamDirection === "yard" && darkTheme === "true"
-                ? "hangar-button-active"
-                : webcamDirection === "yard" && darkTheme === "false"
-                ? "hangar-button-active-light"
-                : "hangar-button"
-            }
-          >
-            Yard
-          </button>
-        )}
+        <button
+          onClick={handleWebcamYard}
+          className={
+            webcamDirection === "yard" && darkTheme === "true"
+              ? "hangar-button-active"
+              : webcamDirection === "yard" && darkTheme === "false"
+              ? "hangar-button-active-light"
+              : "hangar-button"
+          }
+        >
+          Yard
+        </button>
       </div>
       {/* EAST LEFT IN ONLY FOR DEVS IF LOCAL STORAGE CHANGED DIRECTLY, NOT FOR USERS */}
       {webcamDirection === "yard" ? (
@@ -113,11 +108,11 @@ function WebCam() {
           <iframe
             title="yard-webcam"
             src="https://api.wetmet.net/widgets/stream/frame.php?uid=7795ed8bc355d24aee9b77b82884944a"
-            />
+          />
         </div>
       ) : (
         <img
-        src={
+          src={
             webcamDirection === "west"
               ? `https://webcam.skydivecsc.com/hangar_nw?${Date.now()}`
               : webcamDirection === "east"
