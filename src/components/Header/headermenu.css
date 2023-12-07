@@ -34,32 +34,34 @@
 .menu-button-container button, .menu-button-container-light button {
     margin: 1px;
 }
+
 .menu-button-container button:hover {
     color: rgb(55, 165, 33);
     background-color: rgb(0, 0, 0);
 }
-.active-button {
-    background-color: transparent;
-    border: 2px solid black;
-}
+
 .disabled-button {
     color: rgb(55, 165, 33);
     background-color: rgb(0, 0, 0);
     border: 2px solid black;
 }
+
 .active-button-light {
     background-color: rgb(55, 165, 33);
     color: black;
     border: 2px solid black;
 }
+
 .disabled-button-light {
     color: rgb(0, 0, 0);
     background-color: transparent;
     border: 2px solid black;
 }
+
 #menu-light {
     background-color: rgb(219, 217, 207);
 }
+
 .menu-button-container-light button:hover {
     color: rgb(0, 0, 0);
     background-color: rgb(55, 165, 33);

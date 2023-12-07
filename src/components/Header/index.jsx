@@ -116,8 +116,6 @@ function Header() {
                     ? "disabled-button"
                     : tempSetting === "false" && darkTheme === "false"
                     ? "disabled-button-light"
-                    : tempSetting === "true" && darkTheme === "true"
-                    ? "active-button"
                     : "active-button-light"
                 }
                 disabled={tempSetting === "true"}
@@ -131,8 +129,6 @@ function Header() {
                     ? "disabled-button"
                     : tempSetting === "true" && darkTheme === "false"
                     ? "disabled-button-light"
-                    : tempSetting === "false" && darkTheme === "true"
-                    ? "active-button"
                     : "active-button-light"
                 }
                 disabled={tempSetting === "false"}
@@ -154,8 +150,6 @@ function Header() {
                     ? "disabled-button"
                     : speedUnit === "false" && darkTheme === "false"
                     ? "disabled-button-light"
-                    : speedUnit === "true" && darkTheme === "true"
-                    ? "active-button"
                     : "active-button-light"
                 }
                 disabled={speedUnit === "true"}
@@ -169,8 +163,6 @@ function Header() {
                     ? "disabled-button"
                     : speedUnit === "true" && darkTheme === "false"
                     ? "disabled-button-light"
-                    : speedUnit === "false" && darkTheme === "true"
-                    ? "active-button"
                     : "active-button-light"
                 }
                 disabled={speedUnit === "false"}
@@ -192,8 +184,6 @@ function Header() {
                     ? "disabled-button"
                     : unitSetting === "false" && darkTheme === "false"
                     ? "disabled-button-light"
-                    : unitSetting === "true" && darkTheme === "true"
-                    ? "active-button"
                     : "active-button-light"
                 }
                 disabled={unitSetting === "true"}
@@ -207,8 +197,6 @@ function Header() {
                     ? "disabled-button"
                     : unitSetting === "true" && darkTheme === "false"
                     ? "disabled-button-light"
-                    : unitSetting === "false" && darkTheme === "true"
-                    ? "active-button"
                     : "active-button-light"
                 }
                 disabled={unitSetting === "false"}
@@ -226,12 +214,10 @@ function Header() {
             >
               <button
                 className={
-                  darkTheme === "true" && darkTheme === "true"
+                  darkTheme === "true"
                     ? "disabled-button"
-                    : darkTheme === "false" && darkTheme === "false"
+                    : darkTheme === "false"
                     ? "disabled-button-light"
-                    : darkTheme === "true" && darkTheme === "true"
-                    ? "active-button"
                     : "active-button-light"
                 }
                 disabled={darkTheme === "true"}
@@ -241,13 +227,7 @@ function Header() {
               </button>
               <button
                 className={
-                  darkTheme === "false" && darkTheme === "true"
-                    ? "disabled-button"
-                    : darkTheme === "true" && darkTheme === "false"
-                    ? "disabled-button-light"
-                    : darkTheme === "false" && darkTheme === "true"
-                    ? "active-button"
-                    : "active-button-light"
+                  "active-button-light"
                 }
                 disabled={darkTheme === "false"}
                 onClick={handleTheme}
