@@ -83,6 +83,9 @@ function WebCam() {
           Pro
         </button>
       </div>
+      {webcamDirection === 'test' ?
+      <iframe src='https://api.wetmet.net/widgets/stream/frame.php?uid=7795ed8bc355d24aee9b77b82884944a' />
+      :
       <img
         src={
           webcamDirection === "west"
@@ -94,6 +97,7 @@ function WebCam() {
         id="cam"
         alt="Camera feed not found, This is a problem with the source and not this app. View help below to fix."
       />
+      }
       <div className="webcam-help-info">
         <NavLink exact to='/webcamhelp'>Camera not loading? Click here for help.</NavLink>
       </div>
