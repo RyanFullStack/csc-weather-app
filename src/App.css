@@ -257,6 +257,27 @@
   width: 90%;
 }
 
+.yard-cam {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  height: 76vh;
+  width: 90%;
+}
+
+.yard-cam iframe{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-top: 2vh;
+  align-items: center;
+  width: 100%;
+  height: 85%;
+  overflow: hidden;
+  border: none;
+}
+
 .windy-radar iframe, .aircraft-tracker iframe {
   display: flex;
   flex-direction: row;
