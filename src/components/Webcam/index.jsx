@@ -7,10 +7,11 @@ function WebCam() {
   const { webcamDirection, setWebcamDirection, darkTheme } =
     useContext(WeatherContext);
 
-  const handleWebcamEast = () => {
-    setWebcamDirection("east");
-    localStorage.setItem("webcamDirection", "east");
-  };
+  //Leave Removed, camera feed not live
+  // const handleWebcamEast = () => {
+  //   setWebcamDirection("east");
+  //   localStorage.setItem("webcamDirection", "east");
+  // };
   const handleWebcamWest = () => {
     setWebcamDirection("west");
     localStorage.setItem("webcamDirection", "west");
@@ -27,9 +28,10 @@ function WebCam() {
       if (webcamDirection === "west") {
         imgElement.src = `https://webcam.skydivecsc.com/hangar_nw?${timestamp}`;
       }
-      if (webcamDirection === "east") {
-        imgElement.src = `https://webcam.skydivecsc.com/hangar_ne?${timestamp}`;
-      }
+      //Leave removed, camera feed not live
+      // if (webcamDirection === "east") {
+      //   imgElement.src = `https://webcam.skydivecsc.com/hangar_ne?${timestamp}`;
+      // }
       if (webcamDirection === "pro") {
         imgElement.src = `https://webcam.skydivecsc.com/proshop?${timestamp}`;
       }
@@ -51,9 +53,9 @@ function WebCam() {
               : "hangar-button"
           }
         >
-          West
+          Hangar
         </button>
-        <button
+        {/* <button
           onClick={handleWebcamEast}
           className={
             webcamDirection === "east" && darkTheme === "true"
@@ -64,7 +66,7 @@ function WebCam() {
           }
         >
           East
-        </button>
+        </button> */}
         <button
           onClick={handleWebcamPro}
           className={
