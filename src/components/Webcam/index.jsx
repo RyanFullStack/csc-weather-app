@@ -108,6 +108,7 @@ function WebCam() {
           <iframe
             title="yard-webcam"
             src="https://api.wetmet.net/widgets/stream/frame.php?uid=7795ed8bc355d24aee9b77b82884944a"
+            scrolling="no"
           />
         </div>
       ) : (
