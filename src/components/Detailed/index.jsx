@@ -294,6 +294,10 @@ function DetailedPage() {
             <td><NavLink exact to="/safety">Click for safety</NavLink></td>
           </tr>
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
+            <td>Trivia Game:</td>
+            <td><a href="https://csc-trivia.netlify.app/" rel='noreferrer' target='_blank'>Click to play!</a></td>
+          </tr>
+          <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Loading Area View:</td>
             <td>
               <a href="/loadingarea">Click to view</a>
