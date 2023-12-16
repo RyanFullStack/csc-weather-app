@@ -53,7 +53,7 @@ const WindSpeedProvider = (props) => {
   useEffect(() => {
     const data = async () => {
       const res = await fetch(
-        "https://windsaloft.us/winds.php?lat=41.8930014&lon=-89.07829&hourOffset=0&referrer=MSWA"
+        "/.netlify/functions/proxy?url=aloft"
       );
       const winds = await res.json();
       setDirections(winds.direction);
@@ -365,7 +365,7 @@ const WindSpeedProvider = (props) => {
   useEffect(() => {
     const getWind = async () => {
       const res = await fetch(
-        "https://lifeatterminalvelocity.com/csc_awos/data.php"
+        "/.netlify/functions/proxy?url=gusts"
       );
       const resArr = await res.json();
       setGustData([...resArr]);

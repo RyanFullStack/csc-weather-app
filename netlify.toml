@@ -1,0 +1,5 @@
+[build]
+  functions = "functions" # Set the path to your Netlify functions directory
+
+[dev]
+  targetPort = 3000 # Specify the port Vite is running on
