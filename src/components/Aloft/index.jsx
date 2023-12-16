@@ -14,11 +14,13 @@ function WindsAloft() {
   const receivedDate = new Date()
   receivedDate.setUTCHours(parseInt(received), 0, 0, 0)
   const localReceived = receivedDate.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', timeZoneName: 'short', hour: 'numeric' })
+  const current = new Date().toLocaleTimeString('en-US', { timeZone: 'America/Chicago', timeZoneName: 'short', hour: 'numeric' })
+
 
   return (
     <div className="wind-aloft-table">
       <div className="aloft-title">
-        Winds Received at {localReceived}, valid now
+        Winds Received at {localReceived}{localReceived === current ? ', valid now' : null}
       </div>
       <div className="aloft-contents">
         <table>

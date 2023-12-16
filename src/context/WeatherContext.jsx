@@ -53,7 +53,7 @@ const WindSpeedProvider = (props) => {
   useEffect(() => {
     const data = async () => {
       const res = await fetch(
-        "https://corsproxy.io/?https://windsaloft.us/winds.php?lat=41.8930014&lon=-89.07829&hourOffset=0&referrer=MSWA"
+        "https://thingproxy.freeboard.io/fetch/https://windsaloft.us/winds.php?lat=41.8930014&lon=-89.07829&hourOffset=0&referrer=MSWA"
       );
       const winds = await res.json();
       setDirections(winds.direction);
@@ -365,13 +365,10 @@ const WindSpeedProvider = (props) => {
   useEffect(() => {
     const getWind = async () => {
       const res = await fetch(
-        "https://corsproxy.io/?https://lifeatterminalvelocity.com/csc_awos/data.php"
+        "https://thingproxy.freeboard.io/fetch/https://lifeatterminalvelocity.com/csc_awos/data.php"
       );
       const resArr = await res.json();
-
-      if (!gustData.length || gustData[0].receivedAt !== resArr[0].receivedAt) {
-        setGustData([...resArr]);
-      }
+      setGustData([...resArr]);
     };
     getWind();
     const interval = setInterval(() => {
