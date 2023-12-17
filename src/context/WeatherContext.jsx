@@ -53,7 +53,7 @@ const WindSpeedProvider = (props) => {
   useEffect(() => {
     const data = async () => {
       const res = await fetch(
-        "https://api.codetabs.com/v1/proxy/?quest=https://windsaloft.us/winds.php?lat=41.8930014&lon=-89.07829&hourOffset=0&referrer=MSWA"
+        ".netlify/functions/aloft"
       );
       const winds = await res.json();
       setDirections(winds.direction);
@@ -365,7 +365,7 @@ const WindSpeedProvider = (props) => {
   useEffect(() => {
     const getWind = async () => {
       const res = await fetch(
-        "https://api.codetabs.com/v1/proxy/?quest=https://lifeatterminalvelocity.com/csc_awos/data.php"
+        ".netlify/functions/gusts"
       );
       const resArr = await res.json();
       setGustData([...resArr]);
@@ -403,7 +403,7 @@ const WindSpeedProvider = (props) => {
   useEffect(() => {
     const getAstornomy = async () => {
       const res = await fetch(
-        "https://api.sunrise-sunset.org/json?lat=41.892&lng=-89.071&date=today&formatted=0"
+        ".netlify/functions/astronomy"
       );
       const data = await res.json();
       if (data.results) {

@@ -1,5 +1,8 @@
 [build]
-  functions = "functions" # Set the path to your Netlify functions directory
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
 
 [dev]
-  targetPort = 3000 # Specify the port Vite is running on
+  targetPort = 3000
