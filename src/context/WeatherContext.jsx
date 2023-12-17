@@ -64,7 +64,7 @@ const WindSpeedProvider = (props) => {
     data();
     const interval = setInterval(() => {
       data();
-    }, 200000);
+    }, 300000);
 
     return function () {
       clearInterval(interval);
@@ -373,7 +373,7 @@ const WindSpeedProvider = (props) => {
     getWind();
     const interval = setInterval(() => {
       getWind();
-    }, 20000);
+    }, 30000);
 
     return () => {
       clearInterval(interval);
