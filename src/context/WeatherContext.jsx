@@ -403,7 +403,7 @@ const WindSpeedProvider = (props) => {
   useEffect(() => {
     const getAstornomy = async () => {
       const res = await fetch(
-        ".netlify/functions/astronomy"
+        "https://api.sunrise-sunset.org/json?lat=41.892&lng=-89.071&date=today&formatted=0"
       );
       const data = await res.json();
       if (data.results) {
