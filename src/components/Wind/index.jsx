@@ -56,7 +56,7 @@ function Wind() {
           <div className="small">
             {speed === 1 ? (
               `kt`
-            ) : Math.round(speed * (speedUnit === "false" ? 1.151 : 1)) > 25 ? (
+            ) : speed > 25 ? (
               <span className="red">
                 {speedUnit === "true" ? "kts" : "mph"}
               </span>
