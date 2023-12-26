@@ -3,7 +3,7 @@ import { WeatherContext } from "../../context/WeatherContext";
 import GetCst from "../Time";
 import CurrentTemp from "../Temperature";
 import LiveStatus from "../LiveStatus";
-import audio from "../../images/audiored.png";
+import audio from "../../images/audio.png";
 import redLight from "../../images/redlight.png";
 import yellowLight from "../../images/yellowlight.png";
 import greenLight from "../../images/greenlight.png";

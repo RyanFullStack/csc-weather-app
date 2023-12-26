@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { WeatherContext } from "../../context/WeatherContext";
-import arrow from "../../images/arrowcandy.png";
-import arrowright from "../../images/arrowcandyright.png";
+import arrow from "../../images/arrow.png";
+import arrowright from "../../images/arrow-right.png";
 import "./anamometer.css";
 
 function Wind() {
