@@ -7,16 +7,16 @@
 }
 .hangar-button-active-light {
     border: 2px solid black;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(8, 228, 209);
 }
 .hangar-button:hover {
-    background-color: rgb(26, 151, 26);
+    background-color: rgb(39, 196, 182);
 }
 .hangar-button-active:hover {
     background-color: black;
 }
 .hangar-button-active-light:hover {
-    background-color: red;
+    background-color: rgb(39, 196, 182);
 }
 .webcam-help-info {
     margin-top: 15vh;
