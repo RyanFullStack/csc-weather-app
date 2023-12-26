@@ -551,6 +551,10 @@ a:hover {
   color: white;
 }
 
+.table {
+  outline: 1px solid rgb(8, 228, 209);
+}
+
 .footer-jumprun {
   display: flex;
   flex-direction: column;
@@ -681,7 +685,6 @@ a:hover {
     width: 100%;
   }
   .table {
-    border: 1px solid rgb(0, 0, 0);
     font-weight: 500;
   }
   .table-light {
