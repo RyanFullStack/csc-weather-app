@@ -9,10 +9,10 @@
     rgba(0, 0, 0, 1) 7%,
     rgba(34, 34, 34, 0.9) 10%,
     rgba(34, 34, 34, 0.9) 90%,
-    rgba(0, 0, 0, .5) 95%
+    rgba(8, 228, 209, .9) 95%
   );
   font-size: calc(10px + 2vmin);
-  color: rgb(55, 165, 33);
+  color: rgb(8, 228, 209);
   overflow: hidden;
 }
 
@@ -27,7 +27,7 @@
     rgba(0, 0, 0, 1) 7%,
     rgba(255, 255, 255, 0.5) 10%,
     rgba(255, 255, 255, 0.5) 90%,
-    rgba(0, 0, 0, .5) 95%
+    rgba(8, 228, 209, .9) 95%
   );
   font-size: calc(10px + 2vmin);
   color: rgb(0, 0, 0);
@@ -45,8 +45,7 @@
   align-items: center;
   height: 8vh;
   min-width: 100vw;
-  color: rgb(255, 0, 0);
-  text-shadow: 2px 2px 5px black;
+  color: rgb(0, 0, 0);
   font-weight: bold;
 }
 .header-container-loadingarea {
@@ -56,8 +55,7 @@
   align-items: center;
   height: 8vh;
   min-width: 100vw;
-  color: rgb(255, 0, 0);
-  text-shadow: 2px 2px 5px black;
+  color: rgb(0, 0, 0);
   font-weight: bold;
 }
 
@@ -123,7 +121,7 @@
   border-radius: 5px;
   cursor: pointer;
   height: 3vh;
-  background-color: rgb(119, 28, 28);
+  background-color: rgb(0, 0, 0);
 }
 
 .navbuttonactivelight {
@@ -134,11 +132,11 @@
   border-radius: 5px;
   cursor: pointer;
   height: 3vh;
-  background-color: rgb(55, 165, 33);
+  background-color: rgba(8, 228, 209, .8);
 }
 
 .navbutton:hover {
-  background-color: rgb(177, 10, 10);
+  background-color: rgb(29, 201, 186);
 }
 
 .fa-external-link {
@@ -147,7 +145,7 @@
 }
 
 .nav-component a {
-  color: rgb(55, 165, 33);
+  color: rgb(8, 228, 209);
 }
 
 .light a {
@@ -538,9 +536,6 @@ button {
   cursor: pointer;
   font-weight: 900;
 }
-button:hover {
-  background-color: rgba(59, 59, 59, 0.411);
-}
 
 .me-details {
   font-size: calc(8px + 1.5vmin);
@@ -686,7 +681,7 @@ a:hover {
     width: 100%;
   }
   .table {
-    border: 2px solid rgb(143, 16, 16);
+    border: 1px solid rgb(0, 0, 0);
     font-weight: 500;
   }
   .table-light {
