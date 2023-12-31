@@ -103,7 +103,7 @@ function Wind() {
             }
             alt="Wind Direction"
             className="arrow"
-            style={{ transform: `rotate(${direction}deg)` }}
+            style={speed === 0 ? { transform: `rotate(250deg)` } : { transform: `rotate(${direction}deg)` }}
           ></img>
         </div>
         <div className="metar-abbr">
