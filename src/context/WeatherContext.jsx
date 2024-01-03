@@ -61,72 +61,6 @@ const WindSpeedProvider = (props) => {
   let windData = [];
 
   useEffect(() => {
-    const data = async () => {
-      const res = await fetch(".netlify/functions/aloft");
-      const winds = await res.json();
-      setDirections(winds.direction);
-      setTemps(winds.temp);
-      setSpeeds(winds.speed);
-      setReceived(winds.validtime);
-    };
-    data();
-    const interval = setInterval(() => {
-      data();
-    }, 300000);
-
-    return function () {
-      clearInterval(interval);
-    };
-  }, []);
-
-  // useEffect(() => {
-  //   const windQuery = `
-  //       subscription {
-  //         wind: windReported {
-  //           receivedAt
-  //           speed
-  //           gustSpeed
-  //           direction
-  //           variableDirection
-  //         }
-  //       }
-  //       `;
-
-  //   const websocket = new WebSocket("wss://api.skydivecsc.com/graphql", [
-  //     "graphql-ws",
-  //   ]);
-  //   websocket.onopen = function () {
-  //     websocket.send(JSON.stringify({ type: "connection_init", payload: {} }));
-  //     websocket.send(
-  //       JSON.stringify({
-  //         type: "start",
-  //         id: "wind",
-  //         payload: { query: windQuery, variables: null },
-  //       })
-  //     );
-  //   };
-  //   websocket.onmessage = function (event) {
-  //     const res = JSON.parse(event.data);
-
-  //     if (res.payload) {
-  //       windData = [];
-  //       windData.push(res.payload);
-
-  //       const wind = windData[0].data.wind;
-
-  //       setVariableDirection(wind.variableDirection);
-  //       if (wind.speed) {
-  //         setSpeed(wind.speed);
-  //       }
-  //       setGustSpeed(wind.gustSpeed);
-  //       if (wind.direction) {
-  //         setDirection(wind.direction);
-  //       }
-  //     }
-  //   };
-  // }, [windData]);
-
-  useEffect(() => {
     const weatherQuery = `
         subscription {
           weather: weatherReported {
@@ -161,8 +95,10 @@ const WindSpeedProvider = (props) => {
     const websocket = new WebSocket("wss://api.skydivecsc.com/graphql", [
       "graphql-ws",
     ]);
+
     websocket.onopen = function () {
       websocket.send(JSON.stringify({ type: "connection_init", payload: {} }));
+
       websocket.send(
         JSON.stringify({
           type: "start",
@@ -170,6 +106,7 @@ const WindSpeedProvider = (props) => {
           payload: { query: weatherQuery, variables: null },
         })
       );
+
       websocket.send(
         JSON.stringify({
           type: "start",
@@ -181,7 +118,7 @@ const WindSpeedProvider = (props) => {
     websocket.onmessage = function (event) {
       const res = JSON.parse(event.data);
 
-      if (res.id === 'wind' && res.payload) {
+      if (res.id === "wind" && res.payload) {
         windData = [];
         windData.push(res.payload);
 
@@ -197,7 +134,7 @@ const WindSpeedProvider = (props) => {
         }
       }
 
-      if (res.id === 'weather' && res.payload) {
+      if (res.id === "weather" && res.payload) {
         weatherData = [];
         weatherData.push(res.payload);
 
@@ -422,6 +359,25 @@ const WindSpeedProvider = (props) => {
   }, []);
 
   useEffect(() => {
+    const data = async () => {
+      const res = await fetch(".netlify/functions/aloft");
+      const winds = await res.json();
+      setDirections(winds.direction);
+      setTemps(winds.temp);
+      setSpeeds(winds.speed);
+      setReceived(winds.validtime);
+    };
+    data();
+    const interval = setInterval(() => {
+      data();
+    }, 300000);
+
+    return function () {
+      clearInterval(interval);
+    };
+  }, []);
+
+  useEffect(() => {
     const maxGust = gustData.map((gust) => gust.gust_speed);
     const max = Math.max(...maxGust);
     if (max < gustSpeed) {
@@ -441,37 +397,36 @@ const WindSpeedProvider = (props) => {
     }
   }, [gustData, speed]);
 
-  useEffect(() => {
-    const getAstornomy = async () => {
-      const res = await fetch(
-        "https://api.sunrise-sunset.org/json?lat=41.892&lng=-89.071&date=today&formatted=0"
-      );
-      const data = await res.json();
-      if (data.results) {
-        const sunsetFormat = new Date(data.results.sunset).toLocaleTimeString(
-          "en-US",
-          { timeZone: "America/Chicago" }
-        );
-        const sunriseFormat = new Date(data.results.sunrise).toLocaleTimeString(
-          "en-US",
-          { timeZone: "America/Chicago" }
-        );
-        const twilightFormat = new Date(
-          data.results.civil_twilight_end
-        ).toLocaleTimeString("en-US", { timeZone: "America/Chicago" });
-        const noonFormat = new Date(data.results.solar_noon).toLocaleTimeString(
-          "en-US",
-          { timeZone: "America/Chicago" }
-        );
 
-        setSunset(sunsetFormat);
-        setSunrise(sunriseFormat);
-        setTwilight(twilightFormat);
-        setNoon(noonFormat);
-      }
-    };
-    getAstornomy();
-  }, []);
+  const getAstornomy = async () => {
+    const res = await fetch(
+      "https://api.sunrise-sunset.org/json?lat=41.892&lng=-89.071&date=today&formatted=0"
+    );
+    const data = await res.json();
+    if (data.results) {
+      const sunsetFormat = new Date(data.results.sunset).toLocaleTimeString(
+        "en-US",
+        { timeZone: "America/Chicago" }
+      );
+      const sunriseFormat = new Date(data.results.sunrise).toLocaleTimeString(
+        "en-US",
+        { timeZone: "America/Chicago" }
+      );
+      const twilightFormat = new Date(
+        data.results.civil_twilight_end
+      ).toLocaleTimeString("en-US", { timeZone: "America/Chicago" });
+      const noonFormat = new Date(data.results.solar_noon).toLocaleTimeString(
+        "en-US",
+        { timeZone: "America/Chicago" }
+      );
+
+      setSunset(sunsetFormat);
+      setSunrise(sunriseFormat);
+      setTwilight(twilightFormat);
+      setNoon(noonFormat);
+    }
+  };
+  getAstornomy();
 
   useEffect(() => {
     const getJumprun = async () => {
