@@ -68,5 +68,6 @@
 }
 
 #help {
-    font-size: 1rem;
+    font-size: .8rem;
+    margin-top: 15px;
 }

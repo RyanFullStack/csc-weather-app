@@ -28,7 +28,7 @@ The Gusts Chart displays live wind data for the previous 30 minutes in kts or mp
 
 ![aloft](/src/images/readme/Aloft.png)
 
-The Aloft section displays wind conditions aloft up to 18,000', the max used by CSC, according to NOAA forecasts. This information is updated once per hour at the top of every hour.
+The Aloft section displays wind conditions aloft up to 18,000', the max used by CSC, according to NOAA forecasts. This information is updated once per hour at the top of every hour. These values will change with your settings.
 
 ### Detailed
 
@@ -39,6 +39,8 @@ The Detailed section displays a collection of information of weather info displa
 If a custom jumprun is set in the staff only back-end, you will see it displayed here along with the footer.
 
 The detailed section contains the only live link to view the loading area display. This is a desktop mode, made specifically for jumpers to view prior to boarding the aircraft via a monitor in the loading area.
+
+These values will change with your settings.
 
 ### ME
 ![me](/src/images/readme/Me.png)
@@ -75,6 +77,11 @@ The Header displays the option button on the far left, an indicator whether the 
 Most importantly, during jump hours, the header will display a stoplight that reflects the stoplight in the hangar. It will be red if there is an active weather hold, yellow if the day is done and the beer light is on, or green if we are actively jumping.
 
 The Footer displays important info in the center. It will either display a weather hold, beer light, or active jumprun if set by staff. It will otherwise display the live METAR from KRPJ or have a custom message set.
+
+### Loading Area Display
+![loadingarea](/src/images/readme/LoadingArea.png)
+
+This is a custom desktop made view for the loading area. This is a collection of all data in a compressed view for jumpers to view prior to boarding the aircraft. These values do not change with your settings and are forced to display how the dropzone has set.
 
 #### Small Features:
 

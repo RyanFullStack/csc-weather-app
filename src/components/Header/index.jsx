@@ -235,7 +235,7 @@ function Header() {
                 LIGHT
               </button>
             </div>
-              <span id='help'><a href="https://github.com/RyanFullStack/csc-weather-app#Features" target="_blank" rel="noreferrer">HELP</a></span>
+              <span id='help'><a href="https://github.com/RyanFullStack/csc-weather-app#Features" target="_blank" rel="noreferrer">HELP ME!</a></span>
           </div>
         </div>
       ) : null}
