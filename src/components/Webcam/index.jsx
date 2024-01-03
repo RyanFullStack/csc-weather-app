@@ -33,12 +33,9 @@ function WebCam() {
       if (webcamDirection === "west") {
         imgElement.src = `https://webcam.skydivecsc.com/hangar_nw?${timestamp}`;
       }
-
-      //Leave removed, camera feed not live
-      // if (webcamDirection === "east") {
-      //   imgElement.src = `https://webcam.skydivecsc.com/hangar_ne?${timestamp}`;
-      // }
-
+      if (webcamDirection === "east") {
+        imgElement.src = `https://webcam.skydivecsc.com/hangar_ne?${timestamp}`;
+      }
       if (webcamDirection === "pro") {
         imgElement.src = `https://webcam.skydivecsc.com/proshop?${timestamp}`;
       }

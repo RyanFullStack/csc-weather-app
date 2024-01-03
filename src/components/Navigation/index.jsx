@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { useContext } from 'react';
 import { WeatherContext } from '../../context/WeatherContext';
 
 function NavBar() {

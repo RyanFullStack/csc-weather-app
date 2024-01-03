@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { WeatherContext } from "../../context/WeatherContext";
+import { NavLink } from "react-router-dom";
 import fb from "../../images/fb.png";
 import ig from "../../images/ig.png";
 import wa from "../../images/wa.png";
-import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
 function DetailedPage() {
   const {
