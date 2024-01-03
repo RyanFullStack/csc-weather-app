@@ -268,60 +268,60 @@ const WindSpeedProvider = (props) => {
     };
   }, [weatherData, windData, unitSetting]);
 
+  const getWind = async () => {
+    const res = await fetch(".netlify/functions/gusts");
+    const resArr = await res.json();
+    setGustData([...resArr]);
+  };
+
+  const getAloft = async () => {
+    const res = await fetch(".netlify/functions/aloft");
+    const winds = await res.json();
+    setDirections(winds.direction);
+    setTemps(winds.temp);
+    setSpeeds(winds.speed);
+    setReceived(winds.validtime);
+  };
+
+  const getJumprun = async () => {
+    const res = await fetch("https://csc-login.onrender.com/api/jumpruns/");
+    const data = await res.json();
+
+    if (data.jumpruns) {
+      setJumpruns(data.jumpruns);
+
+      if (data.jumpruns[0].spot > 0 && data.jumpruns[0].spot < 10) {
+        setNewSpot(`.${data.jumpruns[0].spot}`);
+      }
+      if (data.jumpruns[0].spot >= 10) {
+        setNewSpot(`${(data.jumpruns[0].spot * 0.1).toFixed(1)}`);
+      }
+      if (data.jumpruns[0].offset > 0 && data.jumpruns[0].offset < 10) {
+        setNewOffset(`.${data.jumpruns[0].offset}`);
+      }
+      if (data.jumpruns[0].offset >= 10) {
+        setNewOffset(`${(data.jumpruns[0].offset * 0.1).toFixed(1)}`);
+      }
+    } else {
+      setJumpruns([]);
+    }
+  };
+
   useEffect(() => {
-    const getWind = async () => {
-      const res = await fetch(".netlify/functions/gusts");
-      const resArr = await res.json();
-      setGustData([...resArr]);
-    };
+    getJumprun();
     getWind();
+    getAloft();
+
     const interval = setInterval(() => {
+      getJumprun();
       getWind();
+      getAloft();
     }, 30000);
 
     return () => {
       clearInterval(interval);
     };
   }, []);
-
-  useEffect(() => {
-    const data = async () => {
-      const res = await fetch(".netlify/functions/aloft");
-      const winds = await res.json();
-      setDirections(winds.direction);
-      setTemps(winds.temp);
-      setSpeeds(winds.speed);
-      setReceived(winds.validtime);
-    };
-    data();
-    const interval = setInterval(() => {
-      data();
-    }, 300000);
-
-    return function () {
-      clearInterval(interval);
-    };
-  }, []);
-
-  useEffect(() => {
-    const maxGust = gustData.map((gust) => gust.gust_speed);
-    const max = Math.max(...maxGust);
-    if (max < gustSpeed) {
-      setMaxGust(gustSpeed);
-    } else {
-      setMaxGust(max);
-    }
-  }, [gustData, gustSpeed]);
-
-  useEffect(() => {
-    const maxSpeed = gustData.map((gust) => gust.wind_speed);
-    const max = Math.max(...maxSpeed);
-    if (max < speed) {
-      setMaxSpeed(speed);
-    } else {
-      setMaxSpeed(max);
-    }
-  }, [gustData, speed]);
 
   const getAstornomy = async () => {
     const res = await fetch(
@@ -349,44 +349,24 @@ const WindSpeedProvider = (props) => {
   getAstornomy();
 
   useEffect(() => {
-    const getJumprun = async () => {
-      const res = await fetch("https://csc-login.onrender.com/api/jumpruns/");
-      const data = await res.json();
-
-      if (data.jumpruns) {
-        setJumpruns(data.jumpruns);
-      } else {
-        setJumpruns([]);
-      }
-    };
-    getJumprun();
-
-    const intervalId = setInterval(() => {
-      getJumprun();
-    }, 30000);
-
-    return function () {
-      setJumpruns([]);
-      clearInterval(intervalId);
-    };
-  }, []);
+    const maxGust = gustData.map((gust) => gust.gust_speed);
+    const max = Math.max(...maxGust);
+    if (max < gustSpeed) {
+      setMaxGust(gustSpeed);
+    } else {
+      setMaxGust(max);
+    }
+  }, [gustData, gustSpeed]);
 
   useEffect(() => {
-    if (jumpruns[0]) {
-      if (jumpruns[0].spot > 0 && jumpruns[0].spot < 10) {
-        setNewSpot(`.${jumpruns[0].spot}`);
-      }
-      if (jumpruns[0].spot >= 10) {
-        setNewSpot(`${(jumpruns[0].spot * 0.1).toFixed(1)}`);
-      }
-      if (jumpruns[0].offset > 0 && jumpruns[0].offset < 10) {
-        setNewOffset(`.${jumpruns[0].offset}`);
-      }
-      if (jumpruns[0].offset >= 10) {
-        setNewOffset(`${(jumpruns[0].offset * 0.1).toFixed(1)}`);
-      }
+    const maxSpeed = gustData.map((gust) => gust.wind_speed);
+    const max = Math.max(...maxSpeed);
+    if (max < speed) {
+      setMaxSpeed(speed);
+    } else {
+      setMaxSpeed(max);
     }
-  }, [jumpruns]);
+  }, [gustData, speed]);
 
   return (
     <WeatherContext.Provider
