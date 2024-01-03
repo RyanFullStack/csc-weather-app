@@ -43,7 +43,7 @@ The detailed section contains the only live link to view the loading area displa
 ### ME
 ![me](/src/images/readme/Me.png)
 
-The Me tab lets users set custom values to get current recommendations based on dropzone safety criteria. These are defined values. An A license recommended max is 17kts, B is 19kts, C is 21kts and D is 25kts. The other feilds are calculated based on current condition, previous 30 min values, and the criteria you select.
+The Me tab lets users set custom values to get current recommendations based on dropzone safety criteria. These are defined values. An A license recommended max is 17kts, B is 19kts, C is 21kts and D is 25kts. The other fields are calculated based on current conditions, previous 30 min values, and the criteria you select.
 
 ### Webcams
 ![webcams](/src/images/readme/Webcams.png)
