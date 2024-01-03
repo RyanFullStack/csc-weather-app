@@ -59,6 +59,106 @@ const WindSpeedProvider = (props) => {
   let weatherData = [];
   let windData = [];
 
+  const getWind = async () => {
+    const res = await fetch(".netlify/functions/gusts");
+    const resArr = await res.json();
+    setGustData([...resArr]);
+  };
+
+  const getAloft = async () => {
+    const res = await fetch(".netlify/functions/aloft");
+    const winds = await res.json();
+    setDirections(winds.direction);
+    setTemps(winds.temp);
+    setSpeeds(winds.speed);
+    setReceived(winds.validtime);
+  };
+
+  const getJumprun = async () => {
+    const res = await fetch("https://csc-login.onrender.com/api/jumpruns/");
+    const data = await res.json();
+
+    if (data.jumpruns) {
+      setJumpruns(data.jumpruns);
+
+      if (data.jumpruns[0].spot > 0 && data.jumpruns[0].spot < 10) {
+        setNewSpot(`.${data.jumpruns[0].spot}`);
+      }
+      if (data.jumpruns[0].spot >= 10) {
+        setNewSpot(`${(data.jumpruns[0].spot * 0.1).toFixed(1)}`);
+      }
+      if (data.jumpruns[0].offset > 0 && data.jumpruns[0].offset < 10) {
+        setNewOffset(`.${data.jumpruns[0].offset}`);
+      }
+      if (data.jumpruns[0].offset >= 10) {
+        setNewOffset(`${(data.jumpruns[0].offset * 0.1).toFixed(1)}`);
+      }
+    } else {
+      setJumpruns([]);
+    }
+  };
+
+  const getAstornomy = async () => {
+    const res = await fetch(
+      "https://api.sunrise-sunset.org/json?lat=41.892&lng=-89.071&date=today&formatted=0"
+    );
+    const data = await res.json();
+    if (data.results) {
+      const sunsetFormat = new Date(data.results.sunset).toLocaleTimeString(
+        "en-US",
+        { timeZone: "America/Chicago" }
+      );
+      const sunriseFormat = new Date(data.results.sunrise).toLocaleTimeString(
+        "en-US",
+        { timeZone: "America/Chicago" }
+      );
+      const twilightFormat = new Date(
+        data.results.civil_twilight_end
+      ).toLocaleTimeString("en-US", { timeZone: "America/Chicago" });
+
+      setSunset(sunsetFormat);
+      setSunrise(sunriseFormat);
+      setTwilight(twilightFormat);
+    }
+  };
+
+  useEffect(() => {
+    getJumprun();
+    getWind();
+    getAloft();
+    getAstornomy();
+
+    const interval = setInterval(() => {
+      getJumprun();
+      getWind();
+      getAloft();
+    }, 30000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  useEffect(() => {
+    const maxGust = gustData.map((gust) => gust.gust_speed);
+    const max = Math.max(...maxGust);
+    if (max < gustSpeed) {
+      setMaxGust(gustSpeed);
+    } else {
+      setMaxGust(max);
+    }
+  }, [gustData, gustSpeed]);
+
+  useEffect(() => {
+    const maxSpeed = gustData.map((gust) => gust.wind_speed);
+    const max = Math.max(...maxSpeed);
+    if (max < speed) {
+      setMaxSpeed(speed);
+    } else {
+      setMaxSpeed(max);
+    }
+  }, [gustData, speed]);
+
   useEffect(() => {
     const weatherQuery = `
         subscription {
@@ -267,106 +367,6 @@ const WindSpeedProvider = (props) => {
       }
     };
   }, [weatherData, windData, unitSetting]);
-
-  const getWind = async () => {
-    const res = await fetch(".netlify/functions/gusts");
-    const resArr = await res.json();
-    setGustData([...resArr]);
-  };
-
-  const getAloft = async () => {
-    const res = await fetch(".netlify/functions/aloft");
-    const winds = await res.json();
-    setDirections(winds.direction);
-    setTemps(winds.temp);
-    setSpeeds(winds.speed);
-    setReceived(winds.validtime);
-  };
-
-  const getJumprun = async () => {
-    const res = await fetch("https://csc-login.onrender.com/api/jumpruns/");
-    const data = await res.json();
-
-    if (data.jumpruns) {
-      setJumpruns(data.jumpruns);
-
-      if (data.jumpruns[0].spot > 0 && data.jumpruns[0].spot < 10) {
-        setNewSpot(`.${data.jumpruns[0].spot}`);
-      }
-      if (data.jumpruns[0].spot >= 10) {
-        setNewSpot(`${(data.jumpruns[0].spot * 0.1).toFixed(1)}`);
-      }
-      if (data.jumpruns[0].offset > 0 && data.jumpruns[0].offset < 10) {
-        setNewOffset(`.${data.jumpruns[0].offset}`);
-      }
-      if (data.jumpruns[0].offset >= 10) {
-        setNewOffset(`${(data.jumpruns[0].offset * 0.1).toFixed(1)}`);
-      }
-    } else {
-      setJumpruns([]);
-    }
-  };
-
-  useEffect(() => {
-    getJumprun();
-    getWind();
-    getAloft();
-
-    const interval = setInterval(() => {
-      getJumprun();
-      getWind();
-      getAloft();
-    }, 30000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-
-  const getAstornomy = async () => {
-    const res = await fetch(
-      "https://api.sunrise-sunset.org/json?lat=41.892&lng=-89.071&date=today&formatted=0"
-    );
-    const data = await res.json();
-    if (data.results) {
-      const sunsetFormat = new Date(data.results.sunset).toLocaleTimeString(
-        "en-US",
-        { timeZone: "America/Chicago" }
-      );
-      const sunriseFormat = new Date(data.results.sunrise).toLocaleTimeString(
-        "en-US",
-        { timeZone: "America/Chicago" }
-      );
-      const twilightFormat = new Date(
-        data.results.civil_twilight_end
-      ).toLocaleTimeString("en-US", { timeZone: "America/Chicago" });
-
-      setSunset(sunsetFormat);
-      setSunrise(sunriseFormat);
-      setTwilight(twilightFormat);
-    }
-  };
-  getAstornomy();
-
-  useEffect(() => {
-    const maxGust = gustData.map((gust) => gust.gust_speed);
-    const max = Math.max(...maxGust);
-    if (max < gustSpeed) {
-      setMaxGust(gustSpeed);
-    } else {
-      setMaxGust(max);
-    }
-  }, [gustData, gustSpeed]);
-
-  useEffect(() => {
-    const maxSpeed = gustData.map((gust) => gust.wind_speed);
-    const max = Math.max(...maxSpeed);
-    if (max < speed) {
-      setMaxSpeed(speed);
-    } else {
-      setMaxSpeed(max);
-    }
-  }, [gustData, speed]);
 
   return (
     <WeatherContext.Provider
