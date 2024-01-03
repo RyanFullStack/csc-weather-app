@@ -158,8 +158,8 @@ const WindSpeedProvider = (props) => {
         metArr.pop();
         metArr.shift();
 
-        const metArr2 = metArr.join(" ");
-        setMetar(metArr2);
+        const formattedMetar = metArr.join(" ");
+        setMetar(formattedMetar);
 
         if (weather.temperature) {
           setTemp(weather.temperature);
@@ -235,7 +235,6 @@ const WindSpeedProvider = (props) => {
           if (weather.presentWeather.includes("FZ")) {
             setMetarDesc("Freezing");
           }
-
           if (weather.presentWeather.includes("BR")) {
             setMetarAbbr("Mist");
           }
