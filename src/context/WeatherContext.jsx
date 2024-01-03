@@ -123,14 +123,10 @@ const WindSpeedProvider = (props) => {
 
         const wind = windData[0].data.wind;
 
-        setVariableDirection(wind.variableDirection);
-        if (wind.speed) {
-          setSpeed(wind.speed);
-        }
-        setGustSpeed(wind.gustSpeed);
-        if (wind.direction) {
-          setDirection(wind.direction);
-        }
+        setVariableDirection(wind?.variableDirection);
+        setSpeed(wind?.speed);
+        setGustSpeed(wind?.gustSpeed);
+        setDirection(wind?.direction);
       }
 
       if (res.id === "weather" && res.payload) {
