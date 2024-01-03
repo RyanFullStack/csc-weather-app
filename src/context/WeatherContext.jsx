@@ -22,9 +22,15 @@ const WindSpeedProvider = (props) => {
   const [metarAbbr, setMetarAbbr] = useState("");
   const [metarDesc, setMetarDesc] = useState("");
   const [gustData, setGustData] = useState([]);
-  const [darkTheme, setDarkTheme] = useState(localStorage.getItem('darkTheme') || "true");
-  const [tempSetting, setTempSetting] = useState(localStorage.getItem('tempSetting') || "true");
-  const [unitSetting, setUnitSetting] = useState(localStorage.getItem('unitSetting') || "true");
+  const [darkTheme, setDarkTheme] = useState(
+    localStorage.getItem("darkTheme") || "true"
+  );
+  const [tempSetting, setTempSetting] = useState(
+    localStorage.getItem("tempSetting") || "true"
+  );
+  const [unitSetting, setUnitSetting] = useState(
+    localStorage.getItem("unitSetting") || "true"
+  );
   const [directions, setDirections] = useState({});
   const [temps, setTemps] = useState({});
   const [speeds, setSpeeds] = useState({});
@@ -43,8 +49,12 @@ const WindSpeedProvider = (props) => {
   const [jumpruns, setJumpruns] = useState([]);
   const [newSpot, setNewSpot] = useState("");
   const [newOffset, setNewOffset] = useState("");
-  const [webcamDirection, setWebcamDirection] = useState(localStorage.getItem('webcamDirection') || "west");
-  const [speedUnit, setSpeedUnit] = useState(localStorage.getItem('speedUnit') || "true");
+  const [webcamDirection, setWebcamDirection] = useState(
+    localStorage.getItem("webcamDirection") || "west"
+  );
+  const [speedUnit, setSpeedUnit] = useState(
+    localStorage.getItem("speedUnit") || "true"
+  );
 
   //necessary for websocket to function correctly, don't use state
   let weatherData = [];
@@ -52,9 +62,7 @@ const WindSpeedProvider = (props) => {
 
   useEffect(() => {
     const data = async () => {
-      const res = await fetch(
-        ".netlify/functions/aloft"
-      );
+      const res = await fetch(".netlify/functions/aloft");
       const winds = await res.json();
       setDirections(winds.direction);
       setTemps(winds.temp);
@@ -71,52 +79,52 @@ const WindSpeedProvider = (props) => {
     };
   }, []);
 
-  useEffect(() => {
-    const windQuery = `
-        subscription {
-          wind: windReported {
-            receivedAt
-            speed
-            gustSpeed
-            direction
-            variableDirection
-          }
-        }
-        `;
+  // useEffect(() => {
+  //   const windQuery = `
+  //       subscription {
+  //         wind: windReported {
+  //           receivedAt
+  //           speed
+  //           gustSpeed
+  //           direction
+  //           variableDirection
+  //         }
+  //       }
+  //       `;
 
-    const websocket = new WebSocket("wss://api.skydivecsc.com/graphql", [
-      "graphql-ws",
-    ]);
-    websocket.onopen = function () {
-      websocket.send(JSON.stringify({ type: "connection_init", payload: {} }));
-      websocket.send(
-        JSON.stringify({
-          type: "start",
-          id: "wind",
-          payload: { query: windQuery, variables: null },
-        })
-      );
-    };
-    websocket.onmessage = function (event) {
-      const res = JSON.parse(event.data);
+  //   const websocket = new WebSocket("wss://api.skydivecsc.com/graphql", [
+  //     "graphql-ws",
+  //   ]);
+  //   websocket.onopen = function () {
+  //     websocket.send(JSON.stringify({ type: "connection_init", payload: {} }));
+  //     websocket.send(
+  //       JSON.stringify({
+  //         type: "start",
+  //         id: "wind",
+  //         payload: { query: windQuery, variables: null },
+  //       })
+  //     );
+  //   };
+  //   websocket.onmessage = function (event) {
+  //     const res = JSON.parse(event.data);
 
-      if (res.payload) {
-        windData = [];
-        windData.push(res.payload);
+  //     if (res.payload) {
+  //       windData = [];
+  //       windData.push(res.payload);
 
-        const wind = windData[0].data.wind;
+  //       const wind = windData[0].data.wind;
 
-        setVariableDirection(wind.variableDirection);
-        if (wind.speed) {
-          setSpeed(wind.speed);
-        }
-        setGustSpeed(wind.gustSpeed);
-        if (wind.direction) {
-          setDirection(wind.direction);
-        }
-      }
-    };
-  }, [windData]);
+  //       setVariableDirection(wind.variableDirection);
+  //       if (wind.speed) {
+  //         setSpeed(wind.speed);
+  //       }
+  //       setGustSpeed(wind.gustSpeed);
+  //       if (wind.direction) {
+  //         setDirection(wind.direction);
+  //       }
+  //     }
+  //   };
+  // }, [windData]);
 
   useEffect(() => {
     const weatherQuery = `
@@ -138,6 +146,18 @@ const WindSpeedProvider = (props) => {
         }
         `;
 
+    const windQuery = `
+        subscription {
+          wind: windReported {
+            receivedAt
+            speed
+            gustSpeed
+            direction
+            variableDirection
+          }
+        }
+        `;
+
     const websocket = new WebSocket("wss://api.skydivecsc.com/graphql", [
       "graphql-ws",
     ]);
@@ -150,11 +170,34 @@ const WindSpeedProvider = (props) => {
           payload: { query: weatherQuery, variables: null },
         })
       );
+      websocket.send(
+        JSON.stringify({
+          type: "start",
+          id: "wind",
+          payload: { query: windQuery, variables: null },
+        })
+      );
     };
     websocket.onmessage = function (event) {
       const res = JSON.parse(event.data);
 
-      if (res.payload) {
+      if (res.id === 'wind' && res.payload) {
+        windData = [];
+        windData.push(res.payload);
+
+        const wind = windData[0].data.wind;
+
+        setVariableDirection(wind.variableDirection);
+        if (wind.speed) {
+          setSpeed(wind.speed);
+        }
+        setGustSpeed(wind.gustSpeed);
+        if (wind.direction) {
+          setDirection(wind.direction);
+        }
+      }
+
+      if (res.id === 'weather' && res.payload) {
         weatherData = [];
         weatherData.push(res.payload);
 
@@ -360,13 +403,11 @@ const WindSpeedProvider = (props) => {
         }
       }
     };
-  }, [weatherData, unitSetting]);
+  }, [weatherData, windData, unitSetting]);
 
   useEffect(() => {
     const getWind = async () => {
-      const res = await fetch(
-        ".netlify/functions/gusts"
-      );
+      const res = await fetch(".netlify/functions/gusts");
       const resArr = await res.json();
       setGustData([...resArr]);
     };
@@ -471,7 +512,6 @@ const WindSpeedProvider = (props) => {
       }
     }
   }, [jumpruns]);
-
 
   return (
     <WeatherContext.Provider
