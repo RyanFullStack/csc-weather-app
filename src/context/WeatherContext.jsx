@@ -190,75 +190,46 @@ const WindSpeedProvider = (props) => {
           setMetarDesc("");
         }
 
+        const metarDescriptors = {
+          "-": "Light",
+          "+": "Heavy",
+          VC: "Vicinity",
+          MI: "Shallow",
+          PR: "Partial",
+          BC: "Patches",
+          DR: "Low Drifting",
+          BL: "Blowing",
+          FZ: "Freezing",
+        };
+
+        const metarAbbreviators = {
+          BR: "Mist",
+          TS: "Thunderstorms",
+          SH: "Shower",
+          DZ: "Drizzle",
+          RA: "Rain",
+          UP: "Precipitation",
+          SN: "Snow",
+          PO: "DUST DEVILS",
+          SS: "Sand Storm",
+          GR: "Hail",
+          FG: "Fog",
+          FU: "Smoke",
+          HZ: "Haze",
+          FC: "Tornado",
+        };
+
         if (weather.presentWeather) {
-          if (weather.presentWeather.includes("-")) {
-            setMetarDesc("Light");
+          for (const condition of Object.keys(metarDescriptors)) {
+            if (weather.presentWeather.includes(condition)) {
+              setMetarDesc(metarDescriptors[condition]);
+            }
           }
-          if (weather.presentWeather.includes("+")) {
-            setMetarDesc("Heavy");
-          }
-          if (weather.presentWeather.includes("VC")) {
-            setMetarDesc("Vicinity");
-          }
-          if (weather.presentWeather.includes("MI")) {
-            setMetarDesc("Shallow");
-          }
-          if (weather.presentWeather.includes("PR")) {
-            setMetarDesc("Partial");
-          }
-          if (weather.presentWeather.includes("BC")) {
-            setMetarDesc("Patches");
-          }
-          if (weather.presentWeather.includes("DR")) {
-            setMetarDesc("Low Drifting");
-          }
-          if (weather.presentWeather.includes("BL")) {
-            setMetarDesc("Blowing");
-          }
-          if (weather.presentWeather.includes("FZ")) {
-            setMetarDesc("Freezing");
-          }
-          if (weather.presentWeather.includes("BR")) {
-            setMetarAbbr("Mist");
-          }
-          if (weather.presentWeather.includes("TS")) {
-            setMetarAbbr("Thunderstorms");
-          }
-          if (weather.presentWeather.includes("SH")) {
-            setMetarAbbr("Shower");
-          }
-          if (weather.presentWeather.includes("DZ")) {
-            setMetarAbbr("Drizzle");
-          }
-          if (weather.presentWeather.includes("RA")) {
-            setMetarAbbr("Rain");
-          }
-          if (weather.presentWeather.includes("UP")) {
-            setMetarAbbr("Precipitation");
-          }
-          if (weather.presentWeather.includes("SN")) {
-            setMetarAbbr("Snow");
-          }
-          if (weather.presentWeather.includes("PO")) {
-            setMetarAbbr("DUST DEVILS");
-          }
-          if (weather.presentWeather.includes("SS")) {
-            setMetarAbbr("Sand Storm");
-          }
-          if (weather.presentWeather.includes("GR")) {
-            setMetarAbbr("Hail");
-          }
-          if (weather.presentWeather.includes("FG")) {
-            setMetarAbbr("Fog");
-          }
-          if (weather.presentWeather.includes("FU")) {
-            setMetarAbbr("Smoke");
-          }
-          if (weather.presentWeather.includes("HZ")) {
-            setMetarAbbr("Haze");
-          }
-          if (weather.presentWeather.includes("FC")) {
-            setMetarAbbr("Tornado");
+
+          for (const condition of Object.keys(metarAbbreviators)) {
+            if (weather.presentWeather.includes(condition)) {
+              setMetarAbbr(metarAbbreviators[condition]);
+            }
           }
         }
 
