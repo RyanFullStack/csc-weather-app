@@ -263,7 +263,7 @@ const WindSpeedProvider = (props) => {
           `${(weather?.skyCondition[1]?.altitude / 3.28).toFixed(0)}M`
         );
 
-        if (weather.skyCondition[1] === undefined) {
+        if (!weather.skyCondition[1]) {
           setCloudCeiling2("");
           setCloudCeilingM2("");
           setSkyCondition2("");
@@ -274,7 +274,7 @@ const WindSpeedProvider = (props) => {
           `${(weather?.skyCondition[2]?.altitude / 3.28).toFixed(0)}M`
         );
 
-        if (weather.skyCondition[2] === undefined) {
+        if (!weather.skyCondition[2]) {
           setCloudCeiling3("");
           setCloudCeilingM3("");
           setSkyCondition3("");
