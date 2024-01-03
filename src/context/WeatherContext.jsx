@@ -42,7 +42,6 @@ const WindSpeedProvider = (props) => {
   const [sunset, setSunset] = useState(null);
   const [sunrise, setSunrise] = useState(null);
   const [twilight, setTwilight] = useState(null);
-  const [noon, setNoon] = useState(null);
   const [maxGust, setMaxGust] = useState(null);
   const [maxSpeed, setMaxSpeed] = useState(null);
   const [variableDirection, setVariableDirection] = useState([]);
@@ -56,7 +55,7 @@ const WindSpeedProvider = (props) => {
     localStorage.getItem("speedUnit") || "true"
   );
 
-  //necessary for websocket to function correctly, don't use state
+  //necessary for websocket to function correctly and stay alive, don't use state
   let weatherData = [];
   let windData = [];
 
@@ -397,7 +396,6 @@ const WindSpeedProvider = (props) => {
     }
   }, [gustData, speed]);
 
-
   const getAstornomy = async () => {
     const res = await fetch(
       "https://api.sunrise-sunset.org/json?lat=41.892&lng=-89.071&date=today&formatted=0"
@@ -413,17 +411,13 @@ const WindSpeedProvider = (props) => {
         { timeZone: "America/Chicago" }
       );
       const twilightFormat = new Date(
-        data.results.civil_twilight_end
-      ).toLocaleTimeString("en-US", { timeZone: "America/Chicago" });
-      const noonFormat = new Date(data.results.solar_noon).toLocaleTimeString(
-        "en-US",
-        { timeZone: "America/Chicago" }
-      );
+        data.results.civil_twilight_end).toLocaleTimeString(
+          "en-US",
+        { timeZone: "America/Chicago" });
 
       setSunset(sunsetFormat);
       setSunrise(sunriseFormat);
       setTwilight(twilightFormat);
-      setNoon(noonFormat);
     }
   };
   getAstornomy();
@@ -509,7 +503,6 @@ const WindSpeedProvider = (props) => {
         sunset,
         sunrise,
         twilight,
-        noon,
         maxGust,
         variableDirection,
         maxSpeed,
