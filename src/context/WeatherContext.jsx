@@ -140,24 +140,21 @@ const WindSpeedProvider = (props) => {
   }, []);
 
   useEffect(() => {
-    const maxGust = gustData.map((gust) => gust.gust_speed);
-    const max = Math.max(...maxGust);
-    if (max < gustSpeed) {
+    const maxGustArr = gustData.map((gust) => gust.gust_speed);
+    const maxSpeedArr = gustData.map((gust) => gust.wind_speed);
+    const maxGust = Math.max(...maxGustArr);
+    const maxSpeed = Math.max(...maxSpeedArr);
+    if (maxGust < gustSpeed) {
       setMaxGust(gustSpeed);
     } else {
-      setMaxGust(max);
+      setMaxGust(maxGust);
     }
-  }, [gustData, gustSpeed]);
-
-  useEffect(() => {
-    const maxSpeed = gustData.map((gust) => gust.wind_speed);
-    const max = Math.max(...maxSpeed);
-    if (max < speed) {
+    if (maxSpeed < speed) {
       setMaxSpeed(speed);
     } else {
-      setMaxSpeed(max);
+      setMaxSpeed(maxSpeed);
     }
-  }, [gustData, speed]);
+  }, [gustData, speed, gustSpeed]);
 
   useEffect(() => {
     const weatherQuery = `
