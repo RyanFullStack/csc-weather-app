@@ -135,66 +135,53 @@ const WindSpeedProvider = (props) => {
 
         const weather = weatherData[0].data.weather;
 
-        if (weather.altimeterSetting) {
-          setPressure(weather.altimeterSetting);
-        }
-        if (weather.densityAltitude) {
-          setDensityAlt(weather.densityAltitude);
-        }
-        if (weather.visibility) {
-          setVisibility(weather.visibility);
-        }
-        if (weather.dewPoint) {
-          setDewPoint(weather.dewPoint);
-        }
+        console.log(weather);
+
+        setPressure(weather?.altimeterSetting);
+        setDensityAlt(weather?.densityAltitude);
+        setVisibility(weather?.visibility);
+        setDewPoint(weather?.dewPoint);
 
         const metArr = weather.metar.split(" ");
         metArr.pop();
         metArr.pop();
         metArr.pop();
         metArr.shift();
-
         const formattedMetar = metArr.join(" ");
         setMetar(formattedMetar);
 
-        if (weather.temperature) {
-          setTemp(weather.temperature);
-          setTempC(((weather.temperature - 32) / 1.8).toFixed(1));
-        }
+        setTemp(weather?.temperature);
+        setTempC(((weather?.temperature - 32) / 1.8).toFixed(1));
 
-        if (weather.skyCondition[0].altitude) {
-          setCloudCeiling1(`${weather.skyCondition[0].altitude}'`);
-          setCloudCeilingM1(
-            `${(weather.skyCondition[0].altitude / 3.28).toFixed(0)}M`
-          );
-        }
+        setCloudCeiling1(`${weather?.skyCondition[0]?.altitude}'`);
+        setCloudCeilingM1(
+          `${(weather?.skyCondition[0]?.altitude / 3.28).toFixed(0)}M`
+        );
 
         if (weather.skyCondition[0].altitude === null) {
-          setSkyCondition1("Clear Sky");
           setCloudCeiling1("");
+          setCloudCeilingM1("");
         }
 
-        if (weather.skyCondition[1]) {
-          setCloudCeiling2(`${weather.skyCondition[1].altitude}'`);
-          setCloudCeilingM2(
-            `${(weather.skyCondition[1].altitude / 3.28).toFixed(0)}M`
-          );
-        }
+        setCloudCeiling2(`${weather?.skyCondition[1]?.altitude}'`);
+        setCloudCeilingM2(
+          `${(weather?.skyCondition[1]?.altitude / 3.28).toFixed(0)}M`
+        );
 
         if (weather.skyCondition[1] === undefined) {
           setCloudCeiling2("");
+          setCloudCeilingM2("");
           setSkyCondition2("");
         }
 
-        if (weather.skyCondition[2]) {
-          setCloudCeiling3(`${weather.skyCondition[2].altitude}'`);
-          setCloudCeilingM3(
-            `${(weather.skyCondition[2].altitude / 3.28).toFixed(0)}M`
-          );
-        }
+        setCloudCeiling3(`${weather?.skyCondition[2]?.altitude}'`);
+        setCloudCeilingM3(
+          `${(weather?.skyCondition[2]?.altitude / 3.28).toFixed(0)}M`
+        );
 
         if (weather.skyCondition[2] === undefined) {
           setCloudCeiling3("");
+          setCloudCeilingM3("");
           setSkyCondition3("");
         }
 
@@ -275,62 +262,38 @@ const WindSpeedProvider = (props) => {
           }
         }
 
-        if (weather.skyCondition[0].cloudCover) {
-          if (weather.skyCondition[0].cloudCover === "CLR") {
-            setSkyCondition1("Clear Sky");
-            setCloudCeiling1("");
-          }
-          if (weather.skyCondition[0].cloudCover === "SCT") {
-            setSkyCondition1("Scattered");
-          }
-          if (weather.skyCondition[0].cloudCover === "BKN") {
-            setSkyCondition1("Broken");
-          }
-          if (weather.skyCondition[0].cloudCover === "OVC") {
-            setSkyCondition1("Overcast");
-          }
-        }
+        const skyConditions = {
+          CLR: "Clear Sky",
+          SCT: "Scattered",
+          BKN: "Broken",
+          OVC: "Overcast",
+        };
 
-        if (weather.skyCondition[1]) {
-          if (weather.skyCondition[1].cloudCover === "CLR") {
-            setSkyCondition2("Clear Sky");
-          }
-          if (weather.skyCondition[1].cloudCover === "SCT") {
-            setSkyCondition2("Scattered");
-          }
-          if (weather.skyCondition[1].cloudCover === "BKN") {
-            setSkyCondition2("Broken");
-          }
-          if (weather.skyCondition[1].cloudCover === "OVC") {
-            setSkyCondition2("Overcast");
-          }
-        }
+        setSkyCondition1(
+          skyConditions[weather?.skyCondition[0]?.cloudCover] || ""
+        );
+        setSkyCondition2(
+          skyConditions[weather?.skyCondition[1]?.cloudCover] || ""
+        );
+        setSkyCondition3(
+          skyConditions[weather?.skyCondition[2]?.cloudCover] || ""
+        );
 
-        if (weather.skyCondition[2]) {
-          if (weather.skyCondition[2].cloudCover === "CLR") {
-            setSkyCondition3("Clear Sky");
-          }
-          if (weather.skyCondition[2].cloudCover === "SCT") {
-            setSkyCondition3("Scattered");
-          }
-          if (weather.skyCondition[2].cloudCover === "BKN") {
-            setSkyCondition3("Broken");
-          }
-          if (weather.skyCondition[2].cloudCover === "OVC") {
-            setSkyCondition3("Overcast");
-          }
-        }
         if (
-          weather.skyCondition[0]?.cloudCover === "CLR" &&
+          (weather.skyCondition[0]?.cloudCover === "CLR" ||
+            weather.skyCondition[0]?.altitude === null) &&
           (!weather.skyCondition[1] || !weather.skyCondition[1].cloudCover) &&
           (!weather.skyCondition[2] || !weather.skyCondition[2].cloudCover)
         ) {
           setSkyCondition1("Clear Sky");
           setCloudCeiling1("");
+          setCloudCeilingM1("");
           setSkyCondition2("");
           setCloudCeiling2("");
+          setCloudCeilingM2("");
           setSkyCondition3("");
           setCloudCeiling3("");
+          setCloudCeilingM3("");
         }
       }
     };
@@ -406,9 +369,8 @@ const WindSpeedProvider = (props) => {
         { timeZone: "America/Chicago" }
       );
       const twilightFormat = new Date(
-        data.results.civil_twilight_end).toLocaleTimeString(
-          "en-US",
-        { timeZone: "America/Chicago" });
+        data.results.civil_twilight_end
+      ).toLocaleTimeString("en-US", { timeZone: "America/Chicago" });
 
       setSunset(sunsetFormat);
       setSunrise(sunriseFormat);
