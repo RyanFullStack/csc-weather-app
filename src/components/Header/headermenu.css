@@ -66,3 +66,7 @@
     color: rgb(0, 0, 0);
     background-color: rgb(8, 228, 209);
 }
+
+#help {
+    font-size: 1rem;
+}
