@@ -71,7 +71,8 @@ This will open an external link displaying the live manifest activity at the dro
 ### Header and Footer
 
 The Header displays the option button on the far left, an indicator whether the data you are viewing is live or forecast, the time, the audio link, and the live temperature.
-Most importantly, during jump hours, the header will display a stoplight that reflect the stoplight in the hangar. It will be red if there is an active weather hold, yellow is the day is done and the beer light is on, or green if we are actively jumping.
+
+Most importantly, during jump hours, the header will display a stoplight that reflects the stoplight in the hangar. It will be red if there is an active weather hold, yellow if the day is done and the beer light is on, or green if we are actively jumping.
 
 The Footer displays important info in the center. It will either display a weather hold, beer light, or active jumprun if set by staff. It will otherwise display the live METAR from KRPJ or have a custom message set.
 
