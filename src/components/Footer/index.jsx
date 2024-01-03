@@ -34,7 +34,7 @@ function Footer() {
             }
 
 
-            <p><a href='https://github.com/RyanFullStack' target="_blank" rel='noreferrer'>Github</a></p>
+            <p><a href='https://github.com/RyanFullStack/csc-weather-app#Features' target="_blank" rel='noreferrer'>Github</a></p>
         </div>
     )
 }
