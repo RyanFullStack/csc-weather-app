@@ -47,6 +47,16 @@ These values will change with your settings.
 
 The Me tab lets users set custom values to get current recommendations based on dropzone safety criteria. These are defined values. An A license recommended max is 17kts, B is 19kts, C is 21kts and D is 25kts. The other fields are calculated based on current conditions, previous 30 min values, and the criteria you select.
 
+The Max Speed value only looks at the max sustained speed in the previous 30 minutes and ignores gusts.
+
+The Max Gust value only looks at the max gust in the previous 30 minutes, which there may be none.
+
+The Max Differential will look at the Max Gust in the previous 30 and subtract the Max Speed in the previous 30 minutes. This is especially useful if you correctly set it!
+
+Let's walk through an example to clarify how these values are different.
+
+You may think setting Max Speed to 15kts, Max Gust to 20kts and Max Differential to 5kts would be redundant since you've custom set both the Max Speed and Max Gust to match your differential, and you'd be right! This is not the proper usage! You should use Max Differential if you want to set a hard wind limit or have no wind limit, but still want to track the difference. Let's say you don't like any wind over 20kts regardless if it's a gust or sustained but you're not comfortable jumping when it's 10kts gusting 20kts. This is perfect! Set both your Max Speed and Max Gust and your hard limit, 20kts in this example, and set your differential for 10kts. Then you will always have a quick reference if it's over 20kts, or if the wind does something weird like 5kts gusting 18kts. If you're an instructor or experienced skydiver and have no personal limit above the dz standards, you may choose to set only the Max Differential property and leave speeds blank. Remember, you can select as many or as few options as you desire!
+
 ### Webcams
 ![webcams](/src/images/readme/Webcams.png)
 
