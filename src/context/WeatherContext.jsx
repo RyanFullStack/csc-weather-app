@@ -135,8 +135,6 @@ const WindSpeedProvider = (props) => {
 
         const weather = weatherData[0].data.weather;
 
-        console.log(weather);
-
         setPressure(weather?.altimeterSetting);
         setDensityAlt(weather?.densityAltitude);
         setVisibility(weather?.visibility);
