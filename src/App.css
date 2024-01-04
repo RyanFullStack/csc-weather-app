@@ -517,6 +517,17 @@
 .me-label {
   font-size: calc(8px + 2vmin);
 }
+.me-title {
+  display: flex;
+  flex-direction: column;
+}
+#me-help {
+  font-size: .8rem;
+  margin-top: .5rem;
+}
+#me-help:hover {
+  color: white;
+}
 
 
 select {
