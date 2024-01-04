@@ -6,10 +6,10 @@ import './safety.css'
 function Safety () {
     return (
         <div className='safety-card'>
-            <h5>Click images to open in new tab</h5>
+            <span id='safety-title'>Click images to open in new tab</span>
         <a href={safetyFront} target='_blank' rel="noreferrer"><img src={safetyFront} alt='Click to open in new tab'/></a>
         <a href={safetyBack} target='_blank' rel="noreferrer"><img src={safetyBack} alt='Click to open in new tab'/></a>
-        <NavLink exact to='/detailed'>BACK</NavLink>
+        <NavLink exact to='/detailed'>Back</NavLink>
         </div>
     )
 }
