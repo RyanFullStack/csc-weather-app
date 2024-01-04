@@ -34,11 +34,13 @@ The Aloft section displays wind conditions aloft up to 18,000', the max used by 
 
 ![detailed](/src/images/readme/Detailed.png)
 
-The Detailed section displays a collection of information of weather info displayed in a table. Also has a live Student Wind Indicator at the top. If the winds go outside student range it will display "STUDENT WIND HOLD". If winds go over DZ limit, it will display "DZ WIND LIMIT HIT"
+The Detailed section displays a collection of weather info displayed in a table. It also has a live Student Wind Indicator at the top. If the winds go outside student range it will display "STUDENT WIND HOLD". If winds go over DZ limit, it will display "DZ WIND LIMIT HIT".
 
-If a custom jumprun is set in the staff only back-end, you will see it displayed here along with the footer.
+If a custom jumprun is set in the staff only back-end, you will see it displayed in this table along with the footer.
 
-The detailed section contains the only live link to view the loading area display. This is a desktop mode, made specifically for jumpers to view prior to boarding the aircraft via a monitor in the loading area.
+The detailed section contains the only link to view the loading area display. This is a desktop mode, made specifically for jumpers to view prior to boarding the aircraft via a monitor in the loading area.
+
+The detailed section contains the only link to view the safety card. This is a card given in person, along with the safety briefing, to visiting jumpers. Ask manifest for a copy if you haven't received one.
 
 These values will change with your settings.
 
@@ -82,9 +84,9 @@ This will open an external link displaying the live manifest activity at the dro
 
 ### Header and Footer
 
-The Header displays the option button on the far left, an indicator whether the data you are viewing is live or forecast, the time, the audio link, and the live temperature.
+The Header displays the option button on the far left, an indicator whether the data you are viewing is live or forecast, the current time, the live audio link, and the live temperature.
 
-Most importantly, during jump hours, the header will display a stoplight that reflects the stoplight in the hangar. It will be red if there is an active weather hold, yellow if the day is done and the beer light is on, or green if we are actively jumping.
+Most importantly, during jump hours, the header will display a stoplight that reflects the stoplight in the hangar. It will be red if there is an active weather hold, yellow if the day is done and the beer light is on, or green if we are actively jumping. If there is no stoplight visible, staff has not set a jumprun for that day.
 
 The Footer displays important info in the center. It will either display a weather hold, beer light, or active jumprun if set by staff. It will otherwise display the live METAR from KRPJ or have a custom message set.
 
