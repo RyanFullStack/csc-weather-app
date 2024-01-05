@@ -27,7 +27,7 @@ function Footer() {
                 ) : (
                     <div id='scroll-container'>
                         <div id='scroll-text'>
-                            <span>HAPPY NEW YEAR FROM CSC!</span><span className='red'>SAFETY DAY 4/6/24</span>
+                            <span>SAFETY DAY 4/6/24</span><span>OPENING DAY 4/19/24</span>
                         </div>
                     </div>
                 )

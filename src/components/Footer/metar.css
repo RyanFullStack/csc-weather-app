@@ -44,9 +44,9 @@
   font-size: calc(6px + 2vmin);
   color: rgb(8, 228, 209);
   gap: 50vw;
-  -moz-transform: translateX(200%);
-  -webkit-transform: translateX(200%);
-  transform: translateX(200%);
+  -moz-transform: translateX(170%);
+  -webkit-transform: translateX(170%);
+  transform: translateX(170%);
   white-space: nowrap;
   -moz-animation: my-animation 15s linear infinite;
   -webkit-animation: my-animation 15s linear infinite;
@@ -56,32 +56,32 @@
 /* for Firefox */
 @-moz-keyframes my-animation {
   from {
-    -moz-transform: translateX(200%);
+    -moz-transform: translateX(170%);
   }
   to {
-    -moz-transform: translateX(-200%);
+    -moz-transform: translateX(-170%);
   }
 }
 
 /* for Chrome */
 @-webkit-keyframes my-animation {
   from {
-    -webkit-transform: translateX(200%);
+    -webkit-transform: translateX(170%);
   }
   to {
-    -webkit-transform: translateX(-200%);
+    -webkit-transform: translateX(-170%);
   }
 }
 
 @keyframes my-animation {
   from {
-    -moz-transform: translateX(200%);
-    -webkit-transform: translateX(200%);
-    transform: translateX(200%);
+    -moz-transform: translateX(170%);
+    -webkit-transform: translateX(170%);
+    transform: translateX(170%);
   }
   to {
-    -moz-transform: translateX(-200%);
-    -webkit-transform: translateX(-200%);
-    transform: translateX(-200%);
+    -moz-transform: translateX(-170%);
+    -webkit-transform: translateX(-170%);
+    transform: translateX(-170%);
   }
 }
