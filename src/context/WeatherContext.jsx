@@ -100,7 +100,7 @@ const WindSpeedProvider = (props) => {
 
   const getAstronomy = async () => {
     const res = await fetch(
-      "https://api.sunrise-sunset.org/json?lat=41.892&lng=-89.071&date=today&formatted=0"
+      "https://api.sunrise-sunset.org/json?lat=42.392&lng=-89.071&date=today&formatted=0"
     );
     const data = await res.json();
     if (data.results) {
