@@ -98,7 +98,7 @@ const WindSpeedProvider = (props) => {
     }
   };
 
-  const getAstornomy = async () => {
+  const getAstronomy = async () => {
     const res = await fetch(
       "https://api.sunrise-sunset.org/json?lat=41.892&lng=-89.071&date=today&formatted=0"
     );
@@ -126,7 +126,7 @@ const WindSpeedProvider = (props) => {
     getJumprun();
     getWind();
     getAloft();
-    getAstornomy();
+    getAstronomy();
 
     const interval = setInterval(() => {
       getJumprun();
