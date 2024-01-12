@@ -221,7 +221,7 @@ const WindSpeedProvider = (props) => {
         const wind = windData[0].data.wind;
 
         setVariableDirection(wind?.variableDirection);
-        setSpeed(wind?.speed);
+        setSpeed(wind?.speed || 0);
         setGustSpeed(wind?.gustSpeed);
         setDirection(wind?.direction);
       }
