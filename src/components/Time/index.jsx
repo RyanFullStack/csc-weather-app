@@ -1,42 +1,41 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 function GetCst() {
-    const [currentDate, setCurrentDate] = useState('')
-    const [currentDay, setCurrentDay] = useState('')
-    const [time, setTime] = useState('')
+  const [currentDate, setCurrentDate] = useState("");
+  const [currentDay, setCurrentDay] = useState("");
+  const [time, setTime] = useState("");
 
-    function getNewDate() {
-        return new Date()
-    }
+  function updateDateTime() {
+    const now = new Date().toLocaleString("en-US", { timeZone: "America/Chicago" });
+    const [date, newTime] = now.split(",");
+    setTime(newTime);
 
-    useEffect(() => {
-        const timeInt = setInterval(() => {
-            const timeObj = getNewDate().toLocaleString('en-US', { timeZone: 'America/Chicago' })
-            const timeArr = timeObj.split(',')
-            const [date, time] = timeArr
-            setTime(time)
+    const newDate = date.split("/");
+    newDate.pop();
+    const today = newDate.join("/");
+    setCurrentDate(today);
 
-            const newDate = date.split('/')
-            newDate.pop()
-            const today = newDate.join('/')
-            setCurrentDate(today)
+    const getDay = new Date();
+    setCurrentDay(getDay.toString().split(" ")[0]);
 
-            const getDay = getNewDate()
-            setCurrentDay(getDay.toString().split(' ')[0])
+    return
+  }
 
-        }, 1000)
+  useEffect(() => {
+    updateDateTime();
 
-        return function () {
-            clearInterval(timeInt)
-        }
-    }, [])
+    const timeInt = setInterval(updateDateTime, 1000);
 
+    return () => {
+      clearInterval(timeInt);
+    };
+  }, []);
 
-    return (
-        <div className="time-component">
-            <div>{currentDay} {currentDate} {time}</div>
-        </div>
-    )
+  return (
+    <div className="time-component">
+      <div>{currentDay} {currentDate} {time}</div>
+    </div>
+  );
 }
 
-export default GetCst
+export default GetCst;
