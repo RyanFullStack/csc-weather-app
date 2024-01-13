@@ -68,10 +68,15 @@ const WindSpeedProvider = (props) => {
   const getAloft = async () => {
     const res = await fetch(".netlify/functions/aloft");
     const winds = await res.json();
-    setDirections(winds.direction);
-    setTemps(winds.temp);
-    setSpeeds(winds.speed);
-    setReceived(winds.validtime);
+
+    if (winds.error) {
+      setDirections(winds);
+    } else {
+      setDirections(winds.direction);
+      setTemps(winds.temp);
+      setSpeeds(winds.speed);
+      setReceived(winds.validtime);
+    }
   };
 
   const getJumprun = async () => {

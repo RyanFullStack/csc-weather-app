@@ -89,6 +89,10 @@ function GustChart() {
         return <div className="loading">Live Gusts Loading!</div>;
       }
 
+    if (gustData[0].error) {
+        return <div className="loading">No Gust Data Found</div>
+    }
+
 
     return (
         <div className="gust-chart">
