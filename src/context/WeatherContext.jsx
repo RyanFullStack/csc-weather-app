@@ -149,10 +149,18 @@ const WindSpeedProvider = (props) => {
   }, []);
 
   useEffect(() => {
-    const maxGustArr = gustData.map((gust) => gust.gust_speed);
-    const maxSpeedArr = gustData.map((gust) => gust.wind_speed);
-    const maxGust = Math.max(...maxGustArr);
-    const maxSpeed = Math.max(...maxSpeedArr);
+    let maxGust, maxSpeed;
+
+    if (gustData[0]?.error) {
+      maxGust = 0;
+      maxSpeed = 0;
+    } else {
+      const maxGustArr = gustData.map((gust) => gust.gust_speed);
+      const maxSpeedArr = gustData.map((gust) => gust.wind_speed);
+      maxGust = Math.max(...maxGustArr);
+      maxSpeed = Math.max(...maxSpeedArr);
+    }
+
     if (maxGust < gustSpeed) {
       setMaxGust(gustSpeed);
     } else {
