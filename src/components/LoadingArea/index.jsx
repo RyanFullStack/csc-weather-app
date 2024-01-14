@@ -90,7 +90,11 @@ function LoadingArea() {
               }
               alt="Wind Direction"
               className="arrow"
-              style={speed === 0 ? { transform: `rotate(250deg)` } : { transform: `rotate(${direction}deg)` }}
+              style={
+                speed === 0
+                  ? { transform: `rotate(250deg)` }
+                  : { transform: `rotate(${direction}deg)` }
+              }
             ></img>
           </div>
           <div className="wind-direction">
@@ -202,11 +206,17 @@ function LoadingArea() {
               <tr className={darkTheme === "true" ? "table" : "table-light"}>
                 <td>Sky Condition:</td>
                 <td>
-                  {skyCondition1} {cloudCeiling1}
-                  {skyCondition2 ? <br /> : null}
-                  {skyCondition2} {cloudCeiling2}
-                  {skyCondition3 ? <br /> : null} {skyCondition3}{" "}
-                  {cloudCeiling3}
+                  {!skyCondition1 ? (
+                    "Unknown"
+                  ) : (
+                    <>
+                      {skyCondition1} {cloudCeiling1}
+                      {skyCondition2 ? <br /> : null}
+                      {skyCondition2} {cloudCeiling2}
+                      {skyCondition3 ? <br /> : null} {skyCondition3}{" "}
+                      {cloudCeiling3}
+                    </>
+                  )}
                 </td>
               </tr>
             </tbody>

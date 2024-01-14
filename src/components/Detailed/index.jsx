@@ -37,7 +37,7 @@ function DetailedPage() {
     metarAbbr,
     metarDesc,
     speedUnit,
-    unitSetting
+    unitSetting,
   } = useContext(WeatherContext);
 
   const [varDir1, setVarDir1] = useState();
@@ -192,10 +192,14 @@ function DetailedPage() {
                     : Math.round(
                         maxSpeed * (speedUnit === "false" ? 1.151 : 1)
                       )}{" "}
-                  {speedUnit === "true" && maxSpeed === 1 ? "kt" : speedUnit === 'true' && maxSpeed > 1 ? 'kts' : "mph"}
+                  {speedUnit === "true" && maxSpeed === 1
+                    ? "kt"
+                    : speedUnit === "true" && maxSpeed > 1
+                    ? "kts"
+                    : "mph"}
                 </span>
               ) : (
-                `0 ${speedUnit === 'true' ? 'kts' : 'mph'}`
+                `0 ${speedUnit === "true" ? "kts" : "mph"}`
               )}
             </td>
           </tr>
@@ -256,19 +260,30 @@ function DetailedPage() {
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Sky Condition:</td>
             <td>
-            {skyCondition1} {cloudCeiling1 && unitSetting === 'true' ? cloudCeiling1 : cloudCeiling1 && unitSetting === 'false' ? cloudCeilingM1 : null}{" "}
-            {skyCondition2 ? <br /> : null}{" "}
-            {skyCondition2 && cloudCeiling2 && unitSetting === 'true'
-              ? `${skyCondition2} ${cloudCeiling2}`
-              : skyCondition2 && cloudCeiling2 && unitSetting === 'false'
-              ? `${skyCondition2} ${cloudCeilingM2}`
-              : null}{" "}
-            {skyCondition3 ? <br /> : null}
-            {skyCondition3 && cloudCeiling3 && unitSetting === 'true'
-              ? `${skyCondition3} ${cloudCeiling3}`
-              : skyCondition3 && cloudCeiling3 && unitSetting === 'false'
-              ? `${skyCondition3} ${cloudCeilingM3}`
-              : null}
+              {!skyCondition1 ? (
+                "Unknown"
+              ) : (
+                <>
+                  {skyCondition1}{" "}
+                  {cloudCeiling1 && unitSetting === "true"
+                    ? cloudCeiling1
+                    : cloudCeiling1 && unitSetting === "false"
+                    ? cloudCeilingM1
+                    : null}{" "}
+                  {skyCondition2 ? <br /> : null}{" "}
+                  {skyCondition2 && cloudCeiling2 && unitSetting === "true"
+                    ? `${skyCondition2} ${cloudCeiling2}`
+                    : skyCondition2 && cloudCeiling2 && unitSetting === "false"
+                    ? `${skyCondition2} ${cloudCeilingM2}`
+                    : null}{" "}
+                  {skyCondition3 ? <br /> : null}
+                  {skyCondition3 && cloudCeiling3 && unitSetting === "true"
+                    ? `${skyCondition3} ${cloudCeiling3}`
+                    : skyCondition3 && cloudCeiling3 && unitSetting === "false"
+                    ? `${skyCondition3} ${cloudCeilingM3}`
+                    : null}
+                </>
+              )}
             </td>
           </tr>
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
@@ -279,7 +294,7 @@ function DetailedPage() {
             <td>Dew Point:</td>
             <td>
               {!dewPoint
-                ? null
+                ? "Unknown"
                 : tempSetting === "true"
                 ? dewPoint + "ºF"
                 : (((dewPoint - 32) * 5) / 9).toFixed(1) + "ºC"}
@@ -287,15 +302,27 @@ function DetailedPage() {
           </tr>
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Pressure:</td>
-            <td>{!pressure ? null : pressure + '" Hg'}</td>
+            <td>{!pressure ? "Unknown" : pressure + '" Hg'}</td>
           </tr>
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Trivia Game:</td>
-            <td><a href="https://csc-trivia.netlify.app/" rel='noreferrer' target='_blank'>Click to play!</a></td>
+            <td>
+              <a
+                href="https://csc-trivia.netlify.app/"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Click to play!
+              </a>
+            </td>
           </tr>
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Safety Card:</td>
-            <td><NavLink exact to="/safety">Click for safety</NavLink></td>
+            <td>
+              <NavLink exact to="/safety">
+                Click for safety
+              </NavLink>
+            </td>
           </tr>
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Loading Area View:</td>
