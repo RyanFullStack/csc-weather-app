@@ -288,7 +288,13 @@ function DetailedPage() {
           </tr>
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Visibility:</td>
-            <td>{visibility < 1 ? visibility?.toFixed(2) : visibility} SM</td>
+            <td>
+              {!visibility ? (
+                "Unknown"
+              ) : (
+                <>{visibility < 1 ? visibility?.toFixed(2) : visibility} SM</>
+              )}
+            </td>
           </tr>
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Dew Point:</td>
