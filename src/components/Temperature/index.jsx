@@ -18,8 +18,8 @@ function CurrentTemp() {
     return (
         <div className='temp-content'>
             {window.location.pathname !== '/loadingarea'
-            ? <div className="temp-temp" onClick={handleClick}>{tempSetting === 'true' && temp ? `${temp}º F` : tempC ? `${tempC}º C` : ''}</div>
-            : <div className="temp-temp">{`${temp}º F`}</div>
+            ? <div className="temp-temp" onClick={handleClick}>{!temp ? null : tempSetting === 'true' && temp ? `${temp}º F` : tempC ? `${tempC}º C` : ''}</div>
+            : <div className="temp-temp">{!temp ? null : `${temp}º F`}</div>
             }
         </div>
     )
