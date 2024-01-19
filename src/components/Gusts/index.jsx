@@ -85,6 +85,12 @@ function GustChart() {
         ]
     }
 
+    return (
+        <div className='loading'>
+            <center>Gust chart under maintenance<br />:'(</center>
+        </div>
+    )
+
     if (!gustData.length) {
         return <div className="loading">Live Gusts Loading!</div>;
       }
