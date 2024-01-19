@@ -10,9 +10,9 @@ function WindsAloftLoading() {
   }
 
   if (
-    Object.keys(directions).length === 0 ||
-    Object.keys(speeds).length === 0 ||
-    Object.keys(temps).length === 0
+    Object?.keys(directions)?.length === 0 ||
+    Object?.keys(speeds)?.length === 0 ||
+    Object?.keys(temps)?.length === 0
   ) {
     return <div className="loading">Winds Aloft Loading!</div>;
   }
