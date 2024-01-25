@@ -71,6 +71,9 @@ const WindSpeedProvider = (props) => {
 
     if (winds.error) {
       setDirections(winds);
+      setTemps({})
+      setSpeeds({})
+      setReceived(null)
     } else {
       setDirections(winds.direction);
       setTemps(winds.temp);
