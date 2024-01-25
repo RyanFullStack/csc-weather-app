@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { WeatherContext } from "../../context/WeatherContext";
 import arrow from "../../images/arrow.png";
 import arrowright from "../../images/arrow-right.png";
@@ -23,24 +23,7 @@ function Wind() {
     speedUnit,
     unitSetting,
   } = useContext(WeatherContext);
-  const [gusting, setGusting] = useState("");
-  const [mini, setMini] = useState("");
 
-  useEffect(() => {
-    if (gustSpeed) {
-      setGusting("gusting");
-    } else {
-      setGusting();
-    }
-  }, [gustSpeed]);
-
-  useEffect(() => {
-    if (skyCondition2 && skyCondition3) {
-      setMini("mini");
-    } else {
-      setMini("");
-    }
-  }, [skyCondition2, skyCondition3]);
 
   return (
     <div className="wind-component">
@@ -67,7 +50,7 @@ function Wind() {
             )}
           </div>
         </div>
-        <div className={`wind-gusts ${gusting}`}>
+        <div className="wind-gusts">
           {gustSpeed > 0 && gustSpeed <= 15 ? (
             <span className="green">
               Gusting:{" "}
@@ -107,14 +90,14 @@ function Wind() {
           ></img>
         </div>
         <div className="metar-abbr">
-          <div className={`metar ${mini}`}>
+        <div className={`metar ${skyCondition2 && skyCondition3 ? 'mini' : ''}`}>
             {metarDesc && metarAbbr
               ? `${metarDesc}  ${metarAbbr}`
               : metarAbbr
               ? `${metarAbbr}`
               : null}
           </div>
-          <div className={`sky-conditions ${mini}`}>
+          <div className={`sky-conditions ${skyCondition2 && skyCondition3 ? 'mini' : ''}`}>
             {skyCondition1}{" "}
             {cloudCeiling1 && unitSetting === "true"
               ? cloudCeiling1

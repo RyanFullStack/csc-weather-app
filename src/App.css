@@ -436,10 +436,6 @@
   font-weight: bold;
 }
 
-.gusting {
-  font-weight: bold;
-}
-
 .wind-direction {
   font-size: calc(10px + 2.5vmin);
 }

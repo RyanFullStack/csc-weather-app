@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import { WeatherContext } from "../../context/WeatherContext";
 import GustChart from "../Gusts";
 import WindsAloftLoading from "./windsaloft";
@@ -25,15 +25,7 @@ function LoadingArea() {
     speed,
     gustSpeed,
   } = useContext(WeatherContext);
-  const [gusting, setGusting] = useState("");
 
-  useEffect(() => {
-    if (gustSpeed) {
-      setGusting("gusting");
-    } else {
-      setGusting();
-    }
-  }, [gustSpeed]);
 
   return (
     <div className="loadingarea-grid">
@@ -50,7 +42,7 @@ function LoadingArea() {
             )}
           </div>
         </div>
-        <div className={`wind-gusts ${gusting}`}>
+        <div className="wind-gusts">
           {gustSpeed > 0 && gustSpeed <= 15 ? (
             <span className="green gust">
               <div>&nbsp;Gusting:</div>
