@@ -3,9 +3,7 @@ import { WeatherContext } from "../../context/WeatherContext";
 import './metar.css';
 
 function Footer() {
-
     const { jumpruns, newSpot, newOffset } = useContext(WeatherContext)
-
 
     return (
         <div className="metar-container">
@@ -32,8 +30,6 @@ function Footer() {
                     </div>
                 )
             }
-
-
             <p><a href='https://github.com/RyanFullStack/csc-weather-app#Features' target="_blank" rel='noreferrer'>Github</a></p>
         </div>
     )

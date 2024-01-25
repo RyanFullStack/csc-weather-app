@@ -49,7 +49,7 @@ function GustChart() {
         setSpeeds(windSpeeds)
         setGusts(gustSpeeds)
 
-    }, [gustData, darkTheme, speedUnit])
+    }, [gustData, speedUnit])
 
 
     const data = {
