@@ -4,14 +4,11 @@ import GetCst from "../Time";
 import CurrentTemp from "../Temperature";
 import LiveStatus from "../LiveStatus";
 import audio from "../../images/audio.png";
-import redLight from "../../images/redlight.png";
-import yellowLight from "../../images/yellowlight.png";
-import greenLight from "../../images/greenlight.png";
+import Beerlight from "../Beerlight";
 import "./headermenu.css";
 
 function Header() {
   const {
-    jumpruns,
     darkTheme,
     setDarkTheme,
     tempSetting,
@@ -21,7 +18,9 @@ function Header() {
     speedUnit,
     setSpeedUnit,
   } = useContext(WeatherContext);
+
   const [menu, setMenu] = useState("hidden");
+
   const menuRef = useRef(null);
 
   const handleMenu = (e) => {
@@ -226,16 +225,22 @@ function Header() {
                 DARK
               </button>
               <button
-                className={
-                  "active-button-light"
-                }
+                className={"active-button-light"}
                 disabled={darkTheme === "false"}
                 onClick={handleTheme}
               >
                 LIGHT
               </button>
             </div>
-              <span id='help'><a href="https://github.com/RyanFullStack/csc-weather-app#Features" target="_blank" rel="noreferrer">HELP ME!</a></span>
+            <span id="help">
+              <a
+                href="https://github.com/RyanFullStack/csc-weather-app#Features"
+                target="_blank"
+                rel="noreferrer"
+              >
+                HELP ME!
+              </a>
+            </span>
           </div>
         </div>
       ) : null}
@@ -243,35 +248,9 @@ function Header() {
         <LiveStatus />
       </div>
       <div className="time-container">
-        {jumpruns[0] ? (
-          <img
-            src={
-              jumpruns[0]?.beerLight
-                ? yellowLight
-                : jumpruns[0]?.weatherHold
-                ? redLight
-                : jumpruns[0]?.heading
-                ? greenLight
-                : null
-            }
-            alt="beerlight"
-          />
-        ) : null}
+        <Beerlight />
         <GetCst />
-        {jumpruns[0] ? (
-          <img
-            src={
-              jumpruns[0]?.beerLight
-                ? yellowLight
-                : jumpruns[0]?.weatherHold
-                ? redLight
-                : jumpruns[0]?.heading
-                ? greenLight
-                : null
-            }
-            alt="beerlight"
-          />
-        ) : null}
+        <Beerlight />
       </div>
       {window.location.pathname !== "/loadingarea" ? (
         <div className="temp-logos">
