@@ -15,7 +15,7 @@ function WindsAloft() {
     return <div className="loading">Winds Aloft Loading!</div>;
   }
 
-   const receivedDate = new Date()
+  const receivedDate = new Date()
   receivedDate.setUTCHours(parseInt(received), 0, 0, 0)
   const localReceived = receivedDate.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', timeZoneName: 'short', hour: 'numeric' })
   const current = new Date().toLocaleTimeString('en-US', { timeZone: 'America/Chicago', timeZoneName: 'short', hour: 'numeric' })

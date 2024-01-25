@@ -44,7 +44,8 @@ const WindSpeedProvider = (props) => {
   const [twilight, setTwilight] = useState(null);
   const [maxGust, setMaxGust] = useState(null);
   const [maxSpeed, setMaxSpeed] = useState(null);
-  const [variableDirection, setVariableDirection] = useState([]);
+  const [variableDirection1, setVariableDirection1] = useState('');
+  const [variableDirection2, setVariableDirection2] = useState('');
   const [jumpruns, setJumpruns] = useState([]);
   const [newSpot, setNewSpot] = useState("");
   const [newOffset, setNewOffset] = useState("");
@@ -240,10 +241,11 @@ const WindSpeedProvider = (props) => {
 
         const wind = windData[0].data.wind;
 
-        setVariableDirection(wind?.variableDirection);
+        setVariableDirection1(wind?.variableDirection?.[0] || '');
+        setVariableDirection2(wind?.variableDirection?.[1] || '');
         setSpeed(wind?.speed || 0);
-        setGustSpeed(wind?.gustSpeed);
-        setDirection(wind?.direction);
+        setGustSpeed(wind?.gustSpeed || null);
+        setDirection(wind?.direction || 0);
       }
 
       if (res.id === "weather" && res.payload) {
@@ -252,10 +254,10 @@ const WindSpeedProvider = (props) => {
 
         const weather = weatherData[0].data.weather;
 
-        setPressure(weather?.altimeterSetting);
-        setDensityAlt(weather?.densityAltitude);
-        setVisibility(weather?.visibility);
-        setDewPoint(weather?.dewPoint);
+        setPressure(weather?.altimeterSetting || null);
+        setDensityAlt(weather?.densityAltitude || null);
+        setVisibility(weather?.visibility || null);
+        setDewPoint(weather?.dewPoint || null);
 
         const metArr = weather.metar.split(" ");
         metArr.pop();
@@ -427,7 +429,8 @@ const WindSpeedProvider = (props) => {
         sunrise,
         twilight,
         maxGust,
-        variableDirection,
+        variableDirection1,
+        variableDirection2,
         maxSpeed,
         webcamDirection,
         setWebcamDirection,

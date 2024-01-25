@@ -33,23 +33,13 @@ function DetailedPage() {
     maxGust,
     maxSpeed,
     direction,
-    variableDirection,
+    variableDirection1,
+    variableDirection2,
     metarAbbr,
     metarDesc,
     speedUnit,
     unitSetting,
   } = useContext(WeatherContext);
-
-  const [varDir1, setVarDir1] = useState();
-  const [varDir2, setVarDir2] = useState();
-
-  useEffect(() => {
-    if (variableDirection) {
-      const [value1, value2] = variableDirection;
-      setVarDir1(value1);
-      setVarDir2(value2);
-    }
-  }, [variableDirection]);
 
   return (
     <div className="detailed-contents">
@@ -234,7 +224,7 @@ function DetailedPage() {
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Variable Direction:</td>
             <td>
-              {varDir1 && varDir2 ? `${varDir1}º - ${varDir2}º` : "Steady"}
+              {variableDirection1 && variableDirection2 ? `${variableDirection1}º - ${variableDirection2}º` : "Steady"}
             </td>
           </tr>
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
