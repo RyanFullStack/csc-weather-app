@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { WeatherContext } from "../../context/WeatherContext";
 import { NavLink } from "react-router-dom";
 import fb from "../../images/fb.png";
