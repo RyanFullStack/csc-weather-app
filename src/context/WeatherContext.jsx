@@ -50,7 +50,7 @@ const WindSpeedProvider = (props) => {
   const [newSpot, setNewSpot] = useState("");
   const [newOffset, setNewOffset] = useState("");
   const [webcamDirection, setWebcamDirection] = useState(
-    localStorage.getItem("webcamDirection") || "west"
+    localStorage.getItem("webcamDirection") || "yard"
   );
   const [speedUnit, setSpeedUnit] = useState(
     localStorage.getItem("speedUnit") || "true"
