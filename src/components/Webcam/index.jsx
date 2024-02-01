@@ -109,17 +109,20 @@ function WebCam() {
           />
         </div>
       ) : (
-        <img
-          src={
-            webcamDirection === "west"
-              ? `https://webcam.skydivecsc.com/hangar_nw?${Date.now()}`
-              : webcamDirection === "east"
-              ? `https://webcam.skydivecsc.com/hangar_ne?${Date.now()}`
-              : `https://webcam.skydivecsc.com/proshop?${Date.now()}`
-          }
-          id="cam"
-          alt="Camera feed not found, This is a problem with the source and not this app. View help below to fix."
-        />
+        <>
+          Security cams under maintenance :(
+        </>
+        // <img
+        //   src={
+        //     webcamDirection === "west"
+        //       ? `https://webcam.skydivecsc.com/hangar_nw?${Date.now()}`
+        //       : webcamDirection === "east"
+        //       ? `https://webcam.skydivecsc.com/hangar_ne?${Date.now()}`
+        //       : `https://webcam.skydivecsc.com/proshop?${Date.now()}`
+        //   }
+        //   id="cam"
+        //   alt="Camera feed not found, This is a problem with the source and not this app. View help below to fix."
+        // />
       )}
       <div className="webcam-help-info">
         <NavLink exact to="/webcamhelp">
