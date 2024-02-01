@@ -151,6 +151,10 @@ function LoadingArea() {
                 <td>Sunset:</td>
                 <td>{sunset}</td>
               </tr>
+
+
+              {/* REMOVED WHILE GUST CHART UNDER MAINT.
+
               <tr className={darkTheme === "true" ? "table" : "table-light"}>
                 <td>
                   Max Speed <small>(30 Min)</small>:
@@ -194,7 +198,10 @@ function LoadingArea() {
                     "None"
                   )}
                 </td>
-              </tr>
+              </tr> */}
+
+
+
               <tr className={darkTheme === "true" ? "table" : "table-light"}>
                 <td>Sky Condition:</td>
                 <td>
