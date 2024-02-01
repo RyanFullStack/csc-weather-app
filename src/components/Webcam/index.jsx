@@ -110,7 +110,7 @@ function WebCam() {
         </div>
       ) : (
         <>
-          Security cams under maintenance :(
+          <center>Security cams under maintenance<br />:'(</center>
         </>
         // <img
         //   src={
