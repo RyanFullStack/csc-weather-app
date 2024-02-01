@@ -49,9 +49,12 @@ const WindSpeedProvider = (props) => {
   const [jumpruns, setJumpruns] = useState([]);
   const [newSpot, setNewSpot] = useState("");
   const [newOffset, setNewOffset] = useState("");
+
+  // Changed to yard while security feed down
   const [webcamDirection, setWebcamDirection] = useState(
     localStorage.getItem("webcamDirection") || "yard"
   );
+  
   const [speedUnit, setSpeedUnit] = useState(
     localStorage.getItem("speedUnit") || "true"
   );
