@@ -124,11 +124,14 @@ function WebCam() {
         //   alt="Camera feed not found, This is a problem with the source and not this app. View help below to fix."
         // />
       )}
-      <div className="webcam-help-info">
+
+      {/* *****  ADD BACK WHEN MAINTENANCE COMPLETE  ********   */}
+      {/* <div className="webcam-help-info">
         <NavLink exact to="/webcamhelp">
           Camera not loading? Click here for help.
         </NavLink>
-      </div>
+      </div> */}
+
     </div>
   );
 }
