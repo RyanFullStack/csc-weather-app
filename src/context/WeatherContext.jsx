@@ -74,8 +74,12 @@ const WindSpeedProvider = (props) => {
   };
 
   const getAloft = async () => {
-    const res = await fetch(".netlify/functions/aloft");
-    const winds = await res.json();
+    const res = await fetch("https://csc-login.onrender.com/api/weather/aloft");
+    let winds = await res.json();
+
+    if (!winds.direction) {
+      winds = {'error': 'no wind aloft info found!'}
+    }
 
     if (winds.error) {
       setDirections(winds);
