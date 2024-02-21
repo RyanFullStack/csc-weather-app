@@ -44,8 +44,8 @@ const WindSpeedProvider = (props) => {
   const [twilight, setTwilight] = useState(null);
   const [maxGust, setMaxGust] = useState(null);
   const [maxSpeed, setMaxSpeed] = useState(null);
-  const [variableDirection1, setVariableDirection1] = useState('');
-  const [variableDirection2, setVariableDirection2] = useState('');
+  const [variableDirection1, setVariableDirection1] = useState("");
+  const [variableDirection2, setVariableDirection2] = useState("");
   const [jumpruns, setJumpruns] = useState([]);
   const [newSpot, setNewSpot] = useState("");
   const [newOffset, setNewOffset] = useState("");
@@ -54,7 +54,7 @@ const WindSpeedProvider = (props) => {
   const [webcamDirection, setWebcamDirection] = useState(
     localStorage.getItem("webcamDirection") || "yard"
   );
-  
+
   const [speedUnit, setSpeedUnit] = useState(
     localStorage.getItem("speedUnit") || "true"
   );
@@ -64,9 +64,13 @@ const WindSpeedProvider = (props) => {
   let windData = [];
 
   const getWind = async () => {
-    const res = await fetch(".netlify/functions/gusts");
+    const res = await fetch("https://csc-login.onrender.com/api/weather/gusts");
     const resArr = await res.json();
-    setGustData([...resArr]);
+    if (!resArr.length) {
+      setGustData([{ error: "no gust data found" }]);
+    } else {
+      setGustData([...resArr]);
+    }
   };
 
   const getAloft = async () => {
@@ -75,9 +79,9 @@ const WindSpeedProvider = (props) => {
 
     if (winds.error) {
       setDirections(winds);
-      setTemps({})
-      setSpeeds({})
-      setReceived(null)
+      setTemps({});
+      setSpeeds({});
+      setReceived(null);
     } else {
       setDirections(winds.direction);
       setTemps(winds.temp);
@@ -244,8 +248,8 @@ const WindSpeedProvider = (props) => {
 
         const wind = windData[0].data.wind;
 
-        setVariableDirection1(wind?.variableDirection?.[0] || '');
-        setVariableDirection2(wind?.variableDirection?.[1] || '');
+        setVariableDirection1(wind?.variableDirection?.[0] || "");
+        setVariableDirection2(wind?.variableDirection?.[1] || "");
         setSpeed(wind?.speed || 0);
         setGustSpeed(wind?.gustSpeed || null);
         setDirection(wind?.direction || 0);

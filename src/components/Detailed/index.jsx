@@ -163,9 +163,6 @@ function DetailedPage() {
             </td>
           </tr>
 
-
-          {/*  REMOVED WHILE GUST CHART UNDER MAINTENANCE
-
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>
               Max Speed <small>(30 Min)</small>:
@@ -219,9 +216,7 @@ function DetailedPage() {
                 "None"
               )}
             </td>
-          </tr> */}
-
-
+          </tr>
 
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Wind Direction:</td>

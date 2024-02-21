@@ -14,7 +14,7 @@ function GustChart() {
 
     useEffect(() => {
         const timeStamps = gustData.map(gust => {
-            const timeObj = new Date(gust.timestamp_stored + 'Z')
+            const timeObj = new Date(gust.received_time)
             const localTime = timeObj.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit' }).split(' ')[0]
             return localTime
         })
@@ -85,12 +85,6 @@ function GustChart() {
         ]
     }
 
-    return (
-        <div className='loading'>
-            <center>Gust chart under maintenance<br />:'(</center>
-        </div>
-    )
-
     if (!gustData.length) {
         return <div className="loading">Live Gusts Loading!</div>;
       }
@@ -98,7 +92,6 @@ function GustChart() {
     if (gustData[0].error) {
         return <div className="loading">No Gust Data Found</div>
     }
-
 
     return (
         <div className="gust-chart">

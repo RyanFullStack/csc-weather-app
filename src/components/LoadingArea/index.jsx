@@ -26,7 +26,6 @@ function LoadingArea() {
     gustSpeed,
   } = useContext(WeatherContext);
 
-
   return (
     <div className="loadingarea-grid">
       <div className="loading-area-content-wind">
@@ -152,9 +151,6 @@ function LoadingArea() {
                 <td>{sunset}</td>
               </tr>
 
-
-              {/* REMOVED WHILE GUST CHART UNDER MAINT.
-
               <tr className={darkTheme === "true" ? "table" : "table-light"}>
                 <td>
                   Max Speed <small>(30 Min)</small>:
@@ -198,9 +194,7 @@ function LoadingArea() {
                     "None"
                   )}
                 </td>
-              </tr> */}
-
-
+              </tr>
 
               <tr className={darkTheme === "true" ? "table" : "table-light"}>
                 <td>Sky Condition:</td>
