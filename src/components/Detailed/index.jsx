@@ -319,7 +319,7 @@ function DetailedPage() {
                 rel="noreferrer"
                 target="_blank"
               >
-                Click to play!
+                Click to play
               </a>
             </td>
           </tr>
