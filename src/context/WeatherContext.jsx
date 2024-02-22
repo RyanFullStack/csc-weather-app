@@ -78,7 +78,7 @@ const WindSpeedProvider = (props) => {
     let winds = await res.json();
 
     if (!winds.direction) {
-      winds = {'error': 'no wind aloft info found!'}
+      winds = { error: "no wind aloft info found!" };
     }
 
     if (winds.error) {
@@ -124,17 +124,24 @@ const WindSpeedProvider = (props) => {
     );
     const data = await res.json();
     if (data.results) {
+      const options = {
+        hour: "numeric",
+        minute: "numeric",
+        hour12: true,
+        timeZone: "America/Chicago",
+      };
+
       const sunsetFormat = new Date(data.results.sunset).toLocaleTimeString(
         "en-US",
-        { timeZone: "America/Chicago" }
+        options
       );
       const sunriseFormat = new Date(data.results.sunrise).toLocaleTimeString(
         "en-US",
-        { timeZone: "America/Chicago" }
+        options
       );
       const twilightFormat = new Date(
         data.results.civil_twilight_end
-      ).toLocaleTimeString("en-US", { timeZone: "America/Chicago" });
+      ).toLocaleTimeString("en-US", options);
 
       setSunset(sunsetFormat);
       setSunrise(sunriseFormat);
