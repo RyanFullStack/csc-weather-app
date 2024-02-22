@@ -162,6 +162,7 @@ const WindSpeedProvider = (props) => {
 
     const fiveMinuteInterval = setInterval(() => {
       getAloft();
+      getAstronomy();
     }, 300000);
 
     return () => {
