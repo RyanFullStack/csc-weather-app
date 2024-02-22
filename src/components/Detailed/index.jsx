@@ -225,7 +225,9 @@ function DetailedPage() {
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Variable Direction:</td>
             <td>
-              {variableDirection1 && variableDirection2 ? `${variableDirection1}º - ${variableDirection2}º` : "Steady"}
+              {variableDirection1 && variableDirection2
+                ? `${variableDirection1}º - ${variableDirection2}º`
+                : "Steady"}
             </td>
           </tr>
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
@@ -302,6 +304,14 @@ function DetailedPage() {
             <td>{!pressure ? "Unknown" : pressure + '" Hg'}</td>
           </tr>
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
+            <td>Safety Card:</td>
+            <td>
+              <NavLink exact to="/safety">
+                Click for safety
+              </NavLink>
+            </td>
+          </tr>
+          <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Trivia Game:</td>
             <td>
               <a
@@ -314,11 +324,11 @@ function DetailedPage() {
             </td>
           </tr>
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
-            <td>Safety Card:</td>
+            <td>CSC Blog:</td>
             <td>
-              <NavLink exact to="/safety">
-                Click for safety
-              </NavLink>
+              <a href="https://www.skydivecsc.com/blog" rel="noreferrer" target="_blank">
+                Click to read
+              </a>
             </td>
           </tr>
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
