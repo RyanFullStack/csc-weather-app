@@ -338,7 +338,7 @@ function DetailedPage() {
             </td>
           </tr>
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
-            <td>Links:</td>
+            <td>Socials:</td>
             <td>
               <div className="temp-logos">
                 <a
