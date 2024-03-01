@@ -119,7 +119,7 @@ function WebCam() {
         <>
           <center>Security cams under maintenance<br />:'(</center>
         </>
-        // ************ ADD BACK WHEN MAIN COMPLETE ****************
+        // ************ ADD BACK WHEN MAINT COMPLETE ****************
         // <img
         //   src={
         //     webcamDirection === "west"
@@ -133,7 +133,7 @@ function WebCam() {
         // />
       )}
 
-      {/* *****  ADD BACK WHEN MAINTENANCE COMPLETE  ********   */}
+      {/* *****  ADD BACK WHEN MAINT COMPLETE  ********   */}
       {/* <div className="webcam-help-info">
         <NavLink exact to="/webcamhelp">
           Camera not loading? Click here for help.
