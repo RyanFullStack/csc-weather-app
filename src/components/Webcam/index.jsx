@@ -119,6 +119,7 @@ function WebCam() {
         <>
           <center>Security cams under maintenance<br />:'(</center>
         </>
+        // ************ ADD BACK WHEN MAIN COMPLETE ****************
         // <img
         //   src={
         //     webcamDirection === "west"
