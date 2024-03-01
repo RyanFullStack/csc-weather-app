@@ -77,7 +77,8 @@ function WebCam() {
           East
         </button> */}
 
-        <button
+
+        {/* <button
           onClick={handleWebcamPro}
           className={
             webcamDirection === "pro" && darkTheme === "true"
@@ -88,7 +89,10 @@ function WebCam() {
           }
         >
           Pro
-        </button>
+        </button> */}
+
+
+
         <button
           onClick={handleWebcamYard}
           className={
