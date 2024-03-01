@@ -47,7 +47,10 @@ function WebCam() {
   return (
     <div className="hangar-cam">
       <div className="hangar-cam-buttons">
-        <button
+
+
+        {/* ADD THIS BUTTON BACK WHEN MAINT DONE */}
+        {/* <button
           onClick={handleWebcamWest}
           className={
             webcamDirection === "west" && darkTheme === "true"
@@ -58,7 +61,7 @@ function WebCam() {
           }
         >
           Hangar
-        </button>
+        </button> */}
 
         {/* LEAVE EAST BUTTON REMOVED, CAMERA NOT LIVE */}
         {/* <button
