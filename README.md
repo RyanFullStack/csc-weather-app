@@ -16,7 +16,7 @@ View this app live at [http://app.skydivecsc.com](http://app.skydivecsc.com)
 
 ![home](/src/images/readme/Home.png)
 
-Home Page displays the current up-to-the-second real-time wind speed and gust as well as direction. It also meaures the sky condition and will report Clear, Scattered, Broken, and Overcast as well as the Altitude indicated by laser. The Vector arrow is a representation of the real life arrow that shows landing direction. These values will change with your settings.
+Home Page displays the current up-to-the-second real-time wind speed and gust as well as direction. It also meaures the sky condition and will report Clear, Scattered, Broken, and Overcast as well as the Altitude indicated by laser. The Vector arrow is a representation of the real life arrow that shows approximate **landing direction**, not *wind direction*. This may differ from the live arrow based on conditions or other factors set by the S&TA. These values will change with your settings.
 
 ### Gusts
 
