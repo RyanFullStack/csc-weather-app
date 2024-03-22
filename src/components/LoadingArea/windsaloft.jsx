@@ -3,7 +3,8 @@ import { useContext } from "react";
 import { calculateTemperatureColor } from "../utils";
 
 function WindsAloftLoading() {
-  const { directions, speeds, temps, darkTheme, received } = useContext(WeatherContext);
+  const { directions, speeds, temps, darkTheme, received } =
+    useContext(WeatherContext);
 
   if (directions?.error) {
     return <div className="loading">No Winds Aloft Found</div>;
@@ -17,10 +18,18 @@ function WindsAloftLoading() {
     return <div className="loading">Winds Aloft Loading!</div>;
   }
 
-  const receivedDate = new Date()
-  receivedDate.setUTCHours(parseInt(received), 0, 0, 0)
-  const localReceived = receivedDate.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', timeZoneName: 'short', hour: 'numeric' })
-  const current = new Date().toLocaleTimeString('en-US', { timeZone: 'America/Chicago', timeZoneName: 'short', hour: 'numeric' })
+  const receivedDate = new Date();
+  receivedDate.setUTCHours(parseInt(received), 0, 0, 0);
+  const localReceived = receivedDate.toLocaleTimeString("en-US", {
+    timeZone: "America/Chicago",
+    timeZoneName: "short",
+    hour: "numeric",
+  });
+  const current = new Date().toLocaleTimeString("en-US", {
+    timeZone: "America/Chicago",
+    timeZoneName: "short",
+    hour: "numeric",
+  });
 
   return (
     <div className="wind-aloft-table">
@@ -74,8 +83,9 @@ function WindsAloftLoading() {
           </tbody>
         </table>
         <div className="aloft-title">
-        Winds Received at {localReceived}{localReceived === current ? ', valid now' : null}
-      </div>
+          Winds Received at {localReceived}
+          {localReceived === current ? ", valid now" : null}
+        </div>
       </div>
     </div>
   );
