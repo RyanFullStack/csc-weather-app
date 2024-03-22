@@ -21,3 +21,14 @@ export const calculateTemperatureColor = (temperature) => {
 
     return `rgb(${r}, ${g}, ${b})`;
 };
+
+
+export const formatLocalTime = (received) => {
+    const receivedDate = new Date();
+    receivedDate.setUTCHours(parseInt(received), 0, 0, 0);
+    return receivedDate.toLocaleTimeString("en-US", {
+        timeZone: "America/Chicago",
+        timeZoneName: "short",
+        hour: "numeric",
+    });
+}
