@@ -1,10 +1,7 @@
 import { WeatherContext } from "../../context/WeatherContext";
 import { useContext } from "react";
-import {
-  calculateTemperatureColor,
-  formatLocalTime,
-  getCurrentLocalTime,
-} from "../utils";
+import AloftIsValid from "../AloftIsValid";
+import { calculateTemperatureColor } from "../utils";
 
 function WindsAloftLoading() {
   const { directions, speeds, temps, darkTheme, received } =
@@ -21,9 +18,6 @@ function WindsAloftLoading() {
   ) {
     return <div className="loading">Winds Aloft Loading!</div>;
   }
-
-  const localReceived = formatLocalTime(received);
-  const current = getCurrentLocalTime();
 
   return (
     <div className="wind-aloft-table">
@@ -76,10 +70,7 @@ function WindsAloftLoading() {
             })}
           </tbody>
         </table>
-        <div className="aloft-title">
-          Winds Received at {localReceived}
-          {localReceived === current ? ", valid now" : null}
-        </div>
+        <AloftIsValid />
       </div>
     </div>
   );
