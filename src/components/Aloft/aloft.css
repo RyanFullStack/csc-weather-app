@@ -9,6 +9,7 @@ table {
     max-width: 600px;
     text-align: center;
     border-collapse: collapse;
+    margin-bottom: 5px;
 }
 td {
     border: 1px solid black;
