@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { calculateTemperatureColor } from "../utils";
 
 function WindsAloftLoading() {
-  const { directions, speeds, temps, darkTheme } = useContext(WeatherContext);
+  const { directions, speeds, temps, darkTheme, received } = useContext(WeatherContext);
 
   if (directions?.error) {
     return <div className="loading">No Winds Aloft Found</div>;
@@ -68,6 +68,9 @@ function WindsAloftLoading() {
             })}
           </tbody>
         </table>
+        <div className="aloft-title">
+        Winds Received at {localReceived}{localReceived === current ? ', valid now' : null}
+      </div>
       </div>
     </div>
   );
