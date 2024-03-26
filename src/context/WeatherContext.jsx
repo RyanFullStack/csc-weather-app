@@ -164,16 +164,14 @@ const WindSpeedProvider = (props) => {
       getAloft();
     }, 180000)
 
-    const fiveMinuteInterval = setInterval(() => {
-    }, 300000);
-
     const tenMinuteInterval = setInterval(() => {
       getAstronomy();
     }, 600000)
 
     return () => {
       clearInterval(thirtySecondInterval);
-      clearInterval(fiveMinuteInterval);
+      clearInterval(threeMinuteInterval);
+      clearInterval(tenMinuteInterval);
     };
   }, []);
 
