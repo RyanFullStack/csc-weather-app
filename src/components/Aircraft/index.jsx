@@ -8,7 +8,7 @@ function AircraftTracker() {
 
     return (
         <div className="aircraft-tracker">
-            <iframe title='aircraft-tracker' src={
+            <iframe title='csc-aircraft-tracker' src={
                 darkTheme === 'true' ? `${url}&mapdim=.3` : `${url}&mapdim=.1`
                 }/>
         </div>
