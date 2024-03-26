@@ -162,7 +162,7 @@ const WindSpeedProvider = (props) => {
 
     const threeMinuteInterval = setInterval(() => {
 
-    })
+    }, 180000)
 
     const fiveMinuteInterval = setInterval(() => {
       getAloft();
@@ -171,7 +171,7 @@ const WindSpeedProvider = (props) => {
 
     const tenMinuteInterval = setInterval(() => {
 
-    })
+    }, 600000)
 
     return () => {
       clearInterval(thirtySecondInterval);
