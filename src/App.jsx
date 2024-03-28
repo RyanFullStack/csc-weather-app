@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { WeatherContext } from './context/WeatherContext';
 import { useContext } from 'react';
 import Footer from './components/Footer';
+import FooterLoadingArea from './components/FooterLoadingArea';
 import Header from './components/Header';
 import Wind from './components/Wind';
 import WebCam from './components/Webcam';
@@ -19,7 +20,7 @@ import './App.css';
 
 function App() {
 
-  const { darkTheme, jumpruns } = useContext(WeatherContext)
+  const { darkTheme } = useContext(WeatherContext)
 
   return (
     <Router>
@@ -106,9 +107,7 @@ function App() {
         </Switch>
 
         <div className='footer-container'>
-          {window.location.pathname !== '/loadingarea' ? <Footer /> :
-            
-          }
+          {window.location.pathname !== '/loadingarea' ? <Footer /> : <FooterLoadingArea /> }
         </div>
       </div>
     </Router>
