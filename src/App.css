@@ -9,7 +9,7 @@
     rgba(0, 0, 0, 1) 7%,
     rgba(34, 34, 34, 0.9) 10%,
     rgba(34, 34, 34, 0.9) 90%,
-    rgba(8, 228, 209, .9) 95%
+    rgba(8, 228, 209, 0.9) 95%
   );
   font-size: calc(10px + 2vmin);
   color: rgb(8, 228, 209);
@@ -27,7 +27,7 @@
     rgba(0, 0, 0, 1) 7%,
     rgba(255, 255, 255, 0.5) 10%,
     rgba(255, 255, 255, 0.5) 90%,
-    rgba(8, 228, 209, .9) 95%
+    rgba(8, 228, 209, 0.9) 95%
   );
   font-size: calc(10px + 2vmin);
   color: rgb(0, 0, 0);
@@ -38,15 +38,19 @@
   margin-top: 20px;
 }
 
-.header-container, .header-container-loadingarea {
+.header-container,
+.header-container-loadingarea {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   height: 8vh;
   min-width: 100vw;
   color: rgb(0, 0, 0);
   font-weight: bold;
+}
+
+.header-container {
+  justify-content: space-between;
 }
 
 .header-container-loadingarea {
@@ -126,7 +130,7 @@
   border-radius: 5px;
   cursor: pointer;
   height: 3vh;
-  background-color: rgba(8, 228, 209, .8);
+  background-color: rgba(8, 228, 209, 0.8);
 }
 
 .navbutton:hover {
@@ -165,7 +169,6 @@
   width: 90%;
   z-index: 0;
 }
-
 
 .gusts-container {
   display: flex;
@@ -240,7 +243,8 @@
   margin-top: 2vh;
 }
 
-.windy-radar, .aircraft-tracker {
+.windy-radar,
+.aircraft-tracker {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -259,7 +263,7 @@
   overflow: hidden;
 }
 
-.yard-cam iframe{
+.yard-cam iframe {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -270,7 +274,8 @@
   border: none;
 }
 
-.windy-radar iframe, .aircraft-tracker iframe {
+.windy-radar iframe,
+.aircraft-tracker iframe {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -512,19 +517,18 @@
   flex-direction: column;
 }
 #me-help {
-  font-size: .8rem;
-  margin-top: .5rem;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
 }
 #me-help:hover {
   color: white;
 }
 
-
 select {
   width: 100%;
   cursor: pointer;
   height: 2rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 button {
   width: 100%;
@@ -571,7 +575,6 @@ a:hover {
   .footer-container {
     font-size: calc(6px + 1vmin);
   }
-
 
   .wind-gusts {
     font-size: calc(10px + 3vmin);
@@ -637,7 +640,6 @@ a:hover {
     outline: 1px solid black;
     padding: 0.2em 0.5em;
   }
-
 }
 
 @media screen and (max-width: 1300px) {
@@ -675,7 +677,8 @@ a:hover {
     margin-top: 4vh;
     width: 90%;
   }
-  .windy-radar, .aircraft-tracker {
+  .windy-radar,
+  .aircraft-tracker {
     height: 74vh;
     margin-top: 2vh;
     width: 100%;
@@ -706,11 +709,10 @@ a:hover {
 
   @media screen and (max-width: 500px) {
     .nav-component a {
-      font-size: calc(10px + 1vmin)
+      font-size: calc(10px + 1vmin);
     }
     .time-container img {
       height: 7vmin;
     }
-
   }
 }
