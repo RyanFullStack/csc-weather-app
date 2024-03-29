@@ -38,7 +38,7 @@
   margin-top: 20px;
 }
 
-.header-container {
+.header-container, .header-container-loadingarea {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -48,15 +48,9 @@
   color: rgb(0, 0, 0);
   font-weight: bold;
 }
+
 .header-container-loadingarea {
-  display: flex;
-  flex-direction: row;
   justify-content: space-around;
-  align-items: center;
-  height: 8vh;
-  min-width: 100vw;
-  color: rgb(0, 0, 0);
-  font-weight: bold;
 }
 
 .nav-container a {
