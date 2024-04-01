@@ -5,7 +5,7 @@ import live from "../../images/live.png";
 import "./livestatus.css";
 
 function LiveStatus() {
-  const [liveStatusText, setLiveStatusText] = useState("LIVE");
+  const [liveStatusText, setLiveStatusText] = useState(null);
 
   const location = useLocation();
 
@@ -15,6 +15,8 @@ function LiveStatus() {
     const path = location.pathname;
     if (!isAwosLive) {
       setLiveStatusText("AWOS DOWN");
+    } else if (isAwosLive) {
+      setLiveStatusText("LIVE");
     }
     if (path === "/aloft") {
       setLiveStatusText("FORECAST");
@@ -25,7 +27,7 @@ function LiveStatus() {
     ) {
       setLiveStatusText("LIVE");
     }
-  }, [location]);
+  }, [location, isAwosLive]);
 
   return (
     <div className="livecomponent">
