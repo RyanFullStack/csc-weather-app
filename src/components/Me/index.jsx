@@ -113,9 +113,6 @@ function Me() {
   return (
     <div className="my-csc">
       <div className="my-small">
-        {!isAwosLive ? (
-          <div><span className="red"><small><b>NO AWOS CONNECTION</b></small></span></div>
-        ) : null}
         {!userLicense && !userMaxSpeed && !userMaxGust && !userDif ? (
           <div className="me-title">
             <span className="yellow">Select one or more options...</span>
@@ -129,7 +126,11 @@ function Me() {
               </a>
             </span>
           </div>
-        ) : isSafe ? (
+        ) :
+        !isAwosLive ? (
+          <div><span className="red"><small><b>NO AWOS CONNECTION</b></small></span></div>
+        ) :
+        isSafe ? (
           <b>
             <span className="green">CONDITIONS ARE OK!</span>
           </b>
