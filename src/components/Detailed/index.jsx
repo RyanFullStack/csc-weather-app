@@ -39,6 +39,7 @@ function DetailedPage() {
     metarDesc,
     speedUnit,
     unitSetting,
+    isAwosLive
   } = useContext(WeatherContext);
 
   return (
@@ -51,7 +52,8 @@ function DetailedPage() {
         </span>
       ) : (
         <span className="student-wind-hold">
-          {maxGust > 50 || maxSpeed > 50 || speed > 50 ? (
+          { !isAwosLive ? <span className="red">NO AWOS CONNECTION</span> :
+            maxGust > 50 || maxSpeed > 50 || speed > 50 ? (
             <span className="red">*** HOLY $h*T!!! ***</span>
           ) : maxGust > 40 || maxSpeed > 40 || speed > 40 ? (
             <span className="red">*** HANG ON TIGHT!!! ***</span>
