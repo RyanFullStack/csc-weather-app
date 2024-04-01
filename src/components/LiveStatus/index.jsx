@@ -9,23 +9,31 @@ function LiveStatus() {
 
   const location = useLocation();
 
-  const { isLive } = useContext(WeatherContext);
+  const { isAwosLive } = useContext(WeatherContext);
 
   useEffect(() => {
     const path = location.pathname;
     if (path === "/aloft") {
-      setLiveStatus(false);
-    } else {
-      setLiveStatus(true);
+      setLiveStatus('forecast');
+    }
+    else if (path === '/webcams' || path === '/aircraft' || path === '/radar') {
+      setLiveStatus('live')
+    }
+    else {
+      setLiveStatus(true)
     }
   }, [location]);
 
   return (
     <div className="livecomponent">
-      {!liveStatus ? (
+      {liveStatus === 'forecast' ? (
         <div>FORECAST</div>
       ) :
-      !isLive ? (
+      liveStatus === 'live' ? (
+        <div>LIVE <img src={live} alt="livestatus" /></div>
+      )
+      :
+      !isAwosLive ? (
         <div>AWOS DOWN</div>
       ) : (
         <div>

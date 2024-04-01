@@ -22,7 +22,7 @@ const WindSpeedProvider = (props) => {
   const [metarAbbr, setMetarAbbr] = useState("");
   const [metarDesc, setMetarDesc] = useState("");
   const [gustData, setGustData] = useState([]);
-  const [isLive, setIsLive] = useState("true")
+  const [isAwosLive, setIsAwosLive] = useState(true)
   const [darkTheme, setDarkTheme] = useState(
     localStorage.getItem("darkTheme") || "true"
   );
@@ -259,10 +259,10 @@ const WindSpeedProvider = (props) => {
     websocket.onmessage = function (event) {
       const res = JSON.parse(event.data);
 
-      if (res.type === 'connection_ack') {
-        setIsLive(false)
+      if (!res.id) {
+        setIsAwosLive(false)
       } else {
-        setIsLive(true)
+        setIsAwosLive(true)
       }
 
       if (res.id === "wind" && res.payload) {
@@ -466,7 +466,7 @@ const WindSpeedProvider = (props) => {
         setWebcamDirection,
         speedUnit,
         setSpeedUnit,
-        isLive
+        isAwosLive
       }}
     >
       {props.children}
