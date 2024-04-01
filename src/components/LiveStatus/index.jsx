@@ -5,7 +5,7 @@ import live from "../../images/live.png";
 import "./livestatus.css";
 
 function LiveStatus() {
-  const [liveStatus, setLiveStatus] = useState(true);
+  const [liveStatusText, setLiveStatusText] = useState("LIVE");
 
   const location = useLocation();
 
@@ -13,34 +13,23 @@ function LiveStatus() {
 
   useEffect(() => {
     const path = location.pathname;
+    if (!isAwosLive) {
+      setLiveStatusText("AWOS DOWN");
+    }
     if (path === "/aloft") {
-      setLiveStatus("forecast");
+      setLiveStatusText("FORECAST");
     } else if (
       path === "/webcams" ||
       path === "/aircraft" ||
       path === "/radar"
     ) {
-      setLiveStatus("live");
-    } else {
-      setLiveStatus(true);
+      setLiveStatusText("LIVE");
     }
   }, [location]);
 
   return (
     <div className="livecomponent">
-      {liveStatus === "forecast" ? (
-        <div>FORECAST</div>
-      ) : liveStatus === "live" ? (
-        <div>
-          LIVE <img src={live} alt="livestatus" />
-        </div>
-      ) : !isAwosLive ? (
-        <div>AWOS DOWN</div>
-      ) : (
-        <div>
-          LIVE <img src={live} alt="livestatus" />
-        </div>
-      )}
+      {liveStatusText} {liveStatusText === "LIVE" ? <img src={live} /> : null}
     </div>
   );
 }
