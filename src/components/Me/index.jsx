@@ -2,7 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import { WeatherContext } from "../../context/WeatherContext";
 
 function Me() {
-  const { speed, gustSpeed, maxSpeed, maxGust } = useContext(WeatherContext);
+  const { speed, gustSpeed, maxSpeed, maxGust, isAwosLive } =
+    useContext(WeatherContext);
   const [userMaxSpeed, setUserMaxSpeed] = useState(
     localStorage.getItem("userMaxSpeed") || ""
   );
@@ -112,10 +113,21 @@ function Me() {
   return (
     <div className="my-csc">
       <div className="my-small">
+        {!isAwosLive ? (
+          <div><span className="red"><small><b>NO AWOS CONNECTION</b></small></span></div>
+        ) : null}
         {!userLicense && !userMaxSpeed && !userMaxGust && !userDif ? (
           <div className="me-title">
             <span className="yellow">Select one or more options...</span>
-            <span id='me-help'><a href='https://github.com/RyanFullStack/csc-weather-app#Me' target="_blank" rel='noreferrer'>Help me with these options!</a></span>
+            <span id="me-help">
+              <a
+                href="https://github.com/RyanFullStack/csc-weather-app#Me"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Help me with these options!
+              </a>
+            </span>
           </div>
         ) : isSafe ? (
           <b>
