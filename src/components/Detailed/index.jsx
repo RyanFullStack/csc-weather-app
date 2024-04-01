@@ -39,7 +39,7 @@ function DetailedPage() {
     metarDesc,
     speedUnit,
     unitSetting,
-    isAwosLive
+    isAwosLive,
   } = useContext(WeatherContext);
 
   return (
@@ -52,8 +52,9 @@ function DetailedPage() {
         </span>
       ) : (
         <span className="student-wind-hold">
-          { !isAwosLive ? <span className="red">NO AWOS CONNECTION</span> :
-            maxGust > 50 || maxSpeed > 50 || speed > 50 ? (
+          {!isAwosLive ? (
+            <span className="red">NO AWOS CONNECTION</span>
+          ) : maxGust > 50 || maxSpeed > 50 || speed > 50 ? (
             <span className="red">*** HOLY $h*T!!! ***</span>
           ) : maxGust > 40 || maxSpeed > 40 || speed > 40 ? (
             <span className="red">*** HANG ON TIGHT!!! ***</span>
@@ -328,7 +329,11 @@ function DetailedPage() {
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>CSC Blog:</td>
             <td>
-              <a href="https://www.skydivecsc.com/blog" rel="noreferrer" target="_blank">
+              <a
+                href="https://www.skydivecsc.com/blog"
+                rel="noreferrer"
+                target="_blank"
+              >
                 Click to read
               </a>
             </td>
