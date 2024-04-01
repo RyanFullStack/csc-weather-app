@@ -261,6 +261,8 @@ const WindSpeedProvider = (props) => {
 
       if (res.type === 'connection_ack') {
         setIsLive(false)
+      } else {
+        setIsLive(true)
       }
 
       if (res.id === "wind" && res.payload) {
