@@ -415,7 +415,7 @@ const WindSpeedProvider = (props) => {
         }
       }
     };
-  }, [weatherData, windData, unitSetting]);
+  }, [unitSetting]);
 
   return (
     <WeatherContext.Provider
