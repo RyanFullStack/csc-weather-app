@@ -472,7 +472,7 @@
   font-size: calc(10px + 3vmin);
 }
 
-.student-wind-hold {
+.student-wind-hold, .student-wind-hold-loading {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -480,8 +480,16 @@
   margin-bottom: 1rem;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+}
+.student-wind-hold {
+  font-size: calc(8px + 1.5vmin);
+}
+
+.student-wind-hold-loading {
   font-size: calc(6px + 1.4vmin);
 }
+
+
 .red {
   color: red;
 }

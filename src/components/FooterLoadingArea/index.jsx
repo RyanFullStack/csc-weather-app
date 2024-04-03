@@ -17,7 +17,7 @@ function FooterLoadingArea() {
           *** DZ {jumpruns[0].weatherType} HOLD ***
         </span>
       ) : (
-        <span className="student-wind-hold">
+        <span className="student-wind-hold-loading">
           {maxGust > 25 || maxSpeed > 25 || speed > 25 ? (
             <span className="red">*** DZ WIND LIMIT HIT ***</span>
           ) : maxGust > 15 || maxSpeed > 15 || speed > 15 ? (
