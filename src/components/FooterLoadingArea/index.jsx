@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { WeatherContext } from "../../context/WeatherContext";
 
 function FooterLoadingArea() {
-  const { jumpruns, maxGust, maxSpeed, speed, isAwosLive } = useContext(WeatherContext);
+  const { jumpruns, maxGust, maxSpeed, speed } = useContext(WeatherContext);
 
   return (
     <div className="footer-jumprun-loading">
