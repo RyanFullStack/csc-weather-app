@@ -70,7 +70,7 @@ function Wind() {
               <small>{speedUnit === "true" ? "kts" : "mph"}</small>
             </span>
           ) : (
-            <span className="green">No Gusts</span>
+            <span className="green">No Gust</span>
           )}
         </div>
 

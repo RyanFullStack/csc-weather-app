@@ -67,7 +67,7 @@ function LoadingArea() {
               </div>
             </span>
           ) : (
-            <span className="green">&nbsp;No Gusts</span>
+            <span className="green">&nbsp;No Gust</span>
           )}
         </div>
 
