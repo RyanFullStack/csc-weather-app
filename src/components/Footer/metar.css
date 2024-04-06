@@ -44,44 +44,44 @@
   font-size: calc(6px + 2vmin);
   color: rgb(8, 228, 209);
   gap: 50vw;
-  -moz-transform: translateX(170%);
-  -webkit-transform: translateX(170%);
-  transform: translateX(170%);
+  -moz-transform: translateX(120%);
+  -webkit-transform: translateX(120%);
+  transform: translateX(120%);
   white-space: nowrap;
-  -moz-animation: my-animation 15s linear infinite;
-  -webkit-animation: my-animation 15s linear infinite;
-  animation: my-animation 15s linear infinite;
+  -moz-animation: my-animation 10s linear infinite;
+  -webkit-animation: my-animation 10s linear infinite;
+  animation: my-animation 10s linear infinite;
 }
 
 /* for Firefox */
 @-moz-keyframes my-animation {
   from {
-    -moz-transform: translateX(170%);
+    -moz-transform: translateX(120%);
   }
   to {
-    -moz-transform: translateX(-170%);
+    -moz-transform: translateX(-120%);
   }
 }
 
 /* for Chrome */
 @-webkit-keyframes my-animation {
   from {
-    -webkit-transform: translateX(170%);
+    -webkit-transform: translateX(120%);
   }
   to {
-    -webkit-transform: translateX(-170%);
+    -webkit-transform: translateX(-120%);
   }
 }
 
 @keyframes my-animation {
   from {
-    -moz-transform: translateX(170%);
-    -webkit-transform: translateX(170%);
-    transform: translateX(170%);
+    -moz-transform: translateX(120%);
+    -webkit-transform: translateX(120%);
+    transform: translateX(120%);
   }
   to {
-    -moz-transform: translateX(-170%);
-    -webkit-transform: translateX(-170%);
-    transform: translateX(-170%);
+    -moz-transform: translateX(-120%);
+    -webkit-transform: translateX(-120%);
+    transform: translateX(-120%);
   }
 }
