@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { WeatherContext } from '../../context/WeatherContext';
+import './nav.css'
 
 function NavBar() {
   const { darkTheme } = useContext(WeatherContext);
