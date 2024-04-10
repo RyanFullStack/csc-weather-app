@@ -194,17 +194,6 @@
   font-size: calc(10px + 1vmin);
 }
 
-.temp-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  gap: 3vw;
-  padding-right: 1.2vw;
-  font-size: calc(12px + 2vmin);
-  text-align: right;
-  cursor: pointer;
-}
-
 .theme-content {
   display: flex;
   flex-direction: row;
