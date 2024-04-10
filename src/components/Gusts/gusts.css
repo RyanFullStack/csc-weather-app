@@ -1,0 +1,7 @@
+.gust-chart {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 95%;
+  height: 98%;
+}

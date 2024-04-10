@@ -151,14 +151,6 @@
   width: 90%;
 }
 
-.gust-chart {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  width: 95%;
-  height: 98%;
-}
-
 .windy-radar,
 .aircraft-tracker {
   display: flex;

@@ -4,6 +4,7 @@ import { Line } from 'react-chartjs-2'
 import 'chartjs-plugin-annotation';
 import { useContext, useEffect, useState } from 'react';
 import { WeatherContext } from '../../context/WeatherContext';
+import './gusts.css'
 
 function GustChart() {
     const { gustData, darkTheme, speedUnit } = useContext(WeatherContext)
