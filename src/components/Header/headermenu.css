@@ -41,6 +41,16 @@
   max-height: 30px;
 }
 
+.time-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+}
+.time-container img {
+  height: 6vh;
+}
+
 .menu-button-container,
 .menu-button-container-light {
   display: flex;

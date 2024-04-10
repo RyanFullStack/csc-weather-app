@@ -207,25 +207,9 @@
   cursor: pointer;
 }
 
-.time-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1vw;
-}
-.time-container img {
-  height: 6vh;
-}
-
-.time-component {
-  font-size: calc(10px + 3vmin);
-  text-align: center;
-}
-
 .wind-component {
   display: flex;
   flex-direction: row;
-  /* outline: 1px solid red; */
   justify-content: space-around;
   height: 90%;
   width: 90%;

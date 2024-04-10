@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import './time.css'
 
 function GetCst() {
   const [currentDate, setCurrentDate] = useState("");
