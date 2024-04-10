@@ -1,0 +1,13 @@
+.detailed-logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5vw;
+}
+
+.detailed-logos img {
+  display: flex;
+  max-width: 30px;
+  max-height: 30px;
+}

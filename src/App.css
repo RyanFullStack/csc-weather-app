@@ -205,19 +205,6 @@
   cursor: pointer;
 }
 
-.temp-logos {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5vw;
-}
-
-.temp-logos img {
-  max-width: 30px;
-  max-height: 30px;
-}
-
 .theme-content {
   display: flex;
   flex-direction: row;

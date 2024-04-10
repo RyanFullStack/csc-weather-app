@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import fb from "../../images/fb.png";
 import ig from "../../images/ig.png";
 import wa from "../../images/wa.png";
+import './detailed.css'
 
 function DetailedPage() {
   const {
@@ -347,7 +348,7 @@ function DetailedPage() {
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Socials:</td>
             <td>
-              <div className="temp-logos">
+              <div className="detailed-logos">
                 <a
                   href="https://www.facebook.com/groups/csc.experienced"
                   target="_blank"
