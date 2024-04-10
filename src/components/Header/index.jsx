@@ -253,7 +253,7 @@ function Header() {
         <Beerlight />
       </div>
       {window.location.pathname !== "/loadingarea" ? (
-        <div className="temp-logos">
+        <div className="header-imgs">
           <a
             href="http://audio.skydivecsc.com/"
             target="_blank"
