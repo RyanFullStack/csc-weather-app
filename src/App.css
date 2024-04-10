@@ -458,7 +458,7 @@ a:hover {
     width: 100%;
   }
 
-  .temp-logos {
+  .detailed-logos {
     gap: 1vw;
   }
 
@@ -488,7 +488,7 @@ a:hover {
   .mini {
     font-size: calc(8px + 1vmin);
   }
-  .temp-logos img {
+  .detailed-logos img, .header-imgs img {
     max-width: 16px;
     max-height: 16px;
   }
