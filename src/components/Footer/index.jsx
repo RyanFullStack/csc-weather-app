@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { WeatherContext } from "../../context/WeatherContext";
-import './metar.css';
+import './footer.css';
 
 function Footer() {
     const { jumpruns, newSpot, newOffset } = useContext(WeatherContext)
