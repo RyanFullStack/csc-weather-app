@@ -194,15 +194,6 @@
   font-size: calc(10px + 1vmin);
 }
 
-.theme-content {
-  display: flex;
-  flex-direction: row;
-  margin-left: 0.5vw;
-  height: 8vh;
-  align-items: center;
-  cursor: pointer;
-}
-
 .fa-solid {
   cursor: pointer;
 }
