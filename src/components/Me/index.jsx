@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { WeatherContext } from "../../context/WeatherContext";
+import './mycsc.css'
 
 function Me() {
   const { speed, gustSpeed, maxSpeed, maxGust, isAwosLive } =

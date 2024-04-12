@@ -209,6 +209,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
 }
+
 .student-wind-hold {
   font-size: calc(8px + 1.5vmin);
 }
@@ -225,40 +226,6 @@
 }
 .yellow {
   color: yellow;
-}
-
-.my-csc {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.my-csc-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2vh;
-}
-.my-small {
-  font-size: calc(8px + 1.5vmin);
-  margin-bottom: 1vmin;
-}
-.me-label {
-  font-size: calc(8px + 2vmin);
-}
-.me-title {
-  display: flex;
-  flex-direction: column;
-}
-#me-help {
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
-}
-#me-help:hover {
-  color: white;
 }
 
 select {
@@ -279,22 +246,20 @@ button {
   font-weight: 900;
 }
 
-.me-details {
-  font-size: calc(8px + 1.5vmin);
-}
-
 a {
   color: inherit;
 }
+
 a:hover {
   color: inherit;
-}
-.table a:hover {
-  color: white;
 }
 
 .table {
   outline: 1px solid rgb(8, 228, 209);
+}
+
+.table a:hover {
+  color: white;
 }
 
 .footer-jumprun {
@@ -388,7 +353,8 @@ a:hover {
   .mini {
     font-size: calc(8px + 1vmin);
   }
-  .detailed-logos img, .header-imgs img {
+  .detailed-logos img,
+  .header-imgs img {
     max-width: 16px;
     max-height: 16px;
   }
