@@ -262,11 +262,6 @@ a:hover {
   color: white;
 }
 
-.footer-jumprun {
-  display: flex;
-  flex-direction: column;
-  font-size: 1.8vh;
-}
 .weather-hold {
   font-size: calc(10px + 1vmin);
   font-weight: 700;
@@ -353,8 +348,7 @@ a:hover {
   .mini {
     font-size: calc(8px + 1vmin);
   }
-  .detailed-logos img,
-  .header-imgs img {
+  .detailed-logos img, .header-imgs img {
     max-width: 16px;
     max-height: 16px;
   }

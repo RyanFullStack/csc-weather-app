@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { WeatherContext } from "../../context/WeatherContext";
+import './loadingfooter.css'
 
 function FooterLoadingArea() {
   const { jumpruns, maxGust, maxSpeed, speed } = useContext(WeatherContext);

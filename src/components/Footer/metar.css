@@ -19,15 +19,9 @@
 }
 
 .footer-jumprun {
-  font-size: 1.2rem;
-  color: rgb(8, 228, 209);
-}
-.footer-jumprun-loading {
   display: flex;
-  flex-direction: row;
-  width: 80vw;
-  justify-content: space-between;
-  font-size: 1.2rem;
+  flex-direction: column;
+  font-size: 1.6vh;
   color: rgb(8, 228, 209);
 }
 

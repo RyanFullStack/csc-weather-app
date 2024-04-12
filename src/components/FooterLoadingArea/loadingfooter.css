@@ -1,0 +1,8 @@
+.footer-jumprun-loading {
+  display: flex;
+  flex-direction: row;
+  width: 80vw;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  color: rgb(8, 228, 209);
+}
