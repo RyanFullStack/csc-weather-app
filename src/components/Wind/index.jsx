@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { WeatherContext } from "../../context/WeatherContext";
 import arrow from "../../images/arrow.png";
 import arrowright from "../../images/arrow-right.png";
-import "./anamometer.css";
+import "./wind.css";
 
 function Wind() {
   const {
