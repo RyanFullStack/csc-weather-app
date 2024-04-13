@@ -4,8 +4,9 @@ import AloftIsValid from "../AloftIsValid";
 import { calculateTemperatureColor } from "../utils";
 
 function WindsAloftLoading() {
-  const { directions, speeds, temps, darkTheme, received } =
-    useContext(WeatherContext);
+  const { directions, speeds, temps, darkTheme } = useContext(WeatherContext);
+
+  const altitudesToRender = [1000, 2000, 3000, 4000, 6000, 10000, 14000];
 
   if (directions?.error) {
     return <div className="loading">No Winds Aloft Found</div>;
@@ -32,10 +33,8 @@ function WindsAloftLoading() {
             </tr>
           </thead>
           <tbody>
-            {Array.from({ length: 7 }, (_, index) => {
-              const altitude = (index + 1) * 2000;
+            {altitudesToRender.map((altitude) => {
               const altitudeKey = `${altitude}`;
-
               return (
                 <tr
                   className={darkTheme === "true" ? "table" : "table-light"}
