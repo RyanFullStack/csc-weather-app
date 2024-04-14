@@ -40,3 +40,7 @@
 #me-help:hover {
   color: white;
 }
+
+#clear-me-form:hover {
+  background-color: rgb(114, 114, 114);
+}

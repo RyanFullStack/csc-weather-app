@@ -185,7 +185,7 @@ function Me() {
             </option>
           ))}
         </select>
-        <button onClick={handleClear}>CLEAR</button>
+        <button onClick={handleClear} id='clear-me-form'>CLEAR</button>
       </div>
       <div className="me-details">
         <small className="red">This is a recommendation.</small>
