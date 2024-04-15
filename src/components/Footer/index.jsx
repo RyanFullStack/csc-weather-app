@@ -25,7 +25,7 @@ function Footer() {
                 ) : (
                     <div id='scroll-container'>
                         <div id='scroll-text'>
-                            <span>OPENING DAY 4/19/24</span>
+                            <span>OPENING THIS FRIDAY - 4/19 @ 12pm</span>
                         </div>
                     </div>
                 )
