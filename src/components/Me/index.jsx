@@ -71,7 +71,7 @@ function Me() {
         (speed >= 21 || gustSpeed >= 21 || maxSpeed >= 21 || maxGust >= 21)) ||
       (userLicense === "D" &&
         speed !== null &&
-        (speed >= 25 || gustSpeed >= 25 || maxSpeed >= 25 || maxGust >= 25))
+        (speed > 25 || gustSpeed > 25 || maxSpeed > 25 || maxGust > 25))
     ) {
       setIsSafe(false);
     }
