@@ -252,17 +252,24 @@ function Header() {
         <GetCst />
         <Beerlight />
       </div>
+
       {window.location.pathname !== "/loadingarea" ? (
         <div className="header-imgs">
-          <a
+
+          {/*
+          ****************  AUDIO FEED REMOVED WHILE REBUILD -- LEAVE DIV FOR SPACING ************************
+      */}
+          {/* <a
             href="http://audio.skydivecsc.com/"
             target="_blank"
             rel="noreferrer"
           >
             <img src={audio} alt="audio" />
-          </a>
+          </a> */}
+
         </div>
       ) : null}
+
       <div className="tempContainer">
         <CurrentTemp />
       </div>
