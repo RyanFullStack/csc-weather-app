@@ -59,6 +59,7 @@
 
 .wind-direction {
   font-size: calc(10px + 2.5vmin);
+  font-weight: 600;
 }
 
 .wind-anamometer {
@@ -76,10 +77,12 @@
 
 .sky-conditions {
   font-size: calc(10px + 3vmin);
+  font-weight: 600;
 }
 
 .mini {
   font-size: calc(10px + 2.5vmin);
+  font-weight: 400;
 }
 
 .metar {
