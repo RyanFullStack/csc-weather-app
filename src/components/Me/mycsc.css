@@ -21,6 +21,7 @@
 
 .me-label {
   font-size: calc(8px + 2vmin);
+  font-weight: 600;
 }
 
 .me-title {
