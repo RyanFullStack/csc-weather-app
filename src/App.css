@@ -219,13 +219,16 @@
 }
 
 .red {
-  color: red;
+  color: rgb(243, 49, 49);
+  text-shadow: 1px 1px 2px black;
 }
 .green {
-  color: rgb(7, 197, 7);
+  color: rgb(58, 236, 58);
+  text-shadow: 1px 1px 2px black;
 }
 .yellow {
-  color: yellow;
+  color: rgb(240, 240, 58);
+  text-shadow: 1px 1px 2px black;
 }
 
 select {
