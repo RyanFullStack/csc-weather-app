@@ -105,7 +105,7 @@ function HamburgerMenu() {
         className={`menu ${menu}`}
         id={darkTheme === "false" ? "menu-light" : ""}
       >
-        Options
+        Menu
         <div
           className={
             darkTheme === "true"
