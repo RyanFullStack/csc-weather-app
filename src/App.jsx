@@ -1,9 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { WeatherContext } from "./context/WeatherContext";
 import { useContext } from "react";
 import Footer from "./components/Footer";
