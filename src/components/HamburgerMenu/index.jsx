@@ -74,6 +74,10 @@ function HamburgerMenu() {
     window.location = '/login'
   }
 
+  const handleHelp = () => {
+    window.open('https://github.com/RyanFullStack/csc-weather-app#Features', '_blank', 'noreferrer')
+  }
+
   useEffect(() => {
     const handleBodyClick = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -239,7 +243,7 @@ function HamburgerMenu() {
               : "menu-button-container-light"
           }
         >
-          <button>HELP ME!</button>
+          <button onClick={handleHelp}>HELP</button>
         </div>
         <div
           className={
