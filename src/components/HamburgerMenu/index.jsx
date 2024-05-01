@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import { WeatherContext } from "../../context/WeatherContext";
+import "./hamburger.css";
 
 function HamburgerMenu() {
   const {
@@ -12,6 +14,8 @@ function HamburgerMenu() {
     speedUnit,
     setSpeedUnit,
   } = useContext(WeatherContext);
+
+  const history = useHistory()
 
   const [menu, setMenu] = useState("hidden");
 
@@ -65,6 +69,10 @@ function HamburgerMenu() {
       localStorage.setItem("speedUnit", "true");
     }
   };
+
+  const handleLogin = () => {
+    window.location = '/login'
+  }
 
   useEffect(() => {
     const handleBodyClick = (e) => {
@@ -224,15 +232,24 @@ function HamburgerMenu() {
             LIGHT
           </button>
         </div>
-        <span id="help">
-          <a
-            href="https://github.com/RyanFullStack/csc-weather-app#Features"
-            target="_blank"
-            rel="noreferrer"
-          >
-            HELP ME!
-          </a>
-        </span>
+        <div
+          className={
+            darkTheme === "true"
+              ? "menu-button-container"
+              : "menu-button-container-light"
+          }
+        >
+          <button>HELP ME!</button>
+        </div>
+        <div
+          className={
+            darkTheme === "true"
+              ? "menu-button-container"
+              : "menu-button-container-light"
+          }
+        >
+          <button onClick={handleLogin}>LOGIN</button>
+        </div>
       </div>
     </div>
   );

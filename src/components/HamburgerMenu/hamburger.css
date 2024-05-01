@@ -1,0 +1,72 @@
+.fa-bars,
+.fa-angle-double-left {
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1vh;
+  align-items: center;
+  position: absolute;
+  background-color: rgb(10, 216, 199);
+  padding: 10px;
+  border-radius: 1rem;
+  width: 220px;
+  z-index: 3;
+  top: 10.5vh;
+  left: 10px;
+  opacity: 1;
+  transition: left 0.3s ease, opacity 0.5s, background-color 0.4s, color 0.4s;
+}
+
+.hidden {
+  left: -240px;
+  opacity: 0;
+}
+
+
+.menu-button-container,
+.menu-button-container-light {
+  display: flex;
+  width: 200px;
+}
+
+.menu-button-container button,
+.menu-button-container-light button {
+  margin: 1px;
+}
+
+.menu-button-container button:hover {
+  color: rgb(8, 228, 209);
+  background-color: rgb(0, 0, 0);
+}
+
+.disabled-button {
+  color: rgb(8, 228, 209);
+  background-color: rgb(0, 0, 0);
+  border: 2px solid black;
+}
+
+.active-button-light {
+  background-color: rgb(8, 228, 209);
+  color: black;
+  border: 2px solid black;
+}
+
+.disabled-button-light {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  border: 2px solid black;
+}
+
+#menu-light {
+  background-color: rgb(219, 217, 207);
+}
+
+.menu-button-container-light button:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgb(8, 228, 209);
+}
