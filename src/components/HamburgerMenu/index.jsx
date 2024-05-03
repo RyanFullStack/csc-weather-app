@@ -242,8 +242,9 @@ function HamburgerMenu() {
               ? "menu-button-container"
               : "menu-button-container-light"
           }
+          id='help-login-div'
         >
-          <button onClick={handleHelp}>HELP</button>
+          <button onClick={handleHelp} id='help-button'>HELP</button>
         </div>
         <div
           className={
@@ -251,8 +252,9 @@ function HamburgerMenu() {
               ? "menu-button-container"
               : "menu-button-container-light"
           }
+          id='help-login-div'
         >
-          <button onClick={handleLogin}>LOGIN</button>
+          <button onClick={handleLogin} id='login-button'>LOGIN</button>
         </div>
       </div>
     </div>

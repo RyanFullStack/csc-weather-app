@@ -70,3 +70,12 @@
   color: rgb(0, 0, 0);
   background-color: rgb(8, 228, 209);
 }
+
+#help-button {
+  margin-top: 20px;
+  height: 25px;
+}
+
+#login-button {
+  height: 25px;
+}
