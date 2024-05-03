@@ -71,6 +71,11 @@
   background-color: rgb(8, 228, 209);
 }
 
+#help-login-div {
+  display: flex;
+  width: 150px;
+}
+
 #help-button {
   margin-top: 20px;
   height: 25px;
