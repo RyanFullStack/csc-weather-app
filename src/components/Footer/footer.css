@@ -21,7 +21,7 @@
 .footer-jumprun {
   display: flex;
   flex-direction: column;
-  font-size: 1.6vh;
+  font-size: 1.7vh;
   color: rgb(8, 228, 209);
 }
 
@@ -77,5 +77,11 @@
     -moz-transform: translateX(-120%);
     -webkit-transform: translateX(-120%);
     transform: translateX(-120%);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .footer-jumprun {
+    font-size: 1.3vh;
   }
 }
