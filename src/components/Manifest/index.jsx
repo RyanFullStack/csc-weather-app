@@ -29,7 +29,6 @@ function Manifest() {
               number = null;
             }
 
-
             return (
               <div className="single-load" key={index}>
                 <div className="single-load-header">
@@ -38,10 +37,22 @@ function Manifest() {
                     <span id="small">Slots</span>
                   </div>
                   <div className="load-header-item">
-                    {number ? <>{number} <span id="small">{text}</span></> : text}
+                    {number ? (
+                      <>
+                        {number} <span id="small">{text}</span>
+                      </>
+                    ) : (
+                      text
+                    )}
                   </div>
                   <div className="load-header-item">
-                    {load.time_left} <span id="small">Mins</span>
+                    {load.status === "On Call" ? (
+                      <>
+                        {load.time_left} <span id="small">Mins</span>
+                      </>
+                    ) : (
+                      <span id="small">{load.status}</span>
+                    )}
                   </div>
                 </div>
                 <div className="single-load-jumpers">
