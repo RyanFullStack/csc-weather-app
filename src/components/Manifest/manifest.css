@@ -96,6 +96,13 @@
   background-color: rgba(216, 230, 90, 0.829);
   color: black;
 }
+.tandemodd {
+  background-color: rgba(223, 245, 25, 0.829);;
+}
+
+.studentodd {
+  background-color: rgba(29, 243, 40, 0.829);
+}
 
 #small {
   font-size: 0.6em;

@@ -66,15 +66,15 @@ function Manifest() {
                   </div>
                 </div>
                 <div className="single-load-jumpers">
-                  {load.groups.map((group) => {
+                  {load.groups.map((group, firstIndex) => {
                     return group.map((person, index) => {
                       return (
                         <div
                           className={
-                            person.type === "Student"
-                              ? "single-jumper student"
-                              : person.type === "Tandem"
-                              ? "single-jumper tandem"
+                            person.type === "Student" && firstIndex % 2 === 0
+                              ? "single-jumper student" : person.type === 'Student' && firstIndex %2 !== 0 ? 'single-jumper student studentodd'
+                              : person.type === "Tandem" && firstIndex % 2 === 0
+                              ? "single-jumper tandem" : person.type === 'Tandem' && firstIndex %2 !== 0 ? 'single-jumper tandem tandemodd'
                               : darkTheme === "true"
                               ? "single-jumper"
                               : "single-jumper jumperlight"
