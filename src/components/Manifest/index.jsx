@@ -85,7 +85,7 @@ function Manifest() {
                           <div id='jumper-team'>
                             <span id="small">{person.team_name ? person.team_name : person.group_number}</span>
                           </div>
-                          <div>{person.jump}</div>
+                          <div id='jumper-jump'>{person.jump}</div>
                         </div>
                       );
                     });
