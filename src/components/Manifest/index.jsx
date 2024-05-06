@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { LoadContext } from "../../context/LoadContext";
 import { WeatherContext } from "../../context/WeatherContext";
-import { multiData } from "./testdata";
 import "./manifest.css";
 
 function Manifest() {
@@ -13,8 +12,6 @@ function Manifest() {
   }
 
   console.log(loads);
-
-  loads = multiData;
 
   return (
     <div className="manifest-content">
@@ -43,7 +40,7 @@ function Manifest() {
               >
                 <div className="single-load-header">
                   <div className="load-header-item first">
-                    {load.max_slots - load.total_slots - load.reserve_slots}
+                    {load.max_slots - load.public_slots - load.reserve_slots}
                     <span id="small">Slots</span>
                   </div>
                   <div className="load-header-item">
@@ -85,7 +82,7 @@ function Manifest() {
                           <div id='jumper-team'>
                             <span id="small">{person.team_name ? person.team_name : person.group_number}</span>
                           </div>
-                          <div id='jumper-jump'>{person.jump}</div>
+                          <div id='jumper-jump'>{person.jump} <br /><span id='small'>{person.option_name} {person.handycam_jump}</span></div>
                         </div>
                       );
                     });

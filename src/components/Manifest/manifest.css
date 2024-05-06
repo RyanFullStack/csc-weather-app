@@ -12,7 +12,7 @@
   flex-direction: column;
   flex: 1 0 30%;
   min-width: 300px;
-  max-width: 50%;
+  max-width: 33%;
   padding: 10px;
   align-items: center;
   min-height: 50vh;
@@ -80,7 +80,7 @@
   max-width: 40%;
   display: flex;
   text-align: right;
-
+  flex-direction: column;
 }
 
 .jumperlight {
@@ -97,11 +97,11 @@
   color: black;
 }
 .tandemodd {
-  background-color: rgba(223, 245, 25, 0.829);;
+  background-color: rgba(225, 243, 62, 0.829);
 }
 
 .studentodd {
-  background-color: rgba(29, 243, 40, 0.829);
+  background-color: rgba(55, 241, 64, 0.829);
 }
 
 #small {
