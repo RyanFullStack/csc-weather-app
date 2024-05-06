@@ -18,6 +18,7 @@ const LoadProvider = (props) => {
     useEffect(() => {
         getLoads();
 
+        // ADD BACK WHEN DEV DONE
         // const fiveSecondInterval = setInterval(() => {
         //     getLoads();
         // }, 10000)
