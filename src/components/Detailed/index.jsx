@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import fb from "../../images/fb.png";
 import ig from "../../images/ig.png";
 import wa from "../../images/wa.png";
-import './detailed.css'
+import "./detailed.css";
 
 function DetailedPage() {
   const {
@@ -336,6 +336,14 @@ function DetailedPage() {
                 target="_blank"
               >
                 Click to read
+              </a>
+            </td>
+          </tr>
+          <tr className={darkTheme === "true" ? "table" : "table-light"}>
+            <td>Burble Manifest:</td>
+            <td>
+              <a href="https://dzm.burblesoft.com/jmp?dz_id=408&columns=5&display_menu=0&font_size=12" rel="noreferrer" target="_blank">
+                Click to open
               </a>
             </td>
           </tr>
