@@ -29,6 +29,9 @@ function Manifest() {
               number = null;
             }
 
+            const slotsRemaining =
+              load.max_slots - load.public_slots - load.reserve_slots;
+
             return (
               <div
                 className={
@@ -39,8 +42,12 @@ function Manifest() {
                 <div className="single-load-header">
                   <div className="load-header-item first">
                     <span id="slot-count">
-                      {load.max_slots - load.public_slots - load.reserve_slots}
-                      <span id="small">Slots</span>
+                      {slotsRemaining}
+                      <span id="small">
+                        {slotsRemaining === 1 || slotsRemaining === -1
+                          ? "Slot"
+                          : "Slots"}
+                      </span>
                     </span>
                   </div>
                   <div className="load-header-item">
@@ -65,7 +72,9 @@ function Manifest() {
                       >
                         {load.time_left}{" "}
                         <span id="small">
-                          {load.time_left === 1 || load.time_left === -1 ? "Min" : "Mins"}
+                          {load.time_left === 1 || load.time_left === -1
+                            ? "Min"
+                            : "Mins"}
                         </span>
                       </span>
                     ) : (
