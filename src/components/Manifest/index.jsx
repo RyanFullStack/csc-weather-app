@@ -11,21 +11,18 @@ function Manifest() {
 
   return (
     <div className="manifest-content">
-      {loads.map((load, index) => {
-        if (!load.length) {
-          return (
-            <div className="single-load" key={index}>
-              No Load
-            </div>
-          );
-        } else {
-          return (
-            <div className="single-load" key={index}>
-              Load has info
-            </div>
-          );
-        }
-      })}
+      {loads.every((load) => !load.length) ? (
+        <div className="single-load">No Loads</div>
+      ) : (
+        loads.map(
+          (load, index) =>
+            load.length > 0 && (
+              <div className="single-load" key={index}>
+                Load has info
+              </div>
+            )
+        )
+      )}
     </div>
   );
 }

@@ -1,8 +1,8 @@
 .manifest-content {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   width: 95%;
   justify-content: center;
-  grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
   margin-bottom: 20px;
 }
@@ -10,17 +10,19 @@
 .single-load {
   display: flex;
   flex-direction: column;
+  flex: 1 0 30%;
+  min-width: 300px;
+  max-width: 33%;
+  padding: 10px;
   align-items: center;
   min-height: 50vh;
   background-color: rgba(17, 17, 17, 0.5);
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 @media screen and (max-width: 700px) {
-  .manifest-content {
-    grid-template-columns: 1fr 1fr;
-  }
   .single-load {
     min-height: 30vh;
+    max-width: 80%;
   }
 }
