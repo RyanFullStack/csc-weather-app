@@ -37,6 +37,14 @@
   align-items: center;
   font-size: 0.9em;
 }
+.end {
+  width: 20%;
+  align-items: flex-end;
+}
+.first {
+  align-items: flex-start;
+  width: 20%;
+}
 
 .single-load-jumpers {
   display: flex;

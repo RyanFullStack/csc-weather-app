@@ -42,7 +42,7 @@ function Manifest() {
                 key={index}
               >
                 <div className="single-load-header">
-                  <div className="load-header-item">
+                  <div className="load-header-item first">
                     {load.max_slots - load.total_slots - load.reserve_slots}
                     <span id="small">Slots</span>
                   </div>
@@ -55,7 +55,7 @@ function Manifest() {
                       text
                     )}
                   </div>
-                  <div className="load-header-item">
+                  <div className="load-header-item end">
                     {load.status === "On Call" ? (
                       <>
                         {load.time_left} <span id="small">Mins</span>
