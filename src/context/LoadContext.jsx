@@ -18,13 +18,13 @@ const LoadProvider = (props) => {
     useEffect(() => {
         getLoads();
 
-        const fiveSecondInterval = setInterval(() => {
-            getLoads();
-        }, 5000)
+        // const fiveSecondInterval = setInterval(() => {
+        //     getLoads();
+        // }, 10000)
 
-        return () => {
-            clearInterval(fiveSecondInterval)
-        }
+        // return () => {
+        //     clearInterval(fiveSecondInterval)
+        // }
     }, [])
 
 

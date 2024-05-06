@@ -20,6 +20,24 @@
   border-radius: 15px;
 }
 
+.single-load-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.load-header-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: .8em;
+}
+
+#small {
+  font-size: .6em;
+}
+
 @media screen and (max-width: 700px) {
   .single-load {
     min-height: 30vh;

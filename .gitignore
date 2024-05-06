@@ -15,6 +15,7 @@ lerna-debug.log*
 dist
 dist-ssr
 *.local
+testdata.js
 
 # Editor directories and files
 .vscode/*

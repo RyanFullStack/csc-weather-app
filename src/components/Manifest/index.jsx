@@ -9,19 +9,48 @@ function Manifest() {
     return <div>Can't connect to burble :(</div>;
   }
 
+  console.log(loads);
+
   return (
     <div className="manifest-content">
-      {loads.every((load) => !load.length) ? (
+      {loads.every((load) => !load.name) ? (
         <div className="single-load">No Loads</div>
       ) : (
-        loads.map(
-          (load, index) =>
-            load.length > 0 && (
+        loads.map((load, index) => {
+
+          if (load.name) {
+            const pattern = /([a-zA-Z\s]+)(\d+)/;
+            const match = load.name.match(pattern);
+            let text, number;
+            if (match) {
+              text = match[1].trim();
+              number = parseInt(match[2]);
+            } else {
+              text = load.name;
+              number = null;
+            }
+
+            return (
               <div className="single-load" key={index}>
-                Load has info
+                <div className="single-load-header">
+                  <div className="load-header-item">
+                    {load.max_slots - load.total_slots}{" "}
+                    <span id="small">Slots</span>
+                  </div>
+                  <div className="load-header-item">{number} <span id="small">{text}</span></div>
+                  <div className="load-header-item">
+                    {load.time_left} <span id="small">Mins</span>
+                  </div>
+                </div>
+                <div className="single-load-jumpers">
+                  {load.groups.map((group) => {
+                    console.log(group);
+                  })}
+                </div>
               </div>
-            )
-        )
+            );
+          }
+        })
       )}
     </div>
   );
