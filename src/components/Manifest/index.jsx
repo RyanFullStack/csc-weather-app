@@ -5,6 +5,10 @@ import "./manifest.css";
 function Manifest() {
   const { loads } = useContext(LoadContext);
 
+  if (loads.error) {
+    return <div>Can't connect to burble :(</div>;
+  }
+
   return (
     <div className="manifest-content">
       {loads.map((load, index) => {

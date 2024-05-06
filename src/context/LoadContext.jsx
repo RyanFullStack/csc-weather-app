@@ -11,7 +11,7 @@ const LoadProvider = (props) => {
         if (data.loads) {
             setLoads(data.loads)
         } else {
-            setLoads({error: "Can't connect to burble!"})
+            setLoads({error: "Can't fetch loads"})
         }
     }
 
