@@ -81,8 +81,10 @@ The Aircraft section is a live traffic adsb-exchange map of CSC allowing jumpers
 The Radar section displays an embed of the Windy App showing current weather condition for the greater CSC area.
 
 ### Manifest
+![manifest](/src/images/readme/Manifest.jpg)
 
-This will open an external link displaying the live manifest activity at the dropzone.
+The manifest tab lets you view live manifest activity from Burble at the DZ. As with the rest of the app it updates automatically, no refreshing necessary.
+Tandems are yellow, students are green, and all other jumps are not colored.
 
 ### Header and Footer
 
