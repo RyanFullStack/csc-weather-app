@@ -17,7 +17,6 @@ function Manifest() {
         <div className="single-load">No Loads</div>
       ) : (
         loads.map((load, index) => {
-
           if (load.name) {
             const pattern = /([a-zA-Z\s]+)(\d+)/;
             const match = load.name.match(pattern);
@@ -34,10 +33,12 @@ function Manifest() {
               <div className="single-load" key={index}>
                 <div className="single-load-header">
                   <div className="load-header-item">
-                    {load.max_slots - load.total_slots}{" "}
+                    {load.max_slots - load.total_slots}
                     <span id="small">Slots</span>
                   </div>
-                  <div className="load-header-item">{number} <span id="small">{text}</span></div>
+                  <div className="load-header-item">
+                    {number} <span id="small">{text}</span>
+                  </div>
                   <div className="load-header-item">
                     {load.time_left} <span id="small">Mins</span>
                   </div>
