@@ -36,6 +36,9 @@ function NavBar() {
     else if (path === '/aircraft') {
       setActive('8');
     }
+    else if (path === '/manifest') {
+      setActive('9');
+    }
   }, [location]);
 
   useEffect(() => {
@@ -79,9 +82,9 @@ function NavBar() {
         <div>
           <NavLink exact to="/radar" id="7" className={active === '7' && darkTheme === 'true' ? 'navbuttonactive' : active === '7' && darkTheme === 'false' ? 'navbuttonactivelight' : 'navbutton'} onClick={handleClick}>RADAR</NavLink>
         </div>
-        <a href="https://dzm.burblesoft.com/jmp?dz_id=408&columns=5&display_menu=0&font_size=12" target="_blank" rel="noreferrer"><div className="navbutton">
-          MANIFEST&nbsp;<i className="fas fa-external-link-alt" />
-        </div></a>
+        <div>
+          <NavLink exact to="/manifest" id="9" className={active === '9' && darkTheme === 'true' ? 'navbuttonactive' : active === '9' && darkTheme === 'false' ? 'navbuttonactivelight' : 'navbutton'} onClick={handleClick}>MANIFEST</NavLink>
+        </div>
       </div>
 
     </div>
