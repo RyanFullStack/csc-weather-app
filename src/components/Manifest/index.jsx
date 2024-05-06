@@ -11,8 +11,6 @@ function Manifest() {
     return <div>Can't connect to burble :(</div>;
   }
 
-  console.log(loads);
-
   return (
     <div className="manifest-content">
       {loads.every((load) => !load.name) ? (
@@ -62,12 +60,12 @@ function Manifest() {
                             ? "load-time red"
                             : load.time_left < 11
                             ? "load-time yellow"
-                            : "load-time"
+                            : "load-time green"
                         }
                       >
                         {load.time_left}{" "}
                         <span id="small">
-                          {load.time_left === 1 ? "Min" : "Mins"}
+                          {load.time_left === 1 || load.time_left === -1 ? "Min" : "Mins"}
                         </span>
                       </span>
                     ) : (

@@ -53,7 +53,9 @@
   align-items: flex-end;
 }
 
-.load-time-5, .load-time-10, .load-time {
+.load-time-5,
+.load-time-10,
+.load-time {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,8 +122,6 @@
 #small {
   font-size: 0.6em;
 }
-
-
 
 @media screen and (max-width: 700px) {
   .single-load {
