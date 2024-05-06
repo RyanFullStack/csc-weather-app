@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { LoadContext } from "../../context/LoadContext";
 import { WeatherContext } from "../../context/WeatherContext";
+import { multiData } from "./testdata";
 import "./manifest.css";
 
 function Manifest() {
-  const { loads } = useContext(LoadContext);
+  let { loads } = useContext(LoadContext);
   const { darkTheme } = useContext(WeatherContext);
 
   if (loads.error) {
@@ -12,6 +13,8 @@ function Manifest() {
   }
 
   console.log(loads);
+
+  loads = multiData;
 
   return (
     <div className="manifest-content">
@@ -40,7 +43,7 @@ function Manifest() {
               >
                 <div className="single-load-header">
                   <div className="load-header-item">
-                    {load.max_slots - load.total_slots}
+                    {load.max_slots - load.total_slots - load.reserve_slots}
                     <span id="small">Slots</span>
                   </div>
                   <div className="load-header-item">
@@ -68,13 +71,20 @@ function Manifest() {
                       return (
                         <div
                           className={
-                            darkTheme === "true"
+                            person.type === "Student"
+                              ? "single-jumper student"
+                              : person.type === "Tandem"
+                              ? "single-jumper tandem"
+                              : darkTheme === "true"
                               ? "single-jumper"
                               : "single-jumper jumperlight"
                           }
                           key={index}
                         >
-                          <div>{person.name}</div>
+                          <div id='jumper-name'>{person.name}</div>
+                          <div id='jumper-team'>
+                            <span id="small">{person.team_name ? person.team_name : person.group_number}</span>
+                          </div>
                           <div>{person.jump}</div>
                         </div>
                       );
