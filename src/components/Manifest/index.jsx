@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { LoadContext } from "../../context/LoadContext";
+import './manifest.css'
 
 function Manifest() {
     const { loads } = useContext(LoadContext)
@@ -7,7 +8,7 @@ function Manifest() {
     console.log(loads)
 
     return (
-        <div>
+        <div className="manifest-content">
             MANIFEST SCREEN
         </div>
     )
