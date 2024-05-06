@@ -29,6 +29,7 @@ function Manifest() {
               number = null;
             }
 
+
             return (
               <div className="single-load" key={index}>
                 <div className="single-load-header">
@@ -37,7 +38,7 @@ function Manifest() {
                     <span id="small">Slots</span>
                   </div>
                   <div className="load-header-item">
-                    {number} <span id="small">{text}</span>
+                    {number ? <>{number} <span id="small">{text}</span></> : text}
                   </div>
                   <div className="load-header-item">
                     {load.time_left} <span id="small">Mins</span>
@@ -45,7 +46,14 @@ function Manifest() {
                 </div>
                 <div className="single-load-jumpers">
                   {load.groups.map((group) => {
-                    console.log(group);
+                    return group.map((person) => {
+                      return (
+                        <div className="single-jumper">
+                          <div>{person.name}</div>
+                          <div>{person.jump}</div>
+                        </div>
+                      );
+                    });
                   })}
                 </div>
               </div>
