@@ -15,7 +15,7 @@
   max-width: 33%;
   padding: 10px;
   align-items: center;
-  min-height: 50vh;
+  min-height: 40vh;
   background-color: rgba(17, 17, 17, 0.5);
   border-radius: 15px;
 }
@@ -30,12 +30,19 @@
   width: 100%;
 }
 
+#slot-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .load-header-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 0.9em;
+  font-weight: 600;
 }
 .first {
   align-items: flex-start;
@@ -44,6 +51,12 @@
 .end {
   width: 20%;
   align-items: flex-end;
+}
+
+.load-time-5, .load-time-10, .load-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .single-load-jumpers {
@@ -112,7 +125,7 @@
 
 @media screen and (max-width: 700px) {
   .single-load {
-    min-height: 30vh;
+    min-height: 10vh;
     max-width: 80%;
   }
 }

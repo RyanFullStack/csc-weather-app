@@ -40,8 +40,10 @@ function Manifest() {
               >
                 <div className="single-load-header">
                   <div className="load-header-item first">
-                    {load.max_slots - load.public_slots - load.reserve_slots}
-                    <span id="small">Slots</span>
+                    <span id="slot-count">
+                      {load.max_slots - load.public_slots - load.reserve_slots}
+                      <span id="small">Slots</span>
+                    </span>
                   </div>
                   <div className="load-header-item">
                     {number ? (
@@ -54,9 +56,20 @@ function Manifest() {
                   </div>
                   <div className="load-header-item end">
                     {load.status === "On Call" ? (
-                      <>
-                        {load.time_left} <span id="small">Mins</span>
-                      </>
+                      <span
+                        className={
+                          load.time_left < 6
+                            ? "load-time red"
+                            : load.time_left < 11
+                            ? "load-time yellow"
+                            : "load-time"
+                        }
+                      >
+                        {load.time_left}{" "}
+                        <span id="small">
+                          {load.time_left === 1 ? "Min" : "Mins"}
+                        </span>
+                      </span>
                     ) : (
                       <span id="small">{load.status}</span>
                     )}
@@ -69,20 +82,34 @@ function Manifest() {
                         <div
                           className={
                             person.type === "Student" && firstIndex % 2 === 0
-                              ? "single-jumper student" : person.type === 'Student' && firstIndex %2 !== 0 ? 'single-jumper student studentodd'
+                              ? "single-jumper student"
+                              : person.type === "Student" &&
+                                firstIndex % 2 !== 0
+                              ? "single-jumper student studentodd"
                               : person.type === "Tandem" && firstIndex % 2 === 0
-                              ? "single-jumper tandem" : person.type === 'Tandem' && firstIndex %2 !== 0 ? 'single-jumper tandem tandemodd'
+                              ? "single-jumper tandem"
+                              : person.type === "Tandem" && firstIndex % 2 !== 0
+                              ? "single-jumper tandem tandemodd"
                               : darkTheme === "true"
                               ? "single-jumper"
                               : "single-jumper jumperlight"
                           }
                           key={index}
                         >
-                          <div id='jumper-name'>{person.name}</div>
-                          <div id='jumper-team'>
-                            <span id="small">{person.team_name ? person.team_name : person.group_number}</span>
+                          <div id="jumper-name">{person.name}</div>
+                          <div id="jumper-team">
+                            <span id="small">
+                              {person.team_name
+                                ? person.team_name
+                                : person.group_number}
+                            </span>
                           </div>
-                          <div id='jumper-jump'>{person.jump} <br /><span id='small'>{person.option_name} {person.handycam_jump}</span></div>
+                          <div id="jumper-jump">
+                            {person.jump} <br />
+                            <span id="small">
+                              {person.option_name} {person.handycam_jump}
+                            </span>
+                          </div>
                         </div>
                       );
                     });
