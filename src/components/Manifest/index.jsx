@@ -4,7 +4,7 @@ import { WeatherContext } from "../../context/WeatherContext";
 import "./manifest.css";
 
 function Manifest() {
-  let { loads } = useContext(LoadContext);
+  const { loads } = useContext(LoadContext);
   const { darkTheme } = useContext(WeatherContext);
 
   if (loads.error) {
