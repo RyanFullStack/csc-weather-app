@@ -1,17 +1,29 @@
 import { useContext } from "react";
 import { LoadContext } from "../../context/LoadContext";
-import './manifest.css'
+import "./manifest.css";
 
 function Manifest() {
-    const { loads } = useContext(LoadContext)
+  const { loads } = useContext(LoadContext);
 
-    console.log(loads)
-
-    return (
-        <div className="manifest-content">
-            MANIFEST SCREEN
-        </div>
-    )
+  return (
+    <div className="manifest-content">
+      {loads.map((load, index) => {
+        if (!load.length) {
+          return (
+            <div className="single-load" key={index}>
+              No Load
+            </div>
+          );
+        } else {
+          return (
+            <div className="single-load" key={index}>
+              Load has info
+            </div>
+          );
+        }
+      })}
+    </div>
+  );
 }
 
 export default Manifest;
