@@ -14,7 +14,13 @@ function Manifest() {
   return (
     <div className="manifest-content">
       {loads.every((load) => !load.name) ? (
-        <div className="single-load">No Loads</div>
+        <div
+          className={
+            darkTheme === "true" ? "single-load" : "single-load loadlight"
+          }
+        >
+          No Loads
+        </div>
       ) : (
         loads.map((load, index) => {
           if (load.name) {
