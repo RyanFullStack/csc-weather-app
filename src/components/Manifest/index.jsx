@@ -64,7 +64,7 @@ function Manifest() {
                 </div>
                 <div className="single-load-jumpers">
                   {load.groups.map((group) => {
-                    return group.map((person) => {
+                    return group.map((person, index) => {
                       return (
                         <div
                           className={
@@ -72,6 +72,7 @@ function Manifest() {
                               ? "single-jumper"
                               : "single-jumper jumperlight"
                           }
+                          key={index}
                         >
                           <div>{person.name}</div>
                           <div>{person.jump}</div>
