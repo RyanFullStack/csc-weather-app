@@ -20,6 +20,10 @@
   border-radius: 15px;
 }
 
+.loadlight {
+  background-color: rgba(214, 214, 208, 0.7);
+}
+
 .single-load-header {
   display: flex;
   justify-content: space-between;
@@ -46,9 +50,13 @@
   display: flex;
   justify-content: space-between;
   margin: 2px 0px;
-  background-color: rgb(51, 51, 51);
+  background-color: rgba(51, 51, 51, 0.6);
   padding: 5px;
   border-radius: 5px;
+}
+
+.jumperlight {
+  background-color: rgba(179, 179, 179, 0.5);
 }
 
 #small {

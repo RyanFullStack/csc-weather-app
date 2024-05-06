@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { LoadContext } from "../../context/LoadContext";
+import { WeatherContext } from "../../context/WeatherContext";
 import "./manifest.css";
 
 function Manifest() {
   const { loads } = useContext(LoadContext);
+  const { darkTheme } = useContext(WeatherContext);
 
   if (loads.error) {
     return <div>Can't connect to burble :(</div>;
@@ -30,7 +32,12 @@ function Manifest() {
             }
 
             return (
-              <div className="single-load" key={index}>
+              <div
+                className={
+                  darkTheme === "true" ? "single-load" : "single-load loadlight"
+                }
+                key={index}
+              >
                 <div className="single-load-header">
                   <div className="load-header-item">
                     {load.max_slots - load.total_slots}
@@ -59,7 +66,13 @@ function Manifest() {
                   {load.groups.map((group) => {
                     return group.map((person) => {
                       return (
-                        <div className="single-jumper">
+                        <div
+                          className={
+                            darkTheme === "true"
+                              ? "single-jumper"
+                              : "single-jumper jumperlight"
+                          }
+                        >
                           <div>{person.name}</div>
                           <div>{person.jump}</div>
                         </div>
