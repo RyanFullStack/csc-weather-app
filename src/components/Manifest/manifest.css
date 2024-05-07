@@ -22,10 +22,6 @@
   font-weight: 500;
 }
 
-#clear-search:hover {
-  background-color: rgb(29, 201, 186);
-}
-
 .manifest-content {
   display: flex;
   flex-wrap: wrap;
@@ -148,6 +144,12 @@
 
 #small {
   font-size: 0.6em;
+}
+
+@media(hover: hover) {
+  #clear-search:hover {
+    background-color: rgb(29, 201, 186);
+  }
 }
 
 @media screen and (max-width: 700px) {
