@@ -29,13 +29,13 @@ function Manifest() {
 
   const handleClear = () => {
     setSearchValue("");
-    setShowFilter(false)
-    setDisplaySport(true)
-    setDisplayStudent(true)
-    setDisplayTandem(true)
-    localStorage.setItem("displaySport", true)
-    localStorage.setItem("displayStudent", true)
-    localStorage.setItem("displayTandem", true)
+    setShowFilter(false);
+    setDisplaySport('true');
+    setDisplayStudent('true');
+    setDisplayTandem('true');
+    localStorage.setItem("displaySport", 'true');
+    localStorage.setItem("displayStudent", 'true');
+    localStorage.setItem("displayTandem", 'true');
   };
 
   const handleShowFilter = () => {
@@ -43,18 +43,33 @@ function Manifest() {
   };
 
   const handleShowSport = () => {
-    setDisplaySport(!displaySport);
-    localStorage.setItem("displaySport", !displaySport);
+    if (displaySport === 'true') {
+      setDisplaySport('false');
+      localStorage.setItem("displaySport", 'false');
+    } else {
+      setDisplaySport('true');
+      localStorage.setItem("displaySport", 'true');
+    }
   };
 
   const handleShowStudent = () => {
-    setDisplayStudent(!displayStudent);
-    localStorage.setItem("displayStudent", !displayStudent);
+    if (displayStudent === 'true') {
+      setDisplayStudent('false');
+      localStorage.setItem("displayStudent", 'false');
+    } else {
+      setDisplayStudent('true');
+      localStorage.setItem("displayStudent", 'true');
+    }
   };
 
   const handleShowTandem = () => {
-    setDisplayTandem(!displayTandem);
-    localStorage.setItem("displayTandem", !displayTandem);
+    if (displayTandem === 'true') {
+      setDisplayTandem('false');
+      localStorage.setItem("displayTandem", 'false');
+    } else {
+      setDisplayTandem('true');
+      localStorage.setItem("displayTandem", 'true');
+    }
   };
 
   return (
@@ -87,9 +102,42 @@ function Manifest() {
 
       {showFilter ? (
         <div className="jumper-filter">
-          <div className={displaySport && darkTheme === 'true' ? 'filter-item filterdark' : displaySport && darkTheme === 'false' ? 'filter-item filterlight' : 'filter-item'} onClick={handleShowSport}>Show Sport</div>
-          <div className={displayTandem && darkTheme === 'true' ? 'filter-item filterdark' : displayTandem && darkTheme === 'false' ? 'filter-item filterlight' : 'filter-item'} onClick={handleShowTandem}>Show Tandem</div>
-          <div className={displayStudent && darkTheme === 'true' ? 'filter-item filterdark' : displayStudent && darkTheme === 'false' ? 'filter-item filterlight' : 'filter-item'} onClick={handleShowStudent}>Show Student</div>
+          <div
+            className={
+              displaySport === 'true' && darkTheme === "true"
+                ? "filter-item filterdark"
+                : displaySport === 'true' && darkTheme === "false"
+                ? "filter-item filterlight"
+                : "filter-item"
+            }
+            onClick={handleShowSport}
+          >
+            Show Sport
+          </div>
+          <div
+            className={
+              displayTandem === 'true' && darkTheme === "true"
+                ? "filter-item filterdark"
+                : displayTandem === 'true' && darkTheme === "false"
+                ? "filter-item filterlight"
+                : "filter-item"
+            }
+            onClick={handleShowTandem}
+          >
+            Show Tandem
+          </div>
+          <div
+            className={
+              displayStudent === 'true' && darkTheme === "true"
+                ? "filter-item filterdark"
+                : displayStudent === 'true' && darkTheme === "false"
+                ? "filter-item filterlight"
+                : "filter-item"
+            }
+            onClick={handleShowStudent}
+          >
+            Show Student
+          </div>
         </div>
       ) : null}
 
@@ -173,12 +221,16 @@ function Manifest() {
                   <div className="single-load-jumpers">
                     {load.groups.map((group, firstIndex) => {
                       return group.map((person, index) => {
-                        return person.name
+                        return (person.name
                           .toLowerCase()
                           .includes(searchValue.toLowerCase()) ||
                           person.team_name
                             .toLowerCase()
-                            .includes(searchValue.toLowerCase()) ? (
+                            .includes(searchValue.toLowerCase())) &&
+                          ((displayTandem === 'true' && person.type === "Tandem") ||
+                            (displayStudent === 'true' && person.type === "Student") ||
+                            (displaySport === 'true' && person.type !== "Student") &&
+                            person.type !== "Tandem") ? (
                           <div
                             className={
                               person.type === "Student" && firstIndex % 2 === 0
