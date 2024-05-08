@@ -24,14 +24,6 @@
   margin: 0px;
 }
 
-.filterdark {
-  background-color: black;
-}
-
-.filterlight {
-  background-color: rgb(54, 236, 227);
-}
-
 .jumper-filter {
   display: flex;
   justify-content: center;
@@ -49,6 +41,14 @@
   background-color: rgba(17, 17, 17, 0.5);
   border-radius: 10px;
   cursor: pointer;
+}
+
+.filterdark {
+  background-color: black;
+}
+
+.filterlight {
+  background-color: rgb(54, 236, 227);
 }
 
 .manifest-content {

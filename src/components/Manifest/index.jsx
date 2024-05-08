@@ -5,7 +5,15 @@ import { multiData } from "./testdata";
 import "./manifest.css";
 
 function Manifest() {
-  let { loads } = useContext(LoadContext);
+  let {
+    loads,
+    displaySport,
+    displayStudent,
+    displayTandem,
+    setDisplaySport,
+    setDisplayStudent,
+    setDisplayTandem,
+  } = useContext(LoadContext);
   const { darkTheme } = useContext(WeatherContext);
 
   const [searchValue, setSearchValue] = useState("");
@@ -25,6 +33,21 @@ function Manifest() {
 
   const handleShowFilter = () => {
     setShowFilter(!showFilter);
+  };
+
+  const handleShowSport = () => {
+    setDisplaySport(!displaySport);
+    localStorage.setItem("displaySport", !displaySport);
+  };
+
+  const handleShowStudent = () => {
+    setDisplayStudent(!displayStudent);
+    localStorage.setItem("displayStudent", !displayStudent);
+  };
+
+  const handleShowTandem = () => {
+    setDisplayTandem(!displayTandem);
+    localStorage.setItem("displayTandem", !displayTandem);
   };
 
   return (
@@ -57,9 +80,9 @@ function Manifest() {
 
       {showFilter ? (
         <div className="jumper-filter">
-          <div className="filter-item">Show Sport</div>
-          <div className="filter-item">Show Tandem</div>
-          <div className="filter-item">Show Student</div>
+          <div className={displaySport && darkTheme === 'true' ? 'filter-item filterdark' : displaySport && darkTheme === 'false' ? 'filter-item filterlight' : 'filter-item'} onClick={handleShowSport}>Show Sport</div>
+          <div className={displayTandem && darkTheme === 'true' ? 'filter-item filterdark' : displayTandem && darkTheme === 'false' ? 'filter-item filterlight' : 'filter-item'} onClick={handleShowTandem}>Show Tandem</div>
+          <div className={displayStudent && darkTheme === 'true' ? 'filter-item filterdark' : displayStudent && darkTheme === 'false' ? 'filter-item filterlight' : 'filter-item'} onClick={handleShowStudent}>Show Student</div>
         </div>
       ) : null}
 
