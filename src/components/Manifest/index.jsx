@@ -229,8 +229,8 @@ function Manifest() {
                             .includes(searchValue.toLowerCase())) &&
                           ((displayTandem === 'true' && person.type === "Tandem") ||
                             (displayStudent === 'true' && person.type === "Student") ||
-                            (displaySport === 'true' && person.type !== "Student") &&
-                            person.type !== "Tandem") ? (
+                            (displaySport === 'true' && person.type !== "Student" &&
+                            person.type !== "Tandem")) ? (
                           <div
                             className={
                               person.type === "Student" && firstIndex % 2 === 0
