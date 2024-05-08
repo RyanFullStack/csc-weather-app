@@ -1,11 +1,10 @@
 import { useContext, useState } from "react";
 import { LoadContext } from "../../context/LoadContext";
 import { WeatherContext } from "../../context/WeatherContext";
-import { multiData } from "./testdata";
 import "./manifest.css";
 
 function Manifest() {
-  let {
+  const {
     loads,
     displaySport,
     displayStudent,
@@ -22,7 +21,7 @@ function Manifest() {
   if (loads.error) {
     return <div>Can't connect to burble :(</div>;
   }
-  loads = multiData;
+
   const handleSearch = (e) => {
     setSearchValue(e.target.value);
   };
