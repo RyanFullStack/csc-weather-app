@@ -29,6 +29,13 @@ function Manifest() {
 
   const handleClear = () => {
     setSearchValue("");
+    setShowFilter(false)
+    setDisplaySport(true)
+    setDisplayStudent(true)
+    setDisplayTandem(true)
+    localStorage.setItem("displaySport", true)
+    localStorage.setItem("displayStudent", true)
+    localStorage.setItem("displayTandem", true)
   };
 
   const handleShowFilter = () => {
