@@ -3,7 +3,7 @@ import { WeatherContext } from "../../context/WeatherContext";
 import './mycsc.css'
 
 function Me() {
-  const { speed, gustSpeed, maxSpeed, maxGust, isAwosLive } =
+  const { speed, gustSpeed, maxSpeed, maxGust, isAwosLive, darkTheme } =
     useContext(WeatherContext);
   const [userMaxSpeed, setUserMaxSpeed] = useState(
     localStorage.getItem("userMaxSpeed") || ""
@@ -112,7 +112,7 @@ function Me() {
   ]);
 
   return (
-    <div className="my-csc">
+    <div className={darkTheme === 'true' ? 'my-csc' : 'my-csc mylight'}>
       <div className="my-small">
         {!userLicense && !userMaxSpeed && !userMaxGust && !userDif ? (
           <div className="me-title">
