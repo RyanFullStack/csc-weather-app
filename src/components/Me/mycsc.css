@@ -38,10 +38,12 @@
   margin-top: 0.5rem;
 }
 
-#me-help:hover {
-  color: white;
-}
+@media (hover: hover) {
+  #me-help:hover {
+    color: white;
+  }
 
-#clear-me-form:hover {
-  background-color: rgb(114, 114, 114);
+  #clear-me-form:hover {
+    background-color: rgb(114, 114, 114);
+  }
 }
