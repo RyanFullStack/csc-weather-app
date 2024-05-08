@@ -55,7 +55,13 @@ function Manifest() {
         </div>
       ) : null}
 
-      {showFilter ? <div className="jumper-filter">FILTER SHOWN</div> : null}
+      {showFilter ? (
+        <div className="jumper-filter">
+          <div className="filter-item">Show Sport</div>
+          <div className="filter-item">Show Tandem</div>
+          <div className="filter-item">Show Student</div>
+        </div>
+      ) : null}
 
       <div className="manifest-content">
         {loads.every((load) => !load.name) ? (

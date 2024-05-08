@@ -18,7 +18,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: .5em;
+  font-size: 0.5em;
   font-weight: 500;
   width: 80px;
   margin: 0px;
@@ -30,6 +30,25 @@
 
 .filterlight {
   background-color: rgb(54, 236, 227);
+}
+
+.jumper-filter {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.filter-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 0.6em;
+  margin-top: -5px;
+  margin-bottom: 5px;
+  background-color: rgba(17, 17, 17, 0.5);
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .manifest-content {
@@ -156,8 +175,8 @@
   font-size: 0.6em;
 }
 
-@media(hover: hover) {
-  #search-button:hover {
+@media (hover: hover) {
+  .search-button:hover {
     background-color: rgb(29, 201, 186);
   }
 }
@@ -167,7 +186,7 @@
     min-height: 10vh;
     max-width: 80%;
   }
-  #search-button {
+  .search-button {
     width: 60px;
   }
 }
