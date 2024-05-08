@@ -1,11 +1,10 @@
 import { useContext, useState } from "react";
 import { LoadContext } from "../../context/LoadContext";
 import { WeatherContext } from "../../context/WeatherContext";
-import { multiData } from "./testdata";
 import "./manifest.css";
 
 function Manifest() {
-  let { loads } = useContext(LoadContext);
+  const { loads } = useContext(LoadContext);
   const { darkTheme } = useContext(WeatherContext);
 
   const [searchValue, setSearchValue] = useState("");
@@ -13,7 +12,7 @@ function Manifest() {
   if (loads.error) {
     return <div>Can't connect to burble :(</div>;
   }
-loads = multiData
+
   const handleSearch = (e) => {
     setSearchValue(e.target.value);
   };
