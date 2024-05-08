@@ -95,7 +95,7 @@ function Manifest() {
             }
             onClick={handleShowFilter}
           >
-            FILTER
+            FILTER <i className={showFilter ? 'fas fa-angle-up' : 'fas fa-angle-down'} id="filter-angle"/>
           </button>
         </div>
       ) : null}

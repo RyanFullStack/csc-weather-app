@@ -175,6 +175,11 @@
   font-size: 0.6em;
 }
 
+#filter-angle {
+  margin: 5px;
+  font-size: .7em;
+}
+
 @media (hover: hover) {
   .search-button:hover, .filter-item:hover {
     background-color: rgb(29, 201, 186);
