@@ -7,6 +7,7 @@
   background-color: rgba(17, 17, 17, 0.3);
   padding: 20px;
   border-radius: 15px;
+  min-width: 280px;
 }
 
 .mylight {
