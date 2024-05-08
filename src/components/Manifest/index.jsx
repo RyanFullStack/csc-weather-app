@@ -1,18 +1,20 @@
 import { useContext, useState } from "react";
 import { LoadContext } from "../../context/LoadContext";
 import { WeatherContext } from "../../context/WeatherContext";
+import { multiData } from "./testdata";
 import "./manifest.css";
 
 function Manifest() {
-  const { loads } = useContext(LoadContext);
+  let { loads } = useContext(LoadContext);
   const { darkTheme } = useContext(WeatherContext);
 
   const [searchValue, setSearchValue] = useState("");
+  const [showFilter, setShowFilter] = useState(false)
 
   if (loads.error) {
     return <div>Can't connect to burble :(</div>;
   }
-
+  loads = multiData
   const handleSearch = (e) => {
     setSearchValue(e.target.value);
   };
@@ -20,6 +22,10 @@ function Manifest() {
   const handleClear = () => {
     setSearchValue("");
   };
+
+  const handleShowFilter = () => {
+    setShowFilter(!showFilter)
+  }
 
   return (
     <>
@@ -31,9 +37,18 @@ function Manifest() {
             id="jumper-search-input"
             placeholder="Search for a name..."
           ></input>
-          <button id="clear-search" onClick={handleClear}>
+          <button id="search-button" onClick={handleClear}>
             CLEAR
           </button>
+          <button id="search-button" onClick={handleShowFilter} >
+            FILTER
+          </button>
+        </div>
+      ) : null}
+
+      {showFilter ? (
+        <div className="jumper-filter">
+          FILTER SHOWN
         </div>
       ) : null}
 

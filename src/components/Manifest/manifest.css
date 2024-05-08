@@ -4,22 +4,24 @@
   width: 100%;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
 
 #jumper-search-input {
   height: 20px;
-  width: 50%;
+  width: 40%;
   border-radius: 8px;
   padding: 8px;
 }
 
-#clear-search {
+#search-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
   font-size: .5em;
   font-weight: 500;
+  width: 80px;
+  margin: 0px;
 }
 
 .manifest-content {
@@ -147,7 +149,7 @@
 }
 
 @media(hover: hover) {
-  #clear-search:hover {
+  #search-button:hover {
     background-color: rgb(29, 201, 186);
   }
 }
@@ -156,5 +158,8 @@
   .single-load {
     min-height: 10vh;
     max-width: 80%;
+  }
+  #search-button {
+    width: 60px;
   }
 }
