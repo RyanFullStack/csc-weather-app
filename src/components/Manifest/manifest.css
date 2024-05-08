@@ -14,7 +14,7 @@
   padding: 8px;
 }
 
-#search-button {
+.search-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,6 +22,14 @@
   font-weight: 500;
   width: 80px;
   margin: 0px;
+}
+
+.filterdark {
+  background-color: black;
+}
+
+.filterlight {
+  background-color: rgb(54, 236, 227);
 }
 
 .manifest-content {

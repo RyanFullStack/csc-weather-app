@@ -9,12 +9,12 @@ function Manifest() {
   const { darkTheme } = useContext(WeatherContext);
 
   const [searchValue, setSearchValue] = useState("");
-  const [showFilter, setShowFilter] = useState(false)
+  const [showFilter, setShowFilter] = useState(false);
 
   if (loads.error) {
     return <div>Can't connect to burble :(</div>;
   }
-  loads = multiData
+  loads = multiData;
   const handleSearch = (e) => {
     setSearchValue(e.target.value);
   };
@@ -24,8 +24,8 @@ function Manifest() {
   };
 
   const handleShowFilter = () => {
-    setShowFilter(!showFilter)
-  }
+    setShowFilter(!showFilter);
+  };
 
   return (
     <>
@@ -37,20 +37,25 @@ function Manifest() {
             id="jumper-search-input"
             placeholder="Search for a name..."
           ></input>
-          <button id="search-button" onClick={handleClear}>
+          <button className="search-button" onClick={handleClear}>
             CLEAR
           </button>
-          <button id="search-button" onClick={handleShowFilter} >
+          <button
+            className={
+              showFilter && darkTheme === "true"
+                ? "search-button filterdark"
+                : showFilter && darkTheme === "false"
+                ? "search-button filterlight"
+                : "search-button"
+            }
+            onClick={handleShowFilter}
+          >
             FILTER
           </button>
         </div>
       ) : null}
 
-      {showFilter ? (
-        <div className="jumper-filter">
-          FILTER SHOWN
-        </div>
-      ) : null}
+      {showFilter ? <div className="jumper-filter">FILTER SHOWN</div> : null}
 
       <div className="manifest-content">
         {loads.every((load) => !load.name) ? (
@@ -136,9 +141,8 @@ function Manifest() {
                           .toLowerCase()
                           .includes(searchValue.toLowerCase()) ||
                           person.team_name
-                          .toLowerCase()
-                          .includes(searchValue.toLowerCase())
-                          ? (
+                            .toLowerCase()
+                            .includes(searchValue.toLowerCase()) ? (
                           <div
                             className={
                               person.type === "Student" && firstIndex % 2 === 0
