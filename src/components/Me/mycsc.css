@@ -4,13 +4,13 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: rgba(17, 17, 17, 0.5);
+  background-color: rgba(17, 17, 17, 0.3);
   padding: 20px;
   border-radius: 15px;
 }
 
 .mylight {
-  background-color: rgba(214, 214, 208, 0.7);
+  background-color: rgba(214, 214, 208, 0.5);
 }
 
 .my-csc-content {
