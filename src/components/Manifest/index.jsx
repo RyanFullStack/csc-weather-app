@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
 import { LoadContext } from "../../context/LoadContext";
 import { WeatherContext } from "../../context/WeatherContext";
+import { multiData } from "./testdata";
 import "./manifest.css";
 
 function Manifest() {
-  const { loads } = useContext(LoadContext);
+  let { loads } = useContext(LoadContext);
   const { darkTheme } = useContext(WeatherContext);
 
   const [searchValue, setSearchValue] = useState("");
@@ -12,7 +13,7 @@ function Manifest() {
   if (loads.error) {
     return <div>Can't connect to burble :(</div>;
   }
-
+loads = multiData
   const handleSearch = (e) => {
     setSearchValue(e.target.value);
   };
@@ -119,7 +120,11 @@ function Manifest() {
                       return group.map((person, index) => {
                         return person.name
                           .toLowerCase()
-                          .includes(searchValue.toLowerCase()) ? (
+                          .includes(searchValue.toLowerCase()) ||
+                          person.team_name
+                          .toLowerCase()
+                          .includes(searchValue.toLowerCase())
+                          ? (
                           <div
                             className={
                               person.type === "Student" && firstIndex % 2 === 0
