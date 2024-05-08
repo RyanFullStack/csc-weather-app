@@ -4,6 +4,9 @@ export const LoadContext = createContext();
 
 const LoadProvider = (props) => {
     const [loads, setLoads] = useState([])
+    const [displaySport, setDisplaySport] = useState(localStorage.getItem('displaySport') || true)
+    const [displayStudent, setDisplayStudent] = useState(localStorage.getItem('displayStudent') || true)
+    const [displayTandem, setDisplayTandem] = useState(localStorage.getItem('displayTandem') || true)
 
     const getLoads = async () => {
         const res = await fetch("https://csc-login.onrender.com/api/loads/")
@@ -29,7 +32,7 @@ const LoadProvider = (props) => {
 
 
     return (
-        <LoadContext.Provider value={{loads}}>
+        <LoadContext.Provider value={{loads, displaySport, displayStudent, displayTandem, setDisplaySport, setDisplayStudent, setDisplayTandem}}>
             {props.children}
         </LoadContext.Provider>
     )
