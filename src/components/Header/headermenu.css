@@ -21,3 +21,11 @@
 .time-container img {
   height: 6vh;
 }
+.temp-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  margin-left: -12%;
+  justify-content: flex-end;
+}

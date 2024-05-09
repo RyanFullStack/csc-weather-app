@@ -36,7 +36,7 @@ function Header() {
         </div>
       ) : null}
 
-      <div className="tempContainer">
+      <div className="temp-container">
         <CurrentTemp />
       </div>
     </>
