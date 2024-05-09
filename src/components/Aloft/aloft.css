@@ -1,33 +1,58 @@
 .wind-aloft-table {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 table {
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-    border-collapse: collapse;
-    margin-bottom: 5px;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  border-collapse: collapse;
+  margin-bottom: 5px;
 }
+
 td {
-    border: 1px solid black;
+  border: 1px solid black;
 }
+
 .table {
-    border: 2px solid rgb(0, 0, 0);
-    font-weight: 700;
+  border: 2px solid rgb(0, 0, 0);
+  font-weight: 700;
 }
+
 .table-light {
-    border: 2px solid rgb(0,0,0);
-    font-weight: 700;
+  border: 2px solid rgb(0, 0, 0);
+  font-weight: 700;
 }
+
 th {
-    font-weight: 100;
-    font-size: calc(10px + 1vmin);
+  font-weight: 100;
+  font-size: calc(10px + 1vmin);
 }
+
 .aloft-title {
-    font-weight: 100;
-    font-size: calc(8px + 1vmin);
-    text-align: center;
+  font-weight: 100;
+  font-size: calc(8px + 1vmin);
+  text-align: center;
+}
+
+.aloft-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(17, 17, 17, 0.3);
+  padding: 20px 5px 10px 5px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.aloftlight {
+    background-color: rgba(214, 214, 208, 0.7);
+  }
+
+.aloft-card table {
+  margin: 5px 80px;
 }
