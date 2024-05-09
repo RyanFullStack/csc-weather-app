@@ -84,7 +84,8 @@ The Radar section displays an embed of the Windy App showing current weather con
 ![manifest](/src/images/readme/Manifest.png)
 
 The manifest tab lets you view live manifest activity from Burble at the DZ.
-At the top is a search bar that allows you to filter the loads by jumper or team name to quickly find yourself, your friends or group.
+At the top is a search bar that allows you to search current loads by jumper or team name to quickly find yourself, your friends or group.
+You also have the option to filter jumpers by type.
 As with the rest of the app it updates automatically, no refreshing necessary.
 Tandems are yellow, students are green, and all other jumps are not colored.
 
