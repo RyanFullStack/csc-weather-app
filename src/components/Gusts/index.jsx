@@ -95,7 +95,7 @@ function GustChart() {
     }
 
     return (
-        <div className="gust-chart">
+        <div className="gust-chart" id={window.location.pathname !== '/loadingarea' ? (darkTheme === 'true' ? 'gust-app' : 'gust-app-light') : null}>
             <Line
                 className='chart'
                 data={data}

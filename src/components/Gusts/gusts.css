@@ -2,6 +2,19 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  width: 95%;
-  height: 98%;
+  width: 90%;
+  height: 100%;
+}
+#gust-app {
+  background-color: rgba(17, 17, 17, 0.3);
+  padding: 10px;
+  border-radius: 15px;
+  height: 94%;
+}
+
+#gust-app-light {
+  padding: 10px;
+  border-radius: 15px;
+  height: 94%;
+  background-color: rgba(214, 214, 208, 0.5);
 }
