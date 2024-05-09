@@ -45,6 +45,7 @@ function DetailedPage() {
 
   return (
     <div className="detailed-contents">
+      <div className={darkTheme === 'true' ? 'detailed-card' : 'detailed-card detailedlight'}>
       {jumpruns[0]?.beerLight ? (
         <span className="yellow weather-hold">*** BEER LIGHT IS ON! ***</span>
       ) : jumpruns[0]?.weatherHold ? (
@@ -385,6 +386,7 @@ function DetailedPage() {
           </tr>
         </tbody>
       </table>
+      </div>
     </div>
   );
 }
