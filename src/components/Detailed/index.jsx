@@ -238,7 +238,7 @@ function DetailedPage() {
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Density Altitude:</td>
             <td>
-              {densityAlt && tempSetting === "true"
+              {densityAlt && unitSetting === "true"
                 ? densityAlt + "'"
                 : !densityAlt
                 ? "Field Level"
