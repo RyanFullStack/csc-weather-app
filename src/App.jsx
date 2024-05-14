@@ -16,9 +16,8 @@ import Me from "./components/Me";
 import Aircraft from "./components/Aircraft";
 import WebcamHelp from "./components/WebcamHelp";
 import Safety from "./components/Safety";
-import LoginRedirect from "./components/LoginRedirect";
-import "./App.css";
 import Manifest from "./components/Manifest";
+import "./App.css";
 
 function App() {
   const { darkTheme } = useContext(WeatherContext);
@@ -106,12 +105,6 @@ function App() {
           <Route exact path="/manifest">
             <div className="manifest-container">
               <Manifest />
-            </div>
-          </Route>
-
-          <Route exact path="/login">
-            <div className="chart-container">
-              <LoginRedirect />
             </div>
           </Route>
 

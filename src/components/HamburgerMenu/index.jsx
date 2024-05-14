@@ -71,7 +71,7 @@ function HamburgerMenu() {
   };
 
   const handleLogin = () => {
-    window.location = '/login'
+    window.open('https://csc-login.onrender.com/', '_blank', 'noreferrer')
   }
 
   const handleHelp = () => {
