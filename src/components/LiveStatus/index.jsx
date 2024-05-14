@@ -23,7 +23,8 @@ function LiveStatus() {
     } else if (
       path === "/webcams" ||
       path === "/aircraft" ||
-      path === "/radar"
+      path === "/radar" ||
+      path === '/manifest'
     ) {
       setLiveStatusText("LIVE");
     }
