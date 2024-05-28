@@ -1,22 +1,25 @@
 import { useEffect, useState, useContext } from "react";
 import { WeatherContext } from "../../context/WeatherContext";
-import './time.css'
+import "./time.css";
 
 function GetCst() {
   const [currentDate, setCurrentDate] = useState("");
   const [currentDay, setCurrentDay] = useState("");
   const [time, setTime] = useState("");
 
-  const { timeFormat } = useContext(WeatherContext)
+  const { timeFormat } = useContext(WeatherContext);
+
+  let options;
+
+  useEffect(() => {
+    if (timeFormat === "true") {
+      options = { timeZone: "America/Chicago", hour12: true };
+    } else {
+      options = { timeZone: "America/Chicago", hour12: false };
+    }
+  }, [timeFormat]);
 
   function updateDateTime() {
-    let options;
-
-    if (timeFormat === 'true') {
-      options = { timeZone: "America/Chicago", hour12: true }
-    } else {
-      options = { timeZone: "America/Chicago", hour12: false }
-    }
     const now = new Date().toLocaleString("en-US", options);
     const [date, newTime] = now.split(",");
     setTime(newTime);
@@ -29,8 +32,7 @@ function GetCst() {
     const getDay = new Date();
     setCurrentDay(getDay.toString().split(" ")[0]);
 
-
-    return
+    return;
   }
 
   useEffect(() => {
@@ -45,7 +47,9 @@ function GetCst() {
 
   return (
     <div className="time-component">
-      <div>{currentDay} {currentDate} {time}</div>
+      <div>
+        {currentDay} {currentDate} {time}
+      </div>
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect, useContext } from "react";
-import { useHistory } from "react-router-dom";
 import { WeatherContext } from "../../context/WeatherContext";
 import "./hamburger.css";
 
@@ -13,9 +12,9 @@ function HamburgerMenu() {
     setUnitSetting,
     speedUnit,
     setSpeedUnit,
+    timeFormat,
+    setTimeFormat
   } = useContext(WeatherContext);
-
-  const history = useHistory()
 
   const [menu, setMenu] = useState("hidden");
 
@@ -67,6 +66,16 @@ function HamburgerMenu() {
     } else {
       setSpeedUnit("true");
       localStorage.setItem("speedUnit", "true");
+    }
+  };
+
+  const handleTime = () => {
+    if (timeFormat === "true") {
+      setTimeFormat("false");
+      localStorage.setItem("timeFormat", "false");
+    } else {
+      setTimeFormat("true");
+      localStorage.setItem("timeFormat", "true");
     }
   };
 
@@ -206,6 +215,40 @@ function HamburgerMenu() {
             onClick={handleUnit}
           >
             METERS
+          </button>
+        </div>
+        <div
+          className={
+            darkTheme === "true"
+              ? "menu-button-container"
+              : "menu-button-container-light"
+          }
+        >
+          <button
+            className={
+              timeFormat === "true" && darkTheme === "true"
+                ? "disabled-button"
+                : timeFormat === "false" && darkTheme === "false"
+                ? "disabled-button-light"
+                : "active-button-light"
+            }
+            disabled={timeFormat === "true"}
+            onClick={handleTime}
+          >
+            12 HR
+          </button>
+          <button
+            className={
+              timeFormat === "false" && darkTheme === "true"
+                ? "disabled-button"
+                : timeFormat === "true" && darkTheme === "false"
+                ? "disabled-button-light"
+                : "active-button-light"
+            }
+            disabled={timeFormat === "false"}
+            onClick={handleTime}
+          >
+            24 HR
           </button>
         </div>
         <div
