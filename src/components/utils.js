@@ -32,6 +32,18 @@ export const formatLocalTime = (received) => {
     });
 }
 
+export const formatLocalTime24 = (received) => {
+    const receivedDate = new Date();
+    receivedDate.setUTCHours(parseInt(received), 0, 0, 0);
+    return receivedDate.toLocaleTimeString("en-US", {
+        timeZone: "America/Chicago",
+        timeZoneName: "short",
+        hour: "numeric",
+        minute: "numeric",
+        hour12: false
+    });
+}
+
 export const getCurrentLocalTime = () => {
     return new Date().toLocaleTimeString("en-US", {
         timeZone: "America/Chicago",
