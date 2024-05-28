@@ -17,6 +17,13 @@ function GetCst() {
     } else {
       options = { timeZone: "America/Chicago", hour12: false };
     }
+    updateDateTime();
+
+    const timeInt = setInterval(updateDateTime, 1000);
+
+    return () => {
+      clearInterval(timeInt);
+    };
   }, [timeFormat]);
 
   function updateDateTime() {
@@ -34,16 +41,6 @@ function GetCst() {
 
     return;
   }
-
-  useEffect(() => {
-    updateDateTime();
-
-    const timeInt = setInterval(updateDateTime, 1000);
-
-    return () => {
-      clearInterval(timeInt);
-    };
-  }, []);
 
   return (
     <div className="time-component">
