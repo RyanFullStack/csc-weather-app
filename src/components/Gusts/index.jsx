@@ -7,16 +7,23 @@ import { WeatherContext } from '../../context/WeatherContext';
 import './gusts.css'
 
 function GustChart() {
-    const { gustData, darkTheme, speedUnit } = useContext(WeatherContext)
+    const { gustData, darkTheme, speedUnit, timeFormat } = useContext(WeatherContext)
     const [times, setTimes] = useState([])
     const [speeds, setSpeeds] = useState([])
     const [gusts, setGusts] = useState([])
 
 
     useEffect(() => {
+        let options;
+        if (timeFormat === "true") {
+            options = { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit', hour12: true};
+          } else {
+            options = { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit', hour12: false};
+          }
+
         const timeStamps = gustData.map(gust => {
             const timeObj = new Date(gust.received_time)
-            const localTime = timeObj.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit' }).split(' ')[0]
+            const localTime = timeObj.toLocaleTimeString('en-US', options).split(' ')[0]
             return localTime
         })
 
@@ -50,7 +57,7 @@ function GustChart() {
         setSpeeds(windSpeeds)
         setGusts(gustSpeeds)
 
-    }, [gustData, speedUnit])
+    }, [gustData, speedUnit, timeFormat])
 
 
     const data = {
