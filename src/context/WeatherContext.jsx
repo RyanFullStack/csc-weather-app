@@ -22,7 +22,7 @@ const WindSpeedProvider = (props) => {
   const [metarAbbr, setMetarAbbr] = useState("");
   const [metarDesc, setMetarDesc] = useState("");
   const [gustData, setGustData] = useState([]);
-  const [isAwosLive, setIsAwosLive] = useState(true)
+  const [isAwosLive, setIsAwosLive] = useState(true);
   const [darkTheme, setDarkTheme] = useState(
     localStorage.getItem("darkTheme") || "true"
   );
@@ -43,6 +43,9 @@ const WindSpeedProvider = (props) => {
   const [sunset, setSunset] = useState(null);
   const [sunrise, setSunrise] = useState(null);
   const [twilight, setTwilight] = useState(null);
+  const [sunset24, setSunset24] = useState(null);
+  const [sunrise24, setSunrise24] = useState(null);
+  const [twilight24, setTwilight24] = useState(null);
   const [maxGust, setMaxGust] = useState(null);
   const [maxSpeed, setMaxSpeed] = useState(null);
   const [variableDirection1, setVariableDirection1] = useState("");
@@ -62,7 +65,7 @@ const WindSpeedProvider = (props) => {
 
   const [timeFormat, setTimeFormat] = useState(
     localStorage.getItem("timeFormat") || "true"
-  )
+  );
 
   //necessary for websocket to function correctly and stay alive, don't use state
   let weatherData = [];
@@ -135,6 +138,12 @@ const WindSpeedProvider = (props) => {
         hour12: true,
         timeZone: "America/Chicago",
       };
+      const options24 = {
+        hour: "numeric",
+        minute: "numeric",
+        hour12: false,
+        timeZone: "America/Chicago",
+      };
 
       const sunsetFormat = new Date(data.results.sunset).toLocaleTimeString(
         "en-US",
@@ -148,9 +157,24 @@ const WindSpeedProvider = (props) => {
         data.results.civil_twilight_end
       ).toLocaleTimeString("en-US", options);
 
+      const sunsetFormat24 = new Date(data.results.sunset).toLocaleTimeString(
+        "en-US",
+        options24
+      );
+      const sunriseFormat24 = new Date(data.results.sunrise).toLocaleTimeString(
+        "en-US",
+        options24
+      );
+      const twilightFormat24 = new Date(
+        data.results.civil_twilight_end
+      ).toLocaleTimeString("en-US", options24);
+
       setSunset(sunsetFormat);
       setSunrise(sunriseFormat);
       setTwilight(twilightFormat);
+      setSunset24(sunsetFormat24);
+      setSunrise24(sunriseFormat24);
+      setTwilight24(twilightFormat24);
     }
   };
 
@@ -167,11 +191,11 @@ const WindSpeedProvider = (props) => {
 
     const threeMinuteInterval = setInterval(() => {
       getAloft();
-    }, 180000)
+    }, 180000);
 
     const tenMinuteInterval = setInterval(() => {
       getAstronomy();
-    }, 600000)
+    }, 600000);
 
     return () => {
       clearInterval(thirtySecondInterval);
@@ -264,9 +288,9 @@ const WindSpeedProvider = (props) => {
       const res = JSON.parse(event.data);
 
       if (!res.id) {
-        setIsAwosLive(false)
+        setIsAwosLive(false);
       } else {
-        setIsAwosLive(true)
+        setIsAwosLive(true);
       }
 
       if (res.id === "wind" && res.payload) {
@@ -462,6 +486,9 @@ const WindSpeedProvider = (props) => {
         sunset,
         sunrise,
         twilight,
+        sunset24,
+        sunrise24,
+        twilight24,
         maxGust,
         variableDirection1,
         variableDirection2,
@@ -472,7 +499,7 @@ const WindSpeedProvider = (props) => {
         setSpeedUnit,
         isAwosLive,
         timeFormat,
-        setTimeFormat
+        setTimeFormat,
       }}
     >
       {props.children}

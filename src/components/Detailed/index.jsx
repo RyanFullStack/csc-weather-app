@@ -20,6 +20,9 @@ function DetailedPage() {
     sunset,
     sunrise,
     twilight,
+    sunset24,
+    sunrise24,
+    twilight24,
     skyCondition1,
     skyCondition2,
     skyCondition3,
@@ -41,6 +44,7 @@ function DetailedPage() {
     speedUnit,
     unitSetting,
     isAwosLive,
+    timeFormat
   } = useContext(WeatherContext);
 
   return (
@@ -74,15 +78,15 @@ function DetailedPage() {
         <tbody>
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Sunset:</td>
-            <td>{sunset}</td>
+            <td>{timeFormat === 'true' ? sunset : sunset24}</td>
           </tr>
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Twilight:</td>
-            <td>{twilight}</td>
+            <td>{timeFormat === 'true' ? twilight : twilight24}</td>
           </tr>
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Sunrise:</td>
-            <td>{sunrise}</td>
+            <td>{timeFormat === 'true' ? sunrise : sunrise24}</td>
           </tr>
 
           {jumpruns[0]?.heading ? (
