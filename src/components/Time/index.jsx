@@ -7,7 +7,7 @@ function GetCst() {
   const [time, setTime] = useState("");
 
   function updateDateTime() {
-    const now = new Date().toLocaleString("en-US", { timeZone: "America/Chicago" });
+    const now = new Date().toLocaleString("en-US", { timeZone: "America/Chicago", hour12: false });
     const [date, newTime] = now.split(",");
     setTime(newTime);
 
@@ -18,6 +18,7 @@ function GetCst() {
 
     const getDay = new Date();
     setCurrentDay(getDay.toString().split(" ")[0]);
+
 
     return
   }

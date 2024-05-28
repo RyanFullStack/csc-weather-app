@@ -60,6 +60,10 @@ const WindSpeedProvider = (props) => {
     localStorage.getItem("speedUnit") || "true"
   );
 
+  const [timeFormat, setTimeFormat] = useState(
+    localStorage.getItem("timeFormat") || "true"
+  )
+
   //necessary for websocket to function correctly and stay alive, don't use state
   let weatherData = [];
   let windData = [];
@@ -466,7 +470,9 @@ const WindSpeedProvider = (props) => {
         setWebcamDirection,
         speedUnit,
         setSpeedUnit,
-        isAwosLive
+        isAwosLive,
+        timeFormat,
+        setTimeFormat
       }}
     >
       {props.children}
