@@ -16,6 +16,17 @@ function WindsAloft() {
     speedUnit,
   } = useContext(WeatherContext);
 
+
+
+
+
+  //ADDED UNDER MAINT WHILE API REQRITE
+  return <div className="loading">Under Maintenance :(</div>;
+  //REMOVE WHEN MAINT COMPLETE
+
+
+
+
   if (directions?.error) {
     return <div className="loading">No Winds Aloft Found</div>;
   }
@@ -26,7 +37,11 @@ function WindsAloft() {
 
   return (
     <div className="wind-aloft-table">
-      <div className={darkTheme === 'true' ? 'aloft-card' : 'aloft-card aloftlight'}>
+      <div
+        className={
+          darkTheme === "true" ? "aloft-card" : "aloft-card aloftlight"
+        }
+      >
         <AloftIsValid />
         <div className="aloft-contents">
           <table>
