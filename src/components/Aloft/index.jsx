@@ -17,16 +17,6 @@ function WindsAloft() {
   } = useContext(WeatherContext);
 
 
-
-
-
-  //ADDED UNDER MAINT WHILE API REQRITE
-  return <div className="loading">Under Maintenance :(</div>;
-  //REMOVE WHEN MAINT COMPLETE
-
-
-
-
   if (directions?.error) {
     return <div className="loading">No Winds Aloft Found</div>;
   }
