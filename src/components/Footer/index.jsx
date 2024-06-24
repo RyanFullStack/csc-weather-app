@@ -3,7 +3,7 @@ import { WeatherContext } from "../../context/WeatherContext";
 import "./footer.css";
 
 function Footer() {
-  const { jumpruns, newSpot, newOffset } = useContext(WeatherContext);
+  const { jumpruns, newSpot, newOffset, metar } = useContext(WeatherContext);
 
   return (
     <div className="metar-container">
@@ -45,9 +45,11 @@ function Footer() {
         ) : null
       ) : (
         <div id="scroll-container">
-          <div id="scroll-text">
-            <span>NOW OPEN 7 DAYS!</span>
-          </div>
+          {/* <div id="scroll-text"> */}
+
+            <span>{metar}</span>
+
+          {/* </div> */}
         </div>
       )}
       <p>
