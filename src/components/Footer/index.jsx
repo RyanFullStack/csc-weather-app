@@ -47,7 +47,10 @@ function Footer() {
         <div id="scroll-container">
           {/* <div id="scroll-text"> */}
 
+          {/* DZ OPEN FULL TIME, CUSTOM MESSAGE REMOVED AND METAR ADDED */}
+
             <span>{metar}</span>
+
 
           {/* </div> */}
         </div>
