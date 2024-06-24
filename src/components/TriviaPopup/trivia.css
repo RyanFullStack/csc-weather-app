@@ -23,6 +23,7 @@
 .trivia-hidden {
   top: -10.5vh;
   opacity: 0;
+  z-index: -1;
 }
 
 #trivia-title {
