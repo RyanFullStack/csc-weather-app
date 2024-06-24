@@ -22,7 +22,7 @@ function Header() {
         <Beerlight />
       </div>
 
-      <TriviaPopup />
+      {window.location.pathname !== "/loadingarea" ? <TriviaPopup /> : null}
 
       {window.location.pathname !== "/loadingarea" ? (
         <div className="header-imgs">
