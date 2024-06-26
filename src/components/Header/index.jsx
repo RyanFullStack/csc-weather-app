@@ -4,7 +4,6 @@ import LiveStatus from "../LiveStatus";
 import audio from "../../images/audio.png";
 import Beerlight from "../Beerlight";
 import HamburgerMenu from "../HamburgerMenu";
-import TriviaPopup from "../TriviaPopup";
 import "./headermenu.css";
 
 function Header() {
@@ -21,8 +20,6 @@ function Header() {
         <GetCst />
         <Beerlight />
       </div>
-
-      {window.location.pathname !== "/loadingarea" ? <TriviaPopup /> : null}
 
       {window.location.pathname !== "/loadingarea" ? (
         <div className="header-imgs">
