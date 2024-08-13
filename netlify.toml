@@ -6,9 +6,3 @@
 
 [dev]
   targetPort = 3000
-
-[[redirects]]
-    from = "https://csc-wx-app.netlify.app/*"
-    to = "https://cscwx.com"
-    status = 301
-    force = true
