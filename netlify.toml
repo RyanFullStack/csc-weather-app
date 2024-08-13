@@ -6,9 +6,3 @@
 
 [dev]
   targetPort = 3000
-
-[[redirects]]
-  from = "/*"
-  to = "https://cscwx.com/:splat"
-  status = 301
-  force = true
