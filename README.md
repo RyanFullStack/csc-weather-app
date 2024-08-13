@@ -91,7 +91,7 @@ Tandems are yellow, students are green, and all other jumps are not colored.
 
 ### Header and Footer
 
-The Header displays the option button on the far left, an indicator whether the data you are viewing is live or forecast, the current time, the live audio link, and the live temperature.
+The Header displays the option menu on the far left, an indicator whether the data you are viewing is live or forecast, the current time, and the live temperature.
 
 Most importantly, during jump hours, the header will display a stoplight that reflects the stoplight in the hangar. It will be red if there is an active weather hold, yellow if the day is done and the beer light is on, or green if we are actively jumping. If there is no stoplight visible, staff has not set a jumprun for that day.
 
@@ -102,8 +102,7 @@ The Footer displays important info in the center. It will either display a weath
 
 This is a custom desktop made view for the loading area. This is a collection of all data in a compressed view for jumpers to view prior to boarding the aircraft. These values do not change with your settings and are forced to display how the dropzone has set.
 
-#### Small Features:
+#### Header Features:
 
     Click the top left icon for Options
     Click the top right temp for quick F/C conversion
-    Click the audio icon in the header to open CSC live audio in a new tab
