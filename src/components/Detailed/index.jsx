@@ -324,7 +324,7 @@ function DetailedPage() {
             <td>Trivia Game:</td>
             <td>
               <a
-                href="https://csc-trivia.netlify.app/"
+                href="https://trivia.cscwx.com/"
                 rel="noreferrer"
                 target="_blank"
               >
