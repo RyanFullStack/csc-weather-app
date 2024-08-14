@@ -80,7 +80,7 @@ function HamburgerMenu() {
   };
 
   const handleLogin = () => {
-    window.location('https://login.cscwx.com/')
+    window.location.href = 'https://login.cscwx.com/'
   }
 
   const handleHelp = () => {
