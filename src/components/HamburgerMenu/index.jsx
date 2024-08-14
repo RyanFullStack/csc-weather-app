@@ -80,7 +80,7 @@ function HamburgerMenu() {
   };
 
   const handleLogin = () => {
-    window.open('https://csc-login.onrender.com/', '_blank', 'noreferrer')
+    window.location('https://login.cscwx.com/')
   }
 
   const handleHelp = () => {
