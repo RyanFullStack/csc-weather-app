@@ -72,7 +72,7 @@ const WindSpeedProvider = (props) => {
   let windData = [];
 
   const getWind = async () => {
-    const res = await fetch("https://csc-login.onrender.com/api/weather/gusts");
+    const res = await fetch("https://login.cscwx.com/api/weather/gusts");
     const resArr = await res.json();
     if (!resArr.length) {
       setGustData([{ error: "no gust data found" }]);
@@ -82,7 +82,7 @@ const WindSpeedProvider = (props) => {
   };
 
   const getAloft = async () => {
-    const res = await fetch("https://csc-login.onrender.com/api/weather/aloft");
+    const res = await fetch("https://login.cscwx.com/api/weather/aloft");
     let winds = await res.json();
 
     if (!winds.direction) {
@@ -103,7 +103,7 @@ const WindSpeedProvider = (props) => {
   };
 
   const getJumprun = async () => {
-    const res = await fetch("https://csc-login.onrender.com/api/jumpruns/");
+    const res = await fetch("https://login.cscwx.com/api/jumpruns/");
     const data = await res.json();
 
     if (data.jumpruns) {
@@ -128,7 +128,7 @@ const WindSpeedProvider = (props) => {
 
   const getAstronomy = async () => {
     const res = await fetch(
-      "https://csc-login.onrender.com/api/weather/astronomy"
+      "https://login.cscwx.com/api/weather/astronomy"
     );
     const data = await res.json();
     if (data.results) {

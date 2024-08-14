@@ -9,7 +9,7 @@ const LoadProvider = (props) => {
     const [displayTandem, setDisplayTandem] = useState(localStorage.getItem('displayTandem') || 'true')
 
     const getLoads = async () => {
-        const res = await fetch("https://csc-login.onrender.com/api/loads/")
+        const res = await fetch("https://login.cscwx.com/api/loads/")
         const data = await res.json()
         if (data.loads) {
             setLoads(data.loads)
