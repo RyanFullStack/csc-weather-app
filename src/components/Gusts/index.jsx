@@ -4,6 +4,7 @@ import { Line } from 'react-chartjs-2'
 import 'chartjs-plugin-annotation';
 import { useContext, useEffect, useState } from 'react';
 import { WeatherContext } from '../../context/WeatherContext';
+import LoadingDots from '../LoadingDots';
 import './gusts.css'
 
 function GustChart() {
@@ -94,7 +95,7 @@ function GustChart() {
     }
 
     if (!gustData.length) {
-        return <div className="loading">Live Gusts Loading!</div>;
+        return <div className="loading">Live Gusts Loading<LoadingDots /></div>;
       }
 
     if (gustData[0].error) {

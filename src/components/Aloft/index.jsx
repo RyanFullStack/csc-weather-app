@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { WeatherContext } from "../../context/WeatherContext";
 import AloftIsValid from "../AloftIsValid";
 import { calculateTemperatureColor } from "../utils";
+import LoadingDots from "../LoadingDots";
 import "./aloft.css";
 
 function WindsAloft() {
@@ -22,7 +23,7 @@ function WindsAloft() {
   }
 
   if (!directions || !speeds || !temps || !received) {
-    return <div className="loading">Winds Aloft Loading!</div>;
+    return <div className="loading">Winds Aloft Loading<LoadingDots /></div>;
   }
 
   return (

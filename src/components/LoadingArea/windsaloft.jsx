@@ -2,6 +2,7 @@ import { WeatherContext } from "../../context/WeatherContext";
 import { useContext } from "react";
 import AloftIsValid from "../AloftIsValid";
 import { calculateTemperatureColor } from "../utils";
+import LoadingDots from "../LoadingDots";
 
 function WindsAloftLoading() {
   const { directions, speeds, temps, darkTheme } = useContext(WeatherContext);
@@ -17,7 +18,7 @@ function WindsAloftLoading() {
     Object.keys(speeds)?.length === 0 ||
     Object.keys(temps)?.length === 0
   ) {
-    return <div className="loading">Winds Aloft Loading!</div>;
+    return <div className="loading">Winds Aloft Loading<LoadingDots /></div>;
   }
 
   return (
