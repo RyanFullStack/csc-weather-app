@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import fb from "../../images/fb.png";
 import ig from "../../images/ig.png";
 import wa from "../../images/wa.png";
+import LoadingDots from "../LoadingDots";
 import "./detailed.css";
 
 function DetailedPage() {
@@ -78,15 +79,15 @@ function DetailedPage() {
         <tbody>
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Sunset:</td>
-            <td>{timeFormat === 'true' ? sunset : sunset24}</td>
+            <td>{sunset === null ? <LoadingDots /> : timeFormat === 'true' ? sunset : sunset24}</td>
           </tr>
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Twilight:</td>
-            <td>{timeFormat === 'true' ? twilight : twilight24}</td>
+            <td>{twilight === null ? <LoadingDots /> : timeFormat === 'true' ? twilight : twilight24}</td>
           </tr>
           <tr className={darkTheme === "true" ? "table" : "table-light"}>
             <td>Sunrise:</td>
-            <td>{timeFormat === 'true' ? sunrise : sunrise24}</td>
+            <td>{sunrise === null ? <LoadingDots /> : timeFormat === 'true' ? sunrise : sunrise24}</td>
           </tr>
 
           {jumpruns[0]?.heading ? (
