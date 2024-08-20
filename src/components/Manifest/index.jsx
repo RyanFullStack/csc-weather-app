@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { LoadContext } from "../../context/LoadContext";
 import { WeatherContext } from "../../context/WeatherContext";
+import LoadingDots from "../LoadingDots";
 import "./manifest.css";
 
 function Manifest() {
@@ -19,8 +20,13 @@ function Manifest() {
   const [showFilter, setShowFilter] = useState(false);
 
   if (loads.error) {
-    return <div>Can't connect to burble :(</div>;
+    return <div className="loading">{loads.error}</div>;
   }
+
+  if (!loads.length) {
+    return <div className="loading">Live Manifest Loading<LoadingDots /></div>
+  }
+
 
   const handleSearch = (e) => {
     setSearchValue(e.target.value);

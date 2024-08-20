@@ -13,8 +13,12 @@ const LoadProvider = (props) => {
         const data = await res.json()
         if (data.loads) {
             setLoads(data.loads)
-        } else {
-            setLoads({error: "Can't fetch loads"})
+        }
+        else if (data.error) {
+            setLoads(data.error)
+        }
+        else {
+            setLoads({error: "Can't fetch loads :("})
         }
     }
 
