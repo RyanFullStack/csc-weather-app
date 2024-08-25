@@ -4,6 +4,7 @@ import GustChart from "../Gusts";
 import WindsAloftLoading from "./windsaloft";
 import arrow from "../../images/arrow.png";
 import arrowright from "../../images/arrow-right.png";
+import LoadingDots from "../LoadingDots";
 import "./loadingarea.css";
 
 function LoadingArea() {
@@ -148,7 +149,7 @@ function LoadingArea() {
               ) : null}
               <tr className={darkTheme === "true" ? "table" : "table-light"}>
                 <td>Sunset:</td>
-                <td>{sunset}</td>
+                <td>{sunset === null ? <LoadingDots /> : sunset}</td>
               </tr>
 
               <tr className={darkTheme === "true" ? "table" : "table-light"}>
@@ -162,8 +163,8 @@ function LoadingArea() {
                         maxSpeed > 15 && maxSpeed < 26
                           ? "yellow"
                           : maxSpeed > 25
-                          ? "red"
-                          : "green"
+                            ? "red"
+                            : "green"
                       }
                     >
                       {maxSpeed === 1 ? "1 kt" : maxSpeed + " kts"}
@@ -184,8 +185,8 @@ function LoadingArea() {
                         maxGust > 15 && maxGust < 26
                           ? "yellow"
                           : maxGust > 25
-                          ? "red"
-                          : "green"
+                            ? "red"
+                            : "green"
                       }
                     >
                       {maxGust} kts
