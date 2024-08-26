@@ -101,7 +101,7 @@ function LoadingArea() {
       </div>
 
       <div className="loading-area-content" id="loading-details">
-        {jumpruns.length === 0 ? <div className="no-jumprun"> Jumprun Loading<LoadingDots /></div> : jumpruns?.error ? (
+        {jumpruns.length === 0 ? <div className="no-jumprun"> Jumprun Loading<LoadingDots /></div> : !jumpruns[0]?.heading ? (
           <div className="no-jumprun">No Jumprun Set</div>
         ) : null}
         <div className="wind-aloft-table-loading">

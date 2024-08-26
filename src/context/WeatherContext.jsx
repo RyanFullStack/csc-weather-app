@@ -122,9 +122,8 @@ const WindSpeedProvider = (props) => {
         setNewOffset(`${(data.jumpruns[0].offset * 0.1).toFixed(1)}`);
       }
     } else {
-      setJumpruns({error: 'No Info Found!'})
+      setJumpruns(data)
     }
-
   };
 
   const getAstronomy = async () => {
