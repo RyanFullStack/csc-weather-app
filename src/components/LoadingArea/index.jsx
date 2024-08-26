@@ -27,6 +27,7 @@ function LoadingArea() {
     gustSpeed,
   } = useContext(WeatherContext);
 
+
   return (
     <div className="loadingarea-grid">
       <div className="loading-area-content-wind">
@@ -100,7 +101,7 @@ function LoadingArea() {
       </div>
 
       <div className="loading-area-content" id="loading-details">
-        {!jumpruns[0]?.heading ? (
+        {jumpruns.length === 0 ? <div className="no-jumprun"> Jumprun Loading<LoadingDots /></div> : jumpruns?.error ? (
           <div className="no-jumprun">No Jumprun Set</div>
         ) : null}
         <div className="wind-aloft-table-loading">
