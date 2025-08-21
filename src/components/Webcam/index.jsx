@@ -39,7 +39,7 @@ function WebCam() {
       if (webcamDirection === "pro") {
         imgElement.src = `https://webcam.skydivecsc.com/proshop?${timestamp}`;
       }
-    }, 1000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [webcamDirection]);
