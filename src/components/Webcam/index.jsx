@@ -7,11 +7,11 @@ function WebCam() {
   const { webcamDirection, setWebcamDirection, darkTheme } =
     useContext(WeatherContext);
 
-  //Leave Removed, camera feed not live
-  // const handleWebcamEast = () => {
-  //   setWebcamDirection("east");
-  //   localStorage.setItem("webcamDirection", "east");
-  // };
+
+  const handleWebcamEast = () => {
+    setWebcamDirection("east");
+    localStorage.setItem("webcamDirection", "east");
+  };
 
   const handleWebcamWest = () => {
     setWebcamDirection("west");
@@ -49,22 +49,21 @@ function WebCam() {
       <div className="hangar-cam-buttons">
 
 
-        {/* ADD THIS BUTTON BACK WHEN MAINT DONE */}
-        {/* <button
-          onClick={handleWebcamWest}
+        <button
+          onClick={handleWebcamYard}
           className={
-            webcamDirection === "west" && darkTheme === "true"
+            webcamDirection === "yard" && darkTheme === "true"
               ? "hangar-button-active"
-              : webcamDirection === "west" && darkTheme === "false"
+              : webcamDirection === "yard" && darkTheme === "false"
               ? "hangar-button-active-light"
               : "hangar-button"
           }
         >
-          Hangar
-        </button> */}
+          Yard
+        </button>
 
-        {/* LEAVE EAST BUTTON REMOVED, CAMERA NOT LIVE */}
-        {/* <button
+
+        {<button
           onClick={handleWebcamEast}
           className={
             webcamDirection === "east" && darkTheme === "true"
@@ -74,8 +73,8 @@ function WebCam() {
               : "hangar-button"
           }
         >
-          East
-        </button> */}
+          Hangar
+        </button>}
 
         {/* ADD THIS BUTTON BACK WHEN MAINT DONE */}
         {/* <button
@@ -92,21 +91,7 @@ function WebCam() {
         </button> */}
 
 
-
-        <button
-          onClick={handleWebcamYard}
-          className={
-            webcamDirection === "yard" && darkTheme === "true"
-              ? "hangar-button-active"
-              : webcamDirection === "yard" && darkTheme === "false"
-              ? "hangar-button-active-light"
-              : "hangar-button"
-          }
-        >
-          Yard
-        </button>
       </div>
-      {/* EAST LEFT IN ONLY FOR DEVS IF LOCAL STORAGE CHANGED DIRECTLY, NOT FOR USERS */}
       {webcamDirection === "yard" ? (
         <div className="yard-cam">
           <iframe
@@ -116,21 +101,17 @@ function WebCam() {
           />
         </div>
       ) : (
-        <>
-          <center>Security cams under maintenance<br />:'(</center>
-        </>
-        // ************ ADD BACK WHEN MAINT COMPLETE ****************
-        // <img
-        //   src={
-        //     webcamDirection === "west"
-        //       ? `https://webcam.skydivecsc.com/hangar_nw?${Date.now()}`
-        //       : webcamDirection === "east"
-        //       ? `https://webcam.skydivecsc.com/hangar_ne?${Date.now()}`
-        //       : `https://webcam.skydivecsc.com/proshop?${Date.now()}`
-        //   }
-        //   id="cam"
-        //   alt="Camera feed not found, This is a problem with the source and not this app. View help below to fix."
-        // />
+        <img
+          src={
+            webcamDirection === "west"
+              ? `https://webcam.skydivecsc.com/hangar_nw?${Date.now()}`
+              : webcamDirection === "east"
+              ? `https://webcam.skydivecsc.com/hangar_ne?${Date.now()}`
+              : `https://webcam.skydivecsc.com/proshop?${Date.now()}`
+          }
+          id="cam"
+          alt="Camera feed not found, This is a problem with the source and not this app. View help below to fix."
+        />
       )}
 
       {/* *****  ADD BACK WHEN MAINT COMPLETE  ********   */}
