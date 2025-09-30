@@ -107,7 +107,7 @@ function WebCam() {
               ? `https://webcam.skydivecsc.com/hangar_nw?${Date.now()}`
               : webcamDirection === "east"
               ? `https://webcam.skydivecsc.com/hangar_ne?${Date.now()}`
-              : `https://webcam.skydivecsc.com/proshop?${Date.now()}`
+              : `https://webcam.skydivecsc.com/courtyard?${Date.now()}`
           }
           id="cam"
           alt="Camera feed not found, This is a problem with the source and not this app."
