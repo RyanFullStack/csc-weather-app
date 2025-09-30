@@ -36,8 +36,8 @@ function WebCam() {
       if (webcamDirection === "east") {
         imgElement.src = `https://webcam.skydivecsc.com/hangar_ne?${timestamp}`;
       }
-      if (webcamDirection === "pro") {
-        imgElement.src = `https://webcam.skydivecsc.com/proshop?${timestamp}`;
+      if (webcamDirection === "court") {
+        imgElement.src = `https://webcam.skydivecsc.com/courtyard?${timestamp}`;
       }
     }, 3000);
 
@@ -110,7 +110,7 @@ function WebCam() {
               : `https://webcam.skydivecsc.com/proshop?${Date.now()}`
           }
           id="cam"
-          alt="Camera feed not found, This is a problem with the source and not this app. View help below to fix."
+          alt="Camera feed not found, This is a problem with the source and not this app."
         />
       )}
 
