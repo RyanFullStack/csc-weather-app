@@ -62,8 +62,8 @@ function WebCam() {
           Yard
         </button>
 
-
-        {<button
+          {/*BUTTON REMOVED, DOUG CANT KEEP HIS SHIT TOGETHER AND KEEP THE CAMS ONLINE*/}
+        {/* {<button
           onClick={handleWebcamEast}
           className={
             webcamDirection === "east" && darkTheme === "true"
@@ -74,7 +74,8 @@ function WebCam() {
           }
         >
           Hangar
-        </button>}
+        </button>} */}
+
 
         {/* ADD THIS BUTTON BACK WHEN MAINT DONE */}
         {/* <button
