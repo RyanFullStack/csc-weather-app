@@ -74,7 +74,7 @@ function NavBar() {
 
       <div className='nav-bottom-half'>
         <div>
-          <NavLink exact to="/webcams" id="4" className={active === '4' && darkTheme === 'true' ? 'navbuttonactive' : active === '4' && darkTheme === 'false' ? 'navbuttonactivelight' : 'navbutton'} onClick={handleClick}>WEBCAM</NavLink>
+          <NavLink exact to="/webcams" id="4" className={active === '4' && darkTheme === 'true' ? 'navbuttonactive' : active === '4' && darkTheme === 'false' ? 'navbuttonactivelight' : 'navbutton'} onClick={handleClick}>WEBCAMS</NavLink>
         </div>
         <div>
           <NavLink exact to="/aircraft" id="8" className={active === '8' && darkTheme === 'true' ? 'navbuttonactive' : active === '8' && darkTheme === 'false' ? 'navbuttonactivelight' : 'navbutton'} onClick={handleClick}>AIRCRAFT</NavLink>
