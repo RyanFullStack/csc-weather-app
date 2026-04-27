@@ -7,7 +7,7 @@ function FooterLoadingArea() {
 
   return (
     <div className="footer-jumprun-loading">
-      <div className="loading-footer-content">app.skydivecsc.com</div>
+      <div className="loading-footer-content">www.cscwx.com</div>
 
       {jumpruns[0]?.beerLight ? (
         <span className="yellow weather-hold" id="loading-footer-light">

@@ -9,7 +9,7 @@ function Footer() {
     <div className="metar-container">
       <p>
         <a
-          href="https://ryanerickson.netlify.app/"
+          href="mailto:skydivecscgithub.gmail.com"
           target="_blank"
           rel="noreferrer"
         >
@@ -57,11 +57,10 @@ function Footer() {
       )}
       <p>
         <a
-          href="https://github.com/RyanFullStack/csc-weather-app#Features"
-          target="_blank"
+          href="https://cscwx.com"
           rel="noreferrer"
         >
-          Github
+          cscwx.com
         </a>
       </p>
     </div>
