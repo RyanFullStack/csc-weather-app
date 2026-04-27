@@ -66,9 +66,9 @@ function NavBar() {
         <div>
           <NavLink exact to="/detailed" id="5" className={active === '5' && darkTheme === 'true' ? 'navbuttonactive' : active === '5' && darkTheme === 'false' ? 'navbuttonactivelight' : 'navbutton'} onClick={handleClick}>DETAILED</NavLink>
         </div>
-        <div>
+        {/* <div>
           <NavLink exact to="/me" id="6" className={active === '6' && darkTheme === 'true' ? 'navbuttonactive' : active === '6' && darkTheme === 'false' ? 'navbuttonactivelight' : 'navbutton'} onClick={handleClick}>ME</NavLink>
-        </div>
+        </div> */}
       </div>
 
 

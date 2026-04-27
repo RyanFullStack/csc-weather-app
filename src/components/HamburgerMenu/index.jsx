@@ -279,7 +279,7 @@ function HamburgerMenu() {
             LIGHT
           </button>
         </div>
-        <div
+        {/* <div
           className={
             darkTheme === "true"
               ? "menu-button-container"
@@ -288,7 +288,7 @@ function HamburgerMenu() {
           id='help-login-div'
         >
           <button onClick={handleHelp} id='help-button'>HELP</button>
-        </div>
+        </div> */}
         <div
           className={
             darkTheme === "true"
@@ -297,7 +297,7 @@ function HamburgerMenu() {
           }
           id='help-login-div'
         >
-          <button onClick={handleLogin} id='login-button'>LOGIN</button>
+          <button onClick={handleLogin} id='login-button'>ADMIN LOGIN</button>
         </div>
       </div>
     </div>
