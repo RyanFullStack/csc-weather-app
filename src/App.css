@@ -342,7 +342,7 @@ a:hover {
   }
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1150px) {
   .arrow {
     max-height: 100%;
     max-width: 100%;

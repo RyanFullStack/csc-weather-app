@@ -7,19 +7,21 @@ function WebCam() {
   const { webcamDirection, setWebcamDirection, darkTheme } =
     useContext(WeatherContext);
 
-
   const handleWebcamEast = () => {
     setWebcamDirection("east");
     localStorage.setItem("webcamDirection", "east");
   };
-
   const handleWebcamWest = () => {
     setWebcamDirection("west");
     localStorage.setItem("webcamDirection", "west");
   };
-  const handleWebcamPro = () => {
-    setWebcamDirection("pro");
-    localStorage.setItem("webcamDirection", "pro");
+  const handleWebcamPatio = () => {
+    setWebcamDirection("patio");
+    localStorage.setItem("webcamDirection", "patio");
+  };
+  const handleWebcamLz = () => {
+    setWebcamDirection("lz");
+    localStorage.setItem("webcamDirection", "lz");
   };
   const handleWebcamYard = () => {
     setWebcamDirection("yard");
@@ -36,8 +38,11 @@ function WebCam() {
       if (webcamDirection === "east") {
         imgElement.src = `https://webcam.skydivecsc.com/hangar_ne?${timestamp}`;
       }
-      if (webcamDirection === "court") {
+      if (webcamDirection === "patio") {
         imgElement.src = `https://webcam.skydivecsc.com/courtyard?${timestamp}`;
+      }
+      if (webcamDirection === "lz") {
+        imgElement.src = `https://webcam.skydivecsc.com/main_landing_area?${timestamp}`;
       }
     }, 3000);
 
@@ -77,19 +82,32 @@ function WebCam() {
         </button>}
 
 
-        {/* ADD THIS BUTTON BACK WHEN MAINT DONE */}
-        {/* <button
-          onClick={handleWebcamPro}
+
+        <button
+          onClick={handleWebcamPatio}
           className={
-            webcamDirection === "pro" && darkTheme === "true"
+            webcamDirection === "patio" && darkTheme === "true"
               ? "hangar-button-active"
-              : webcamDirection === "pro" && darkTheme === "false"
+              : webcamDirection === "patio" && darkTheme === "false"
               ? "hangar-button-active-light"
               : "hangar-button"
           }
         >
-          Pro
-        </button> */}
+          Patio
+        </button>
+
+        <button
+          onClick={handleWebcamLz}
+          className={
+            webcamDirection === "lz" && darkTheme === "true"
+              ? "hangar-button-active"
+              : webcamDirection === "lz" && darkTheme === "false"
+              ? "hangar-button-active-light"
+              : "hangar-button"
+          }
+        >
+          LZ
+        </button>
 
 
       </div>
@@ -106,21 +124,21 @@ function WebCam() {
           src={
             webcamDirection === "west"
               ? `https://webcam.skydivecsc.com/hangar_nw?${Date.now()}`
-              : webcamDirection === "east"
+              :
+            webcamDirection === "east"
               ? `https://webcam.skydivecsc.com/hangar_ne?${Date.now()}`
-              : `https://webcam.skydivecsc.com/courtyard?${Date.now()}`
+              :
+            webcamDirection === "patio"
+              ? `https://webcam.skydivecsc.com/courtyard?${Date.now()}`
+              :
+            webcamDirection === "lz"
+              ? `https://webcam.skydivecsc.com/main_landing_area?${Date.now()}`
+              : handleWebcamYard()
           }
           id="cam"
           alt="Camera feed not found, This is a problem with the source and not this app."
         />
       )}
-
-      {/* *****  ADD BACK WHEN MAINT COMPLETE  ********   */}
-      {/* <div className="webcam-help-info">
-        <NavLink exact to="/webcamhelp">
-          Camera not loading? Click here for help.
-        </NavLink>
-      </div> */}
 
     </div>
   );
